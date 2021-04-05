@@ -60,27 +60,8 @@ To use this feature the **Utterance** received from the intent service must be p
 
 ## The backends
 
-The default backend is still mpg123 for mp3 files which is very limited but is the most generally available or multiple platforms.
-
-Included in this release there's also
-
-* `VLC` \(a very general purpose media player\)
-* `mopidy` \(a common audio server in the Raspberry Pi community\)
-* `chromecast` \(experimental\)
-
-These haven't been extensively tested on the Mark 1 yet.
-
-## PulseAudio features
-
-The audio service hooks into the PulseAudio controls and can mute playback of sound streams beyond Chatterbox's control.
-This is currently deactivated by default but can be enabled by changing the `chatterbox.conf` configuration found in `chatterbox/configuration/chatterbox.conf`
-
-```javascript
-  "play_wav_cmdline": "paplay %1 --stream-name=chatterbox-voice",
-  "Audio": {
-    "pulseaudio": "mute"
-  }
-```
+* `VLC` a very general purpose media playe (Default)
+* `simple` uses only common command line utilities (aplay, paplay, mpg123, ogg123...)
 
 ## AudioService Technical Documentation
 
