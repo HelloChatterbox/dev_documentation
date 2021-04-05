@@ -55,7 +55,7 @@ A Skill may even require that other Chatterbox Skills are installed rather than 
 ```yaml
 dependencies:
   skill:
-    - https://github.com/JarbasSkills/skill-wolfie
+    - https://github.com/HelloChatterbox/hello-world-test-skill
 ```
 
 ## Example files

@@ -17,7 +17,7 @@ To make sure a system has everything that your Skill needs, we can define the de
 During installation the Chatterbox Skills Manager will then check that they are installed, and if not attempt to do so.
 
 
-`manifest.yml` is the default method. This can include all three types of dependencies including variations for different operating systems if required.
+`manifest.yml` is the default method.
 
 {% page-ref page="manifest-yml.md" %}
 
@@ -25,20 +25,21 @@ During installation the Chatterbox Skills Manager will then check that they are 
 ## Manual installation
 
 The file outlined above ensure that dependencies are available on devices when a Skill is being installed by the Chatterbox Skills Manager. 
-If you are developing the Skill on your own machine, you may need to install these dependencies manually.
+If you are developing the Skill you may need to install these dependencies manually.
 
-Packages can be installed using chat commands, for example:
+Requirements can be installed using chat commands, for example:
 
+System packages
 ```bash
 /apt install system-package-name
 ```
 
+Python packages
 ```bash
 /pip install python-package-name
 ```
 
-Chatterbox Skills can be installed using the Chatterbox Skills Manager:
-
+Chatterbox Skills
 ```bash
-/install github_url_to_skill
+/install https://github.com/HelloChatterbox/hello-world-test-skill
 ```
