@@ -61,7 +61,7 @@ Once you have paired your Chatterbox Device, pairing information is stored in:
 
 `~/.chatterbox/identity/identity2.json`
 
-DO NOT SHARE THIS INFORMATION WITH OTHERS - IT IS YOUR MYCROFT IDENTITY
+DO NOT SHARE THIS INFORMATION WITH OTHERS - IT IS YOUR CHATTERBOX IDENTITY
 
 You may be asked for this information by Chatterbox support staff while troubleshooting Device and/or Pairing issues.
 
