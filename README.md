@@ -1,8 +1,5 @@
 
 Chatterbox Documentation
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-[![Join chat](https://img.shields.io/badge/Mattermost-join_chat-brightgreen.svg)](https://chat.chatterbox.ai/community/channels/documentation)
-[![CLA Required](https://img.shields.io/badge/CLA%3F-Required-blue.svg)](https://chatterbox.ai/cla)
 ==========
 
 Head to https://chatterbox.ai/documentation for all public facing documentation.
@@ -53,11 +50,9 @@ The following conventions are observed in Chatterbox documentation:
 The following conventions are used for styling technical terms and related phrases.
 
 * **internet** is always written in lowercase, never as Internet unless at the start of a sentence.
-* **Mark 1** is always styled as such
 * **Metadata** is always styled as one word
 * **Micro SD card** is always styled as such, not as micro sd card, micro SD card or alternatives
 * **Picroft** is always styled as such
-* **PocketSphinx** is always styled as such
 * **Skill Author** is always used to refer to the developer, writer or creator of a **Skill**.
 * **Speak** is always capitalized given the importance of Speaking in a voice interface.
 * **User** is always capitalized as a sign of respect for our Users.
