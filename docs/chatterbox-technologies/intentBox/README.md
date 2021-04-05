@@ -6,20 +6,6 @@ description: >-
 
 # intentBox
 
-- [About](#about)
-  * [Single Intent](#single-intent)
-    + [Adapt](#adapt)
-    + [Padatious](#padatious)
-  * [Main and Secondary intents](#main-and-secondary-intents)
-    + [Adapt](#adapt-1)
-  * [Segmentation + Intent](#segmentation---intent)
-    + [Adapt](#adapt-2)
-    + [Padatious](#padatious-1)
-  * [Segmentation + Main and Secondary Intents](#segmentation---main-and-secondary-intents)
-    + [Adapt](#adapt-3)
-  * [Improving accuracy](#improving-accuracy)
-    + [DeepSegment](#deepsegment)
-    + [Coreference resolution](#coreference-resolution)
 - [Usage](#usage)
   * [Adapt](#adapt-4)
   * [Padatious](#padatious-2)
