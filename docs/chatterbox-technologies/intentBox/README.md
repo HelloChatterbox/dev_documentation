@@ -20,7 +20,6 @@ from intentBox.adapt_extract import AdaptExtractor
 from pprint import pprint
 
 intents = AdaptExtractor()
-# intents = AdaptExtractor(use_deepseg=True)
 
 weather = ["weather"]
 hello = ["hey", "hello", "hi", "greetings"]
@@ -112,8 +111,6 @@ from intentBox.padatious_extract import PadatiousExtractor
 from pprint import pprint
 
 intents = PadatiousExtractor()
-# intents = PadatiousExtractor(use_deepseg=True) 
-
 
 weather = ["weather"]
 hello = ["hey", "hello", "hi", "greetings"]
