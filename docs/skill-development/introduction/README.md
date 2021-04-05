@@ -19,7 +19,7 @@ If you aren't familiar with the basics of Python, check out our [list of Python 
 ### Github account
 
 Skills are hosted on [Github](https://github.com), so you will need to create an account there if you don't already have one.
-It is good to have an understanding of the [GitHub basics](https://guides.github.com/activities/hello-world/), however the [Chatterbox Skills Kit](../../chatterbox-technologies/chatterbox-skills-kit.md) also automates some of the more complex aspects of managing a Github repository \(or repo\).
+It is good to have an understanding of the [GitHub basics](https://guides.github.com/activities/hello-world/).
 
 ### Running Chatterbox
 
