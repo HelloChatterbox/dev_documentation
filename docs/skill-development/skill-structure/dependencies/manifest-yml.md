@@ -9,7 +9,8 @@ description: >-
 In this file we can include Python packages, Linux applications or other Chatterbox skills that are required for our own Skill to function properly.
 
 {% hint style="info" %}
-[YAML](https://en.wikipedia.org/wiki/YAML) is a language commonly used for configuration files. It uses indentation rather than brackets or parentheses to define the structure or hierarchy of its contents.
+[YAML](https://en.wikipedia.org/wiki/YAML) is a language commonly used for configuration files.
+It uses indentation rather than brackets or parentheses to define the structure or hierarchy of its contents.
 {% endhint %}
 
 ## File contents
@@ -34,56 +35,28 @@ dependencies:
 
 When a Skill with this `manifest.yml` file is being installed, Chatterbox would check for, and if required install, both packages from [PyPI](https://pypi.org/) using the PIP installer.
 
-There is no limit to the number of packages you can install, however these are reviewed during the [Skills Acceptance Process](../../marketplace-submission/skills-acceptance-process/) to ensure they are appropriate for the Skill being installed.
+There is no limit to the number of packages you can install
 
 ### Linux System Packages
 
-Linux packages are defined under the `system` key. As Chatterbox can be installed on many different Linux distributions, support is provided for a range of package managers.
-
-For packages that have consistent naming across package managers, we can use `all`.
+Linux packages are defined under the `system` key. 
 
 ```yaml
 dependencies:
   system:
-    all: pianobar piano-dev
+    apt-get: fortune
 ```
 
-If the package has a different name on specific platforms, we can define that using the name of the package manager as a key. In the following example, we want to use the `libpiano-dev` package when using the `APT` package manager on Debian, Ubuntu and other related distributions.
-
-```yaml
-dependencies:
-  system:
-    all: pianobar piano-dev
-    apt-get: pianobar libpiano-dev
-```
-
-Finally we can check that certain executables are available for the install to succeed. This is done by checking the [PATH environment variable](http://www.linfo.org/path_env_var.html).
-
-```yaml
-dependencies:
-  system:
-    all: pianobar piano-dev
-    apt-get: pianobar libpiano-dev  
-
-  exes:
-    - pianobar
-```
-
-Here we have installed a number of `pianobar` packages, and then verify that the `pianobar` executable is available for our Skill.
 
 ### Other Chatterbox Skills
 
 A Skill may even require that other Chatterbox Skills are installed rather than duplicate functionality. 
-Here we can see that the Cocktails Skill and the Mozilla Webthings Gateway are listed as dependencies.
 
 ```yaml
 dependencies:
   skill:
-    - cocktails
-    - webthings-gateway
+    - https://github.com/JarbasSkills/skill-wolfie
 ```
-
-Anything listed in this section will be passed to the [Chatterbox Skills Manager](https://chatterbox-ai.gitbook.io/docs/chatterbox-technologies/chatterbox-core/msm) for installation. A feature of MSM is that it will search for Skills that most closely match the given string. So even though the `mozilla-webthings-gateway` Skill has not been perfectly entered, it will still match with a high enough confidence to install the Skill.
 
 ## Example files
 

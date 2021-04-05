@@ -18,11 +18,14 @@ If you aren't familiar with the basics of Python, check out our [list of Python 
 
 ### Github account
 
-Skills are hosted on [Github](https://github.com), so you will need to create an account there if you don't already have one. It is good to have an understanding of the [GitHub basics](https://guides.github.com/activities/hello-world/), however the [Chatterbox Skills Kit](../../chatterbox-technologies/chatterbox-skills-kit.md) also automates some of the more complex aspects of managing a Github repository \(or repo\).
+Skills are hosted on [Github](https://github.com), so you will need to create an account there if you don't already have one.
+It is good to have an understanding of the [GitHub basics](https://guides.github.com/activities/hello-world/), however the [Chatterbox Skills Kit](../../chatterbox-technologies/chatterbox-skills-kit.md) also automates some of the more complex aspects of managing a Github repository \(or repo\).
 
 ### Running Chatterbox
 
-To test your Skill out, you will need to [set up a Chatterbox device](../../using-chatterbox-ai/get-chatterbox/). Chatterbox can be installed on your computer, a Raspberry Pi using Picroft, or a dedicated device like the Chatterbox Mark 1. Chatterbox also comes with a number of helpful tools to create new Skills, host them on Github, run integration tests, and submit them for inclusion in the [Chatterbox Marketplace](https://market.chatterbox.ai). If you aren't yet familiar with how Chatterbox works, check out the [overview of Chatterbox components](http://chatterbox.ai/documentation/chatterbox-software-hardware/) to understand the many technologies that come together to provide an intelligent voice assistant.
+To test your Skill out, you will need to [set up a Chatterbox device](../../using-chatterbox-ai/get-chatterbox/). 
+
+If you aren't yet familiar with how Chatterbox works, check out the [overview of Chatterbox components](http://chatterbox.ai/documentation/chatterbox-software-hardware/) to understand the many technologies that come together to provide an intelligent voice assistant.
 
 ## What makes a good Skill?
 
@@ -37,8 +40,6 @@ Just like a web page with a thoughtfully-designed interface is much more pleasan
 If you haven't already, be sure to read our Voice User Interface Design Guidelines:
 
 {% page-ref page="../voice-user-interface-design-guidelines/" %}
-
-If you have an idea for a Skill, it's a great idea to join [Chatterbox Chat](https://chat.chatterbox.ai), specifically the [~skills](https://chat.chatterbox.ai/community/channels/skills) channel, and share what your plans are. You'll be able to get constructive and helpful feedback on your Skill from an experienced community.
 
 ## Skill terminology
 

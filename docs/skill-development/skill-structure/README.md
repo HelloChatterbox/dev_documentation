@@ -183,17 +183,11 @@ _Please note that this function is not scoped within your Skills class. It shoul
 
 ### LICENSE
 
-This file contains the full text of the license your Skill is being distributed under. It is not required for the Skill to work, however all Skills submitted to the [Marketplace](https://market.chatterbox.ai) must be released under an appropriate open source license.
+This file contains the full text of the license your Skill is being distributed under. 
 
 ### README.md
 
-The README file contains human readable information about your Skill. The information in this file is used to generate the Skills entry in the [Marketplace](https://market.chatterbox.ai). More information about this file, can be found in the [Marketplace Submission section](../marketplace-submission/skill-readme-md.md).
-
-### settingsmeta.yaml
-
-This file defines the settings that will be available to a User through their account on [Home.Chatterbox.ai](https://home.chatterbox.ai/skills).
-
-Jump to [Skill Settings](skill-settings.md) for more information on this file and handling of Skill settings.
+The README file contains human readable information about your Skill.
 
 ## What have we learned
 
