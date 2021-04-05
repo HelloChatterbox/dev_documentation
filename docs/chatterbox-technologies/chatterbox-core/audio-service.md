@@ -44,7 +44,8 @@ or with a list of tracks
 
 see the [AudioServicePlugins](https://chatterbox-ai.gitbook.io/docs/chatterbox-technologies/chatterbox-core/plugins/audioservice#audiobackend) for information about configuring supported uris.
 
-The play method has an optional second argument to further process the user's **Utterance**. Currently this can only be used to select backend \(where you want to send the audio\) but in the future it will be able to handle requests like
+The play method has an optional second argument to further process the user's **Utterance**. 
+Currently this can only be used to select backend \(where you want to send the audio\) but in the future it will be able to handle requests like
 
 > Hey Chatterbox, play Hello Nasty by the Beastie Boys at half volume. We don't want to wake the neighbours
 
@@ -71,7 +72,8 @@ These haven't been extensively tested on the Mark 1 yet.
 
 ## PulseAudio features
 
-The audio service hooks into the PulseAudio controls and can mute playback of sound streams beyond Chatterbox's control. This is currently deactivated by default but can be enabled by changing the `chatterbox.conf` configuration found in `chatterbox/configuration/chatterbox.conf`
+The audio service hooks into the PulseAudio controls and can mute playback of sound streams beyond Chatterbox's control.
+This is currently deactivated by default but can be enabled by changing the `chatterbox.conf` configuration found in `chatterbox/configuration/chatterbox.conf`
 
 ```javascript
   "play_wav_cmdline": "paplay %1 --stream-name=chatterbox-voice",

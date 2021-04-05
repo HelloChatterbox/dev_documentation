@@ -6,27 +6,15 @@ description: A broad overview of the technology that makes up Chatterbox AI.
 
 Chatterbox is the name of a suite of software and hardware tools that use [natural language processing](https://en.wikipedia.org/wiki/Natural_language_processing) and [machine learning](https://en.wikipedia.org/wiki/Machine_learning) to provide an open source voice assistant.
 
-{% embed url="https://www.youtube.com/watch?v=m4L0QfzUeEI" caption="Our vision for Chatterbox" %}
 
 ## Chatterbox components
 
 Chatterbox is modular. Some components can be easily 'swapped out' for others:
 
-* Wake Word detection
 * Speech to Text \(STT\)
 * Intent parser
+* Text to Speech \(TTS\)
 
-### Wake Word detection
-
-A Wake Word is a phrase you use to tell Chatterbox you're about to issue a command. By default, this is `Hey Chatterbox`, but you can configure your own Wake Word in your [Chatterbox Home](https://home.chatterbox.ai) account.
-
-There are two technologies that Chatterbox.AI currently uses for Wake Word detection:
-
-* [PocketSphinx](https://github.com/cmusphinx/pocketsphinx): PocketSphinx is part of the broader [CMUSphinx package](https://cmusphinx.github.io/), developed by [Carnegie Mellon University](https://www.cmu.edu). PocketSphinx is a lightweight speech recognition engine, specifically tuned for handheld and mobile devices.
-
-Because PocketSphinx is trained on English speech, your Wake Word currently needs to be an English word, like `Hello Mike`, `Hi there Mickey` or `Hey Mike`. Wake Words in other languages, like Spanish, French or German, won't work as well.
-
-* [Precise](https://chatterbox.ai/documentation/precise): Unlike PocketSphinx, which is based on Speech to Text technology, Precise is a neural network that is trained on audio data. It doesn't matter what _words_ you want to use for your Wake Word. Instead, you train it on _sounds_. The downside is that Precise needs to be trained on your chosen Wake Word. Precise is the default Wake Word Listener for the "Hey Chatterbox" wake word, PocketSphinx provides a fallback to this if Precise is unavailable.
 
 ### Speech to Text \(STT\)
 
@@ -77,12 +65,6 @@ The Chatterbox middleware has two components:
 ### Chatterbox Skills
 
 [Chatterbox Skills](https://github.com/ChatterboxAI/chatterbox-skills) are like 'add-ons' or 'plugins' that provide additional functionality. Skills can be developed by Chatterbox Developers, or by Community Developers, and vary in their functionality and maturity.
-
-[Chatterbox Skills Kit \(MSK\)](https://github.com/chatterboxai/chatterbox-skills-kit) is a Python-based utility that has been created to make it easier for Skill Authors to create, test and submit Skills to the [Skills Marketplace](https://market.chatterbox.ai).
-
-{% page-ref page="chatterbox-skills-kit.md" %}
-
-[Chatterbox Skills Manager \(MSM\)](https://github.com/chatterboxai/chatterbox-skills-manager) is a command line tool used to add, manage and remove Skills on any Chatterbox installation.
 
 ### Devices and Enclosures
 

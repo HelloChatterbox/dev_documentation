@@ -15,7 +15,6 @@ description: >-
 * **Registration Code** - a 6-character code that Chatterbox issues to you during setup of the Device. This code is needed to [add a Device](http://chatterbox.ai/documentation/home-chatterbox-ai-pairing/)
 * **Skill** - when Chatterbox hears the **Wake Word**, then an **Utterance**, Chatterbox will try to find a **Skill** that matches the **Utterance**. The **Skill** might fetch some data, or play some audio, or speak, or display some information. If Chatterbox can't find a **Skill** that matches the Utterance, he will tell you he doesn't understand.
 * **Utterance** - an Utterance is how you interact with Chatterbox. An **Utterance** is a command or question - like "What's the weather like in Kansas City?" or "Tell me about the Pembroke Welsh Corgi".
-* **Wake Word** - the Wake Word is the phrase you use to tell Chatterbox you're about to issue a command. You can configure your own **Wake Word** in your [Chatterbox Home](https://home.chatterbox.ai) account.
 
 Are we missing a word? Let us know below.
 
