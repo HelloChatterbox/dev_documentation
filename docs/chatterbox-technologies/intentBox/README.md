@@ -1,190 +1,437 @@
 ---
 description: >-
-  Adapt is an intent parser - meaning that it is a library for converting
+  IntentBox is an intent parser - meaning that it is a library for converting
   natural language into machine-readable data structures, such as JSON.
 ---
 
-# Adapt
+# intentBox
 
-## What is the Adapt Intent Parser?
+Multiple intent extraction from a single utterance, framed as a segmentation problem
 
-The Adapt Intent Parser is open source software. It is lightweight and is designed to run on devices with limited computing resources, such as embedded devices.
+- [About](#about)
+  * [Single Intent](#single-intent)
+    + [Adapt](#adapt)
+    + [Padatious](#padatious)
+  * [Main and Secondary intents](#main-and-secondary-intents)
+    + [Adapt](#adapt-1)
+  * [Segmentation + Intent](#segmentation---intent)
+    + [Adapt](#adapt-2)
+    + [Padatious](#padatious-1)
+  * [Segmentation + Main and Secondary Intents](#segmentation---main-and-secondary-intents)
+    + [Adapt](#adapt-3)
+  * [Improving accuracy](#improving-accuracy)
+    + [DeepSegment](#deepsegment)
+    + [Coreference resolution](#coreference-resolution)
+- [Usage](#usage)
+  * [Adapt](#adapt-4)
+  * [Padatious](#padatious-2)
 
-{% embed url="https://www.youtube.com/watch?v=zR9xvPtM6Ro" caption="" %}
 
-Adapt takes in natural language as an input, and outputs a data structure that includes
+# About
 
-* the **Intent**: what the User is trying to do
-* **a match probability**: how confident Adapt is that the **Intent** has been correctly identified
-* a tagged list of **entities**: that can be used by **Skills** to perform functions
+## Single Intent
 
-Adapt is useful for interpreting natural language input. For example, you might want to create a [voice user interface](https://en.wikipedia.org/wiki/Voice_user_interface) that allows a User to play a Pandora station. The **Utterances** a User might Speak include:
+CONS:
+- restricted to 1 utterance, 1 intent
+- mixes up conflicting orders into a single one
 
-* `Turn on Pandora`
-* `Play Pandora`
-* `Play my Joan Jett Pandora station`
+### Adapt
 
-The Adapt Intent Parser takes this input and generates a JSON data structure like this:
+MAX: 1 intent
 
-```javascript
-{
-    "confidence": 0.61,
-    "target": null,
-    "Artist": "joan jett",
-    "intent_type": "MusicIntent",
-    "MusicVerb": "put on",
-    "MusicKeyword": "pandora"
-}
+    UTTERANCE: turn off the lights and turn on the tv
+    {'conf': 0.5,
+     'intent_type': 'lights_on',
+     'entities': {'lights': 'lights', 'on': 'on'}}
+    _______________________________
+
+    UTTERANCE: tell me a joke and the weather
+    {'conf': 0.6666666666666666,
+     'intent_type': 'weather',
+     'entities': {'say': 'tell', 'weather': 'weather'}}
+
+### Padatious
+
+MAX: 1 intent
+
+    UTTERANCE: tell me a joke order some pizza
+    {'conf': 0.5230809565835034, 'entities': {}, 'name': 'joke'}    
+
+
+## Main and Secondary intents
+
+calculate an intent, remove entities from utterance, calculate intent in utterance remainer
+
+PROS:
+- 1 utterance, 2 intents
+- does not depend on segmentation
+
+CONS:
+- loses context of keywords consumed in first intent
+- it's not very smart joining keywords
+- limited number of intents
+
+
+### Adapt
+
+adapt is keyword based so this works great, there always is an utterance remainder unless every word was consumed
+
+MAX: 2 intents
+
+    UTTERANCE: turn off the lights turn on the tv
+    {'main_intent': {'conf': 0.5,
+                     'intent_type': 'lights_on',
+                     'entities': {'lights': 'lights', 'on': 'on'}},
+     'remainder_intent': {'conf': 1.0,
+                          'intent_type': 'tv_off',
+                          'entities': {'tv': 'tv', 'off': 'off'}},
+     'utterance': 'turn off the lights turn on the tv',
+     'utterance_remainder': 'turn off the   the tv'}
+    ______________________________
+    UTTERANCE: turn on the lights close the door
+    {'main_intent': {'conf': 0.5,
+                     'intent_type': 'lights_on',
+                     'entities': {'lights': 'lights', 'on': 'on'}},
+     'remainder_intent': {'conf': 1.0,
+                          'intent_type': 'door_close',
+                          'entities': {'door': 'door', 'off': 'close'}},
+     'utterance': 'turn on the lights close the door',
+     'utterance_remainder': 'turn  the  close the door'}
+
+
+
+padatious is examples based, there is no utterance remainder to use in this method
+
+
+## Segmentation + Intent
+
+works great in general
+
+PROS:
+
+- uses segmentation to split utterances logically
+- 1 utterance, unlimited intents
+
+CONS:
+
+- context is lost in segmentation
+
+### Adapt
+
+MAX: number of utterance chunks after segmentation
+
+    UTTERANCE: turn off the lights and open the door
+    {' open the door': {'conf': 1.0,
+                        'intent_type': 'door_open',
+                        'entities': {'door': 'door', 'on': 'open'}},
+     'turn off the lights': {'conf': 1.0,
+                             'intent_type': 'lights_off',
+                             'entities': {'lights': 'lights', 'off': 'off'}}}
+
+### Padatious
+
+MAX: number of utterance chunks after segmentation
+
+    UTTERANCE: tell me a joke and order some pizza and turn on the lights and close the door and play some songs
+    {'close the door': {'conf': 1.0, 'entities': {}, 'name': 'door_close'},
+     'order some pizza': None,
+     'play some songs': {'conf': 1.0, 'entities': {}, 'name': 'play_music'},
+     'tell me a joke': {'conf': 1.0, 'entities': {}, 'name': 'joke'},
+     'turn on the lights': {'conf': 1.0, 'entities': {}, 'name': 'lights_on'}}
+    _______________________________
+
+## Segmentation + Main and Secondary Intents
+
+same as above, works great in adapt but not usually in padatious
+
+PROS:
+- compensates for failures in segmentation
+
+### Adapt
+
+MAX: 2* number of utterance chunks after segmentation
+
+    UTTERANCE: close the pod bay doors play some music
+    {'close the pod bay doors play some music': {'main_intent': {'conf': 0.5,
+                                                                 'intent_type': 'door_close',
+                                                                 'entities': {'door': 'doors',
+                                                                             'off': 'close'}},
+                                                 'remainder_intent': {'conf': 1.0,
+                                                                      'intent_type': 'play_music',
+                                                                      'entities': {'music': 'music',
+                                                                                  'play': 'play'}},
+                                                 'utterance': 'close the pod bay '
+                                                              'doors play some '
+                                                              'music',
+                                                 'utterance_remainder': ' the pod '
+                                                                        'bay  play '
+                                                                        'some '
+                                                                        'music'}} 
+
+
+
+
+## Improving accuracy
+
+### DeepSegment
+
+Instead of rule based segmentantion we can handle more corner cases using [DeepSegment](https://github.com/bedapudi6788/deepsegment)
+
+PROS:
+- better segmentation, not rule based
+
+CONS:
+- slows down pipeline
+- requires tensorflow
+
+Cases where simple segmentation fails and this works:
+
+    UTTERANCE: turn on the lights close the door
+    {'close the door': {'conf': 1.0, 'entities': {}, 'name': 'door_close'},
+     'turn on the lights': {'conf': 1.0, 'entities': {}, 'name': 'lights_on'}}
+    _______________________________
+    UTTERANCE: close the door turn off the lights
+    {'close the door': {'conf': 1.0, 'entities': {}, 'name': 'door_close'},
+     'turn off the lights': {'conf': 1.0, 'entities': {}, 'name': 'lights_off'}}
+
+Failure cases
+
+    UTTERANCE: turn off the lights open the door
+    {'turn off the lights open the door': {'conf': 0.5311372507542608,
+                                           'entities': {},
+                                           'name': 'lights_off'}}]
+    ___
+
+
+
+### Coreference resolution
+
+using [neuralcoref](https://github.com/huggingface/neuralcoref)
+
+
+PROS:
+- helps in keeping context
+
+CONS:
+- slows down pipeline
+- requires spacy
+
+segmentation only:
+
+    UTTERANCE: Call mom and tell her hello
+    {'Call mom': {'conf': 1.0,
+                  'entities': {'person': 'mom'},
+                  'name': 'call_person'},
+     'tell her hello': {'conf': 1.0,
+                        'entities': {'person': 'her'},
+                        'name': 'greet_person'}}
+    _______________________________
+
+with coreference resolution
+
+    UTTERANCE: Call mom and tell her hello
+    {'Call mom': {'conf': 1.0,
+                  'entities': {'person': 'mom'},
+                  'name': 'call_person'},
+     'tell mom hello': {'conf': 1.0,
+                        'entities': {'person': 'mom'},
+                        'name': 'greet_person'}}
+    _______________________________
+
+
+
+# Usage
+
+## Adapt
+
+```python
+from intentBox.adapt_extract import AdaptExtractor
+
+from pprint import pprint
+
+intents = AdaptExtractor()
+# intents = AdaptExtractor(use_deepseg=True)
+
+weather = ["weather"]
+hello = ["hey", "hello", "hi", "greetings"]
+name = ["name is"]
+joke = ["joke"]
+play = ["play"]
+say = ["say", "tell"]
+music = ["music", "jazz", "metal", "rock", "songs"]
+door = ["door", "doors"]
+light = ["light", "lights"]
+on = ["activate", "on", "engage", "open"]
+off = ["deactivate", "off", "disengage", "close"]
+
+
+intents.register_entity("weather", weather) # name, samples
+intents.register_entity("hello", hello)
+intents.register_entity("name", name)
+intents.register_entity("joke", joke)
+intents.register_entity("door", door)
+intents.register_entity("lights", light)
+intents.register_entity("on", on)
+intents.register_entity("off", off)
+intents.register_entity("play", play)
+intents.register_entity("music", music)
+intents.register_entity("say", say)
+
+
+intents.register_intent("weather", ["weather"], ["say"]) # name, required_kwords, optional_kwords
+intents.register_intent("hello", ["hello"])
+intents.register_intent("name", ["name"])
+intents.register_intent("joke", ["joke"], ["say"])
+intents.register_intent("lights_on", ["lights", "on"])
+intents.register_intent("lights_off", ["lights", "off"])
+intents.register_intent("door_open", ["door", "on"])
+intents.register_intent("door_close", ["door", "off"])
+intents.register_intent("play_music", ["play", "music"])
+
+sentences = [
+    "tell me a joke and say hello",
+    "turn off the lights, open the door",
+    "nice work! get me a beer",
+    "Call mom tell her hello",
+    "tell me a joke and the weather",
+    "turn on the lights close the door",
+    "close the door turn off the lights",
+    "tell me a joke and order some pizza and turn on the lights and close the door and play some songs",
+    "close the pod bay doors play some music"  # fail
+]
+
+print("# _______________________________")
+print("# CALCULATE SINGLE INTENT")
+print("# _______________________________")
+for sent in sentences:
+    print("UTTERANCE:", sent)
+    pprint(intents.calc_intent(sent))
+    print("_______________________________")
+
+print("# _______________________________")
+print("# CALCULATE MAIN AND SECONDARY INTENTS")
+print("# _______________________________")
+for sent in sentences:
+    print("UTTERANCE:", sent)
+    pprint(intents.intent_remainder(sent))
+    print("_______________________________")
+
+print("# _______________________________")
+print("# SEGMENT AND CALCULATE BEST INTENTS")
+print("# _______________________________")
+for sent in sentences:
+    print("UTTERANCE:", sent)
+    pprint(intents.calc_intents(sent))
+    print("_______________________________")
+
+print("# _______________________________")
+print("# SEGMENT AND CALCULATE MAIN AND SECONDARY INTENTS")
+print("# _______________________________")
+for sent in sentences:
+    print("UTTERANCE:", sent)
+    pprint(intents.intents_remainder(sent))
+    print("_______________________________")
+
+```
+## Padatious
+
+
+```python
+from intentBox.padatious_extract import PadatiousExtractor
+
+from pprint import pprint
+
+intents = PadatiousExtractor()
+# intents = PadatiousExtractor(use_deepseg=True) 
+
+
+weather = ["weather"]
+hello = ["hey", "hello", "hi", "greetings"]
+name = ["my name is {name}"]
+joke = ["tell me a joke", "i want a joke", "say a joke", "tell joke"]
+lights_on = ["turn on the lights", "lights on", "turn lights on", "turn the lights on"]
+lights_off = ["turn off the lights", "lights off", "turn lights off", "turn the lights off"]
+door_on = ["open the door", "open door", "open the doors"]
+door_off = ["close the door", "close door", "close the doors"]
+music = ["play music", "play some songs", "play heavy metal", "play some jazz", "play rock"]
+
+intents.register_intent("weather", weather)  # name, samples
+intents.register_intent("hello", hello)
+intents.register_intent("name", name)
+intents.register_intent("joke", joke)
+intents.register_intent("lights_on", lights_on)
+intents.register_intent("lights_off", lights_off)
+intents.register_intent("door_open", door_on)
+intents.register_intent("door_close", door_off)
+intents.register_intent("play_music", music)
+
+sentences = [
+    "tell me a joke and say hello",
+    "turn off the lights, open the door",
+    "nice work! get me a beer",
+    "Call mom tell her hello",
+    "tell me a joke and the weather",
+    "turn on the lights close the door",
+    "close the door turn off the lights",
+    "tell me a joke and order some pizza and turn on the lights and close the door and play some songs",
+    "close the pod bay doors play some music"  # fail
+]
+
+print("# _______________________________")
+print("# CALCULATE SINGLE INTENT")
+print("# _______________________________")
+for sent in sentences:
+    print("UTTERANCE:", sent)
+    pprint(intents.calc_intent(sent))
+    print("_______________________________")
+
+print("# _______________________________")
+print("# SEGMENT AND CALCULATE BEST INTENTS")
+print("# _______________________________")
+for sent in sentences:
+    print("UTTERANCE:", sent)
+    pprint(intents.calc_intents(sent))
+    print("_______________________________")
+
 ```
 
-Applications - or Chatterbox Skills - can then parse the JSON data take appropriate action - such as playing Joan Jett using the open source Pandora application [Pianobar](https://6xq.net/pianobar/).
+## Coreference
 
-## Is Adapt right for me or my use cases?
+```python
 
-{% hint style="info" %}
-If you are looking to use Adapt in a Chatterbox Skill, please see [Skill Development &gt; Intents](../../skill-development/user-interaction/intents/)
-{% endhint %}
+from intentBox.coreference import CoreferenceSolver
 
-Adapt is useful for determining user intent quickly and accurately from natural language. It is particularly beneficial for applications with limited vocabularies - that is, where the User will only issue a small number of **Utterances**.
+text = "My sister has a dog. She loves him"
+print(CoreferenceSolver.replace_coreferences(text))
+# My sister has a dog. my sister loves a dog.
+print(CoreferenceSolver.contexts)
+# {'him': 'a dog', 'she': 'my sister'}
 
-Adapt has a number of features.
+text = "Turn on the light and change it to blue"
+print(CoreferenceSolver.replace_coreferences(text))
+# Turn on the light and change the light to blue
 
-### Lightweight
+print(CoreferenceSolver.contexts)  # keeps adding from previous text
+# {'him': 'a dog', 'it': 'the light', 'she': 'my sister'}
 
-Adapt is written to run on embedded system with limited resources. Adapt can be used as the engine to parse natural language on IoT devices like remote controls and hubs.
+print(CoreferenceSolver.extract_replacements(text, "Turn on the light and change the light to blue"))
+# {'it': ['the light']}
 
-### Portable
 
-Adapt is written in Python. Python is very widely adopted and supported in the technical community. Because it is written in Python, Adapt will run on many different devices - from servers to a Raspberry Pi. Adapt is designed to be run cross-platform and can be deployed in software environments that include Android, iOS, Windows and Linux.
+text = "call mom"
+print(CoreferenceSolver.replace_coreferences(text))
+# call mom
 
-### Reliable
+text = "tell her to buy eggs"
+print(CoreferenceSolver.replace_coreferences_with_context(text))  # use previous utterance for context
+# tell mom to buy eggs
 
-Because Adapt is small enough to run locally on an embedded device, it removes the dependency of having to parse intent in the cloud. This allows applications to function when they don't have an internet connection. Adapt is therefore suited to environments where the internet connection is slow, unreliable or intermittent.
+text = "tell her to buy coffee"
+print(CoreferenceSolver.replace_coreferences_with_context(text))   # use previous utterance for context
+# tell mom to buy coffee
 
-### Open source
+text = "tell her to buy milk"
+print(CoreferenceSolver.replace_coreferences(text))   # no context available
+# tell her to buy milk
 
-At Chatterbox.AI, we believe that artficial intelligence is too important to be controlled by a few large companies. Adapt is open source, licensed under the Apache v2.0 license. Anyone can access the [source code](https://github.com/chatterboxai/adapt), change the software and use Adapt Intent Parser in new applications.
-
-[Open Source](https://en.wikipedia.org/wiki/Open-source_software) software powers the Internet. Artificial intelligence software, like Adapt Intent Parser, is gaining in importance. However, very few artificial intelligence software is open source. Here at Chatterbox.AI, we believe that natural language processing is going to be a key component of many future technologies. By sharing our software we believe that we can help bring artificial intelligence to the open source community where it can be used to benefit millions of users world wide. We hope to work with other open source initiatives like [TensorFlow](https://www.tensorflow.org/) and [OpenAI](https://openai.com/) to ensure that the future of artificial intelligence is open for all.
-
-## Who developed Adapt?
-
-Adapt Intent Parser was developed at Chatterbox.AI by a team led by [Sean Fitzgerald](https://github.com/clusterfudge). Sean was previously a developer at both Siri and Amazon Echo.
-
-## How do I install Adapt Intent Parser?
-
-### Requirements
-
-Adapt Intent Parser requires Python 2.7 or above.
-
-### `pip` installation
-
-`pip` is a package manager used to install and manage software packages in Python. To use `pip` you first need to [install it](https://pip.pypa.io/en/stable/installing/).
-
-Adapt is available on the [Python Package Index \(PyPI\)](https://pypi.org/project/adapt-parser/) making it easily installable using `pip`.
-
-```bash
-pip install intentBox-parser
 ```
-
-_NOTE: We recommend the use of virtual environments for development on Adapt and Chatterbox. This allows for dependencies to be configured just for Adapt and your project, rather than installing them globally. This approach prevents conflicts between Adapt and other software._
-
-### Github installation
-
-You can also get the source code directly from the [Adapt Github repository](https://github.com/ChatterboxAI/adapt#adapt-intent-parser).
-
-## How do I contribute to Adapt Intent Parser?
-
-### For Ubuntu, Debian and Raspbian based Linux
-
-To develop on Adapt itself, or try the examples, check out the repo from GitHub and set up a `virtualenv`.
-
-```bash
-$ sudo apt-get install virtualenv
-$ virtualenv myvirtualenv
-$ . myvirtualenv/bin/activate
-$ git clone https://github.com/chatterboxai/adapt
-$ cd intentBox
-$ pip install -r requirements.txt
-```
-
-Verify the installation by running the example code from the Adapt repository.
-
-```bash
-$ cd ~/intentBox
-PYTHONPATH=. python examples/multi_intent_parser.py "play some music by the clash"
-```
-
-### For Fedora / RPM based Linux
-
-To develop with the latest Adapt, install it via `pip` into your project's `virtualenv`:
-
-```bash
-$ pip install virtualenv
-$ virtualenv myvirtualenv
-$ source myvirtualenv/bin/activate
-$ pip install -e git+https://github.com/chatterboxai/adapt#egg=intentBox-parser
-```
-
-To develop on Adapt itself, or try the examples, check out the repo from GitHub and set up a `virtualenv`.
-
-```bash
-$ pip install virtualenv
-$ virtualenv myvirtualenv
-$ source myvirtualenv/bin/activate
-$ git clone https://github.com/chatterboxai/adapt
-$ cd intentBox
-$ pip install -r requirements.txt
-```
-
-Verify the installation by running the example code from the Adapt repository.
-
-```bash
-$ cd ~/intentBox
-PYTHONPATH=. python examples/multi_intent_parser.py "play some music by the clash"
-```
-
-### For MacOS X
-
-First, Xcode must be installed and Apple’s license agreement accepted.
-
-`$ xcode-select --install`
-
-Next, install the [Homebrew package manager](https://brew.sh/) and update `brew` packages.
-
-`$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-
-`brew update`
-
-Next, install Adapt dependencies with `brew` and `python-pip`.
-
-```bash
-$ brew install git python
-$ pip install python virtualenv
-```
-
-To develop with the latest Adapt, install it via `pip` into your project's `virtualenv`:
-
-```bash
-$ virtualenv myvirtualenv
-$ . myvirtualenv/bin/activate
-$ pip install -e git+https://github.com/chatterboxai/adapt#egg=intentBox-parser
-```
-
-To develop on Adapt itself, or try the examples, check out the repo from GitHub and set up a `virtualenv`.
-
-```bash
-$ virtualenv myvirtualenv
-$ . myvirtualenv/bin/activate
-$ git clone https://github.com/chatterboxai/adapt
-$ cd intentBox
-$ pip install -r requirements.txt
-```
-
-Verify the installation by running the example code from the Adapt repository.
-
-```bash
-$ cd ~/intentBox
-PYTHONPATH=. python examples/multi_intent_parser.py "play some music by the clash"
-```
-
