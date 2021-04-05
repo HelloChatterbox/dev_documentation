@@ -32,12 +32,5 @@ Chatterbox runs on a wide range of software platforms and hardware - meaning tha
 
 ## Lightweight
 
-Chatterbox is lightweight, and will run on low-powered hardware, such as the Raspberry Pi 3. So if you're a Hacker, Maker or Hobbyist, it's the perfect platform for low cost experimentation.
-
-## Community
-
-Chatterbox has a vibrant, engaged and helpful community. You can interact with the community via:
-
-* Chat - [https://chat.chatterbox.ai](https://chat.chatterbox.ai)
-* Forum - [https://community.chatterbox.ai](https://community.chatterbox.ai)
-
+Chatterbox is lightweight, and will run on low-powered hardware, such as the Raspberry Pi 3. 
+So if you're a Hacker, Maker or Hobbyist, it's the perfect platform for low cost experimentation.

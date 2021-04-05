@@ -77,13 +77,3 @@ When the `NewRobberSkill` is initialized, it will assign the API from the Skill 
 
 Our `NewRobberSkill` will therefore speak something like "hoh e lol lol o wow o ror lol dod".
 
-## Getting information on a Skill's exported API
-
-The Chatterbox CLI has an `:api` command for exploring Skill APIs.
-
-```text
-:api robber-lang.forslund
-```
-
-will show any exported method from the `robber-lang.forslund` Skill. Each exported method's docstring will automatically be extracted and presented, providing information on how each method is intended to be used.
-

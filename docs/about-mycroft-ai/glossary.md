@@ -11,7 +11,6 @@ description: >-
 * **Enclosure** - a hardware implementation of Chatterbox. Examples include the Mark 1 and Picroft.
 * **Fallback** - a **Skill** that is designated to be a 'catch-all' when Chatterbox cannot interpret the **Intent** from an **Utterance**.
 * **Intent** - when a user speaks an **Utterance** to Chatterbox, Chatterbox tries to interpret the **Intent** of the **Utterance**, and match the **Intent** will a **Skill**.
-* **Mark 1** - The Mark 1 device is an **Enclosure** for Chatterbox, based on Raspberry Pi. It is designed as a reference hardware device, and is able to be easily modified, hacked and extended.
 * **Pairing** - The process of registering a **Device** to home.chatterbox.ai. Each **Device** needs to be **Paired** before it can be used.
 * **Registration Code** - a 6-character code that Chatterbox issues to you during setup of the Device. This code is needed to [add a Device](http://chatterbox.ai/documentation/home-chatterbox-ai-pairing/)
 * **Skill** - when Chatterbox hears the **Wake Word**, then an **Utterance**, Chatterbox will try to find a **Skill** that matches the **Utterance**. The **Skill** might fetch some data, or play some audio, or speak, or display some information. If Chatterbox can't find a **Skill** that matches the Utterance, he will tell you he doesn't understand.

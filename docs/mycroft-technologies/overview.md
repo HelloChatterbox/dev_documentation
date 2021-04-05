@@ -88,9 +88,8 @@ The Chatterbox middleware has two components:
 
 Chatterbox is designed to run on many different platforms. Each dedicated platform is called a device, these include:
 
-* **Mark 1** - our first reference hardware device using a dedicated software image.
-* **Mark 2** - our latest reference hardware device using a dedicated software image.
 * **Picroft** - any Raspberry Pi 3 or 4 that is running the Picroft software image.
 
-The enclosure refers to the specific code that is required for that device. It might define unique functionality such as the eyes on the Mark 1, or a specific way of interacting with the hardware, such as controlling the volume levels at a hardware level via i2c.
+The enclosure refers to the specific code that is required for that device. 
+It might define unique functionality such as the button, or a specific way of interacting with the hardware, such as controlling the volume levels at a hardware level via i2c.
 

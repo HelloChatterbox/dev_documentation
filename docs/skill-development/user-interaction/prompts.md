@@ -6,7 +6,8 @@ description: >-
 
 # Prompts
 
-Here we look at how to implement the most common types of prompts. For more information on conversation design see the [Voice User Interface Design Guidelines](https://chatterbox-ai.gitbook.io/docs/skill-development/voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts).
+Here we look at how to implement the most common types of prompts. 
+For more information on conversation design see the [Voice User Interface Design Guidelines](https://chatterbox-ai.gitbook.io/docs/skill-development/voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts).
 
 ## Get Response
 
@@ -31,7 +32,10 @@ def create_skill():
     return IceCreamSkill()
 ```
 
-In this Skill we have used `get_response()` and passed it the name of our dialog file `'what.is.your.favorite.flavor.dialog'`. This is the simplest form of this method. It will speak dialog from the given file, then activate the microphone for 3-10 seconds allowing the User to respond. The transcript of their response will then be assigned to our variable `favorite_flavor`. To confirm that we have heard the User correctly we then speak a confirmation dialog passing the value of `favorite_flavor` to be spoken as part of that dialog.
+In this Skill we have used `get_response()` and passed it the name of our dialog file `'what.is.your.favorite.flavor.dialog'`. 
+This is the simplest form of this method. It will speak dialog from the given file, then activate the microphone for 3-10 seconds allowing the User to respond.
+The transcript of their response will then be assigned to our variable `favorite_flavor`. 
+To confirm that we have heard the User correctly we then speak a confirmation dialog passing the value of `favorite_flavor` to be spoken as part of that dialog.
 
 ### Optional Arguments
 
@@ -46,9 +50,11 @@ The `get_response()` method also takes the following optional arguments:
 
 [`ask_yesno()`](https://chatterbox-core.readthedocs.io/en/latest/source/chatterbox.html#chatterbox.ChatterboxSkill.ask_yesno) checks if the response contains "yes" or "no" like phrases.
 
-The vocab for this check is sourced from the Skills `yes.voc` and `no.voc` files \(if they exist\), as well as chatterbox-cores defaults \(contained within `chatterbox-core/res/text/en-us/yes.voc`\). A longer phrase containing the required vocab is considered successful eg both "yes" and "yeah that would be great thanks" would be considered a successful "yes".
+The vocab for this check is sourced from the Skills `yes.voc` and `no.voc` files \(if they exist\), as well as chatterbox-cores defaults \(contained within `chatterbox-core/res/text/en-us/yes.voc`\). 
+A longer phrase containing the required vocab is considered successful eg both "yes" and "yeah that would be great thanks" would be considered a successful "yes".
 
-If "yes" or "no" responses are detected, then the method will return the string "yes" or "no". If the response does not contain "yes" or "no" vocabulary then the entire utterance will be returned. If no speech was detected indicating the User did not respond, then the method will return `None`.
+If "yes" or "no" responses are detected, then the method will return the string "yes" or "no". If the response does not contain "yes" or "no" vocabulary then the entire utterance will be returned. 
+If no speech was detected indicating the User did not respond, then the method will return `None`.
 
 Let's add a new intent to our `IceCreamSkill` to see how this works.
 
@@ -72,11 +78,13 @@ def create_skill():
     return IceCreamSkill()
 ```
 
-In this example we have asked the User if they like ice cream. We then speak different dialog whether they respond yes or no. We also speak some error dialog if neither yes or no are returned.
+In this example we have asked the User if they like ice cream. We then speak different dialog whether they respond yes or no. 
+We also speak some error dialog if neither yes or no are returned.
 
 ## Providing a list of options
 
-[`ask_selection()`](https://chatterbox-core.readthedocs.io/en/latest/source/chatterbox.html#chatterbox.ChatterboxSkill.ask_selection) provides a list of options to the User for them to select from. The User can respond with either the name of one of these options or select with a numbered ordinal eg "the third".
+[`ask_selection()`](https://chatterbox-core.readthedocs.io/en/latest/source/chatterbox.html#chatterbox.ChatterboxSkill.ask_selection) provides a list of options to the User for them to select from. 
+The User can respond with either the name of one of these options or select with a numbered ordinal eg "the third".
 
 This method automatically manages fuzzy matching the users response against the list of options provided.
 
@@ -102,7 +110,8 @@ def create_skill():
     return IceCreamSkill()
 ```
 
-In this example we first speak some `welcome.dialog`. The list of flavors is then spoken, followed by the `what.flavor.dialog`. Finally we confirm the Users selection by speaking `coming.right.up.dialog`
+In this example we first speak some `welcome.dialog`. The list of flavors is then spoken, followed by the `what.flavor.dialog`. 
+Finally we confirm the Users selection by speaking `coming.right.up.dialog`
 
 ### Optional arguments
 
@@ -112,7 +121,9 @@ There are two optional arguments for this method.
 
 ## Returning responses to the intent parser
 
-So far we have looked at ways to prompt the User, and return their response directly to our Skill. It is also possible to speak some dialog, and activate the listener, directing the response back to the standard intent parsing engine. We may do this to let the user trigger another Skill, or because we want to make use of our own intents to handle the response.
+So far we have looked at ways to prompt the User, and return their response directly to our Skill. 
+It is also possible to speak some dialog, and activate the listener, directing the response back to the standard intent parsing engine.
+We may do this to let the user trigger another Skill, or because we want to make use of our own intents to handle the response.
 
 To do this, we use the `expect_response` parameter of the `speak_dialog()` method.
 
@@ -137,5 +148,6 @@ def create_skill():
     return IceCreamSkill()
 ```
 
-Here we have added a new dialog after confirming the Users selection. We may use it to tell the User other things they can do with their Chatterbox device while they enjoy their delicious ice cream.
+Here we have added a new dialog after confirming the Users selection. 
+We may use it to tell the User other things they can do with their Chatterbox device while they enjoy their delicious ice cream.
 
