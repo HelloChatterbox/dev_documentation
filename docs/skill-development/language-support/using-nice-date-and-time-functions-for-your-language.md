@@ -5,7 +5,7 @@ description: >-
 
 # Configuring some of the “nice” functions for a language
 
-The following functions are used to convert a Python datetime to a pronounceable string, for a given language [please refer to the Mycroft API documentation](http://mycroft-core.readthedocs.io/en/stable/))
+The following functions are used to convert a Python datetime to a pronounceable string, for a given language [please refer to the Chatterbox API documentation](http://chatterbox-core.readthedocs.io/en/stable/))
 
 * ```nice_date(dt, lang='en-us', now=None)```
 * ```nice_date_time(dt, lang='en-us', now=None, use_24hour=False, use_ampm=False)```
@@ -18,12 +18,12 @@ This page describe how to add a new language, or change configuration for an exi
 ## Configuration files in the file system
 
 Each language has a configuration file and a unit test file. The configuration files are written in json. The configurations are:
-* ```mycroft/res/text//date_time.json```
-* ```mycroft/res/text//date_time_test.json```
+* ```chatterbox/res/text//date_time.json```
+* ```chatterbox/res/text//date_time_test.json```
 
-For example: ```mycroft/res/text/en-us/date_time.json```
+For example: ```chatterbox/res/text/en-us/date_time.json```
 
-The `mycroft.util.nice_time()` function is not configurable using the approach described in this document (historical reasons). The `nice_date_and_time()` depends on `nice_time()`, which must be able to support the selected language, if you want nice results from `nice_date_time()`. Without support for a language in `nice_time()`, `nice_date_and_time(`) will still return a string, but the time part not be appropriate for your language.
+The `chatterbox.util.nice_time()` function is not configurable using the approach described in this document (historical reasons). The `nice_date_and_time()` depends on `nice_time()`, which must be able to support the selected language, if you want nice results from `nice_date_time()`. Without support for a language in `nice_time()`, `nice_date_and_time(`) will still return a string, but the time part not be appropriate for your language.
 
 ## The configuration file
 
@@ -291,12 +291,12 @@ This section contains information on how to format a pronounceable date and time
 }
 ```
 
-The formatted time is obtained using the existing `mycroft.util.nice_time()` function. The output of this function is not configurable like the other formatting functions mentioned in this document. If `mycroft.util.nice_time()` does not support a language, it will still produce a string, but it will not be formatted.
+The formatted time is obtained using the existing `chatterbox.util.nice_time()` function. The output of this function is not configurable like the other formatting functions mentioned in this document. If `chatterbox.util.nice_time()` does not support a language, it will still produce a string, but it will not be formatted.
 
 #### Arguments to format templates
 
 * {formatted_date}: Date formatted as specified in the "date_format" section
-* {formatted_time}: Time formatted by nice_time(), [please refer to the Mycroft API documentation](http://mycroft-core.readthedocs.io/en/stable/)
+* {formatted_time}: Time formatted by nice_time(), [please refer to the Chatterbox API documentation](http://chatterbox-core.readthedocs.io/en/stable/)
 
 ## Maps
 
@@ -316,7 +316,7 @@ A new language requires new unit tests, to ensure that it produce correct result
 To prove the likelihood that formatting makes sense, a configuration file must be provided, that lists the unit tests. One unit test file exists for each language, it is placed in:
 
 ```
-mycroft/res/text//date_time_test.json
+chatterbox/res/text//date_time_test.json
 ```
 
 Section [Test file for en-us](# Test file for en-us) contains the test file for the en-us language. It has three sections:

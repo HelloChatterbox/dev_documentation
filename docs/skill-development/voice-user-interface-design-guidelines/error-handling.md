@@ -7,17 +7,17 @@ Inevitably, the user will say something that your skill can’t handle. It’s b
 | Speaker |  |
 | :--- | :--- |
 | **User** | _Timer_ |
-| **Mycroft** | _I'm sorry I can't help you with that_ |
+| **Chatterbox** | _I'm sorry I can't help you with that_ |
 
 **Better**
 
 | **Speaker** |  |
 | :--- | :--- |
 | **Use**r | _Timer_ |
-| **Mycroft** | _A timer for how long?_ |
+| **Chatterbox** | _A timer for how long?_ |
 | **User** | _5 minutes_ |
 
-In the first example Mycroft does not give the user any options to finish the job they set out to do. Try to avoid situations where the user has to start the conversation over.
+In the first example Chatterbox does not give the user any options to finish the job they set out to do. Try to avoid situations where the user has to start the conversation over.
 
 ## Help, Cancel, and Stop
 

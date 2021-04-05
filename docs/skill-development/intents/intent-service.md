@@ -1,6 +1,6 @@
 # Intent Service
 
-Mycroft supports both Padatious and Adapt intent handlers. Mycroft Core has an intent service that decides which intent will be triggered by a particular utterance. This is based on the confidence of a
+Chatterbox supports both Padatious and Adapt intent handlers. Chatterbox Core has an intent service that decides which intent will be triggered by a particular utterance. This is based on the confidence of a
 
 ## Intent Confidence
 

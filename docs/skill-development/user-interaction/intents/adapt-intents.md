@@ -5,7 +5,7 @@ Adapt is a keyword based intent parser. It determines user intent based on a lis
 {% embed url="https://www.youtube.com/watch?v=zR9xvPtM6Ro" caption="" %}
 
 {% hint style="info" %}
-For technical details or usage of Adapt outside of a Mycroft Skill, see the [Adapt documentation](../../../mycroft-technologies/adapt/).
+For technical details or usage of Adapt outside of a Chatterbox Skill, see the [Adapt documentation](../../../chatterbox-technologies/adapt/).
 {% endhint %}
 
 ## Defining keywords and entities
@@ -14,7 +14,7 @@ For technical details or usage of Adapt outside of a Mycroft Skill, see the [Ada
 
 Vocab files define keywords that Adapt will look for in a Users utterance to determine their intent.
 
-These files can be located in either the `vocab/lang-code/` or `locale/lang-code/` directories of a Skill. They can have one or more lines to list synonyms or terms that have the same meaning in the context of this Skill. Mycroft will match _any_ of these keywords with the Intent.
+These files can be located in either the `vocab/lang-code/` or `locale/lang-code/` directories of a Skill. They can have one or more lines to list synonyms or terms that have the same meaning in the context of this Skill. Chatterbox will match _any_ of these keywords with the Intent.
 
 Consider a simple `Potato.voc`. Within this file we might include:
 
@@ -36,13 +36,13 @@ or
 
 > spud
 
-Mycroft will match this to any Adapt Intents that are using the `Potato` keyword.
+Chatterbox will match this to any Adapt Intents that are using the `Potato` keyword.
 
 ### Regular Expression \(.rx\) Files
 
 Regular expressions \(or regex\) allow us to capture entities based on the structure of an utterance.
 
-These files can be located in either the `regex/lang-code/` or `locale/lang-code/` directories of a Skill. They can have one or more lines to provide different ways that an entity may be referenced. Mycroft will execute these lines in the order they appear and return the first result as an entity to the Intent Handler.
+These files can be located in either the `regex/lang-code/` or `locale/lang-code/` directories of a Skill. They can have one or more lines to provide different ways that an entity may be referenced. Chatterbox will execute these lines in the order they appear and return the first result as an entity to the Intent Handler.
 
 Let's consider a `type.rx` file to extract the type of potato we are interested in. Within this file we might include:
 
@@ -107,7 +107,7 @@ Both of these must be imported before we can use them:
 
 ```python
 from adapt.intent import IntentBuilder
-from mycroft import intent_handler
+from chatterbox import intent_handler
 ```
 
 The IntentBuilder is then passed the name of the Intent as a string, followed by one or more parameters that correspond with one of our `.voc` or `.rx` files.
@@ -146,9 +146,9 @@ Now we can create our Potato Skill:
 
 ```python
 from adapt.intent import IntentBuilder
-from mycroft import intent_handler
+from chatterbox import intent_handler
 
-class PotatoSkill(MycroftSkill):
+class PotatoSkill(ChatterboxSkill):
 
     @intent_handler(IntentBuilder('WhatIsPotato').require('What')
                     .require('Potato'))
@@ -170,7 +170,7 @@ def create_skill():
 ```
 
 {% hint style="info" %}
-You can [download this entire Potato Skill from Github](https://github.com/krisgesling/dev-ex-adapt-intents-skill/blob/master/__init__.py), or see another Adapt intent handler example in the [Hello World Skill](https://github.com/MycroftAI/skill-hello-world/blob/f3eb89be6d80e1834637a64566c707d05fb8e3fa/__init__.py#L37)
+You can [download this entire Potato Skill from Github](https://github.com/krisgesling/dev-ex-adapt-intents-skill/blob/master/__init__.py), or see another Adapt intent handler example in the [Hello World Skill](https://github.com/ChatterboxAI/skill-hello-world/blob/f3eb89be6d80e1834637a64566c707d05fb8e3fa/__init__.py#L37)
 {% endhint %}
 
 ## Common Problems
@@ -179,9 +179,9 @@ You can [download this entire Potato Skill from Github](https://github.com/krisg
 
 One of the most common mistakes when getting started with Skills is that the vocab file doesn't include all of the keywords or terms that a User might use to trigger the intent. It is important to map out your Skill and test the interactions with others to see how they might ask questions differently.
 
-### I have added new phrases in the .voc file, but Mycroft isn't recognizing them
+### I have added new phrases in the .voc file, but Chatterbox isn't recognizing them
 
-1. Compound words like "don't", "won't", "shouldn't" etc. are normalized by Mycroft - so they become "do not", "will not", "should not". You should use the normalized words in your `.voc` files. Similarly, definite articles like the word "the" are removed in the normalization process, so avoid using them in your `.voc` or `.rx` files as well.
+1. Compound words like "don't", "won't", "shouldn't" etc. are normalized by Chatterbox - so they become "do not", "will not", "should not". You should use the normalized words in your `.voc` files. Similarly, definite articles like the word "the" are removed in the normalization process, so avoid using them in your `.voc` or `.rx` files as well.
 2. Tab != 4 Spaces, sometimes your text editor or IDE automatically replaces tabs with spaces or vice versa. This may lead to an indentation error. So make sure there's no extra tabs and that your editor doesn't replace your spaces!
 3. Wrong order of files directories is a very common mistake. You have to make a language sub-folder inside the dialog, vocab or locale folders such as `skill-dir/locale/en-us/somefile.dialog`. So make sure that your `.voc` files and `.dialog` files inside a language subfolder.
 
@@ -199,7 +199,7 @@ The utterance string received from the speech-to-text engine is received all low
 
 ## Need more help?
 
-If something isn't working as expected, please join us in the [~Skills channel of Mycroft Chat](https://chat.mycroft.ai/community/channels/skills).
+If something isn't working as expected, please join us in the [~Skills channel of Chatterbox Chat](https://chat.chatterbox.ai/community/channels/skills).
 
-It's also really helpful for us if you add an issue to our [documentation repo](https://github.com/MycroftAI/documentation/issues). This means we can make sure it gets covered for all developers in the future.
+It's also really helpful for us if you add an issue to our [documentation repo](https://github.com/ChatterboxAI/documentation/issues). This means we can make sure it gets covered for all developers in the future.
 

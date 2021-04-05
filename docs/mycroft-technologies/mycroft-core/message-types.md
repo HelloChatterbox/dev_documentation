@@ -1,6 +1,6 @@
 ---
 description: >-
-  Messages are used to communicate information between Mycroft services and
+  Messages are used to communicate information between Chatterbox services and
   other components. This list of Message types outlines the details and provides
   sample code for each.
 ---
@@ -29,7 +29,7 @@ Request to speak utterance
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -42,7 +42,7 @@ def handler_speak(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -55,48 +55,48 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'speak' '{ "utterance": <words to be spoken>, "lang": <language code, e.g. en-us>}'
+python3 -m chatterbox.messagebus.send 'speak' '{ "utterance": <words to be spoken>, "lang": <language code, e.g. en-us>}'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.internet.connected
+### chatterbox.internet.connected
 
 Internet connection is now available \(only generated on initial connection\)
 
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.internet.connected',
-                   self.handler_mycroft_internet_connected)
+    self.add_event('chatterbox.internet.connected',
+                   self.handler_chatterbox_internet_connected)
 
-def handler_mycroft_internet_connected(self, message):
-    # code to excecute when mycroft.internet.connected message detected...
+def handler_chatterbox_internet_connected(self, message):
+    # code to excecute when chatterbox.internet.connected message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.internet.connected'))
+    self.bus.emit(Message('chatterbox.internet.connected'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.internet.connected'
+python3 -m chatterbox.messagebus.send 'chatterbox.internet.connected'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.ready
+### chatterbox.ready
 
 Sent by start-up sequence when everything is ready for user interaction
 
@@ -107,72 +107,72 @@ Sent by start-up sequence when everything is ready for user interaction
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.ready',
-                   self.handler_mycroft_ready)
+    self.add_event('chatterbox.ready',
+                   self.handler_chatterbox_ready)
 
-def handler_mycroft_ready(self, message):
-    # code to excecute when mycroft.ready message detected...
+def handler_chatterbox_ready(self, message):
+    # code to excecute when chatterbox.ready message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.ready'))
+    self.bus.emit(Message('chatterbox.ready'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.ready'
+python3 -m chatterbox.messagebus.send 'chatterbox.ready'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.stop
+### chatterbox.stop
 
 Stop command \(e.g. button pressed\)
 
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.stop',
-                   self.handler_mycroft_stop)
+    self.add_event('chatterbox.stop',
+                   self.handler_chatterbox_stop)
 
-def handler_mycroft_stop(self, message):
-    # code to excecute when mycroft.stop message detected...
+def handler_chatterbox_stop(self, message):
+    # code to excecute when chatterbox.stop message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.stop'))
+    self.bus.emit(Message('chatterbox.stop'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.stop'
+python3 -m chatterbox.messagebus.send 'chatterbox.stop'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.not.paired
+### chatterbox.not.paired
 
 Start the pairing process when this event is emitted.
 
@@ -195,36 +195,36 @@ Start the pairing process when this event is emitted.
 </table>
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.not.paired',
-                   self.handler_mycroft_not_paired)
+    self.add_event('chatterbox.not.paired',
+                   self.handler_chatterbox_not_paired)
 
-def handler_mycroft_not_paired(self, message):
-    # code to excecute when mycroft.not.paired message detected...
+def handler_chatterbox_not_paired(self, message):
+    # code to excecute when chatterbox.not.paired message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.not.paired'))
+    self.bus.emit(Message('chatterbox.not.paired'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.not.paired'
+python3 -m chatterbox.messagebus.send 'chatterbox.not.paired'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.paired
+### chatterbox.paired
 
 Pairing has completed
 
@@ -252,72 +252,72 @@ Pairing has completed
 </table>
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.paired',
-                   self.handler_mycroft_paired)
+    self.add_event('chatterbox.paired',
+                   self.handler_chatterbox_paired)
 
-def handler_mycroft_paired(self, message):
-    # code to excecute when mycroft.paired message detected...
+def handler_chatterbox_paired(self, message):
+    # code to excecute when chatterbox.paired message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.paired'))
+    self.bus.emit(Message('chatterbox.paired'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.paired'
+python3 -m chatterbox.messagebus.send 'chatterbox.paired'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.awoken
+### chatterbox.awoken
 
 Has come out of sleep mode
 
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.awoken',
-                   self.handler_mycroft_awoken)
+    self.add_event('chatterbox.awoken',
+                   self.handler_chatterbox_awoken)
 
-def handler_mycroft_awoken(self, message):
-    # code to excecute when mycroft.awoken message detected...
+def handler_chatterbox_awoken(self, message):
+    # code to excecute when chatterbox.awoken message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.awoken'))
+    self.bus.emit(Message('chatterbox.awoken'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.awoken'
+python3 -m chatterbox.messagebus.send 'chatterbox.awoken'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.debug.log
+### chatterbox.debug.log
 
 log level can be: "CRITICAL" "ERROR" "WARNING" "INFO" "DEBUG" These correspond to the Python logging object.
 
@@ -335,24 +335,24 @@ The "bus" parameter allows turning the logging of all bus messages on/off.
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.debug.log',
-                   self.handler_mycroft_debug_log)
+    self.add_event('chatterbox.debug.log',
+                   self.handler_chatterbox_debug_log)
 
-def handler_mycroft_debug_log(self, message):
-    # code to excecute when mycroft.debug.log message detected...
+def handler_chatterbox_debug_log(self, message):
+    # code to excecute when chatterbox.debug.log message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.debug.log',
+    self.bus.emit(Message('chatterbox.debug.log',
                               {
    "level" : <log level>,
    "bus": <True/False>}))
@@ -362,7 +362,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.debug.log' '{   "level" : <log level>,   "bus": <True/False>}'
+python3 -m chatterbox.messagebus.send 'chatterbox.debug.log' '{   "level" : <log level>,   "bus": <True/False>}'
 ```
 {% endtab %}
 {% endtabs %}
@@ -374,7 +374,7 @@ Intent processing failed
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -387,7 +387,7 @@ def handler_complete_intent_failure(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -398,7 +398,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'complete_intent_failure'
+python3 -m chatterbox.messagebus.send 'complete_intent_failure'
 ```
 {% endtab %}
 {% endtabs %}
@@ -410,7 +410,7 @@ Notification to services that the configuration has changed and needs reloaded
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -423,7 +423,7 @@ def handler_configuration_updated(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -434,7 +434,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'configuration.updated'
+python3 -m chatterbox.messagebus.send 'configuration.updated'
 ```
 {% endtab %}
 {% endtabs %}
@@ -461,7 +461,7 @@ Wakeword was heard
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -474,7 +474,7 @@ def handler_wakeword(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -488,7 +488,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'recognizer_loop:wakeword' '{ "utterance": <wakeword heard>, "session": <session ID>,}'
+python3 -m chatterbox.messagebus.send 'recognizer_loop:wakeword' '{ "utterance": <wakeword heard>, "session": <session ID>,}'
 ```
 {% endtab %}
 {% endtabs %}
@@ -504,7 +504,7 @@ Recording has started
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -517,7 +517,7 @@ def handler_record_begin(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -528,7 +528,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'recognizer_loop:record_begin'
+python3 -m chatterbox.messagebus.send 'recognizer_loop:record_begin'
 ```
 {% endtab %}
 {% endtabs %}
@@ -544,7 +544,7 @@ Recording has ended
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -557,7 +557,7 @@ def handler_record_end(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -568,7 +568,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'recognizer_loop:record_end'
+python3 -m chatterbox.messagebus.send 'recognizer_loop:record_end'
 ```
 {% endtab %}
 {% endtabs %}
@@ -618,7 +618,7 @@ STT has detected the given text or text was injected as an utterance via the CLI
 </table>
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -631,7 +631,7 @@ def handler_utterance(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -645,7 +645,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'recognizer_loop:utterance' '{ "utterances": [text], "lang": self.stt.lang, "session": session_id}'
+python3 -m chatterbox.messagebus.send 'recognizer_loop:utterance' '{ "utterances": [text], "lang": self.stt.lang, "session": session_id}'
 ```
 {% endtab %}
 {% endtabs %}
@@ -661,7 +661,7 @@ Text output \(TTS\) has begun
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -674,7 +674,7 @@ def handler_audio_output_start(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -685,7 +685,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'recognizer_loop:audio_output_start'
+python3 -m chatterbox.messagebus.send 'recognizer_loop:audio_output_start'
 ```
 {% endtab %}
 {% endtabs %}
@@ -701,7 +701,7 @@ Text output \(TTS\) has ended
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -714,7 +714,7 @@ def handler_audio_output_end(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -725,19 +725,19 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'recognizer_loop:audio_output_end'
+python3 -m chatterbox.messagebus.send 'recognizer_loop:audio_output_end'
 ```
 {% endtab %}
 {% endtabs %}
 
 ### recognizer\_loop:sleep
 
-Go into "sleep" mode. Everything except "Hey Mycroft, wake up" will be ignored.
+Go into "sleep" mode. Everything except "Hey Chatterbox, wake up" will be ignored.
 
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -750,7 +750,7 @@ def handler_sleep(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -761,7 +761,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'recognizer_loop:sleep'
+python3 -m chatterbox.messagebus.send 'recognizer_loop:sleep'
 ```
 {% endtab %}
 {% endtabs %}
@@ -773,7 +773,7 @@ Come out of "sleep" mode.
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -786,7 +786,7 @@ def handler_wake_up(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -797,7 +797,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'recognizer_loop:wake_up'
+python3 -m chatterbox.messagebus.send 'recognizer_loop:wake_up'
 ```
 {% endtab %}
 {% endtabs %}
@@ -815,7 +815,7 @@ Detected a connection error during STT
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -828,7 +828,7 @@ def handler_enclosure_notify_no_internet(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -839,7 +839,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'enclosure.notify.no_internet'
+python3 -m chatterbox.messagebus.send 'enclosure.notify.no_internet'
 ```
 {% endtab %}
 {% endtabs %}
@@ -860,7 +860,7 @@ start: timestamp for audio starts \(unix epoch\) END\_TIME: time in seconds from
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -873,7 +873,7 @@ def handler_enclosure_mouth_viseme_list(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -887,90 +887,90 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'enclosure.mouth.viseme_list' '{  "start": timestamp,  "visemes": [[CODE,END_TIME],...]}'
+python3 -m chatterbox.messagebus.send 'enclosure.mouth.viseme_list' '{  "start": timestamp,  "visemes": [[CODE,END_TIME],...]}'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.eyes.default
+### chatterbox.eyes.default
 
 Change eyes to default color
 
 | Producer | Consumer |
 | :--- | :--- |
-|  | mycroft-mark-1 |
+|  | chatterbox-mark-1 |
 
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.eyes.default',
-                   self.handler_mycroft_eyes_default)
+    self.add_event('chatterbox.eyes.default',
+                   self.handler_chatterbox_eyes_default)
 
-def handler_mycroft_eyes_default(self, message):
-    # code to excecute when mycroft.eyes.default message detected...
+def handler_chatterbox_eyes_default(self, message):
+    # code to excecute when chatterbox.eyes.default message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.eyes.default'))
+    self.bus.emit(Message('chatterbox.eyes.default'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.eyes.default'
+python3 -m chatterbox.messagebus.send 'chatterbox.eyes.default'
 ```
 {% endtab %}
 {% endtabs %}
 
 ## Microphone Behavior
 
-### mycroft.mic.listen
+### chatterbox.mic.listen
 
 Begin recording for STT processing
 
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.mic.listen',
-                   self.handler_mycroft_mic_listen)
+    self.add_event('chatterbox.mic.listen',
+                   self.handler_chatterbox_mic_listen)
 
-def handler_mycroft_mic_listen(self, message):
-    # code to excecute when mycroft.mic.listen message detected...
+def handler_chatterbox_mic_listen(self, message):
+    # code to excecute when chatterbox.mic.listen message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.mic.listen'))
+    self.bus.emit(Message('chatterbox.mic.listen'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.mic.listen'
+python3 -m chatterbox.messagebus.send 'chatterbox.mic.listen'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.mic.mute
+### chatterbox.mic.mute
 
 Turn off the mic \(no wakeword or STT processing\)
 
@@ -981,36 +981,36 @@ Turn off the mic \(no wakeword or STT processing\)
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.mic.mute',
-                   self.handler_mycroft_mic_mute)
+    self.add_event('chatterbox.mic.mute',
+                   self.handler_chatterbox_mic_mute)
 
-def handler_mycroft_mic_mute(self, message):
-    # code to excecute when mycroft.mic.mute message detected...
+def handler_chatterbox_mic_mute(self, message):
+    # code to excecute when chatterbox.mic.mute message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.mic.mute'))
+    self.bus.emit(Message('chatterbox.mic.mute'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.mic.mute'
+python3 -m chatterbox.messagebus.send 'chatterbox.mic.mute'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.mic.unmute
+### chatterbox.mic.unmute
 
 Turn on the mic \(enable wakeword and STT processing\)
 
@@ -1021,38 +1021,38 @@ Turn on the mic \(enable wakeword and STT processing\)
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.mic.unmute',
-                   self.handler_mycroft_mic_unmute)
+    self.add_event('chatterbox.mic.unmute',
+                   self.handler_chatterbox_mic_unmute)
 
-def handler_mycroft_mic_unmute(self, message):
-    # code to excecute when mycroft.mic.unmute message detected...
+def handler_chatterbox_mic_unmute(self, message):
+    # code to excecute when chatterbox.mic.unmute message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.mic.unmute'))
+    self.bus.emit(Message('chatterbox.mic.unmute'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.mic.unmute'
+python3 -m chatterbox.messagebus.send 'chatterbox.mic.unmute'
 ```
 {% endtab %}
 {% endtabs %}
 
 ## Audio Playback
 
-### mycroft.audio.service.play
+### chatterbox.audio.service.play
 
 Start playback of tracklist
 
@@ -1076,36 +1076,36 @@ Start playback of tracklist
 </table>
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.audio.service.play',
-                   self.handler_mycroft_audio_service_play)
+    self.add_event('chatterbox.audio.service.play',
+                   self.handler_chatterbox_audio_service_play)
 
-def handler_mycroft_audio_service_play(self, message):
-    # code to excecute when mycroft.audio.service.play message detected...
+def handler_chatterbox_audio_service_play(self, message):
+    # code to excecute when chatterbox.audio.service.play message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.audio.service.play'))
+    self.bus.emit(Message('chatterbox.audio.service.play'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.audio.service.play'
+python3 -m chatterbox.messagebus.send 'chatterbox.audio.service.play'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.audio.service.stop
+### chatterbox.audio.service.stop
 
 Stop playback
 
@@ -1129,36 +1129,36 @@ Stop playback
 </table>
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.audio.service.stop',
-                   self.handler_mycroft_audio_service_stop)
+    self.add_event('chatterbox.audio.service.stop',
+                   self.handler_chatterbox_audio_service_stop)
 
-def handler_mycroft_audio_service_stop(self, message):
-    # code to excecute when mycroft.audio.service.stop message detected...
+def handler_chatterbox_audio_service_stop(self, message):
+    # code to excecute when chatterbox.audio.service.stop message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.audio.service.stop'))
+    self.bus.emit(Message('chatterbox.audio.service.stop'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.audio.service.stop'
+python3 -m chatterbox.messagebus.send 'chatterbox.audio.service.stop'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.audio.service.pause
+### chatterbox.audio.service.pause
 
 Pause playback \(if supported\)
 
@@ -1182,36 +1182,36 @@ Pause playback \(if supported\)
 </table>
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.audio.service.pause',
-                   self.handler_mycroft_audio_service_pause)
+    self.add_event('chatterbox.audio.service.pause',
+                   self.handler_chatterbox_audio_service_pause)
 
-def handler_mycroft_audio_service_pause(self, message):
-    # code to excecute when mycroft.audio.service.pause message detected...
+def handler_chatterbox_audio_service_pause(self, message):
+    # code to excecute when chatterbox.audio.service.pause message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.audio.service.pause'))
+    self.bus.emit(Message('chatterbox.audio.service.pause'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.audio.service.pause'
+python3 -m chatterbox.messagebus.send 'chatterbox.audio.service.pause'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.audio.service.resume
+### chatterbox.audio.service.resume
 
 Resume playback \(if supported by backend\)
 
@@ -1235,36 +1235,36 @@ Resume playback \(if supported by backend\)
 </table>
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.audio.service.resume',
-                   self.handler_mycroft_audio_service_resume)
+    self.add_event('chatterbox.audio.service.resume',
+                   self.handler_chatterbox_audio_service_resume)
 
-def handler_mycroft_audio_service_resume(self, message):
-    # code to excecute when mycroft.audio.service.resume message detected...
+def handler_chatterbox_audio_service_resume(self, message):
+    # code to excecute when chatterbox.audio.service.resume message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.audio.service.resume'))
+    self.bus.emit(Message('chatterbox.audio.service.resume'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.audio.service.resume'
+python3 -m chatterbox.messagebus.send 'chatterbox.audio.service.resume'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.audio.service.next
+### chatterbox.audio.service.next
 
 Skip to next track
 
@@ -1288,36 +1288,36 @@ Skip to next track
 </table>
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.audio.service.next',
-                   self.handler_mycroft_audio_service_next)
+    self.add_event('chatterbox.audio.service.next',
+                   self.handler_chatterbox_audio_service_next)
 
-def handler_mycroft_audio_service_next(self, message):
-    # code to excecute when mycroft.audio.service.next message detected...
+def handler_chatterbox_audio_service_next(self, message):
+    # code to excecute when chatterbox.audio.service.next message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.audio.service.next'))
+    self.bus.emit(Message('chatterbox.audio.service.next'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.audio.service.next'
+python3 -m chatterbox.messagebus.send 'chatterbox.audio.service.next'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.audio.service.prev
+### chatterbox.audio.service.prev
 
 Skip to previous track
 
@@ -1341,36 +1341,36 @@ Skip to previous track
 </table>
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.audio.service.prev',
-                   self.handler_mycroft_audio_service_prev)
+    self.add_event('chatterbox.audio.service.prev',
+                   self.handler_chatterbox_audio_service_prev)
 
-def handler_mycroft_audio_service_prev(self, message):
-    # code to excecute when mycroft.audio.service.prev message detected...
+def handler_chatterbox_audio_service_prev(self, message):
+    # code to excecute when chatterbox.audio.service.prev message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.audio.service.prev'))
+    self.bus.emit(Message('chatterbox.audio.service.prev'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.audio.service.prev'
+python3 -m chatterbox.messagebus.send 'chatterbox.audio.service.prev'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.audio.service.track\_info
+### chatterbox.audio.service.track\_info
 
 Request track info from audio service
 
@@ -1394,36 +1394,36 @@ Request track info from audio service
 </table>
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.audio.service.track_info',
-                   self.handler_mycroft_audio_service_track_info)
+    self.add_event('chatterbox.audio.service.track_info',
+                   self.handler_chatterbox_audio_service_track_info)
 
-def handler_mycroft_audio_service_track_info(self, message):
-    # code to excecute when mycroft.audio.service.track_info message detected...
+def handler_chatterbox_audio_service_track_info(self, message):
+    # code to excecute when chatterbox.audio.service.track_info message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.audio.service.track_info'))
+    self.bus.emit(Message('chatterbox.audio.service.track_info'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.audio.service.track_info'
+python3 -m chatterbox.messagebus.send 'chatterbox.audio.service.track_info'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.audio.service.track\_info\_reply
+### chatterbox.audio.service.track\_info\_reply
 
 Reply to track info request
 
@@ -1434,36 +1434,36 @@ Reply to track info request
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.audio.service.track_info_reply',
-                   self.handler_mycroft_audio_service_track_info_reply)
+    self.add_event('chatterbox.audio.service.track_info_reply',
+                   self.handler_chatterbox_audio_service_track_info_reply)
 
-def handler_mycroft_audio_service_track_info_reply(self, message):
-    # code to excecute when mycroft.audio.service.track_info_reply message detected...
+def handler_chatterbox_audio_service_track_info_reply(self, message):
+    # code to excecute when chatterbox.audio.service.track_info_reply message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.audio.service.track_info_reply'))
+    self.bus.emit(Message('chatterbox.audio.service.track_info_reply'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.audio.service.track_info_reply'
+python3 -m chatterbox.messagebus.send 'chatterbox.audio.service.track_info_reply'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.audio.service.list\_backends
+### chatterbox.audio.service.list\_backends
 
 Returns list of available backends.
 
@@ -1474,38 +1474,38 @@ Returns list of available backends.
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.audio.service.list_backends',
-                   self.handler_mycroft_audio_service_list_backends)
+    self.add_event('chatterbox.audio.service.list_backends',
+                   self.handler_chatterbox_audio_service_list_backends)
 
-def handler_mycroft_audio_service_list_backends(self, message):
-    # code to excecute when mycroft.audio.service.list_backends message detected...
+def handler_chatterbox_audio_service_list_backends(self, message):
+    # code to excecute when chatterbox.audio.service.list_backends message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.audio.service.list_backends'))
+    self.bus.emit(Message('chatterbox.audio.service.list_backends'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.audio.service.list_backends'
+python3 -m chatterbox.messagebus.send 'chatterbox.audio.service.list_backends'
 ```
 {% endtab %}
 {% endtabs %}
 
 ## Volume Control
 
-### mycroft.volume.increase
+### chatterbox.volume.increase
 
 Enclosure Volume up
 
@@ -1522,24 +1522,24 @@ Enclosure Volume up
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.volume.increase',
-                   self.handler_mycroft_volume_increase)
+    self.add_event('chatterbox.volume.increase',
+                   self.handler_chatterbox_volume_increase)
 
-def handler_mycroft_volume_increase(self, message):
-    # code to excecute when mycroft.volume.increase message detected...
+def handler_chatterbox_volume_increase(self, message):
+    # code to excecute when chatterbox.volume.increase message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.volume.increase',
+    self.bus.emit(Message('chatterbox.volume.increase',
                               {"play_sound": True}))
 ...
 ```
@@ -1547,12 +1547,12 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.volume.increase' '{"play_sound": True}'
+python3 -m chatterbox.messagebus.send 'chatterbox.volume.increase' '{"play_sound": True}'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.volume.decrease
+### chatterbox.volume.decrease
 
 Enclosure Volume down
 
@@ -1569,24 +1569,24 @@ Enclosure Volume down
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.volume.decrease',
-                   self.handler_mycroft_volume_decrease)
+    self.add_event('chatterbox.volume.decrease',
+                   self.handler_chatterbox_volume_decrease)
 
-def handler_mycroft_volume_decrease(self, message):
-    # code to excecute when mycroft.volume.decrease message detected...
+def handler_chatterbox_volume_decrease(self, message):
+    # code to excecute when chatterbox.volume.decrease message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.volume.decrease',
+    self.bus.emit(Message('chatterbox.volume.decrease',
                               {"play_sound": True}))
 ...
 ```
@@ -1594,12 +1594,12 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.volume.decrease' '{"play_sound": True}'
+python3 -m chatterbox.messagebus.send 'chatterbox.volume.decrease' '{"play_sound": True}'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.volume.mute
+### chatterbox.volume.mute
 
 Enclosure Volume muted
 
@@ -1616,24 +1616,24 @@ Enclosure Volume muted
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.volume.mute',
-                   self.handler_mycroft_volume_mute)
+    self.add_event('chatterbox.volume.mute',
+                   self.handler_chatterbox_volume_mute)
 
-def handler_mycroft_volume_mute(self, message):
-    # code to excecute when mycroft.volume.mute message detected...
+def handler_chatterbox_volume_mute(self, message):
+    # code to excecute when chatterbox.volume.mute message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.volume.mute',
+    self.bus.emit(Message('chatterbox.volume.mute',
                               {"speak_message": True}))
 ...
 ```
@@ -1641,12 +1641,12 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.volume.mute' '{"speak_message": True}'
+python3 -m chatterbox.messagebus.send 'chatterbox.volume.mute' '{"speak_message": True}'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.volume.unmute
+### chatterbox.volume.unmute
 
 Enclosure Volume unmuted
 
@@ -1663,24 +1663,24 @@ Enclosure Volume unmuted
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.volume.unmute',
-                   self.handler_mycroft_volume_unmute)
+    self.add_event('chatterbox.volume.unmute',
+                   self.handler_chatterbox_volume_unmute)
 
-def handler_mycroft_volume_unmute(self, message):
-    # code to excecute when mycroft.volume.unmute message detected...
+def handler_chatterbox_volume_unmute(self, message):
+    # code to excecute when chatterbox.volume.unmute message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.volume.unmute',
+    self.bus.emit(Message('chatterbox.volume.unmute',
                               {"speak_message": True}))
 ...
 ```
@@ -1688,12 +1688,12 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.volume.unmute' '{"speak_message": True}'
+python3 -m chatterbox.messagebus.send 'chatterbox.volume.unmute' '{"speak_message": True}'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.volume.set
+### chatterbox.volume.set
 
 Set enclosure volume \(0.0 = no output, 1.0 = loudest possible\)
 
@@ -1710,24 +1710,24 @@ Set enclosure volume \(0.0 = no output, 1.0 = loudest possible\)
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.volume.set',
-                   self.handler_mycroft_volume_set)
+    self.add_event('chatterbox.volume.set',
+                   self.handler_chatterbox_volume_set)
 
-def handler_mycroft_volume_set(self, message):
-    # code to excecute when mycroft.volume.set message detected...
+def handler_chatterbox_volume_set(self, message):
+    # code to excecute when chatterbox.volume.set message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.volume.set',
+    self.bus.emit(Message('chatterbox.volume.set',
                               {"percent": float}))
 ...
 ```
@@ -1735,48 +1735,48 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.volume.set' '{"percent": float}'
+python3 -m chatterbox.messagebus.send 'chatterbox.volume.set' '{"percent": float}'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.volume.get
+### chatterbox.volume.get
 
 Request volume level
 
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.volume.get',
-                   self.handler_mycroft_volume_get)
+    self.add_event('chatterbox.volume.get',
+                   self.handler_chatterbox_volume_get)
 
-def handler_mycroft_volume_get(self, message):
-    # code to excecute when mycroft.volume.get message detected...
+def handler_chatterbox_volume_get(self, message):
+    # code to excecute when chatterbox.volume.get message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.volume.get'))
+    self.bus.emit(Message('chatterbox.volume.get'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.volume.get'
+python3 -m chatterbox.messagebus.send 'chatterbox.volume.get'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.volume.get.response
+### chatterbox.volume.get.response
 
 **Data:**
 
@@ -1794,24 +1794,24 @@ python3 -m mycroft.messagebus.send 'mycroft.volume.get'
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.volume.get.response',
-                   self.handler_mycroft_volume_get_response)
+    self.add_event('chatterbox.volume.get.response',
+                   self.handler_chatterbox_volume_get_response)
 
-def handler_mycroft_volume_get_response(self, message):
-    # code to excecute when mycroft.volume.get.response message detected...
+def handler_chatterbox_volume_get_response(self, message):
+    # code to excecute when chatterbox.volume.get.response message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.volume.get.response',
+    self.bus.emit(Message('chatterbox.volume.get.response',
                               {"percent": <volume percentage>,
                                "muted": <true/false>}))
 ...
@@ -1820,12 +1820,12 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.volume.get.response' '{ "percent": <volume percentage>, "muted": <true/false>}'
+python3 -m chatterbox.messagebus.send 'chatterbox.volume.get.response' '{ "percent": <volume percentage>, "muted": <true/false>}'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.volume.duck
+### chatterbox.volume.duck
 
 Reduce the volume level temporarily
 
@@ -1836,36 +1836,36 @@ Reduce the volume level temporarily
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.volume.duck',
-                   self.handler_mycroft_volume_duck)
+    self.add_event('chatterbox.volume.duck',
+                   self.handler_chatterbox_volume_duck)
 
-def handler_mycroft_volume_duck(self, message):
-    # code to excecute when mycroft.volume.duck message detected...
+def handler_chatterbox_volume_duck(self, message):
+    # code to excecute when chatterbox.volume.duck message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.volume.duck'))
+    self.bus.emit(Message('chatterbox.volume.duck'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.volume.duck'
+python3 -m chatterbox.messagebus.send 'chatterbox.volume.duck'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.volume.unduck
+### chatterbox.volume.unduck
 
 Restore the volume level
 
@@ -1876,38 +1876,38 @@ Restore the volume level
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.volume.unduck',
-                   self.handler_mycroft_volume_unduck)
+    self.add_event('chatterbox.volume.unduck',
+                   self.handler_chatterbox_volume_unduck)
 
-def handler_mycroft_volume_unduck(self, message):
-    # code to excecute when mycroft.volume.unduck message detected...
+def handler_chatterbox_volume_unduck(self, message):
+    # code to excecute when chatterbox.volume.unduck message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.volume.unduck'))
+    self.bus.emit(Message('chatterbox.volume.unduck'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.volume.unduck'
+python3 -m chatterbox.messagebus.send 'chatterbox.volume.unduck'
 ```
 {% endtab %}
 {% endtabs %}
 
-## Mycroft Skill Core
+## Chatterbox Skill Core
 
-### mycroft.skill.handler.start
+### chatterbox.skill.handler.start
 
 **Data:**
 
@@ -1918,24 +1918,24 @@ python3 -m mycroft.messagebus.send 'mycroft.volume.unduck'
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.skill.handler.start',
-                   self.handler_mycroft_skill_handler_start)
+    self.add_event('chatterbox.skill.handler.start',
+                   self.handler_chatterbox_skill_handler_start)
 
-def handler_mycroft_skill_handler_start(self, message):
-    # code to excecute when mycroft.skill.handler.start message detected...
+def handler_chatterbox_skill_handler_start(self, message):
+    # code to excecute when chatterbox.skill.handler.start message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.skill.handler.start',
+    self.bus.emit(Message('chatterbox.skill.handler.start',
                               {handler: class/function name}))
 ...
 ```
@@ -1943,46 +1943,46 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.skill.handler.start' '{handler: class/function name}'
+python3 -m chatterbox.messagebus.send 'chatterbox.skill.handler.start' '{handler: class/function name}'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.skill.handler.complete
+### chatterbox.skill.handler.complete
 
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.skill.handler.complete',
-                   self.handler_mycroft_skill_handler_complete)
+    self.add_event('chatterbox.skill.handler.complete',
+                   self.handler_chatterbox_skill_handler_complete)
 
-def handler_mycroft_skill_handler_complete(self, message):
-    # code to excecute when mycroft.skill.handler.complete message detected...
+def handler_chatterbox_skill_handler_complete(self, message):
+    # code to excecute when chatterbox.skill.handler.complete message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.skill.handler.complete'))
+    self.bus.emit(Message('chatterbox.skill.handler.complete'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.skill.handler.complete'
+python3 -m chatterbox.messagebus.send 'chatterbox.skill.handler.complete'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.skill.enable\_intent
+### chatterbox.skill.enable\_intent
 
 Enable disabled intent
 
@@ -1994,29 +1994,29 @@ Enable disabled intent
 
 | Producer | Consumer |
 | :--- | :--- |
-|  | `mycroft/skills/core.py` |
+|  | `chatterbox/skills/core.py` |
 
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.skill.enable_intent',
-                   self.handler_mycroft_skill_enable_intent)
+    self.add_event('chatterbox.skill.enable_intent',
+                   self.handler_chatterbox_skill_enable_intent)
 
-def handler_mycroft_skill_enable_intent(self, message):
-    # code to excecute when mycroft.skill.enable_intent message detected...
+def handler_chatterbox_skill_enable_intent(self, message):
+    # code to excecute when chatterbox.skill.enable_intent message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.skill.enable_intent',
+    self.bus.emit(Message('chatterbox.skill.enable_intent',
                               {"intent_name": "name"}))
 ...
 ```
@@ -2024,12 +2024,12 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.skill.enable_intent' '{"intent_name": "name"}'
+python3 -m chatterbox.messagebus.send 'chatterbox.skill.enable_intent' '{"intent_name": "name"}'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.skill.disable\_intent
+### chatterbox.skill.disable\_intent
 
 Disable intent
 
@@ -2041,29 +2041,29 @@ Disable intent
 
 | Producer | Consumer |
 | :--- | :--- |
-|  | `mycroft/skills/core.py` |
+|  | `chatterbox/skills/core.py` |
 
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.skill.disable_intent',
-                   self.handler_mycroft_skill_disable_intent)
+    self.add_event('chatterbox.skill.disable_intent',
+                   self.handler_chatterbox_skill_disable_intent)
 
-def handler_mycroft_skill_disable_intent(self, message):
-    # code to excecute when mycroft.skill.disable_intent message detected...
+def handler_chatterbox_skill_disable_intent(self, message):
+    # code to excecute when chatterbox.skill.disable_intent message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.skill.disable_intent',
+    self.bus.emit(Message('chatterbox.skill.disable_intent',
                               {"intent_name": "name"}))
 ...
 ```
@@ -2071,12 +2071,12 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.skill.disable_intent' '{"intent_name": "name"}'
+python3 -m chatterbox.messagebus.send 'chatterbox.skill.disable_intent' '{"intent_name": "name"}'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.skills.loaded
+### chatterbox.skills.loaded
 
 A Skill has been loaded
 
@@ -2093,29 +2093,29 @@ A Skill has been loaded
 
 | Producer | Consumer |
 | :--- | :--- |
-| `skills/main.py` | `mycroft/skills/intent_service.py` |
+| `skills/main.py` | `chatterbox/skills/intent_service.py` |
 
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.skills.loaded',
-                   self.handler_mycroft_skills_loaded)
+    self.add_event('chatterbox.skills.loaded',
+                   self.handler_chatterbox_skills_loaded)
 
-def handler_mycroft_skills_loaded(self, message):
-    # code to excecute when mycroft.skills.loaded message detected...
+def handler_chatterbox_skills_loaded(self, message):
+    # code to excecute when chatterbox.skills.loaded message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.skills.loaded',
+    self.bus.emit(Message('chatterbox.skills.loaded',
                               {"id": <skill ID>,
                                "name": <skill name>,
                                "folder": <skill directory>,
@@ -2126,12 +2126,12 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.skills.loaded' '{ "id": <skill ID>, "name": <skill name>, "folder": <skill directory>, "modified": <modified time>}'
+python3 -m chatterbox.messagebus.send 'chatterbox.skills.loaded' '{ "id": <skill ID>, "name": <skill name>, "folder": <skill directory>, "modified": <modified time>}'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.skills.loading\_failure
+### chatterbox.skills.loading\_failure
 
 A Skill has failed to load
 
@@ -2151,24 +2151,24 @@ A Skill has failed to load
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.skills.loading_failure',
-                   self.handler_mycroft_skills_loading_failure)
+    self.add_event('chatterbox.skills.loading_failure',
+                   self.handler_chatterbox_skills_loading_failure)
 
-def handler_mycroft_skills_loading_failure(self, message):
-    # code to excecute when mycroft.skills.loading_failure message detected...
+def handler_chatterbox_skills_loading_failure(self, message):
+    # code to excecute when chatterbox.skills.loading_failure message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.skills.loading_failure',
+    self.bus.emit(Message('chatterbox.skills.loading_failure',
                               {"id": <skill ID>,
                                "folder": <skill directory>}))
 ...
@@ -2177,12 +2177,12 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.skills.loading_failure' '{ "id": <skill ID>, "folder": <skill directory>}'
+python3 -m chatterbox.messagebus.send 'chatterbox.skills.loading_failure' '{ "id": <skill ID>, "folder": <skill directory>}'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.skills.shutdown
+### chatterbox.skills.shutdown
 
 A Skill has shutdown
 
@@ -2202,24 +2202,24 @@ A Skill has shutdown
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.skills.shutdown',
-                   self.handler_mycroft_skills_shutdown)
+    self.add_event('chatterbox.skills.shutdown',
+                   self.handler_chatterbox_skills_shutdown)
 
-def handler_mycroft_skills_shutdown(self, message):
-    # code to excecute when mycroft.skills.shutdown message detected...
+def handler_chatterbox_skills_shutdown(self, message):
+    # code to excecute when chatterbox.skills.shutdown message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.skills.shutdown',
+    self.bus.emit(Message('chatterbox.skills.shutdown',
                               {"id": <skill ID>,
                                "folder": <skill directory>}))
 ...
@@ -2228,52 +2228,52 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.skills.shutdown' '{ "id": <skill ID>, "folder": <skill directory>}'
+python3 -m chatterbox.messagebus.send 'chatterbox.skills.shutdown' '{ "id": <skill ID>, "folder": <skill directory>}'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.skills.initialized
+### chatterbox.skills.initialized
 
 Upon startup, all skills have been loaded
 
 | Producer | Consumer |
 | :--- | :--- |
-| `mycroft/skills/skill_manager.py` | `mycroft/skills/padatious_service.py` |
+| `chatterbox/skills/skill_manager.py` | `chatterbox/skills/padatious_service.py` |
 
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.skills.initialized',
-                   self.handler_mycroft_skills_initialized)
+    self.add_event('chatterbox.skills.initialized',
+                   self.handler_chatterbox_skills_initialized)
 
-def handler_mycroft_skills_initialized(self, message):
-    # code to excecute when mycroft.skills.initialized message detected...
+def handler_chatterbox_skills_initialized(self, message):
+    # code to excecute when chatterbox.skills.initialized message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.skills.initialized'))
+    self.bus.emit(Message('chatterbox.skills.initialized'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.skills.initialized'
+python3 -m chatterbox.messagebus.send 'chatterbox.skills.initialized'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.skills.list
+### chatterbox.skills.list
 
 List of loaded skills \(response to 'skillmanager.list'\)
 
@@ -2290,24 +2290,24 @@ List of loaded skills \(response to 'skillmanager.list'\)
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.skills.list',
-                   self.handler_mycroft_skills_list)
+    self.add_event('chatterbox.skills.list',
+                   self.handler_chatterbox_skills_list)
 
-def handler_mycroft_skills_list(self, message):
-    # code to excecute when mycroft.skills.list message detected...
+def handler_chatterbox_skills_list(self, message):
+    # code to excecute when chatterbox.skills.list message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.skills.list',
+    self.bus.emit(Message('chatterbox.skills.list',
                               {"skills": [<list of skill IDs>] }))
 ...
 ```
@@ -2315,52 +2315,52 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.skills.list' '{"skills": [<list of skill IDs>] }'
+python3 -m chatterbox.messagebus.send 'chatterbox.skills.list' '{"skills": [<list of skill IDs>] }'
 ```
 {% endtab %}
 {% endtabs %}
 
-### mycroft.skills.settings.update
+### chatterbox.skills.settings.update
 
 Pull new skill settings from the server
 
 | Producer | Consumer |
 | :--- | :--- |
-| Configuration Skill | `mycroft/skills/settings.py` |
+| Configuration Skill | `chatterbox/skills/settings.py` |
 
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('mycroft.skills.settings.update',
-                   self.handler_mycroft_skills_settings_update)
+    self.add_event('chatterbox.skills.settings.update',
+                   self.handler_chatterbox_skills_settings_update)
 
-def handler_mycroft_skills_settings_update(self, message):
-    # code to excecute when mycroft.skills.settings.update message detected...
+def handler_chatterbox_skills_settings_update(self, message):
+    # code to excecute when chatterbox.skills.settings.update message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('mycroft.skills.settings.update'))
+    self.bus.emit(Message('chatterbox.skills.settings.update'))
 ...
 ```
 {% endtab %}
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'mycroft.skills.settings.update'
+python3 -m chatterbox.messagebus.send 'chatterbox.skills.settings.update'
 ```
 {% endtab %}
 {% endtabs %}
 
-## Mycroft Skill Manager \(MSM\)
+## Chatterbox Skill Manager \(MSM\)
 
 ### msm.updating
 
@@ -2373,7 +2373,7 @@ MSM install has begun
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -2386,7 +2386,7 @@ def handler_msm_updating(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -2397,7 +2397,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'msm.updating'
+python3 -m chatterbox.messagebus.send 'msm.updating'
 ```
 {% endtab %}
 {% endtabs %}
@@ -2413,7 +2413,7 @@ MSM update has begun
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -2426,7 +2426,7 @@ def handler_msm_installing(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -2437,7 +2437,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'msm.installing'
+python3 -m chatterbox.messagebus.send 'msm.installing'
 ```
 {% endtab %}
 {% endtabs %}
@@ -2459,7 +2459,7 @@ MSM install succeeded for given skill
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -2472,7 +2472,7 @@ def handler_msm_install_succeeded(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -2484,7 +2484,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'msm.install.succeeded' '{ "skill" : <skill name> }'
+python3 -m chatterbox.messagebus.send 'msm.install.succeeded' '{ "skill" : <skill name> }'
 ```
 {% endtab %}
 {% endtabs %}
@@ -2509,7 +2509,7 @@ MSM install failed for given skill
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -2522,7 +2522,7 @@ def handler_msm_install_failed(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -2535,7 +2535,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'msm.install.failed' '{ "skill" : <skill name>, "error": <error code>}'
+python3 -m chatterbox.messagebus.send 'msm.install.failed' '{ "skill" : <skill name>, "error": <error code>}'
 ```
 {% endtab %}
 {% endtabs %}
@@ -2551,7 +2551,7 @@ MSM install is complete
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -2564,7 +2564,7 @@ def handler_msm_installed(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -2575,7 +2575,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'msm.installed'
+python3 -m chatterbox.messagebus.send 'msm.installed'
 ```
 {% endtab %}
 {% endtabs %}
@@ -2591,7 +2591,7 @@ MSM update is complete
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -2604,7 +2604,7 @@ def handler_msm_updated(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -2615,7 +2615,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'msm.updated'
+python3 -m chatterbox.messagebus.send 'msm.updated'
 ```
 {% endtab %}
 {% endtabs %}
@@ -2631,7 +2631,7 @@ MSM remove has begun
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -2644,7 +2644,7 @@ def handler_msm_removing(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -2655,7 +2655,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'msm.removing'
+python3 -m chatterbox.messagebus.send 'msm.removing'
 ```
 {% endtab %}
 {% endtabs %}
@@ -2677,7 +2677,7 @@ MSM remove succeeded for given skill
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -2690,7 +2690,7 @@ def handler_msm_remove_succeeded(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -2702,7 +2702,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'msm.remove.succeeded' '{ "skill" : <skill name> }'
+python3 -m chatterbox.messagebus.send 'msm.remove.succeeded' '{ "skill" : <skill name> }'
 ```
 {% endtab %}
 {% endtabs %}
@@ -2727,7 +2727,7 @@ MSM remove failed for given skill
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -2740,7 +2740,7 @@ def handler_msm_remove_failed(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -2753,7 +2753,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'msm.remove.failed' '{ "skill" : <skill name>, "error": <error code>}'
+python3 -m chatterbox.messagebus.send 'msm.remove.failed' '{ "skill" : <skill name>, "error": <error code>}'
 ```
 {% endtab %}
 {% endtabs %}
@@ -2769,7 +2769,7 @@ MSM remove is complete
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -2782,7 +2782,7 @@ def handler_msm_removed(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -2793,7 +2793,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'msm.removed'
+python3 -m chatterbox.messagebus.send 'msm.removed'
 ```
 {% endtab %}
 {% endtabs %}
@@ -2817,7 +2817,7 @@ Deactivate a skill. Activate by typing ":deactivate " in the CLI
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -2830,7 +2830,7 @@ def handler_skillmanager_deactivate(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -2842,7 +2842,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'skillmanager.deactivate' '{'skill': <skill directory name>}'
+python3 -m chatterbox.messagebus.send 'skillmanager.deactivate' '{'skill': <skill directory name>}'
 ```
 {% endtab %}
 {% endtabs %}
@@ -2858,7 +2858,7 @@ List installed skills. Activate by typing ":list" in the CLI
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -2871,7 +2871,7 @@ def handler_skillmanager_list(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -2882,7 +2882,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'skillmanager.list'
+python3 -m chatterbox.messagebus.send 'skillmanager.list'
 ```
 {% endtab %}
 {% endtabs %}
@@ -2898,7 +2898,7 @@ Request immediate update of all skills
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -2911,7 +2911,7 @@ def handler_skillmanager_update(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -2922,7 +2922,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'skillmanager.update'
+python3 -m chatterbox.messagebus.send 'skillmanager.update'
 ```
 {% endtab %}
 {% endtabs %}
@@ -2940,7 +2940,7 @@ websocket connection has closed
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -2953,7 +2953,7 @@ def handler_open(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -2964,7 +2964,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'open'
+python3 -m chatterbox.messagebus.send 'open'
 ```
 {% endtab %}
 {% endtabs %}
@@ -2980,7 +2980,7 @@ websocket connection was lost, reconnecting
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -2993,7 +2993,7 @@ def handler_close(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -3004,7 +3004,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'close'
+python3 -m chatterbox.messagebus.send 'close'
 ```
 {% endtab %}
 {% endtabs %}
@@ -3020,7 +3020,7 @@ websocket connection has opened
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -3033,7 +3033,7 @@ def handler_reconnecting(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -3044,7 +3044,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'reconnecting'
+python3 -m chatterbox.messagebus.send 'reconnecting'
 ```
 {% endtab %}
 {% endtabs %}
@@ -3057,12 +3057,12 @@ Kick off a a wifi-setup session
 
 | Producer | Consumer |
 | :--- | :--- |
-|  | `mycroft-wifi-setup: mycroft_admin_service.py` |
+|  | `chatterbox-wifi-setup: chatterbox_admin_service.py` |
 
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -3075,7 +3075,7 @@ def handler_system_wifi_setup(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -3086,7 +3086,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'system.wifi.setup'
+python3 -m chatterbox.messagebus.send 'system.wifi.setup'
 ```
 {% endtab %}
 {% endtabs %}
@@ -3097,12 +3097,12 @@ Clear the saved wifi settings
 
 | Producer | Consumer |
 | :--- | :--- |
-|  | `mycroft-wifi-setup: mycroft_admin_service.py` |
+|  | `chatterbox-wifi-setup: chatterbox_admin_service.py` |
 
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -3115,7 +3115,7 @@ def handler_system_wifi_reset(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -3126,7 +3126,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'system.wifi.reset'
+python3 -m chatterbox.messagebus.send 'system.wifi.reset'
 ```
 {% endtab %}
 {% endtabs %}
@@ -3137,12 +3137,12 @@ Force the system clock to synchronize with NTP servers
 
 | Producer | Consumer |
 | :--- | :--- |
-|  | `mycroft-wifi-setup: mycroft_admin_service.py` |
+|  | `chatterbox-wifi-setup: chatterbox_admin_service.py` |
 
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -3155,7 +3155,7 @@ def handler_system_ntp_sync(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -3166,7 +3166,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'system.ntp.sync'
+python3 -m chatterbox.messagebus.send 'system.ntp.sync'
 ```
 {% endtab %}
 {% endtabs %}
@@ -3177,12 +3177,12 @@ Configure system to allow SSH connections
 
 | Producer | Consumer |
 | :--- | :--- |
-|  | `mycroft-wifi-setup: mycroft_admin_service.py` |
+|  | `chatterbox-wifi-setup: chatterbox_admin_service.py` |
 
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -3195,7 +3195,7 @@ def handler_system_ssh_enable(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -3206,7 +3206,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'system.ssh.enable'
+python3 -m chatterbox.messagebus.send 'system.ssh.enable'
 ```
 {% endtab %}
 {% endtabs %}
@@ -3217,12 +3217,12 @@ Configure system to block SSH connections
 
 | Producer | Consumer |
 | :--- | :--- |
-|  | `mycroft-wifi-setup: mycroft_admin_service.py` |
+|  | `chatterbox-wifi-setup: chatterbox_admin_service.py` |
 
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -3235,7 +3235,7 @@ def handler_system_ssh_disable(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -3246,7 +3246,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'system.ssh.disable'
+python3 -m chatterbox.messagebus.send 'system.ssh.disable'
 ```
 {% endtab %}
 {% endtabs %}
@@ -3257,12 +3257,12 @@ Force a Linux reboot
 
 | Producer | Consumer |
 | :--- | :--- |
-|  | `mycroft-wifi-setup: mycroft_admin_service.py` |
+|  | `chatterbox-wifi-setup: chatterbox_admin_service.py` |
 
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -3275,7 +3275,7 @@ def handler_system_reboot(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -3286,7 +3286,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'system.reboot'
+python3 -m chatterbox.messagebus.send 'system.reboot'
 ```
 {% endtab %}
 {% endtabs %}
@@ -3297,12 +3297,12 @@ Force a Linux shutdown
 
 | Producer | Consumer |
 | :--- | :--- |
-|  | `mycroft-wifi-setup: mycroft_admin_service.py` |
+|  | `chatterbox-wifi-setup: chatterbox_admin_service.py` |
 
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -3315,7 +3315,7 @@ def handler_system_shutdown(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -3326,23 +3326,23 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'system.shutdown'
+python3 -m chatterbox.messagebus.send 'system.shutdown'
 ```
 {% endtab %}
 {% endtabs %}
 
 ### system.update
 
-Force an apt-get update on 'mycroft-mark-1' or 'mycroft-picroft' package \(as appropriate\)
+Force an apt-get update on 'chatterbox-mark-1' or 'chatterbox-picroft' package \(as appropriate\)
 
 | Producer | Consumer |
 | :--- | :--- |
-|  | `mycroft-wifi-setup: mycroft_admin_service.py` |
+|  | `chatterbox-wifi-setup: chatterbox_admin_service.py` |
 
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -3355,7 +3355,7 @@ def handler_system_update(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -3366,7 +3366,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'system.update'
+python3 -m chatterbox.messagebus.send 'system.update'
 ```
 {% endtab %}
 {% endtabs %}
@@ -3384,7 +3384,7 @@ python3 -m mycroft.messagebus.send 'system.update'
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -3397,7 +3397,7 @@ def handler_query(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -3409,7 +3409,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'play:query' '{ "phrase": <something to be played> }'
+python3 -m chatterbox.messagebus.send 'play:query' '{ "phrase": <something to be played> }'
 ```
 {% endtab %}
 {% endtabs %}
@@ -3506,7 +3506,7 @@ No suitable result was found.
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -3519,7 +3519,7 @@ def handler_query(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -3531,7 +3531,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'question:query' '{"phrase": "complete question"}'
+python3 -m chatterbox.messagebus.send 'question:query' '{"phrase": "complete question"}'
 ```
 {% endtab %}
 {% endtabs %}
@@ -3560,7 +3560,7 @@ python3 -m mycroft.messagebus.send 'question:query' '{"phrase": "complete questi
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -3573,7 +3573,7 @@ def handler_query_response(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -3590,7 +3590,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'question:query.response' '{ "phrase": phrase, "skill_id": <skill_id>, "answer": "answer string", "conf": confidence, "callback_data": <json data>, "searching": true/false}'
+python3 -m chatterbox.messagebus.send 'question:query.response' '{ "phrase": phrase, "skill_id": <skill_id>, "answer": "answer string", "conf": confidence, "callback_data": <json data>, "searching": true/false}'
 ```
 {% endtab %}
 {% endtabs %}
@@ -3604,7 +3604,7 @@ python3 -m mycroft.messagebus.send 'question:query.response' '{ "phrase": phrase
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -3617,7 +3617,7 @@ def handler_action(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -3628,14 +3628,14 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'question:action'
+python3 -m chatterbox.messagebus.send 'question:action'
 ```
 {% endtab %}
 {% endtabs %}
 
-## Mycroft Alarm Skill
+## Chatterbox Alarm Skill
 
-### private.mycroftai.has\_alarm
+### private.chatterboxai.has\_alarm
 
 Count of running alarms \(0 == no alarms\)
 
@@ -3648,24 +3648,24 @@ Count of running alarms \(0 == no alarms\)
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
-    self.add_event('private.mycroftai.has_alarm',
-                   self.handler_private_mycroftai_has_alarm)
+    self.add_event('private.chatterboxai.has_alarm',
+                   self.handler_private_chatterboxai_has_alarm)
 
-def handler_private_mycroftai_has_alarm(self, message):
-    # code to excecute when private.mycroftai.has_alarm message detected...
+def handler_private_chatterboxai_has_alarm(self, message):
+    # code to excecute when private.chatterboxai.has_alarm message detected...
 ...
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
-    self.bus.emit(Message('private.mycroftai.has_alarm',
+    self.bus.emit(Message('private.chatterboxai.has_alarm',
                               {"active_alarms": COUNT }))
 ...
 ```
@@ -3673,7 +3673,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'private.mycroftai.has_alarm' '{"active_alarms": COUNT }'
+python3 -m chatterbox.messagebus.send 'private.chatterboxai.has_alarm' '{"active_alarms": COUNT }'
 ```
 {% endtab %}
 {% endtabs %}
@@ -3682,12 +3682,12 @@ python3 -m mycroft.messagebus.send 'private.mycroftai.has_alarm' '{"active_alarm
 
 ### skill.namespace.\*
 
-e.g. "skill.mycroft.noftify.alarm\_changed" or "skill.jaguar.notify.car\_stopped"
+e.g. "skill.chatterbox.noftify.alarm\_changed" or "skill.jaguar.notify.car\_stopped"
 
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -3700,7 +3700,7 @@ def handler_skill_namespace_*(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -3711,7 +3711,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'skill.namespace.*'
+python3 -m chatterbox.messagebus.send 'skill.namespace.*'
 ```
 {% endtab %}
 {% endtabs %}
@@ -3723,7 +3723,7 @@ for private \(not intended to be used by anyone else\)
 **Usage:**
 
 {% tabs %}
-{% tab title="Message handler in MycroftSkill" %}
+{% tab title="Message handler in ChatterboxSkill" %}
 ```python
 ...
 def initialize(self):
@@ -3736,7 +3736,7 @@ def handler_private_github_username_*(self, message):
 ```
 {% endtab %}
 
-{% tab title="Generating Message from MycroftSkill" %}
+{% tab title="Generating Message from ChatterboxSkill" %}
 ```python
 ...
 def some_method(self):
@@ -3747,7 +3747,7 @@ def some_method(self):
 
 {% tab title="Command line invocation" %}
 ```bash
-python3 -m mycroft.messagebus.send 'private.github_username.*'
+python3 -m chatterbox.messagebus.send 'private.github_username.*'
 ```
 {% endtab %}
 {% endtabs %}

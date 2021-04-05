@@ -8,31 +8,31 @@ Parameters for this testing can be set using commandline flags or through a YAML
 
 ### With helper commands
 
-If the Mycroft helper commands \(located in `mycroft-core/bin/`\) have been included on your `$PATH` you can initiate the test runner using either:
+If the Chatterbox helper commands \(located in `chatterbox-core/bin/`\) have been included on your `$PATH` you can initiate the test runner using either:
 
 ```bash
-mycroft-start vktest -t skill-to-test
+chatterbox-start vktest -t skill-to-test
 ```
 
 or
 
 ```bash
-mycroft-skill-testrunner vktest -t skill-to-test
+chatterbox-skill-testrunner vktest -t skill-to-test
 ```
 
-So to test the Mycroft Weather Skill we can run:
+So to test the Chatterbox Weather Skill we can run:
 
 ```bash
-mycroft-skill-testrunner vktest -t mycroft-weather
+chatterbox-skill-testrunner vktest -t chatterbox-weather
 ```
 
 ### Without helper commands
 
-If the helper commands are unavailable you can run this directly from your mycroft-core installation:
+If the helper commands are unavailable you can run this directly from your chatterbox-core installation:
 
 ```bash
-cd ~/mycroft-core
-./start-mycroft.sh vktest -t skill-to-test
+cd ~/chatterbox-core
+./start-chatterbox.sh vktest -t skill-to-test
 ```
 
 ### Commandline options
@@ -42,7 +42,7 @@ Commandline flags can be used to set or override configuration and runtime optio
 ```text
   -p PLATFORM, --platform PLATFORM            
         Set the PLATFORM or device type, must be one of:[default, kde,
-        mycroft_mark_1, mycroft_mark_2, mycroft_mark_2pi, picroft, respeaker].
+        chatterbox_mark_1, chatterbox_mark_2, chatterbox_mark_2pi, picroft, respeaker].
   -t SKILL,SKILL, --test-skills SKILL,SKILL
         Test the provided comma-separated list of SKILLS.
   -e PATTERN, --exclude PATTERN
@@ -80,15 +80,15 @@ Commandline flags can be used to set or override configuration and runtime optio
 
 For more complex or repeatable testing configurations we can use a YAML file to define our test parameters. The configuration of these tests consists of three main settings:
 
-* Platform \(string\) - the platform or device type that the tests are being run on. This must be one of \[default, mycroft\_mark\_1, mycroft\_mark\_2, mycroft\_mark\_2pi, picroft, kde, respeaker\]
+* Platform \(string\) - the platform or device type that the tests are being run on. This must be one of \[default, chatterbox\_mark\_1, chatterbox\_mark\_2, chatterbox\_mark\_2pi, picroft, kde, respeaker\]
 * Test Skills \(list\) - the testrunner will execute the tests for these Skills
 * Extra Skills \(list\) - additional Skills that will be installed prior to the test. Tests from these Skills will not be executed.
 
 ```yaml
-platform: mycroft_mark_1
+platform: chatterbox_mark_1
 tested_skills:
-- mycroft-hello-world
-- mycroft-personal
+- chatterbox-hello-world
+- chatterbox-personal
 extra_skills:
 - cocktails
 ```
@@ -99,30 +99,30 @@ The example above shows that this tests suite:
 * the tests from the Hello World and Personal Skills will be included
 * before running the tests, the Cocktails Skill be installed if it isn't already on the system.
 
-By default the test runner will use the configuration stored at: `mycroft-core/test/integrationtests/voight_kampff/default.yml`.
+By default the test runner will use the configuration stored at: `chatterbox-core/test/integrationtests/voight_kampff/default.yml`.
 
 You can specify an alternate file location with the `-c` flag:
 
 ```bash
-mycroft-skill-testrunner vktests -c /path/to/your/configuration.yml
+chatterbox-skill-testrunner vktests -c /path/to/your/configuration.yml
 ```
 
 ## Stacking test runs
 
 Voight Kampff has been designed to allow test runs to be stacked.
 
-When you execute a test run the files for that test will be copied into `mycroft-core/test/integrationtests/voight_kampff/features/`
+When you execute a test run the files for that test will be copied into `chatterbox-core/test/integrationtests/voight_kampff/features/`
 
 The test files will remain there until cleared, or overwritten. As such each test you run will also execute all previous tests. For example running:
 
 ```bash
-mycroft-start vktest -t mycroft-weather
+chatterbox-start vktest -t chatterbox-weather
 ```
 
 Will test only the Weather Skill. However if we then run:
 
 ```bash
-mycroft-start vktest -t mycroft-timer
+chatterbox-start vktest -t chatterbox-timer
 ```
 
 Then both the Weather and Timer Skill will be tested.
@@ -132,7 +132,7 @@ Then both the Weather and Timer Skill will be tested.
 To avoid this, or to clean up your system after running tests, we can clear all existing test files:
 
 ```bash
-mycroft-start vktest clear
+chatterbox-start vktest clear
 ```
 
 This will remove all of the Feature and custom Step files that have been transferred during our previous test runs.
@@ -141,21 +141,21 @@ This will remove all of the Feature and custom Step files that have been transfe
 
 If you don't want audio output whilst the tests are running, you can switch this off temporarily through your device configuration.
 
-This change also has the benefit of speeding up testing, as the framework doesn't have to wait for Mycroft to stop talking. Note, that to have audio output during normal debugging the config change should be reverted.
+This change also has the benefit of speeding up testing, as the framework doesn't have to wait for Chatterbox to stop talking. Note, that to have audio output during normal debugging the config change should be reverted.
 
-### Using `mycroft-config`
+### Using `chatterbox-config`
 
 To enable the dummy tts setting and disable audio for tests run the following command:
 
-`mycroft-config set tts.module "dummy"`
+`chatterbox-config set tts.module "dummy"`
 
 To reset the tts settings to default run:
 
-`mycroft-config set tts.module "mimic2"`
+`chatterbox-config set tts.module "mimic2"`
 
-### Editing `mycroft.conf`
+### Editing `chatterbox.conf`
 
-You can also make the adjustment by editing the config file directly `~/.mycroft/mycroft.conf`.
+You can also make the adjustment by editing the config file directly `~/.chatterbox/chatterbox.conf`.
 
 ```javascript
 {
@@ -165,9 +165,9 @@ You can also make the adjustment by editing the config file directly `~/.mycroft
 }
 ```
 
-To edit the file we recommend using the Mycroft Configuration tool as it will validate your changes on save, warning you about any errors you may have made.
+To edit the file we recommend using the Chatterbox Configuration tool as it will validate your changes on save, warning you about any errors you may have made.
 
 ```text
-mycroft-config edit user
+chatterbox-config edit user
 ```
 

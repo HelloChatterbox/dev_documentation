@@ -8,9 +8,9 @@ description: >-
 
 If you are new to Python or programming in general there are lots of resources online to catering to all experience levels. Once you have the basics, a simple Skill can be a great way to try them out in a real project.
 
-Mycroft uses Python 3 and as of December 2019 supports Python 3.5-3.7.
+Chatterbox uses Python 3 and as of December 2019 supports Python 3.5-3.7.
 
-The following are a collection of resources recommended by members of our Community. If you know of other great resources please let us know in the [Dev channel of Mycroft Chat](https://chat.mycroft.ai/community/channels/dev).
+The following are a collection of resources recommended by members of our Community. If you know of other great resources please let us know in the [Dev channel of Chatterbox Chat](https://chat.chatterbox.ai/community/channels/dev).
 
 ## Books
 

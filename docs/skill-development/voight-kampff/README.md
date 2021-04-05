@@ -1,16 +1,16 @@
 ---
 description: >-
   Integration testing ensures your Skill works as expected when it is running
-  inside Mycroft in a realistic environment alongside other Skills.
+  inside Chatterbox in a realistic environment alongside other Skills.
 ---
 
 # Integration Tests
 
-Mycroft has recently adopted a new [Behavior Driven Development \(BDD\)](https://en.wikipedia.org/wiki/Behavior_Driven_Development) framework called [Behave](https://behave.readthedocs.io/) for integration testing. Mycroft's implementation has been code-named Voight Kampff.
+Chatterbox has recently adopted a new [Behavior Driven Development \(BDD\)](https://en.wikipedia.org/wiki/Behavior_Driven_Development) framework called [Behave](https://behave.readthedocs.io/) for integration testing. Chatterbox's implementation has been code-named Voight Kampff.
 
 ## Why have integration tests
 
-Writing tests for your Skill has benefits for both you and Mycroft as a whole. For the project it allows us to automatically check that the Skill is working as intended, and that no other Skill is causing a conflict.
+Writing tests for your Skill has benefits for both you and Chatterbox as a whole. For the project it allows us to automatically check that the Skill is working as intended, and that no other Skill is causing a conflict.
 
 Test-driven development also allows you to work more efficiently and find bugs faster. We are currently working on a Skill Design Guide that outlines the process we go through to design new voice Skills.
 
@@ -34,13 +34,13 @@ In this example, we started by defining the name of the Feature, in this case "c
 * `When` steps describe actions that are taken, and
 * `Then` steps observe the outcome of the test.
 
-When this specific test is run with the provided Steps, the system will: 1. Ensure that it is in the appropriate state awaiting an utterance in English. 2. Send the given utterance to Mycroft as if it had been spoken by a user. 3. Observe Mycroft's response and check that the correct Skill responded with appropriate dialog.
+When this specific test is run with the provided Steps, the system will: 1. Ensure that it is in the appropriate state awaiting an utterance in English. 2. Send the given utterance to Chatterbox as if it had been spoken by a user. 3. Observe Chatterbox's response and check that the correct Skill responded with appropriate dialog.
 
 ### File location
 
 Each `Feature` we define for our Skills test suite should be placed in it's own file inside the `test/behave` directory of our Skill. For this example we will save the Feature file in:
 
 ```text
-/opt/mycroft/skills/my-weather-skill/test/behave/current-weather.feature`
+/opt/chatterbox/skills/my-weather-skill/test/behave/current-weather.feature`
 ```
 

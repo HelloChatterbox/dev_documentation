@@ -1,6 +1,6 @@
 ---
 description: >-
-  Dies ist eine Anleitung wie Mycroft in Deutsch eingerichtet werden kann. Diese
+  Dies ist eine Anleitung wie Chatterbox in Deutsch eingerichtet werden kann. Diese
   Seite beinhaltet auch eine Kurzanleitung.
 ---
 
@@ -8,15 +8,15 @@ description: >-
 
 ## Erster Einstieg
 
-!!!Aktuell ist das paaren von Mycroft noch nicht vollständig in deutsch möglich, daher sollten sie Mycroft bereits unter "lang": "en-us" verbunden und eingerichtet haben.
+!!!Aktuell ist das paaren von Chatterbox noch nicht vollständig in deutsch möglich, daher sollten sie Chatterbox bereits unter "lang": "en-us" verbunden und eingerichtet haben.
 
-Zuerst, [verbinden Sie sich mit ihrem Gerät \(z.B. SSH\)](https://mycroft.ai/documentation/mark-1/#connecting-to-the-mark-1-via-ssh).
+Zuerst, [verbinden Sie sich mit ihrem Gerät \(z.B. SSH\)](https://chatterbox.ai/documentation/mark-1/#connecting-to-the-mark-1-via-ssh).
 
-Folgend wird an den Beispielen Google/Mbrola der Sprachoutput \(TTS\) auf deutsch gesetzt. Mycroft bietet weitere TTS-Möglichkeiten über [marytts](http://mary.dfki.de/), [responsive\_voice](https://responsivevoice.org/), [polly](https://aws.amazon.com/de/polly/), auf die hier jedoch nicht näher eingegangen wird. Zudem arbeitet die deutsche Community aktuell an einer eigenen TTS Stimme auf [tacotron2](https://github.com/thorstenMueller/deep-learning-german-tts) Basis.
+Folgend wird an den Beispielen Google/Mbrola der Sprachoutput \(TTS\) auf deutsch gesetzt. Chatterbox bietet weitere TTS-Möglichkeiten über [marytts](http://mary.dfki.de/), [responsive\_voice](https://responsivevoice.org/), [polly](https://aws.amazon.com/de/polly/), auf die hier jedoch nicht näher eingegangen wird. Zudem arbeitet die deutsche Community aktuell an einer eigenen TTS Stimme auf [tacotron2](https://github.com/thorstenMueller/deep-learning-german-tts) Basis.
 
 ## Text-to-Speech \(TTS\) über Google
 
-Ändere oder ersetze die eigene Konfiguration `mycroft-config edit user` mit folgendem Inhalt.
+Ändere oder ersetze die eigene Konfiguration `chatterbox-config edit user` mit folgendem Inhalt.
 
 **Data:**
 
@@ -32,7 +32,7 @@ Folgend wird an den Beispielen Google/Mbrola der Sprachoutput \(TTS\) auf deutsc
 }
 ```
 
-_HINWEIS: Sollte sich die Standardausgabe von Mycroft in deutsch melden hilft eventuell das updaten mit `mycroft-pip install --upgrade gtts` oder `mycroft-pip install --upgrade gtts-token`._
+_HINWEIS: Sollte sich die Standardausgabe von Chatterbox in deutsch melden hilft eventuell das updaten mit `chatterbox-pip install --upgrade gtts` oder `chatterbox-pip install --upgrade gtts-token`._
 
 ## TTS Alternativ mit espeak mbrola
 
@@ -55,15 +55,15 @@ Für Rasberry kann mbrola hier herunterladen werden mit `wget http://steinerdate
 
 _HINWEIS: Die Stimme 7 kann auch durch eine andere Stimme ersetzt werden. Dabei sind alle geraden Zahlen männlich und alle ungeraden Stimmen weiblich._
 
-Mycroft sollte nach einem Neustart auf deutsch hören und sprechen. Viele Skills sind bereits übersetzt und können sofort genutzt werden.
+Chatterbox sollte nach einem Neustart auf deutsch hören und sprechen. Viele Skills sind bereits übersetzt und können sofort genutzt werden.
 
-Das **Wake Word** \(z.b. Hey Mycroft, Christopher, Hey Ezra, Hey Jarvis\) wird hierbei unter [Mycroft Home](https://home.mycroft.ai) eingerichtet.
+Das **Wake Word** \(z.b. Hey Chatterbox, Christopher, Hey Ezra, Hey Jarvis\) wird hierbei unter [Chatterbox Home](https://home.chatterbox.ai) eingerichtet.
 
 ## Ändern des **Wake Words** in ein deutsches Wort
 
-Mycroft verwendet [Precise](https://mycroft.ai/documentation/precise) und [PocketSphinx](https://github.com/cmusphinx/pocketsphinx) als **Wake Word**-Mechanismus. Das Standard **Wake Word** auf englisch ist `Hey Mycroft` und nutzt Precise und - falls Precise es nicht erkennt - Pocketsphinx.
+Chatterbox verwendet [Precise](https://chatterbox.ai/documentation/precise) und [PocketSphinx](https://github.com/cmusphinx/pocketsphinx) als **Wake Word**-Mechanismus. Das Standard **Wake Word** auf englisch ist `Hey Chatterbox` und nutzt Precise und - falls Precise es nicht erkennt - Pocketsphinx.
 
-Diese Anleitung bezieht sich insbesodere auf Pocketsphinx. Weiterführende Informationen zu Precise findet man [hier](https://mycroft-ai.gitbook.io/docs/using-mycroft-ai/customizations/wake-word#precise) \(englisch\)
+Diese Anleitung bezieht sich insbesodere auf Pocketsphinx. Weiterführende Informationen zu Precise findet man [hier](https://chatterbox-ai.gitbook.io/docs/using-chatterbox-ai/customizations/wake-word#precise) \(englisch\)
 
 Um das **Wake Word** \(in ein deutsch klingendes\) zu ändern muss das deutsche Wörterbuch und das deutsche akustische Modell herunterladen werden, danach trainiere es mit dem neusten `sphinxtrain`.
 
@@ -133,13 +133,13 @@ Dann verschieben es in das PocketSphinx-Verzeichnis
 /usr/local/share/pocketsphinx/model/de/de/variances
 ```
 
-### Verlinken/Kopieren Sie Modell und Wörterbuch in die Mycroft-Verzeichnisse
+### Verlinken/Kopieren Sie Modell und Wörterbuch in die Chatterbox-Verzeichnisse
 
-Navigieren Sie dazu zum Mycroft-Sprachenmodellverzeichnis.
+Navigieren Sie dazu zum Chatterbox-Sprachenmodellverzeichnis.
 
-Zum Beispiel, auf `mycroft-core` für Linux, navigiere zu
+Zum Beispiel, auf `chatterbox-core` für Linux, navigiere zu
 
-`~/mycroft-core/mycroft/client/speech/recognizer/model`
+`~/chatterbox-core/chatterbox/client/speech/recognizer/model`
 
 Es sollten die folgenden Verzeichnise zu sehen sein:
 
@@ -167,10 +167,10 @@ _HINWEIS: Der `cp`-Befehl könnte durch `ln`-Befehl ersetzt werden um Speicherpl
 Falls mit `ln` gearbeitet wird, müssen die folgenden Verzeichnisse, Dateien und symbolische Verknüpft werden:
 
 ```text
-~/mycroft/client/speech/recognizer/model/de
-~/mycroft-core/client/speech/recognizer/model/de/hmm
-~/mycroft-core/client/speech/recognizer/model/de/de.dict
-~/mycroft-core/client/speech/recognizer/model/de/de.lm
+~/chatterbox/client/speech/recognizer/model/de
+~/chatterbox-core/client/speech/recognizer/model/de/hmm
+~/chatterbox-core/client/speech/recognizer/model/de/de.dict
+~/chatterbox-core/client/speech/recognizer/model/de/de.lm
 ```
 
 ### Ein deutsches **Wake Word** wählen
@@ -185,9 +185,9 @@ Wähle ein deutsches **Wake Word** oder Wake Phrase auf deutsch und stelle siche
 
 Wenn das gewählte **Wake Word** oder Phrase nicht in der `de.dict` Datei ist, dann wählen Sie entweder ein anderes **Wake Word** oder ändern Sie die `de.dict`Datei, um es hinzuzufügen.
 
-### Konfiguriere Mycroft für die Verwendung eines deutsch ausgesprochenen **Wake Words**
+### Konfiguriere Chatterbox für die Verwendung eines deutsch ausgesprochenen **Wake Words**
 
-Ändere oder ersetze die eigene Konfiguration `mycroft-config edit user` mit folgendem Inhalt.
+Ändere oder ersetze die eigene Konfiguration `chatterbox-config edit user` mit folgendem Inhalt.
 
 **Data:**
 
@@ -207,12 +207,12 @@ Wenn das gewählte **Wake Word** oder Phrase nicht in der `de.dict` Datei ist, d
 
 ## Mozilla Deepspeech STT
 
-Mycroft unterstützt auch Deepspeech STT. Hierfür muss ein deutsches Modell auf einem Deepspeech Server einrichten. [Aashish Agarwal](https://github.com/AASHISHAG/deepspeech-german) hat dazu entsprechende [Modell Files](https://drive.google.com/drive/folders/1L7ILB-TMmzL8IDYi_GW8YixAoYWjDMn1) unter Deepspeech V9.0 veröffentlicht.
+Chatterbox unterstützt auch Deepspeech STT. Hierfür muss ein deutsches Modell auf einem Deepspeech Server einrichten. [Aashish Agarwal](https://github.com/AASHISHAG/deepspeech-german) hat dazu entsprechende [Modell Files](https://drive.google.com/drive/folders/1L7ILB-TMmzL8IDYi_GW8YixAoYWjDMn1) unter Deepspeech V9.0 veröffentlicht.
 
 ### Installation
 
 1. Entpacke die heruntergeladenen Ordner und wechsle hinein. `cd release_v0.9.0`
-2. Aktiviere venv durch `source ~/mycroft-core/.venv/bin/activate`.
+2. Aktiviere venv durch `source ~/chatterbox-core/.venv/bin/activate`.
 3. Installiere Deepspeech mit `pip install deepspeech==0.9.0` oder `pip install deepspeech-gpu==0.9.0`.
 4. Auf Raspberry installiere noch einige Pakete mit `sudo apt-get install gfortran libopenblas-dev liblapack-dev`
 5. Installiere Deepspeech Server `pip install deepspeech-server`.
@@ -261,12 +261,12 @@ Antwort sollte nun `test ein zwei drei test(.venv) pi@picroft:~/release_v0.9.0$`
 Füge folgendes in Startup Datei `/etc/rc.local`.
 
 ```text
-/home/pi/mycroft-core/.venv/bin/deepspeech-server --config /home/pi/release_v0.9.0/config.json
+/home/pi/chatterbox-core/.venv/bin/deepspeech-server --config /home/pi/release_v0.9.0/config.json
 ```
 
-### Konfiguriere Mycroft für die Verwendung von Deepspeech
+### Konfiguriere Chatterbox für die Verwendung von Deepspeech
 
-Ändere oder ergänze die eigene Konfiguration `mycroft-config edit user` mit folgendem Inhalt.
+Ändere oder ergänze die eigene Konfiguration `chatterbox-config edit user` mit folgendem Inhalt.
 
 **Data:**
 
@@ -280,5 +280,5 @@ Füge folgendes in Startup Datei `/etc/rc.local`.
 }
 ```
 
-Für weitergehende Fragen besuche [den deutschen channel auf Mycroft chat](https://chat.mycroft.ai/community/channels/language-de).
+Für weitergehende Fragen besuche [den deutschen channel auf Chatterbox chat](https://chat.chatterbox.ai/community/channels/language-de).
 

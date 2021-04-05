@@ -1,20 +1,20 @@
 ---
 description: >-
-  Mycroft Core sits at the centre of all Mycroft installations. The code itself
-  includes anything that is generic to all instances of Mycroft.
+  Chatterbox Core sits at the centre of all Chatterbox installations. The code itself
+  includes anything that is generic to all instances of Chatterbox.
 ---
 
-# Mycroft Core
+# Chatterbox Core
 
-## Mycroft Services
+## Chatterbox Services
 
-Mycroft Core includes four or more distinct Services:
+Chatterbox Core includes four or more distinct Services:
 
 * [MessageBus](message-bus.md)
-* [Skills](https://github.com/MycroftAI/documentation/tree/4a8ffa3702e64c9411fb0ba4239a61d1cca506ab/docs/mycroft-technologies/mycroft-core/skills-service.md)
+* [Skills](https://github.com/ChatterboxAI/documentation/tree/4a8ffa3702e64c9411fb0ba4239a61d1cca506ab/docs/chatterbox-technologies/chatterbox-core/skills-service.md)
 * [Audio](services/audio-service.md)
-* [Voice](https://github.com/MycroftAI/documentation/tree/4a8ffa3702e64c9411fb0ba4239a61d1cca506ab/docs/mycroft-technologies/mycroft-core/voice-service.md)
-* [Enclosure](https://github.com/MycroftAI/documentation/tree/4a8ffa3702e64c9411fb0ba4239a61d1cca506ab/docs/mycroft-technologies/mycroft-core/enclosures.md)
+* [Voice](https://github.com/ChatterboxAI/documentation/tree/4a8ffa3702e64c9411fb0ba4239a61d1cca506ab/docs/chatterbox-technologies/chatterbox-core/voice-service.md)
+* [Enclosure](https://github.com/ChatterboxAI/documentation/tree/4a8ffa3702e64c9411fb0ba4239a61d1cca506ab/docs/chatterbox-technologies/chatterbox-core/enclosures.md)
 
 Each of these is started in it's own process, and communicates with other processes by emitting and listening to messages on the MessageBus.
 
@@ -31,8 +31,8 @@ status = ProcessStatus(name, bus, on_started=None, on_alive=None, on_ready=None,
 
 **Arguments**
 
-`name` \(str\): process name, will be used to create the messagebus messagetype "mycroft.{name}..."  
-`bus` \(MessageBusClient\): connection to the Mycroft messagebus.  
+`name` \(str\): process name, will be used to create the messagebus messagetype "chatterbox.{name}..."  
+`bus` \(MessageBusClient\): connection to the Chatterbox messagebus.  
 `on_started` \(callable\): callback to execute when process is started  
 `on_alive` \(callable\): callback to execute when minimum operation is reached.  
 `on_ready` \(callable\): callback to execute when loading is 100 % complete.  
@@ -66,11 +66,11 @@ It is up to each Service to determine it's readiness and set the state according
 
 The status of a Service can be queried via the MessageBus.
 
-The request Message should be in the form - `mycroft.{service_name}.{is_status}`. For example, we can check if the Audio Service is `ALIVE` by emitting:
+The request Message should be in the form - `chatterbox.{service_name}.{is_status}`. For example, we can check if the Audio Service is `ALIVE` by emitting:
 
 ```python
 response = self.bus.wait_for_response(Message(
-           'mycroft.audio.is_alive'))
+           'chatterbox.audio.is_alive'))
 ```
 
 The response message will include a `status` boolean in the data payload:
@@ -82,16 +82,16 @@ The response message will include a `status` boolean in the data payload:
 
 ## Proposed Addition
 
-If you have thoughts or comments on the following status proposals, please [let us know in the Community Forums](https://community.mycroft.ai/t/dev-sync-2020-08-18/9283/4).
+If you have thoughts or comments on the following status proposals, please [let us know in the Community Forums](https://community.chatterbox.ai/t/dev-sync-2020-08-18/9283/4).
 
 ### Status/Watchdog Service
 
-The status/watchdog service would be a new systemd service running on devices that run Mycroft-core. The functionality of this service could include, but would not be limited to:
+The status/watchdog service would be a new systemd service running on devices that run Chatterbox-core. The functionality of this service could include, but would not be limited to:
 
 * Monitoring various aspects of the health of each core service \(is service running, healthy, ready, etc.\).  
 * Heartbeats could be emitted from each service, or the new service could check the pulse of each service on regular intervals.  
 * Actions could be taken if a service becomes unhealthy, such as attempting to restart a crashed service.  
 * Specific checks, such as the existing microphone watchdog, could be included in this service. 
 * Responsible for restarting services on a daily basis.  
-* If a user opts in to data sharing, information about exceptions or crashes could be sent to Mycroft for diagnostic purposes.
+* If a user opts in to data sharing, information about exceptions or crashes could be sent to Chatterbox for diagnostic purposes.
 

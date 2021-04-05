@@ -1,25 +1,25 @@
 ---
 description: >-
-  Mycroft has a built-in mechanism to help you automatically test your Skill.
+  Chatterbox has a built-in mechanism to help you automatically test your Skill.
   This is particularly important when submitting your Skill for inclusion in the
   Marketplace.
 ---
 
 # Old Test System
 
-Automatic testing of **Skills** helps increase the quality of the Mycroft ecosystem overall, and helps assure you that your **Skill** is performing as intended. Tests are required to be passing before your **Skill** will be accepted into the [Mycroft **Skill**](https://github.com/MycroftAI/mycroft-skills) repository on GitHub.
+Automatic testing of **Skills** helps increase the quality of the Chatterbox ecosystem overall, and helps assure you that your **Skill** is performing as intended. Tests are required to be passing before your **Skill** will be accepted into the [Chatterbox **Skill**](https://github.com/ChatterboxAI/chatterbox-skills) repository on GitHub.
 
 ## Overview
 
-The Integration Test Runner tests Mycroft **Skills** by emulating **Utterances** expected to be spoken by the User, sending them to the **Skill**, and then checking to see if the **Skill** responds as expected.
+The Integration Test Runner tests Chatterbox **Skills** by emulating **Utterances** expected to be spoken by the User, sending them to the **Skill**, and then checking to see if the **Skill** responds as expected.
 
 The Integration Test Runner can test:
 
 * That the expected **Intent** in the **Skill** is activated
 * That the expected parameters are extracted from the **Utterance**
-* That Mycroft _contexts_ are set or removed
+* That Chatterbox _contexts_ are set or removed
 * That the **Skill** speaks the intended _dialog_
-* The content of any message exchanged between the **Skill** and Mycroft Core
+* The content of any message exchanged between the **Skill** and Chatterbox Core
 
 To initialize a test, the Integration Test Runner can:
 
@@ -27,11 +27,11 @@ To initialize a test, the Integration Test Runner can:
 * Set up and remove _context_
 * Set up a custom timeout for the Integration Test Runner, to allow for **Skills** that run for a very long time
 
-_NOTE: If you have submitted your Skill to the `mycroft-skills` repo and wish to run tests to ensure they are still passing, you can add the comment `Run test` to the PR and this will automatically initiate a Jenkins CI runthrough of the tests in the Skill._
+_NOTE: If you have submitted your Skill to the `chatterbox-skills` repo and wish to run tests to ensure they are still passing, you can add the comment `Run test` to the PR and this will automatically initiate a Jenkins CI runthrough of the tests in the Skill._
 
 ## The Integration Test Runner files
 
-The Integration Test Runner is part of the `mycroft-core` package. It consists of the following files in `mycroft-core/test/integrationtests/skills`:
+The Integration Test Runner is part of the `chatterbox-core` package. It consists of the following files in `chatterbox-core/test/integrationtests/skills`:
 
 * `discover_tests.py`
 * `skill_tester.py`
@@ -43,7 +43,7 @@ The most interesting files from a Skill Author's perspective are:
 
 The `runner.py` can be copied to the Skill Author's working directory, where the **Skill's** `__init__.py` file exists or invoked directly with the skill path as argument. Running `runner.py` will test only the **Skills** it finds in the directory it is in, or, if it can’t find a **Skill**, it will search any subdirectory.
 
-The `discover_test.py` is the Python file that runs integration tests on all **Skills** in `/opt/mycroft/skills`. It is intended for debugging that all your tests are found by the test runner.
+The `discover_test.py` is the Python file that runs integration tests on all **Skills** in `/opt/chatterbox/skills`. It is intended for debugging that all your tests are found by the test runner.
 
 The `message_tester.py` is a utility that can test a single message against the internal rule format used by the `skill_tester`. It is intended for debugging rules.
 
@@ -152,7 +152,7 @@ The `expected response` is a regular expression that must match the answer that 
 
 The `changed_context` is a list of contexts, that the **Intent** has set or removed. It is not possible to distinguish between set or remove context.
 
-The `expected_data` can be used to check for specific data content, for example the content of a message parsed with [Padatious](https://mycroft.ai/documentation/padatious/). The example test case below will pass if a message contains an "ampm" value equal to **"pm"** and a "time" value equal to **6**. Note that the "ampm" value is a string literal, and is quoted, while the "time" value is an integer value and is _not_ quoted.
+The `expected_data` can be used to check for specific data content, for example the content of a message parsed with [Padatious](https://chatterbox.ai/documentation/padatious/). The example test case below will pass if a message contains an "ampm" value equal to **"pm"** and a "time" value equal to **6**. Note that the "ampm" value is a string literal, and is quoted, while the "time" value is an integer value and is _not_ quoted.
 
 ```javascript
   "expected_data": {
@@ -163,7 +163,7 @@ The `expected_data` can be used to check for specific data content, for example 
 
 Note that the message can contain additional fields without the test failing.
 
-The `expected_dialog` takes the dialog file \(without the `.dialog`\) in the same manner as when using the dialog in the **Skill**. See [skill-personal](https://github.com/MycroftAI/skill-personal/blob/0a056a0f13fa3ad2ff5d3f685be0bf99244bca1e/test/intent/what.are.you.intent.json) for an example.
+The `expected_dialog` takes the dialog file \(without the `.dialog`\) in the same manner as when using the dialog in the **Skill**. See [skill-personal](https://github.com/ChatterboxAI/skill-personal/blob/0a056a0f13fa3ad2ff5d3f685be0bf99244bca1e/test/intent/what.are.you.intent.json) for an example.
 
 In the example above the `changed_context` and `assert` actually does the same thing, it is mentioned as an example only. The `assert` shows the internal rule format \(see the next paragraph\).
 
@@ -220,15 +220,15 @@ The `discover_tests.py` is intended to be run like a Python unit test, please re
 The `runner.py` is intended to run with a skill directory as parameter,
 
 ```text
-ake@Woodstock:~/projects/python/mycroft-core$ source venv-activate.sh
-ake@Woodstock:~/projects/python/mycroft-core$ python -m test.integrationtests.skills.runner PATH/TO/SKILL
+ake@Woodstock:~/projects/python/chatterbox-core$ source venv-activate.sh
+ake@Woodstock:~/projects/python/chatterbox-core$ python -m test.integrationtests.skills.runner PATH/TO/SKILL
 ```
 
 or directly in the **Skill** directory:
 
 ```text
-ake@Woodstock:~/projects/python/mycroft-core$ source venv-activate.sh
-ake@Woodstock:~/projects/python/mycroft-core$ cd /PATH/TO/SKILL
+ake@Woodstock:~/projects/python/chatterbox-core$ source venv-activate.sh
+ake@Woodstock:~/projects/python/chatterbox-core$ cd /PATH/TO/SKILL
 ake@Woodstock:/PATH/TO/SKILL$ python -m test.integrationtests.skills.runner
 ```
 
@@ -241,13 +241,13 @@ Each message event is tested by the rules. When all rules have succeeded, the te
 Test case output file:
 
 ```text
-/opt/mycroft/skills/skill-pairing/test/intent/sample1.intent.json
+/opt/chatterbox/skills/skill-pairing/test/intent/sample1.intent.json
 Test case: {u'intent': {u'DevicePairingPhrase': u'pair my device'}, u'intent_type': u'PairingIntent', u'utterance': u"let's pair my device"}
 Rule created [['and', ['endsWith', 'intent_type', 'PairingIntent'], ['equal', 'DevicePairingPhrase', 'pair my device']]]
 Evaluating message: {'lang': 'en-us', 'skill_id': 1211234571, 'utterances': [u"let's pair my device"]}
 Evaluating message: {'confidence': 1.0, 'target': None, 'DeviceKeyword': 'device', 'intent_type': '1211234573:PairingIntent', 'PairingKeyword': 'pair', '__tags__': [{'end_token': 2, 'start_token': 2, 'from_context': False, 'entities': [{'confidence': 1.0, 'data': [('pair', u'BCBBCDEFHDPairingKeyword')], 'match': u'pair', 'key': 'pair'}], 'key': 'pair', 'match': u'pair'}, {'end_token': 4, 'start_token': 4, 'from_context': False, 'entities': [{'confidence': 1.0, 'data': [('device', u'BCBBCDEFHDDeviceKeyword')], 'match': u'device', 'key': 'device'}], 'key': 'device', 'match': u'device'}], 'utterance': u"let's pair my device"}
 Evaluating message: {'name': 'PairingSkill.handle_pairing'}
-Evaluating message: {'expect_response': False, 'utterance': u'Now I am ready for use. Try asking me things like "hey mycroft, what's the weather", "hey mycroft, tell me about abraham lincoln", or "hey mycroft, play the news". If you need to stop me talking at any time, just push my button.'}
+Evaluating message: {'expect_response': False, 'utterance': u'Now I am ready for use. Try asking me things like "hey chatterbox, what's the weather", "hey chatterbox, tell me about abraham lincoln", or "hey chatterbox, play the news". If you need to stop me talking at any time, just push my button.'}
 Evaluating message: {'name': 'PairingSkill.handle_pairing'}
 Evaluation failed
 Rule status: [['and', ['endsWith', 'intent_type', 'PairingIntent', 'succeeded'], ['equal', 'DevicePairingPhrase', 'pair my device']]]
@@ -302,10 +302,10 @@ else:
 > raise Exception('Skill couldn't be loaded')
 E Exception: Skill couldn't be loaded
 test/integrationtests/skills/skill_tester.py:198: Exception
-TestCase.test_skill[/opt/mycroft/skills/skill-alarm-/opt/mycroft/skills/skill-alarm/test/intent/sample7.intent.json]
+TestCase.test_skill[/opt/chatterbox/skills/skill-alarm-/opt/chatterbox/skills/skill-alarm/test/intent/sample7.intent.json]
 self =
-skill = '/opt/mycroft/skills/skill-alarm'
-example = '/opt/mycroft/skills/skill-alarm/test/intent/sample7.intent.json'
+skill = '/opt/chatterbox/skills/skill-alarm'
+example = '/opt/chatterbox/skills/skill-alarm/test/intent/sample7.intent.json'
 @pytest.mark.parametrize("skill,example", sum([
 [(skill, example) for example in tests[skill]]
 for skill in tests.keys()
@@ -321,16 +321,16 @@ The last section of the Integration Test Runner output shows the test coverage -
 ---------- coverage: platform linux2, python 2.7.12-final-0 ----------
 Name Stmts Miss Cover
 -----------------------------------------------------------------
-/opt/mycroft/skills/skill-alarm/__init__.py 293 290 1%
+/opt/chatterbox/skills/skill-alarm/__init__.py 293 290 1%
 ```
 
 ## What should I do if the tests that are failing are not within my control?
 
-If you are running the automated tests, and have test failures that are beyond your control - for example the error is triggered by something in `mycroft-core` or other Mycroft software, then the Skills Management Team can choose to override the need for automated tests to have passed when they assess the **Skill**.
+If you are running the automated tests, and have test failures that are beyond your control - for example the error is triggered by something in `chatterbox-core` or other Chatterbox software, then the Skills Management Team can choose to override the need for automated tests to have passed when they assess the **Skill**.
 
-Please paste a copy of the automated **Skill** testing output as a comment in the Pull Request when you [submit it to the Skills repo](https://mycroft.ai/documentation/skills/skill-submission/).
+Please paste a copy of the automated **Skill** testing output as a comment in the Pull Request when you [submit it to the Skills repo](https://chatterbox.ai/documentation/skills/skill-submission/).
 
 ## Where can I go to get more assistance?
 
-Join us in the [~skills channel in Mycroft Chat](https://chat.mycroft.ai/community/channels/skills).
+Join us in the [~skills channel in Chatterbox Chat](https://chat.chatterbox.ai/community/channels/skills).
 

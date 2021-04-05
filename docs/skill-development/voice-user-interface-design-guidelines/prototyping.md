@@ -15,7 +15,7 @@ To begin the test give the user a task. For example, with the Moon Phase skill, 
 
 **Task Example:**
 
-> _You're thinking about taking some photos of the moon tonight, and you want to know what phase the moon will be in. What would you ask Mycroft to help you plan your photo session?_
+> _You're thinking about taking some photos of the moon tonight, and you want to know what phase the moon will be in. What would you ask Chatterbox to help you plan your photo session?_
 
 The first off the cuff responses from your test are generally the best, but it's always good to ask your testers if they can provide any variations on the way they might ask the question.
 

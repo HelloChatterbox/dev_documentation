@@ -1,11 +1,11 @@
 
-Mycroft Documentation
+Chatterbox Documentation
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-[![Join chat](https://img.shields.io/badge/Mattermost-join_chat-brightgreen.svg)](https://chat.mycroft.ai/community/channels/documentation)
-[![CLA Required](https://img.shields.io/badge/CLA%3F-Required-blue.svg)](https://mycroft.ai/cla)
+[![Join chat](https://img.shields.io/badge/Mattermost-join_chat-brightgreen.svg)](https://chat.chatterbox.ai/community/channels/documentation)
+[![CLA Required](https://img.shields.io/badge/CLA%3F-Required-blue.svg)](https://chatterbox.ai/cla)
 ==========
 
-Head to https://mycroft.ai/documentation for all public facing documentation.
+Head to https://chatterbox.ai/documentation for all public facing documentation.
 The website is automatically updated from this repo.
 
 ## Table of Contents
@@ -23,13 +23,13 @@ The website is automatically updated from this repo.
 - [License](#license)
 
 ## Objective
-The purpose of this repo is to unify all the documentation for the public-facing components of Mycroft.AI, and to reduce the fragmentation of documentation.
+The purpose of this repo is to unify all the documentation for the public-facing components of Chatterbox.AI, and to reduce the fragmentation of documentation.
 
 It is intended that the Markdown in this repo will be consumed by transformation layers or integrations to present the documentation in a user-friendly way.
 
 ## Project lead and key contact
 
-@krisgesling - Kris Gesling [kris.gesling@mycroft.ai](mailto:kris.gesling@mycroft.ai)
+@krisgesling - Kris Gesling [kris.gesling@chatterbox.ai](mailto:kris.gesling@chatterbox.ai)
 
 ## Branches
 
@@ -39,10 +39,10 @@ At the time of writing, the Docs Repository has only a single branch, `master`. 
 
 ### Conventions
 
-The following conventions are observed in Mycroft documentation:
+The following conventions are observed in Chatterbox documentation:
 
 * All code is presented `like this`
-* All Mycroft-specific terms are **bolded**
+* All Chatterbox-specific terms are **bolded**
 * Information is presented in 'inverted pyramid format'. This means an overview is given first, then more detailed information, then more granular information.
 * Human-written documentation is done in Markdown, on GitHub
 * Documentation of code is done through Google DocStrings format https://google.github.io/styleguide/pyguide.html#Comments and this then passed to documentation generators.
@@ -70,15 +70,15 @@ To make documentation easier to read, voice interactions should be presented in 
 
 When a User Speaks, it is always presented in the style of a quote:
 
-> Hey Mycroft, what time is it?
+> Hey Chatterbox, what time is it?
 
-When Mycroft Speaks, it is always presented in quote marks in preformatted style:
+When Chatterbox Speaks, it is always presented in quote marks in preformatted style:
 
 `"The time is 12.30"`
 
 ### Tone of voice
 
-Mycroft documentation is written with the following tone of voice:
+Chatterbox documentation is written with the following tone of voice:
 
 * Knowledgeable but never arrogant
 * Helpful but encouraging of self-discovery
@@ -94,7 +94,7 @@ Use this handy checklist when creating or modifying documentation:
 - [ ] Does the documentation comply with tone of voice?
 
 ## Contributing
-[See the Contributing Guide for Mycroft Documentation](CONTRIBUTING.md)
+[See the Contributing Guide for Chatterbox Documentation](CONTRIBUTING.md)
 
 ## License
-[See the License for Mycroft Documenation](LICENSE.md)
+[See the License for Chatterbox Documenation](LICENSE.md)

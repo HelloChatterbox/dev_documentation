@@ -8,13 +8,13 @@ description: >-
 
 ## Intents
 
-The initial interactions with your Skill will start with a general utterance from the User. Your Skill must register intents that it can handle and Mycroft will then determine which Skill can respond to the Users request.
+The initial interactions with your Skill will start with a general utterance from the User. Your Skill must register intents that it can handle and Chatterbox will then determine which Skill can respond to the Users request.
 
 {% page-ref page="intents/" %}
 
 ## Statements
 
-Mycroft can speak any information that you need to communicate to the User.
+Chatterbox can speak any information that you need to communicate to the User.
 
 {% page-ref page="statements.md" %}
 
@@ -26,7 +26,7 @@ If you need to prompt the User for information, you can use a range of methods t
 
 ## Parsing Utterances
 
-A common process within a Skill is to parse the contents of an utterance. Mycroft provides a range of easy to use methods for this task.
+A common process within a Skill is to parse the contents of an utterance. Chatterbox provides a range of easy to use methods for this task.
 
 {% page-ref page="parsing.md" %}
 

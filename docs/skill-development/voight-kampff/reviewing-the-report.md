@@ -25,27 +25,27 @@ Let's now go take a look at that failing test.
 If a scenario fails, the failing `Then` statement will be highlighted in red, and a detailed description of the failure is provided. By default, the test runner will automatically retry the failing scenario a second time before moving on.
 
 ```bash
-2020-03-20 19:11:14,392 | Voight Kampff | INFO | Starting tests for mycroft-hello-world
-Feature: mycroft-hello-world # features/hello-world.feature:1
+2020-03-20 19:11:14,392 | Voight Kampff | INFO | Starting tests for chatterbox-hello-world
+Feature: chatterbox-hello-world # features/hello-world.feature:1
 
   Scenario: Hello world                                            # features/hello-world.feature:3
     Given an english speaking user                                 # features/steps/utterance_responses.py:108 0.001s
     When the user says "Hello world"                               # features/steps/utterance_responses.py:113 0.001s
-    Then "mycroft-hello-world" should reply with "I'm doing very well" # features/steps/utterance_responses.py:137 10.019s
-      Assertion Failed: Mycroft responded with: mycroft-hello-world by mycroftai
-      Mycroft: hello.world.dialog(HelloWorldSkill)
+    Then "chatterbox-hello-world" should reply with "I'm doing very well" # features/steps/utterance_responses.py:137 10.019s
+      Assertion Failed: Chatterbox responded with: chatterbox-hello-world by chatterboxai
+      Chatterbox: hello.world.dialog(HelloWorldSkill)
       "Hi to you too"
 
       Captured stdout:
       Matching with the dialog file: how.are.you.dialog
 
       Captured logging:
-      INFO:msm.mycroft_skills_manager:Best match (1.0): mycroft-hello-world by mycroftai
+      INFO:msm.chatterbox_skills_manager:Best match (1.0): chatterbox-hello-world by chatterboxai
 ```
 
-The example output above shows a test that has failed. The line containing the `Then` statement would be highlighted in red, and it has provided a description of the error. In this case Mycroft responded with "Hi to you too" which is in the `hello.world.dialog` file in the `mycroft-hello-world` Skill. It then indicates that the response string provided in the test "I'm doing very well" was actually found in the `how.are.you.dialog` file.
+The example output above shows a test that has failed. The line containing the `Then` statement would be highlighted in red, and it has provided a description of the error. In this case Chatterbox responded with "Hi to you too" which is in the `hello.world.dialog` file in the `chatterbox-hello-world` Skill. It then indicates that the response string provided in the test "I'm doing very well" was actually found in the `how.are.you.dialog` file.
 
-Looks like we have an error in our test. Mycroft should respond to "Hello World" with "Hi to you too" or another phrase from `hello.world.dialog`.
+Looks like we have an error in our test. Chatterbox should respond to "Hello World" with "Hi to you too" or another phrase from `hello.world.dialog`.
 
 ## Allure Reporting Framework
 
@@ -53,7 +53,7 @@ The test results are also written to JSON files that can be used with [Allure](h
 
 ## Help
 
-For further assistance with Skill testing, please post your question on the [Community Forums](https://community.mycroft.ai/) or in the [Skills channel on Mycroft Chat](https://chat.mycroft.ai/community/channels/skills).
+For further assistance with Skill testing, please post your question on the [Community Forums](https://community.chatterbox.ai/) or in the [Skills channel on Chatterbox Chat](https://chat.chatterbox.ai/community/channels/skills).
 
-See our [tips for how to ask the best questions](../../using-mycroft-ai/troubleshooting/getting-more-support.md). This helps you get a more complete response faster.
+See our [tips for how to ask the best questions](../../using-chatterbox-ai/troubleshooting/getting-more-support.md). This helps you get a more complete response faster.
 

@@ -1,12 +1,12 @@
 ---
 description: >-
-  Mycroft Skills Manager (msm) is a command line tool used to add, manage and
-  remove Skills on any Mycroft installation.
+  Chatterbox Skills Manager (msm) is a command line tool used to add, manage and
+  remove Skills on any Chatterbox installation.
 ---
 
-# Mycroft Skills Manager
+# Chatterbox Skills Manager
 
-Mycroft Skills Manager \(MSM\) is a command line tool used to add, manage and remove Skills on any Mycroft installation. It can install any Skill listed on the [Mycroft Skills Repository](https://github.com/MycroftAI/mycroft-skills) or from any Github repository. It is a handy tool for Developers and those who may frequently reconfigure, install and uninstall Skills.
+Chatterbox Skills Manager \(MSM\) is a command line tool used to add, manage and remove Skills on any Chatterbox installation. It can install any Skill listed on the [Chatterbox Skills Repository](https://github.com/ChatterboxAI/chatterbox-skills) or from any Github repository. It is a handy tool for Developers and those who may frequently reconfigure, install and uninstall Skills.
 
 ## Information
 
@@ -15,7 +15,7 @@ Mycroft Skills Manager \(MSM\) is a command line tool used to add, manage and re
 To list all Skills available in the Marketplace run:
 
 ```text
-mycroft-msm list
+chatterbox-msm list
 ```
 
 ### Search for a Skill
@@ -23,7 +23,7 @@ mycroft-msm list
 To search the available Skills run:
 
 ```text
-mycroft-msm search <name>
+chatterbox-msm search <name>
 ```
 
 ### Show information
@@ -31,17 +31,17 @@ mycroft-msm search <name>
 To show all available information on a Skill you can use the name or repository url:
 
 ```text
-mycroft-msm info <name/url>
+chatterbox-msm info <name/url>
 ```
 
 ## Install
 
 ### From the Marketplace
 
-To install a Skill from the Mycroft Marketplace you can provide a rough title and MSM will return the most likely match.
+To install a Skill from the Chatterbox Marketplace you can provide a rough title and MSM will return the most likely match.
 
 ```text
-mycroft-msm install cocktail
+chatterbox-msm install cocktail
 ```
 
 ### From a Specific Author
@@ -51,7 +51,7 @@ If you know the author of the Skill, particularly where multiple Skills with sim
 If I wanted a Dice Skill, but only if it was authored by Forslund, I would run:
 
 ```text
-mycroft-msm install dice forslund
+chatterbox-msm install dice forslund
 ```
 
 Such a Skill doesn't exist so MSM returns a list of alternative options from the same author:
@@ -59,19 +59,19 @@ Such a Skill doesn't exist so MSM returns a list of alternative options from the
 ```text
 INFO - building SkillEntry objects for all skills
 INFO - Best match (0.34): cocktails by forslund
-MultipleSkillMatches: cocktails, youtube-music-skill.forslund, mycroft-spotify, game-zork, fallback-aiml
+MultipleSkillMatches: cocktails, youtube-music-skill.forslund, chatterbox-spotify, game-zork, fallback-aiml
 ```
 
 ### From a Github repository
 
 {% hint style="warning" %}
-Installing Skills from outside the Mycroft Marketplace is done at your own risk. To be included in the Marketplace, all Skills are reviewed to ensure they contain no malicious or otherwise harmful code. We strongly recommend reviewing any code you are loading onto your device.
+Installing Skills from outside the Chatterbox Marketplace is done at your own risk. To be included in the Marketplace, all Skills are reviewed to ensure they contain no malicious or otherwise harmful code. We strongly recommend reviewing any code you are loading onto your device.
 {% endhint %}
 
-To install a Skill that is not included in the Mycroft Marketplace use the url of the repository.
+To install a Skill that is not included in the Chatterbox Marketplace use the url of the repository.
 
 ```text
-mycroft-msm install https://github.com/krisgesling/tea-skill
+chatterbox-msm install https://github.com/krisgesling/tea-skill
 ```
 
 ## Updating
@@ -81,17 +81,17 @@ mycroft-msm install https://github.com/krisgesling/tea-skill
 To update all Skills installed on a device run:
 
 ```text
-mycroft-msm update
+chatterbox-msm update
 ```
 
-Note that if Mycroft detects that any file in a Skill has been modified, it will not update that Skill. This is to prevent loss of any work you are doing in that directory. See [MSM Troubleshooting &gt; Uncommitted Changes](msm-troubleshooting.md#uncommitted-changes) for tips to resolve this.
+Note that if Chatterbox detects that any file in a Skill has been modified, it will not update that Skill. This is to prevent loss of any work you are doing in that directory. See [MSM Troubleshooting &gt; Uncommitted Changes](msm-troubleshooting.md#uncommitted-changes) for tips to resolve this.
 
 ### Install and update defaults
 
 To install all default Skills for the device, as well as update all Skills, run:
 
 ```text
-mycroft-msm default
+chatterbox-msm default
 ```
 
 ## Removal
@@ -99,7 +99,7 @@ mycroft-msm default
 To uninstall or remove any Skill from the device run:
 
 ```text
-mycroft-msm remove <name>
+chatterbox-msm remove <name>
 ```
 
 Note that default Skills will be reinstalled by the system unless they are explicitly blacklisted. See ["How do I disable a Skill?"](../faq.md#how-do-i-disable-a-skill) for more info.
@@ -109,7 +109,7 @@ Note that default Skills will be reinstalled by the system unless they are expli
 The `remove` command also has an optional `author` parameter that can be used to specify which Skill you intend to be uninstalled.
 
 ```text
-mycroft-msm remove <name> <author>
+chatterbox-msm remove <name> <author>
 ```
 
 ## Show Help Information
@@ -119,12 +119,12 @@ To show help information describing how to use MSM's different commands, use the
 For a complete overview run:
 
 ```text
-mycroft-msm -h
+chatterbox-msm -h
 ```
 
 Or for command specific information include the command.
 
 ```text
-mycroft-msm install -h
+chatterbox-msm install -h
 ```
 

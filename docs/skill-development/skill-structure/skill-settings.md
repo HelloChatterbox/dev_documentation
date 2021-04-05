@@ -20,7 +20,7 @@ To define our Skills settings we use a `settingsmeta.json` or `settingsmeta.yaml
 
 ### Example settings file
 
-To see it in action, lets look at a simple example from the [Mycroft Date-Time Skill](https://github.com/MycroftAI/skill-date-time). First using the JSON syntax as a `settingsmeta.json` file:
+To see it in action, lets look at a simple example from the [Chatterbox Date-Time Skill](https://github.com/ChatterboxAI/skill-date-time). First using the JSON syntax as a `settingsmeta.json` file:
 
 ```javascript
 {
@@ -55,7 +55,7 @@ skillMetadata:
             value: "true"
 ```
 
-Notice that the value of `false` is surrounded by "quotation marks". This is because Mycroft expects a string of `"true"` or `"false"` rather than a Boolean.
+Notice that the value of `false` is surrounded by "quotation marks". This is because Chatterbox expects a string of `"true"` or `"false"` rather than a Boolean.
 
 Both of these files would result in the same settings block.
 
@@ -107,13 +107,13 @@ Examples for each type of field are provided in JSON and YAML at the end of this
 
 ## Using settings in your Skill
 
-Once settings have been defined using a `settingsmeta` file, they will be presented to the user on their personal [Skill Settings page](https://home.mycroft.ai/skills).
+Once settings have been defined using a `settingsmeta` file, they will be presented to the user on their personal [Skill Settings page](https://home.chatterbox.ai/skills).
 
-When settings are fetched from the Mycroft server, they are saved into a `settings.json` file. This file is automatically created when a Skill is loaded even if the Skill does not have any settings. Your Skill then accesses the settings from this file. Nowadays the file is located in the Skill's XDG\_CONFIG\_DIR \(usually `~/config/mycroft/skills/<skillname>`\), however if a `settings.json` file already exists in the Skill's root directory \(the deprecated location\) that location is used for compatibility.
+When settings are fetched from the Chatterbox server, they are saved into a `settings.json` file. This file is automatically created when a Skill is loaded even if the Skill does not have any settings. Your Skill then accesses the settings from this file. Nowadays the file is located in the Skill's XDG\_CONFIG\_DIR \(usually `~/config/chatterbox/skills/<skillname>`\), however if a `settings.json` file already exists in the Skill's root directory \(the deprecated location\) that location is used for compatibility.
 
 ### Reading settings
 
-Skill settings are available on the MycroftSkill class and inherit from a Python Dict. This means that you can use it just like you would any other Python dictionary.
+Skill settings are available on the ChatterboxSkill class and inherit from a Python Dict. This means that you can use it just like you would any other Python dictionary.
 
 To access the `show_time` variable from our example above we would use the `Dict.get` method:
 
@@ -147,7 +147,7 @@ It is also important to note that the `settings` dictionary will not be availabl
 
 ### Handling settings changes
 
-Each Mycroft device will check for updates to a users settings regularly, and write these to the Skills `settings.json`. To perform some action when settings are updated, you can register a callback function in your Skill.
+Each Chatterbox device will check for updates to a users settings regularly, and write these to the Skills `settings.json`. To perform some action when settings are updated, you can register a callback function in your Skill.
 
 ```python
 def initialize(self):

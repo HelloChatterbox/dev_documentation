@@ -11,7 +11,7 @@ description: >-
 
 The Common Query Framework handles the common use case of "general information" or question answering. Many Skills may implement handlers for "what is X" or "when did Y", the Common Query Framework allows all these Skills be queried and a single "best" answer to be selected. This is similar to the Common Play Framework that handles the common use of "playing" music or other media.
 
-The Common Query Skill System is led by the [Query Fallback Skill](https://github.com/MycroftAI/skill-query). This Skill handles queries matching a question pattern such as "What is the height of the Eiffle Tower" and "When is lunch". A matched question will be sent to all Skills based upon the `CommonQuerySkill` base class. The Skills will return wether they can answer the query along with an answer when applicable. The "best" match will be selected and spoken to the user.
+The Common Query Skill System is led by the [Query Fallback Skill](https://github.com/ChatterboxAI/skill-query). This Skill handles queries matching a question pattern such as "What is the height of the Eiffle Tower" and "When is lunch". A matched question will be sent to all Skills based upon the `CommonQuerySkill` base class. The Skills will return wether they can answer the query along with an answer when applicable. The "best" match will be selected and spoken to the user.
 
 ## CommonQuerySkill
 
@@ -20,7 +20,7 @@ A Skill interfacing with the Common Query Framework inherits from the the `Commo
 The general structure is:
 
 ```python
-from mycroft.skills.common_query_skill import CommonQuerySkill, CQSMatchLevel
+from chatterbox.skills.common_query_skill import CommonQuerySkill, CQSMatchLevel
 
 class MyCommonQuerySkill(CommonQuerySkill):
     def CQS_match_query_phrase(self, utt):
@@ -51,7 +51,7 @@ CQSMatchLevel is an Enum with the possible values
 Let's make a simple Skill that tells us the age of the various Monty Python members. A quick draft looks like this. \(You can find the complete code [here](https://github.com/forslund/common-query-tutorial)\)
 
 ```python
-from mycroft.skills.common_query_skill import CommonQuerySkill, CQSMatchLevel
+from chatterbox.skills.common_query_skill import CommonQuerySkill, CQSMatchLevel
 
 
 

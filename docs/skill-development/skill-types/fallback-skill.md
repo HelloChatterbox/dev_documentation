@@ -15,7 +15,7 @@ The Fallback **Skills** all have a priority and will be checked in order from lo
 Import the `FallbackSkill` base class:
 
 ```python
-from mycroft import FallbackSkill
+from chatterbox import FallbackSkill
 ```
 
 Create a derived class:

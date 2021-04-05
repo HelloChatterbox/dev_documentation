@@ -8,8 +8,8 @@ description: Template for the Code Review component of the Skills Acceptance Pro
 ## Meta
 
 * Platform:  
-* Mycroft-core version:  
-* Who: [@your-github-handle](https://github.com/your-github-handle) / @your-mycroft-chat-handle  
+* Chatterbox-core version:  
+* Who: [@your-github-handle](https://github.com/your-github-handle) / @your-chatterbox-chat-handle  
 * Datestamp: run `date +%Y-%m-%d_%H:%M:%S_%Z`  
 * Language and dialect of tester:
 

@@ -3,23 +3,23 @@ description: >-
 
 ---
 
-# Mycroft for Plasma
+# Chatterbox for Plasma
 
-This is a general installation and user guide for Plasma Mycroft on the [KDE Plasma Desktop platform](https://www.kde.org/plasma-desktop).
+This is a general installation and user guide for Plasma Chatterbox on the [KDE Plasma Desktop platform](https://www.kde.org/plasma-desktop).
 
 ## Getting started
 
 ### Distribution packages
 
-Check your Linux distribution for `mycroft-core` and `plasma-mycroft` packages.
+Check your Linux distribution for `chatterbox-core` and `plasma-chatterbox` packages.
 
 ### KDE Neon git unstable
 
-_NOTE: KDE Neon only provides `plasma-mycroft` packages for the [Git Unstable Edition](https://neon.kde.org/download). This installation method requires that `mycroft-core` be installed in your home folder following the [guide here](https://mycroft.ai/documentation/linux/)_.
+_NOTE: KDE Neon only provides `plasma-chatterbox` packages for the [Git Unstable Edition](https://neon.kde.org/download). This installation method requires that `chatterbox-core` be installed in your home folder following the [guide here](https://chatterbox.ai/documentation/linux/)_.
 
-``` sudo apt install plasma-mycroft ```
+``` sudo apt install plasma-chatterbox ```
 
-## Mycroft for Plasma installer
+## Chatterbox for Plasma installer
 
 |Supported Distributions|
 |---|
@@ -28,55 +28,55 @@ _NOTE: KDE Neon only provides `plasma-mycroft` packages for the [Git Unstable Ed
 |Kubuntu 17.10, 18.04|
 |Fedora 27, 28|
 
-Download The Latest Installer AppImage From: https://github.com/AIIX/mycroft-installer/releases
+Download The Latest Installer AppImage From: https://github.com/AIIX/chatterbox-installer/releases
 
-_NOTE: This installer also provides support for installing `mycroft-core` and `plasma-mycroft` on Arm64 and ArmHF architecture._
+_NOTE: This installer also provides support for installing `chatterbox-core` and `plasma-chatterbox` on Arm64 and ArmHF architecture._
 
-### Mycroft for Plasma installer scripts
+### Chatterbox for Plasma installer scripts
 
-Installation scripts are available at https://github.com/MycroftAI/installers
+Installation scripts are available at https://github.com/ChatterboxAI/installers
 
-### Mycroft for Plasma manual installation
+### Chatterbox for Plasma manual installation
 
-_NOTE: This installation method requires `mycroft-core` to be installed in your home folder following the [guide available here](https://mycroft.ai/documentation/linux/).
+_NOTE: This installation method requires `chatterbox-core` to be installed in your home folder following the [guide available here](https://chatterbox.ai/documentation/linux/).
 
 ```
-git clone https://anongit.kde.org/plasma-mycroft.git
-cd plasma-mycroft
+git clone https://anongit.kde.org/plasma-chatterbox.git
+cd plasma-chatterbox
 mkdir build
 cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -DKDE_INSTALL_LIBDIR=lib -DKDE_INSTALL_USE_QT_SYS_PATHS=ON
 make
 sudo make install
-sudo chmod +x /usr/share/plasma/plasmoids/org.kde.plasma.mycroftplasmoid/contents/code/startservice.sh
-sudo chmod +x /usr/share/plasma/plasmoids/org.kde.plasma.mycroftplasmoid/contents/code/stopservice.sh
-sudo chmod +x /usr/share/plasma/plasmoids/org.kde.plasma.mycroftplasmoid/contents/code/pkgstartservice.sh
-sudo chmod +x /usr/share/plasma/plasmoids/org.kde.plasma.mycroftplasmoid/contents/code/pkgstopservice.sh
+sudo chmod +x /usr/share/plasma/plasmoids/org.kde.plasma.chatterboxplasmoid/contents/code/startservice.sh
+sudo chmod +x /usr/share/plasma/plasmoids/org.kde.plasma.chatterboxplasmoid/contents/code/stopservice.sh
+sudo chmod +x /usr/share/plasma/plasmoids/org.kde.plasma.chatterboxplasmoid/contents/code/pkgstartservice.sh
+sudo chmod +x /usr/share/plasma/plasmoids/org.kde.plasma.chatterboxplasmoid/contents/code/pkgstopservice.sh
 
 ```
 
-## The Mycroft for Plasma interface
+## The Chatterbox for Plasma interface
 
-![Plasma Mycroft Screenshot](https://mycroft.ai/wp-content/uploads/2018/06/plasmoid-gs1.png)
+![Plasma Chatterbox Screenshot](https://chatterbox.ai/wp-content/uploads/2018/06/plasmoid-gs1.png)
 
-## Troubleshooting Mycroft for Plasma
+## Troubleshooting Chatterbox for Plasma
 
 ### Debugging connection errors
 
 Follow these steps to debug connection errors.
 
-* First, check that your `mycroft-core` location is correctly set in your Mycroft for Plasma settings. By default, Mycroft for Plasma searches for `mycroft-core` in your `$HOME` path - ie. `/home/$USER/mycroft-core`.
-* Next, check if `mycroft-core` is able to start manually using the `debug` console - `./start-mycroft.sh debug`
-* Next, check to see if your firewall is blocking incoming connections to the `mycroft-core` websocket address. By default, `mycroft-core` listens on port 8181.
-* Next, check the `mycroft-bus.log` file to see if there are any errors blocking your connection. [See here for more information on the location of log files on Linux](https://mycroft.ai/documentation/troubleshooting/#linux).
-* Next, check to see if the Mycroft for Plasma start and stop scripts have 'execute' filesystem permissions. They are located at:
+* First, check that your `chatterbox-core` location is correctly set in your Chatterbox for Plasma settings. By default, Chatterbox for Plasma searches for `chatterbox-core` in your `$HOME` path - ie. `/home/$USER/chatterbox-core`.
+* Next, check if `chatterbox-core` is able to start manually using the `debug` console - `./start-chatterbox.sh debug`
+* Next, check to see if your firewall is blocking incoming connections to the `chatterbox-core` websocket address. By default, `chatterbox-core` listens on port 8181.
+* Next, check the `chatterbox-bus.log` file to see if there are any errors blocking your connection. [See here for more information on the location of log files on Linux](https://chatterbox.ai/documentation/troubleshooting/#linux).
+* Next, check to see if the Chatterbox for Plasma start and stop scripts have 'execute' filesystem permissions. They are located at:
 
-* `/usr/share/plasma/plasmoids/org.kde.plasma.mycroftplasmoid/contents/code/startservice.sh` (start)
-* `/usr/share/plasma/plasmoids/org.kde.plasma.mycroftplasmoid/contents/code/stopservice.sh` (stop)
+* `/usr/share/plasma/plasmoids/org.kde.plasma.chatterboxplasmoid/contents/code/startservice.sh` (start)
+* `/usr/share/plasma/plasmoids/org.kde.plasma.chatterboxplasmoid/contents/code/stopservice.sh` (stop)
 
 ## The visual display
 
-The Mycroft for Plasma desktop `enclosure` provides Skill Authors with a visual display platform to showcase **Skill** results and data in the form of interactive visual cards that can be created by the Skill Authors using popular UI/UX technologies such as `html` and `QML`.
+The Chatterbox for Plasma desktop `enclosure` provides Skill Authors with a visual display platform to showcase **Skill** results and data in the form of interactive visual cards that can be created by the Skill Authors using popular UI/UX technologies such as `html` and `QML`.
 
 ### HTML-based visual Skill generation
 
@@ -85,7 +85,7 @@ The Mycroft for Plasma desktop `enclosure` provides Skill Authors with a visual 
 First, create a `html` folder inside your **Skill** folder. Next, we map the path to the folder.
 
 ```{.XML}
-class WikipediaSkill(MycroftSkill):
+class WikipediaSkill(ChatterboxSkill):
 def __init__(self):
 ....
 self.html_index = dirname(__file__) + '/html/' # Location where the html files will be generated
@@ -138,7 +138,7 @@ Next, we send the URL to the `enclosure` for handling via the `self_enclosure.ws
 
 ```
 {.XML}
-# Requires import: from mycroft.messagebus.message import Message
+# Requires import: from chatterbox.messagebus.message import Message
 def handle_intent(self, message):
 try:
 ....
@@ -170,7 +170,7 @@ First, create a `qml` folder inside your **Skill** folder and then map the path 
 ```
 {.XML}
 
-class WikipediaSkill(MycroftSkill):
+class WikipediaSkill(ChatterboxSkill):
 def __init__(self):
 ....
 self.qml_index = dirname(__file__) + '/qml/' # Location where the qml files will be generated
@@ -234,20 +234,20 @@ Next, send the QML file location to the `enclosure` for handling via the `self_e
 
 ```
 {.XML}
-#Requires import: from mycroft.messagebus.message import Message
+#Requires import: from chatterbox.messagebus.message import Message
 
 def handle_intent(self, message):
 try:
 ....
 self.enclosure.ws.emit(Message("visualObject", {'desktop': {'url': self.visualobject_index + title + 'Wikiresult.qml'}}))
-# This function emits the visual object and qml location to the loader functiion in the mycroft plasmoid. This function can be called before or after self.speak(summary) depending on where you like to position your qml visualobject
+# This function emits the visual object and qml location to the loader functiion in the chatterbox plasmoid. This function can be called before or after self.speak(summary) depending on where you like to position your qml visualobject
 self.speak(summary)
 ....
 ```
 
-## Mycroft for Plasma native visual Skill
+## Chatterbox for Plasma native visual Skill
 
-The Mycroft for Plasma `enclosure` also provides Skill Authors the ability to natively implement visual design for their **Skill** by providing a simple Object to the plasmoid.
+The Chatterbox for Plasma `enclosure` also provides Skill Authors the ability to natively implement visual design for their **Skill** by providing a simple Object to the plasmoid.
 
 First, create a custom visual object, and emit it to the plasmoid.
 
@@ -258,4 +258,4 @@ self.enclosure.ws.emit(Message("yourCustomObjectName", {'desktop': {'Your Custom
 ....
 ```
 
-Once added to your **Skill**, you can reach out to the Mycroft for Plasma maintainer to discuss the design and implementation of your **Skill**. The best way to do this is to join the [Desktop Channel on Mycroft Chat](https://chat.mycroft.ai/community/channels/desktop).
+Once added to your **Skill**, you can reach out to the Chatterbox for Plasma maintainer to discuss the design and implementation of your **Skill**. The best way to do this is to join the [Desktop Channel on Chatterbox Chat](https://chat.chatterbox.ai/community/channels/desktop).

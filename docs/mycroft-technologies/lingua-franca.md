@@ -1,7 +1,7 @@
 ---
 description: >-
   Lingua Franca is our multilingual language parsing and formatting library.
-  This is what allows Mycroft to both understand and respond with naturally
+  This is what allows Chatterbox to both understand and respond with naturally
   expressed dates, numbers and times.
 ---
 
@@ -11,7 +11,7 @@ Lingua Franca _\(noun\)_
 
 > a framework that is adopted as the common language between speakers with different native tongues
 
-[Lingua Franca Github repo](https://github.com/MycroftAI/lingua-franca#lingua-franca)
+[Lingua Franca Github repo](https://github.com/ChatterboxAI/lingua-franca#lingua-franca)
 
 ## Supported Languages
 

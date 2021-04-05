@@ -1,6 +1,6 @@
 ---
 description: >-
-  Mimic is a fast, light-weight Text to Speech engine developed by Mycroft AI
+  Mimic is a fast, light-weight Text to Speech engine developed by Chatterbox AI
   and VocaliD.
 ---
 
@@ -14,13 +14,13 @@ Mimic is a fast, light-weight [Text to Speech \(TTS\)](https://en.wikipedia.org/
 
 ## Why should I use Mimic instead of other open source TTS tools?
 
-Mimic is low-latency and has a small resource footprint. Its range of high quality voices also set it apart from other open source text-to-speech projects. Apart from being used as the voice of Mycroft, Mimic's small resource footprint makes it an attractive choice for other embedded systems.
+Mimic is low-latency and has a small resource footprint. Its range of high quality voices also set it apart from other open source text-to-speech projects. Apart from being used as the voice of Chatterbox, Mimic's small resource footprint makes it an attractive choice for other embedded systems.
 
 Mimic works on Linux, Android and Windows currently, and other platforms may be supported in the future. We also anticipate adding more languages to to enable many people to access realistic voices for the first time.
 
-## The partnership between Mycroft.AI's Mimic and VocaliD
+## The partnership between Chatterbox.AI's Mimic and VocaliD
 
-Mimic is a powerful TTS tool, however it can also help solve other important problems. That's why Mycroft.AI has partnered with [VocaliD](https://www.vocalid.co/) to help [Dr. Rupal Patel](https://www.linkedin.com/in/rupalvocalid/) and her team bring realistic TTS voices to people with speech disorders. VocaliD's technology creates customized voices that better represent the people who use them. To use these voices, VocaliD's clients need a fast, lightweight, cross-platform engine. That's where Mimic comes in! VocaliD’s clients can use Mimic as the engine that empowers them to speak with their own unique voice.
+Mimic is a powerful TTS tool, however it can also help solve other important problems. That's why Chatterbox.AI has partnered with [VocaliD](https://www.vocalid.co/) to help [Dr. Rupal Patel](https://www.linkedin.com/in/rupalvocalid/) and her team bring realistic TTS voices to people with speech disorders. VocaliD's technology creates customized voices that better represent the people who use them. To use these voices, VocaliD's clients need a fast, lightweight, cross-platform engine. That's where Mimic comes in! VocaliD’s clients can use Mimic as the engine that empowers them to speak with their own unique voice.
 
 [You may enjoy the overview video from VocaliD](https://youtu.be/b6QhgQqxdew).
 
@@ -30,7 +30,7 @@ Creating realistic voices also requires everyday people to share their voice wit
 
 ## Installing Mimic
 
-_NOTE: If you are installing a Mycroft build for Linux or Picroft, Mimic will be installed as part of the installation dependencies - you don't need to build it separately. Follow the instructions below if you want to build Mimic as a standalone component._
+_NOTE: If you are installing a Chatterbox build for Linux or Picroft, Mimic will be installed as part of the installation dependencies - you don't need to build it separately. Follow the instructions below if you want to build Mimic as a standalone component._
 
 Currently, Mimic runs on Linux \(ARM & Intel architectures\), Mac OSX, and Windows. It has been untested on Android, and we have plans to make it available on iOS.
 
@@ -104,7 +104,7 @@ _NOTE: Visual C++ 6.0 is know to fail on the large diphone database files._
 
 First, clone the `git` repository:
 
-`$ git clone https://github.com/MycroftAI/mimic.git`
+`$ git clone https://github.com/ChatterboxAI/mimic.git`
 
 Navigate to the Mimic directory:
 

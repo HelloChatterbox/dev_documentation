@@ -14,7 +14,7 @@ For Skills to enter our official Marketplace they need to be testable. We use a 
 Small portion of an example Feature file:
 
 ```text
-Feature: mycroft-moon-phase
+Feature: chatterbox-moon-phase
 
   Scenario Outline: The user asks for the current moon phase
     Given an english speaking user

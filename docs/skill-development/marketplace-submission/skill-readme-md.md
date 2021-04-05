@@ -6,9 +6,9 @@ description: >-
 
 # Skill README.md
 
-This file is used by the [Skills Marketplace](https://market.mycroft.ai/) to display the appropriate information including the [Card view](https://market.mycroft.ai/skills) and [Details view](https://market.mycroft.ai/skill/mycroft-weather).
+This file is used by the [Skills Marketplace](https://market.chatterbox.ai/) to display the appropriate information including the [Card view](https://market.chatterbox.ai/skills) and [Details view](https://market.chatterbox.ai/skill/chatterbox-weather).
 
-When creating your Skill, the [Mycroft Skills Kit](https://mycroft.ai/documentation/skills/msk/) will automatically generate your first README.md for you. Alternatively you can use the [Skills Meta Editor](https://mycroft.ai/skill-meta-editor) to generate a compatible README.md and ensure all the relevant information is included.
+When creating your Skill, the [Chatterbox Skills Kit](https://chatterbox.ai/documentation/skills/msk/) will automatically generate your first README.md for you. Alternatively you can use the [Skills Meta Editor](https://chatterbox.ai/skill-meta-editor) to generate a compatible README.md and ensure all the relevant information is included.
 
 ## Top tips for a great README
 
@@ -38,11 +38,11 @@ README.md files are written using the Markdown syntax, which is a way to style t
 * Select the README.md file  
 * Then the pencil icon to edit the file
 
-**2. Review your changes using the** [**Skills Meta Editor**](https://mycroft.ai/skill-meta-editor)
+**2. Review your changes using the** [**Skills Meta Editor**](https://chatterbox.ai/skill-meta-editor)
 
-* GitHub provides the preview tab for quickly checking your formatting. However, in the Mycroft Marketplace, there are several ways a Skill might be shown.  
-* Copy and paste the file contents into the README.md tab of the [Meta Editor](https://mycroft.ai/skill-meta-editor) to see a preview of the Card and Detail views.  
-* Please be aware that after importing text into this tool, it may be modified to fit the standard features of a Mycroft Skill's README.
+* GitHub provides the preview tab for quickly checking your formatting. However, in the Chatterbox Marketplace, there are several ways a Skill might be shown.  
+* Copy and paste the file contents into the README.md tab of the [Meta Editor](https://chatterbox.ai/skill-meta-editor) to see a preview of the Card and Detail views.  
+* Please be aware that after importing text into this tool, it may be modified to fit the standard features of a Chatterbox Skill's README.
 
 **3. Propose the changes**
 

@@ -4,11 +4,11 @@ description: Having trouble triggering the wake word?
 
 # Wake Word Troubleshooting
 
-> The microphone is working but Mycroft does not trigger when I say the Wake Word
+> The microphone is working but Chatterbox does not trigger when I say the Wake Word
 
-To verify that it is the Wake Word and not the microphone causing the issue, we will get Mycroft to ask us a question that we can respond to.
+To verify that it is the Wake Word and not the microphone causing the issue, we will get Chatterbox to ask us a question that we can respond to.
 
-In the Mycroft CLI type in an utterance like "set timer". Mycroft will then ask how long of a timer you would like, play the activation sound and turn on the microphone. Speaking now should result in your utterance being transcribed.
+In the Chatterbox CLI type in an utterance like "set timer". Chatterbox will then ask how long of a timer you would like, play the activation sound and turn on the microphone. Speaking now should result in your utterance being transcribed.
 
 If your response is successfully transcribed, it is most likely the Wake Word engine causing the problem.
 
@@ -30,7 +30,7 @@ The ARM architecture has a similar requirement called SIMD \(Single Instruction,
 
 If your device does not have AVX or SIMD support then our Precise wake word engine will not work. Technical users may be able to build an older version of TensorFlow \(1.13\) from source using the instructions provided on their website that does not have this requirement.
 
-You may still use Mycroft with the PocketSphinx wake word engine. See [Using a custom wake word](../customizations/wake-word.md) to see how to configure this.
+You may still use Chatterbox with the PocketSphinx wake word engine. See [Using a custom wake word](../customizations/wake-word.md) to see how to configure this.
 
 ### Check microphone input level
 
@@ -48,11 +48,11 @@ We have a range of Alsamixer tips in the [Audio Troubleshooting Guide](audio-tro
 
 Whilst we continue to improve our wake word models, it can still have trouble detecting the specified term from some voices.
 
-If you think this might be the case, you can play a video from our [Youtube channel](https://www.youtube.com/channel/UC1dlmB1lup9RwFQBSGnhA-g) that uses the phrase "Hey Mycroft". Playing this through speakers near the connected microphone should trigger Mycroft.
+If you think this might be the case, you can play a video from our [Youtube channel](https://www.youtube.com/channel/UC1dlmB1lup9RwFQBSGnhA-g) that uses the phrase "Hey Chatterbox". Playing this through speakers near the connected microphone should trigger Chatterbox.
 
 #### Resolution
 
-You may still be able to use Mycroft with the PocketSphinx wake word engine. See [Using a custom wake word](../customizations/wake-word.md) to see how to configure this.
+You may still be able to use Chatterbox with the PocketSphinx wake word engine. See [Using a custom wake word](../customizations/wake-word.md) to see how to configure this.
 
 ## PocketSphinx
 
@@ -62,5 +62,5 @@ PocketSphinx is an attractive option for a custom wake word as a new term. Whils
 
 ## Further Information and Support
 
-You're welcome to post questions and queries to the [Mycroft Forum](https://community.mycroft.ai/c/Help-with-Mycroft-related-issues) or join our [Wake Word channel on Mycroft Chat](https://chat.mycroft.ai/community/channels/wake-word) to connect with others in the Community.
+You're welcome to post questions and queries to the [Chatterbox Forum](https://community.chatterbox.ai/c/Help-with-Chatterbox-related-issues) or join our [Wake Word channel on Chatterbox Chat](https://chat.chatterbox.ai/community/channels/wake-word) to connect with others in the Community.
 

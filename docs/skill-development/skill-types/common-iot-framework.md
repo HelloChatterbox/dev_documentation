@@ -11,7 +11,7 @@ The Common IoT Framework is designed to provide a common language for controllin
 
 Phrases like "turn on", might relate to a range of Skills, devices, or services. The Common IoT Framework enables these to be handled in a uniform and seamless way.
 
-Unlike the Common Play and Common Query Frameworks, an IoT request may need to be handled by multiple Skills. Imagine a User has both LIFX and Hue lightbulbs, and installs Skills for both of these. Asking Mycroft to turn off all lights in the house, this request needs both Skills to turn off their lights for the intention of the phrase to be fulfilled.
+Unlike the Common Play and Common Query Frameworks, an IoT request may need to be handled by multiple Skills. Imagine a User has both LIFX and Hue lightbulbs, and installs Skills for both of these. Asking Chatterbox to turn off all lights in the house, this request needs both Skills to turn off their lights for the intention of the phrase to be fulfilled.
 
 ## IoT Objects
 
@@ -103,5 +103,5 @@ The strings returned by this function will be registered as SCENE values with th
 
 ## IoT Control Skill
 
-The [IoT Control Skill](https://github.com/MycroftAI/skill-iot-control) registers vocabulary and intents to capture IoT related requests. It then emits messages on the messagebus that will be picked up by all skills that extend this class. Each skill will have the opportunity to declare whether or not it can handle the given request. Skills that acknowledge that they are capable of handling the request will be considered candidates, and after a short timeout, a winner, or winners, will be chosen. With this setup, a user can have several IoT systems, and control them all without worry that skills will step on each other.
+The [IoT Control Skill](https://github.com/ChatterboxAI/skill-iot-control) registers vocabulary and intents to capture IoT related requests. It then emits messages on the messagebus that will be picked up by all skills that extend this class. Each skill will have the opportunity to declare whether or not it can handle the given request. Skills that acknowledge that they are capable of handling the request will be considered candidates, and after a short timeout, a winner, or winners, will be chosen. With this setup, a user can have several IoT systems, and control them all without worry that skills will step on each other.
 

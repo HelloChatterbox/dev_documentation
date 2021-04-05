@@ -8,7 +8,7 @@ description: >-
 
 We can do this using Scenario Outlines. Think of these as a template that we setup and can then feed data into to run multiple tests.
 
-Let's revisit the example from the [previous page](https://github.com/MycroftAI/documentation/tree/384c23ed6db63685b60d97645b47e1ff882cefba/docs/skill-development/introduction.md).
+Let's revisit the example from the [previous page](https://github.com/ChatterboxAI/documentation/tree/384c23ed6db63685b60d97645b47e1ff882cefba/docs/skill-development/introduction.md).
 
 ```yaml
 Feature: current-weather
@@ -25,7 +25,7 @@ Feature: current-weather
   Scenario Outline: current local weather
     Given an english speaking user
      When the user says "<current local weather>"
-     Then "mycroft-weather" should reply with "Right now, it's overcast clouds and 32 degrees."
+     Then "chatterbox-weather" should reply with "Right now, it's overcast clouds and 32 degrees."
 
    Examples: local weather questions  # Table heading
         | current local weather   |   # Column heading
@@ -61,5 +61,5 @@ Feature: Pokemon abilities
 In our new `Examples` block, you can see we have expanded this into a two-column table containing the names of some Pokemon and the abilities they have. Using this data we have done two things.
 
 1. With the Pokemon `Name`, we have used this in both the question and the response.
-2. The Abilities that are reported back are directly related to the Name from the same table row. If a user was to say "What abilities does Bulbasaur have", and Mycroft replied with "Bulbasaur has solar-power and blaze", then the Scenario would be considered a fail.
+2. The Abilities that are reported back are directly related to the Name from the same table row. If a user was to say "What abilities does Bulbasaur have", and Chatterbox replied with "Bulbasaur has solar-power and blaze", then the Scenario would be considered a fail.
 

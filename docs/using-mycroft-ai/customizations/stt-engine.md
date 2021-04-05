@@ -1,39 +1,39 @@
 ---
 description: >-
   Speech-To-Text (STT) is the process of converting audio of spoken words into
-  strings of text. Mycroft supports a range of Speech-To-Text engines.
+  strings of text. Chatterbox supports a range of Speech-To-Text engines.
 ---
 
 # Speech-To-Text
 
-Many users want to use a specific STT engine rather than the default. Like most of Mycroft's technology stack, this too can be customized.
+Many users want to use a specific STT engine rather than the default. Like most of Chatterbox's technology stack, this too can be customized.
 
 ## Default Engine
 
-For a voice assistant like Mycroft, speech recognition must be performed very quickly and with a high degree of accuracy. For this reason, Mycroft by default uses Google's STT engine.
+For a voice assistant like Chatterbox, speech recognition must be performed very quickly and with a high degree of accuracy. For this reason, Chatterbox by default uses Google's STT engine.
 
-In order to provide an additional layer of privacy for our users, we proxy all STT requests through Mycroft's servers. This prevents Google's service from profiling Mycroft users or connecting voice recordings to their identities. Only the voice recording is sent to Google, no other identifying information is included in the request. Therefore Google's STT service does not know if an individual person is making thousands of requests, or if thousands of people are making a small number of requests each.
+In order to provide an additional layer of privacy for our users, we proxy all STT requests through Chatterbox's servers. This prevents Google's service from profiling Chatterbox users or connecting voice recordings to their identities. Only the voice recording is sent to Google, no other identifying information is included in the request. Therefore Google's STT service does not know if an individual person is making thousands of requests, or if thousands of people are making a small number of requests each.
 
-By supporting Mozilla's DeepSpeech project we are aiming to provide a competitive open source alternative. The accuracy of DeepSpeech is not yet sufficient to provide a quality experience for Mycroft users. However we will be switching to DeepSpeech by default as soon as we have achieved an acceptable level of accuracy.
+By supporting Mozilla's DeepSpeech project we are aiming to provide a competitive open source alternative. The accuracy of DeepSpeech is not yet sufficient to provide a quality experience for Chatterbox users. However we will be switching to DeepSpeech by default as soon as we have achieved an acceptable level of accuracy.
 
-The following are some of the available STT options. Each provides details on how to get setup, and how to configure Mycroft.
+The following are some of the available STT options. Each provides details on how to get setup, and how to configure Chatterbox.
 
 ## Mozilla DeepSpeech
 
-Mycroft has been supporting Mozilla's efforts to build DeepSpeech, an open Speech-to-Text technology. It is a fully open source STT engine, based on Baidu’s Deep Speech architecture and implemented with Google’s TensorFlow framework. Being open source means that if you have the hardware, it can be run within your own network providing additional privacy and control for you and your family.
+Chatterbox has been supporting Mozilla's efforts to build DeepSpeech, an open Speech-to-Text technology. It is a fully open source STT engine, based on Baidu’s Deep Speech architecture and implemented with Google’s TensorFlow framework. Being open source means that if you have the hardware, it can be run within your own network providing additional privacy and control for you and your family.
 
 ### Server Setup
 
 You can test DeepSpeech using their pre-trained model by following the instructions on the [DeepSpeech Github repository](https://github.com/mozilla/DeepSpeech#project-deepspeech).
 
-To setup a DeepSpeech server that Mycroft can use, try the [deepspeech-server project on PyPI](https://pypi.org/project/deepspeech-server/). Once you have this up and running, we can configure Mycroft to use this server.
+To setup a DeepSpeech server that Chatterbox can use, try the [deepspeech-server project on PyPI](https://pypi.org/project/deepspeech-server/). Once you have this up and running, we can configure Chatterbox to use this server.
 
-### Mycroft Configuration
+### Chatterbox Configuration
 
-Using the [Configuration Manager](config-manager.md) we can edit the `mycroft.conf` file by running:
+Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
 
 ```bash
-mycroft-config edit user
+chatterbox-config edit user
 ```
 
 To our existing configuration values we will add the following:
@@ -49,7 +49,7 @@ To our existing configuration values we will add the following:
 
 ### Community Support
 
-If you are interested in the continued development of the DeepSpeech STT engine, please join our the [DeepSpeech channel on Mycroft Chat](https://chat.mycroft.ai/community/channels/deepspeech-stt).
+If you are interested in the continued development of the DeepSpeech STT engine, please join our the [DeepSpeech channel on Chatterbox Chat](https://chat.chatterbox.ai/community/channels/deepspeech-stt).
 
 ## Kaldi
 
@@ -63,12 +63,12 @@ First be sure to read the [system requirements in the Kaldi documentation](https
 
 The latest installation instructions can be found on the [Kaldi Github repository](https://github.com/kaldi-asr/kaldi#kaldi-speech-recognition-toolkit).
 
-### Mycroft Configuration
+### Chatterbox Configuration
 
-Using the [Configuration Manager](config-manager.md) we can edit the `mycroft.conf` file by running:
+Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
 
 ```bash
-mycroft-config edit user
+chatterbox-config edit user
 ```
 
 To our existing configuration values we will add the following:
@@ -92,12 +92,12 @@ The software is available in both 32 and 64-bit versions for Linux, Windows, and
 
 See [their website](https://www.govivace.com/products/automatic-speech-recognition-asr/) for more details.
 
-### Mycroft Configuration
+### Chatterbox Configuration
 
-Using the [Configuration Manager](config-manager.md) we can edit the `mycroft.conf` file by running:
+Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
 
 ```bash
-mycroft-config edit user
+chatterbox-config edit user
 ```
 
 To our existing configuration values we will add the following:
@@ -139,12 +139,12 @@ To obtain the required credential JSON data, you must create a Google API Consol
 
 Remember to activate the API in the [GCP Console](https://console.developers.google.com/apis/library/speech.googleapis.com?)
 
-### Mycroft Configuration
+### Chatterbox Configuration
 
-Using the [Configuration Manager](config-manager.md) we can edit the `mycroft.conf` file by running:
+Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
 
 ```bash
-mycroft-config edit user
+chatterbox-config edit user
 ```
 
 To our existing configuration values we will add the following:
@@ -180,18 +180,18 @@ A streaming STT interface for the Google Cloud Speech-To-Text API.
 
 A [Google Cloud account](https://cloud.google.com/) with active billing is required. Please carefully consider the [financial cost of using this service](https://cloud.google.com/speech-to-text/pricing).
 
-### Mycroft Configuration
+### Chatterbox Configuration
 
-Install `google-cloud-speech` in the Mycroft Virtual environment using:
+Install `google-cloud-speech` in the Chatterbox Virtual environment using:
 
 ```text
-mycroft-pip install google-cloud-speech
+chatterbox-pip install google-cloud-speech
 ```
 
-Then, using the [Configuration Manager](config-manager.md) we can edit the `mycroft.conf` file by running:
+Then, using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
 
 ```bash
-mycroft-config edit user
+chatterbox-config edit user
 ```
 
 To our existing configuration values we will add the following:
@@ -220,12 +220,12 @@ Create a [Houndify account](https://www.houndify.com/), then:
 * Enable the "Speech To Text Only" domain for your Client.
 * Get the `Client ID` and `Client Key` from your Client Information panel.
 
-### Mycroft Configuration
+### Chatterbox Configuration
 
-Using the [Configuration Manager](config-manager.md) we can edit the `mycroft.conf` file by running:
+Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
 
 ```bash
-mycroft-config edit user
+chatterbox-config edit user
 ```
 
 To our existing configuration values we will add the following:
@@ -254,12 +254,12 @@ Create an account at [IBM.com/cloud](https://www.ibm.com/cloud/watson-speech-to-
   * Select "Speech to Text" as the product
 * Retrieve the `API Key` and `URL` from the Services section of your dashboard
 
-### Mycroft Configuration
+### Chatterbox Configuration
 
-Using the [Configuration Manager](config-manager.md) we can edit the `mycroft.conf` file by running:
+Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
 
 ```bash
-mycroft-config edit user
+chatterbox-config edit user
 ```
 
 To our existing configuration values we will add the following:
@@ -284,12 +284,12 @@ STT provided by the Microsoft Azure Speech Services. Formerly known as Bing STT.
 
 Create a [Microsoft Azure account](https://azure.microsoft.com/en-us/services/cognitive-services/speech-services/) and get a server access token.
 
-### Mycroft Configuration
+### Chatterbox Configuration
 
-Using the [Configuration Manager](config-manager.md) we can edit the `mycroft.conf` file by running:
+Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
 
 ```bash
-mycroft-config edit user
+chatterbox-config edit user
 ```
 
 To our existing configuration values we will add the following:
@@ -313,12 +313,12 @@ A natural language platform owned by Facebook.
 
 Create an account at [Wit.ai](https://wit.ai/) then create a new app to get your server access token. See the [Wit.ai documentation](https://wit.ai/docs) for further details.
 
-### Mycroft Configuration
+### Chatterbox Configuration
 
-Using the [Configuration Manager](config-manager.md) we can edit the `mycroft.conf` file by running:
+Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
 
 ```bash
-mycroft-config edit user
+chatterbox-config edit user
 ```
 
 To our existing configuration values we will add the following:
@@ -344,17 +344,17 @@ Create a [Yandex Cloud account](https://cloud.yandex.com/services/speechkit), th
 
 * [Create a billing account](https://cloud.yandex.com/docs/billing/quickstart/#create_billing_account) - you can activate a free period in the console.
 * Create first "folder" in cloud.
-* [Create a service account](https://cloud.yandex.com/docs/iam/operations/sa/create) for your Mycroft instance with role editor.
+* [Create a service account](https://cloud.yandex.com/docs/iam/operations/sa/create) for your Chatterbox instance with role editor.
 * [Create an API key](https://cloud.yandex.com/docs/iam/operations/api-key/create) for your service account.
 
 See the [Yandex Identity and Access Management documentation](https://cloud.yandex.com/docs/iam/) for further details.
 
-### Mycroft Configuration
+### Chatterbox Configuration
 
-Using the [Configuration Manager](config-manager.md) we can edit the `mycroft.conf` file by running:
+Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
 
 ```bash
-mycroft-config edit user
+chatterbox-config edit user
 ```
 
 To our existing configuration values we will add the following:

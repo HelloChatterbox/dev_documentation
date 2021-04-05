@@ -1,6 +1,6 @@
 ---
 description: >-
-  The Mycroft GUI Framework has a number of common methods for displaying
+  The Chatterbox GUI Framework has a number of common methods for displaying
   standard simple content types.
 ---
 

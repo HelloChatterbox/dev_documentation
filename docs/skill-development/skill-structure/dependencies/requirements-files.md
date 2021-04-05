@@ -1,7 +1,7 @@
 ---
 description: >-
   A Skill's `requirements.txt` and `requirements.sh` files provide an
-  alternative method to define the dependencies of a Mycroft Skill.
+  alternative method to define the dependencies of a Chatterbox Skill.
 ---
 
 # Requirements files
@@ -29,8 +29,8 @@ It is strongly recommended to only use these operators when required. If submitt
 
 ### Examples of requirements.txt
 
-* [Weather Skill](https://github.com/MycroftAI/skill-weather/blob/19.08/requirements.txt)
-* [Wiki Skill](https://github.com/MycroftAI/skill-wiki/blob/19.08/requirements.txt)
+* [Weather Skill](https://github.com/ChatterboxAI/skill-weather/blob/19.08/requirements.txt)
+* [Wiki Skill](https://github.com/ChatterboxAI/skill-wiki/blob/19.08/requirements.txt)
 
 ## requirements.sh
 
@@ -38,7 +38,7 @@ The `requirements.sh` file may contain a shell script that is run during install
 
 Prior to the `manifest.yml` file, this was the only method available to install system packages. If you are only installing packages, using the [`manifest.yml`](manifest-yml.md) file instead is recommended.
 
-The contents of this file will be checked carefully if a Skill is submitted for inclusion in the [Skills Marketplace](https://market.mycroft.ai)
+The contents of this file will be checked carefully if a Skill is submitted for inclusion in the [Skills Marketplace](https://market.chatterbox.ai)
 
 ### Examples of requirements.sh
 

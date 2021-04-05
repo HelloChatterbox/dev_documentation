@@ -1,23 +1,23 @@
 ---
 description: >-
-  Text-To-Speech (TTS) is the process of synthesizing audio from text. Mycroft
+  Text-To-Speech (TTS) is the process of synthesizing audio from text. Chatterbox
   uses our own TTS engines by default, however we also support a range of third
   party services.
 ---
 
 # Text-To-Speech
 
-Mycroft has two open source TTS engines.
+Chatterbox has two open source TTS engines.
 
 Mimic 1 is a fast, light-weight engine based on [Carnegie Mellon University's FLITE software](http://cmuflite.org/). Whilst the original Mimic may sound more robotic, it is able to be synthesized on your device.
 
-{% page-ref page="../../mycroft-technologies/mimic-overview/" %}
+{% page-ref page="../../chatterbox-technologies/mimic-overview/" %}
 
-[Mimic 2](https://github.com/MycroftAI/mimic2#mimic2) is an implementation of Tacotron speech synthesis. It is a fork of [Keith Ito's project](https://github.com/keithito/tacotron) with additional tooling and code enhancements. Mimic 2 provides a much more natural sounding voice, however requires significant processing power to do so and is therefore cloud-based.
+[Mimic 2](https://github.com/ChatterboxAI/mimic2#mimic2) is an implementation of Tacotron speech synthesis. It is a fork of [Keith Ito's project](https://github.com/keithito/tacotron) with additional tooling and code enhancements. Mimic 2 provides a much more natural sounding voice, however requires significant processing power to do so and is therefore cloud-based.
 
 ## Default Engine
 
-The engine that will be used depends on the voice selected in your [Device Settings at Home.mycroft.ai](https://home.mycroft.ai/devices).
+The engine that will be used depends on the voice selected in your [Device Settings at Home.chatterbox.ai](https://home.chatterbox.ai/devices).
 
 Currently:
 
@@ -26,7 +26,7 @@ Currently:
 * American Male is Mimic 2
 * Google Voice uses the Google Translate TTS API.
 
-As Mimic 1 voices can be synthesized on device, the British Male voice will be used anytime the device cannot reach your preferred TTS service. This allows Mycroft to continue to speak even if it is not connected to a network.
+As Mimic 1 voices can be synthesized on device, the British Male voice will be used anytime the device cannot reach your preferred TTS service. This allows Chatterbox to continue to speak even if it is not connected to a network.
 
 ## eSpeak
 
@@ -34,7 +34,7 @@ A multi-lingual software speech synthesizer for Linux and Windows.
 
 [eSpeak](http://espeak.sourceforge.net/) uses a "formant synthesis" method. This allows many languages to be provided in a small size. The speech is clear, and can be used at high speeds, but is not as natural or smooth as larger synthesizers which are based on human speech recordings.
 
-### Mycroft Configuration
+### Chatterbox Configuration
 
 First, ensure that the espeak package is installed on your system.
 
@@ -42,10 +42,10 @@ First, ensure that the espeak package is installed on your system.
 sudo apt-get install espeak
 ```
 
-Then, using the [Configuration Manager](config-manager.md) we can edit the `mycroft.conf` file by running:
+Then, using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
 
 ```bash
-mycroft-config edit user
+chatterbox-config edit user
 ```
 
 To our existing configuration values we will add the following:
@@ -68,12 +68,12 @@ The multilingual open-source MARY text-to-speech platform. MaryTTS is a client-s
 
 The latest installation instructions can be found on the [MaryTTS Github repository](https://github.com/marytts/marytts).
 
-### Mycroft Configuration
+### Chatterbox Configuration
 
-Using the [Configuration Manager](config-manager.md) we can edit the `mycroft.conf` file by running:
+Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
 
 ```bash
-mycroft-config edit user
+chatterbox-config edit user
 ```
 
 To our existing configuration values we will add the following:
@@ -95,12 +95,12 @@ Produced by [Mivoq](https://www.mivoq.it/), it is based off Mary TTS.
 
 The latest installation instructions can be found on the [Mivoq FA TTS Github repository](https://github.com/mivoq/fatts).
 
-### Mycroft Configuration
+### Chatterbox Configuration
 
-Using the [Configuration Manager](config-manager.md) we can edit the `mycroft.conf` file by running:
+Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
 
 ```bash
-mycroft-config edit user
+chatterbox-config edit user
 ```
 
 To our existing configuration values we will add the following:
@@ -124,29 +124,29 @@ To our existing configuration values we will add the following:
 
 You will need to take note of your private "Access Key ID" and "Secret Access Key".
 
-### Mycroft Configuration
+### Chatterbox Configuration
 
 First, check the [list of available voices and languages](https://docs.aws.amazon.com/polly/latest/dg/voicelist.html). Note that Polly does not provide a separate `language` attribute like other TTS options. The language is determined by which voice is chosen.
 
-Then, install the `boto3` python module in the Mycroft virtual environment:
+Then, install the `boto3` python module in the Chatterbox virtual environment:
 
 ```bash
-mycroft-pip install boto3
+chatterbox-pip install boto3
 ```
 
 or
 
 ```bash
-cd ~/mycroft-core
+cd ~/chatterbox-core
 source .venv/bin/activate
 pip3 install boto3
 deactivate
 ```
 
-Finally, using the [Configuration Manager](config-manager.md) we can edit the `mycroft.conf` file by running:
+Finally, using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
 
 ```bash
-mycroft-config edit user
+chatterbox-config edit user
 ```
 
 To our existing configuration values we will add the following:
@@ -170,12 +170,12 @@ If the `voice`, `region`, and `engine` attributes are ommitted the defaults of `
 
 Google Translate's text-to-speech API.
 
-### Mycroft Configuration
+### Chatterbox Configuration
 
-Using the [Configuration Manager](config-manager.md) we can edit the `mycroft.conf` file by running:
+Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
 
 ```bash
-mycroft-config set tts.module "google"
+chatterbox-config set tts.module "google"
 ```
 
 ## IBM Watson
@@ -186,14 +186,14 @@ Create an account at [IBM.com/cloud](https://www.ibm.com/cloud/watson-text-to-sp
 
 You can find a list of available voices at [Languages and Voices](https://cloud.ibm.com/docs/text-to-speech?topic=text-to-speech-voices#neuralVoices). For example, "en-US\_MichaelV3Voice".
 
-IBM keeps a log of all requests in the lite plan unless you turn it off explicitly by setting "X-Watson-Learning-Opt-Out" to true. We have set Mycroft to Opt-Out by default, so if you want to share data with IBM then you must set this to false.
+IBM keeps a log of all requests in the lite plan unless you turn it off explicitly by setting "X-Watson-Learning-Opt-Out" to true. We have set Chatterbox to Opt-Out by default, so if you want to share data with IBM then you must set this to false.
 
-### Mycroft Configuration
+### Chatterbox Configuration
 
-Using the [Configuration Manager](config-manager.md) we can edit the `mycroft.conf` file by running:
+Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
 
 ```bash
-mycroft-config edit user
+chatterbox-config edit user
 ```
 
 To our existing configuration values we will add the following:
@@ -212,21 +212,21 @@ To our existing configuration values we will add the following:
 
 ## Microsoft Azure Cognitive Service
 
-_Note: This is a Community provided TTS plugin and is not controlled by Mycroft AI. Updates for this plugin may not have been reviewed by the Mycroft team. We strongly recommend reviewing any code you intend to install from outside Mycroft's official channels._
+_Note: This is a Community provided TTS plugin and is not controlled by Chatterbox AI. Updates for this plugin may not have been reviewed by the Chatterbox team. We strongly recommend reviewing any code you intend to install from outside Chatterbox's official channels._
 
-_Plugins are currently only available on the `dev` channel of Mycroft. They will be available on all systems in the next minor release. If you're not sure what that means,_ [_sign up to our newsletter_](https://mycroft.ai/newsletters/) _to get notified about the next release._
+_Plugins are currently only available on the `dev` channel of Chatterbox. They will be available on all systems in the next minor release. If you're not sure what that means,_ [_sign up to our newsletter_](https://chatterbox.ai/newsletters/) _to get notified about the next release._
 
 ### Installation
 
 ```bash
-mycroft-pip install mycroft-tts-plugin-azure
+chatterbox-pip install chatterbox-tts-plugin-azure
 ```
 
 ### Account Setup
 
 This TTS service requires a subscription to Microsoft Azure and the creation of a Speech resource \([https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/overview\#create-the-azure-resource](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/overview#create-the-azure-resource)\) The free plan is more than able to handle domestic usage \(5 million character per month, or 0.5 million with neural TTS voice\)
 
-### Mycroft Configuration
+### Chatterbox Configuration
 
 You can choose your voice here in the column "voice name" \([https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support\#text-to-speech](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support#text-to-speech)\) Neural voices are much better, but cost more.
 
@@ -247,12 +247,12 @@ You can choose your voice here in the column "voice name" \([https://docs.micros
 
 Create a [Microsoft Azure account](https://azure.microsoft.com/en-us/services/cognitive-services/speech-services/) and get a server access token.
 
-### Mycroft Configuration
+### Chatterbox Configuration
 
-Using the [Configuration Manager](config-manager.md) we can edit the `mycroft.conf` file by running:
+Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
 
 ```bash
-mycroft-config edit user
+chatterbox-config edit user
 ```
 
 To our existing configuration values we will add the following:
@@ -274,12 +274,12 @@ To our existing configuration values we will add the following:
 
 Instructions for setting up a Mozilla TTS server are [available on the projects wiki](https://github.com/mozilla/TTS/wiki/Build-instructions-for-server).
 
-### Mycroft Configuration
+### Chatterbox Configuration
 
-Using the [Configuration Manager](config-manager.md) we can edit the `mycroft.conf` file by running:
+Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
 
 ```bash
-mycroft-config edit user
+chatterbox-config edit user
 ```
 
 To our existing configuration values we will add the following:
@@ -293,26 +293,26 @@ To our existing configuration values we will add the following:
 }
 ```
 
-By default the `url` is set to the localhost: [`http://0.0.0.0:5002/api/tts`](http://0.0.0.0:5002/api/tts) So if you are running the server on the same machine as your Mycroft instance, only the `module` attribute needs to be set. This can also be done with a single command:
+By default the `url` is set to the localhost: [`http://0.0.0.0:5002/api/tts`](http://0.0.0.0:5002/api/tts) So if you are running the server on the same machine as your Chatterbox instance, only the `module` attribute needs to be set. This can also be done with a single command:
 
 ```bash
-mycroft-config set tts.module mozilla
+chatterbox-config set tts.module mozilla
 ```
 
 ## Responsive Voice
 
 {% hint style="warning" %}
-The API for this service may have significantly changed. As such this TTS option may not be available. Contributions to restore the service are warmly welcomed. Please direct any development questions to the [~Dev channel of Mycroft Chat](https://chat.mycroft.ai/community/channels/dev).
+The API for this service may have significantly changed. As such this TTS option may not be available. Contributions to restore the service are warmly welcomed. Please direct any development questions to the [~Dev channel of Chatterbox Chat](https://chat.chatterbox.ai/community/channels/dev).
 {% endhint %}
 
 Lifelike human digital voices from [ResponsiveVoice.org](https://responsivevoice.org).
 
-### Mycroft Configuration
+### Chatterbox Configuration
 
-Using the [Configuration Manager](config-manager.md) we can edit the `mycroft.conf` file by running:
+Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
 
 ```bash
-mycroft-config edit user
+chatterbox-config edit user
 ```
 
 To our existing configuration values we will add the following:
@@ -337,12 +337,12 @@ A common high-level interface to speech synthesis from [Free\(B\)Soft](https://f
 
 Install the `speech-dispatcher` package using your systems package manager. For example: `sudo apt-get install speech-dispatcher`
 
-### Mycroft Configuration
+### Chatterbox Configuration
 
-Using the [Configuration Manager](config-manager.md) we can edit the `mycroft.conf` file by running:
+Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
 
 ```bash
-mycroft-config set tts.module "spdsay"
+chatterbox-config set tts.module "spdsay"
 ```
 
 ## Yandex SpeechKit
@@ -357,15 +357,15 @@ Speech services from Yandex, one of the largest cloud platforms in Russia.
    You can activate a free trial period in the console.
 
 3. Create first "folder" in cloud.
-4. Create service account for you Mycroft instance with role editor: [https://cloud.yandex.com/docs/iam/operations/sa/create](https://cloud.yandex.com/docs/iam/operations/sa/create)
+4. Create service account for you Chatterbox instance with role editor: [https://cloud.yandex.com/docs/iam/operations/sa/create](https://cloud.yandex.com/docs/iam/operations/sa/create)
 5. Create API key for service account: [https://cloud.yandex.com/docs/iam/operations/api-key/create](https://cloud.yandex.com/docs/iam/operations/api-key/create)
 
-### Mycroft Configuration
+### Chatterbox Configuration
 
-Using the [Configuration Manager](config-manager.md) we can edit the `mycroft.conf` file by running:
+Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
 
 ```bash
-mycroft-config edit user
+chatterbox-config edit user
 ```
 
 To our existing configuration values we will add the following:

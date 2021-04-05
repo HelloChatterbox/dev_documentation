@@ -10,54 +10,54 @@ Here is an example of a First Draft Interaction of a Moon Phase Skill.
 
 |  | Example Interaction 1 |
 | :--- | :--- |
-| **User** | _Hey Mycroft, what’s the moon phase?_ |
-| **Mycroft** | _Today’s moon is Waning Crescent with 55% illumination_ |
+| **User** | _Hey Chatterbox, what’s the moon phase?_ |
+| **Chatterbox** | _Today’s moon is Waning Crescent with 55% illumination_ |
 
 | \_\_ | Example interaction 2 |
 | :--- | :--- |
-| **User** | _Hey Mycroft, when is the next full moon?_ |
-| **Mycroft** | _The next full moon is on May 7th._ |
+| **User** | _Hey Chatterbox, when is the next full moon?_ |
+| **Chatterbox** | _The next full moon is on May 7th._ |
 
 | \_\_ | Example Dialog 3 |
 | :--- | :--- |
-| **User** | _Hey Mycroft when is the next First quarter moon?_ |
-| **Mycroft** | _The next First quarter moon is April 30th_ |
+| **User** | _Hey Chatterbox when is the next First quarter moon?_ |
+| **Chatterbox** | _The next First quarter moon is April 30th_ |
 
 | \_\_ | Example Dialog 4 |
 | :--- | :--- |
 | **User** | _What phase of the moon is May 2nd?_ |
-| **Mycroft** | _The moon will be Waxing Gibbous with 68% illumination on May 2nd_ |
+| **Chatterbox** | _The moon will be Waxing Gibbous with 68% illumination on May 2nd_ |
 
 | \_\_ | Example Dialog 5 |
 | :--- | :--- |
-| **User** | _Hey Mycroft, what’s the moon phase 5 days from today?_ |
-| **Mycroft** | _The moon will be Waning Crescent with 5% illumination on May 20th_ |
+| **User** | _Hey Chatterbox, what’s the moon phase 5 days from today?_ |
+| **Chatterbox** | _The moon will be Waning Crescent with 5% illumination on May 20th_ |
 
 | \_\_ | Example Dialog 6 |
 | :--- | :--- |
-| **User** | _Hey Mycroft, can you tell me the moon phase for a certain day?_ |
-| **Mycroft** | _Yes, what day would you like to know the moon phase?_ |
+| **User** | _Hey Chatterbox, can you tell me the moon phase for a certain day?_ |
+| **Chatterbox** | _Yes, what day would you like to know the moon phase?_ |
 | **User** | _May 15th_ |
-| **Mycroft** | _On May 15th the moon will be waning crescent and 45% illuminated_ |
+| **Chatterbox** | _On May 15th the moon will be waning crescent and 45% illuminated_ |
 
 | \_\_ | Example Dialog 7 |
 | :--- | :--- |
-| **User** | _Hey Mycroft, what are the phases of the moon?_ |
-| **Mycroft** | _A lunar cycle lasts 29.53 days and consists of four principal phases, the new moon, first quarter, full moon and third quarter. Would you like to know more?_ |
+| **User** | _Hey Chatterbox, what are the phases of the moon?_ |
+| **Chatterbox** | _A lunar cycle lasts 29.53 days and consists of four principal phases, the new moon, first quarter, full moon and third quarter. Would you like to know more?_ |
 | **User** | _Yes_ |
-| **Mycroft** | _The apparent shape of the moon between New Moon and First Quarter is known as Waxing Crescent, the apparent shape between First Quarter and Full Moon is known as Waxing Gibbous. The moon is half illuminated in both First Quarter and Third Quarter, the use of the word quarter indicates the period within the cycle and not the illumination._ |
+| **Chatterbox** | _The apparent shape of the moon between New Moon and First Quarter is known as Waxing Crescent, the apparent shape between First Quarter and Full Moon is known as Waxing Gibbous. The moon is half illuminated in both First Quarter and Third Quarter, the use of the word quarter indicates the period within the cycle and not the illumination._ |
 
 |  | Example Dialog 8 |
 | :--- | :--- |
 | **User** | _What's the moon phase on the next go around?_ |
-| **Mycroft** | _The next quarterly moon phase is the last quarter moon on May 14th_ |
+| **Chatterbox** | _The next quarterly moon phase is the last quarter moon on May 14th_ |
 
 |  | Example Dialog 9 |
 | :--- | :--- |
 | **User** | _How many moon phases are there left?_ |
-| **Mycroft** | _I’m not sure I understood you, would you like to know when the next moon phase cycle begins?_ |
+| **Chatterbox** | _I’m not sure I understood you, would you like to know when the next moon phase cycle begins?_ |
 | **User** | _Yes_ |
-| **Mycroft** | _The next moon phase begins with the new moon on May 22nd_ |
+| **Chatterbox** | _The next moon phase begins with the new moon on May 22nd_ |
 
 ## Organized Interaction Scripts
 
@@ -65,51 +65,51 @@ The next step in the process is organizing the first pass of dialogs into groups
 
 | **Scenario** | **When a user asks for the current Moon Phase** |
 | :--- | :--- |
-| **User** | _Hey Mycroft, what’s the moon phase?_ |
-| **Mycroft** | _Today’s moon is Waning Crescent with 55% illumination_ |
+| **User** | _Hey Chatterbox, what’s the moon phase?_ |
+| **Chatterbox** | _Today’s moon is Waning Crescent with 55% illumination_ |
 
 | **Scenario** | **When a user asks for the next moon phase** |
 | :--- | :--- |
-| **User** | _Hey Mycroft, whe is the next full moon?_ |
-| **Mycroft** | _The next full moon is on May 7th._ |
+| **User** | _Hey Chatterbox, whe is the next full moon?_ |
+| **Chatterbox** | _The next full moon is on May 7th._ |
 | \_\_ |  |
-| **User** | _Hey Mycroft, when is the next First Quarter Moon?_ |
-| **Mycroft** | _The next First Quarter Moon is April 30th._ |
+| **User** | _Hey Chatterbox, when is the next First Quarter Moon?_ |
+| **Chatterbox** | _The next First Quarter Moon is April 30th._ |
 
 | **Scenario** | **When a user asks for the next moon phase** |
 | :--- | :--- |
 | **User** | _what is the next principal moon phase_ |
-| **Mycroft** | _The next principal moon phase is the full moon, on May 7th_ |
+| **Chatterbox** | _The next principal moon phase is the full moon, on May 7th_ |
 
 | **Scenario** | **When the user asks for the Moon Phase on a date** |
 | :--- | :--- |
 | **User** | _What phase of the moon is May 2nd?_ |
-| **Mycroft** | _The moon will be Waxing Gibbous with 68% illumination on May 2nd_ |
+| **Chatterbox** | _The moon will be Waxing Gibbous with 68% illumination on May 2nd_ |
 |  |  |
-| **User** | _Hey Mycroft, what’s the moon phase 5 days from today?_ |
-| **Mycroft** | _The moon will be Waning Crescent with 5% illumination on May 20th_ |
+| **User** | _Hey Chatterbox, what’s the moon phase 5 days from today?_ |
+| **Chatterbox** | _The moon will be Waning Crescent with 5% illumination on May 20th_ |
 
 | **Scenario** | **When the user asks for more information on Moon Phases** |
 | :--- | :--- |
-| **User** | _Hey Mycroft, what are the phases of the moon?_ |
-| **Mycroft** | _A lunar cycle lasts 29.53 days and consists of four principal phases, the new moon, first quarter, full moon and third quarter. Would you like to know more?_ |
+| **User** | _Hey Chatterbox, what are the phases of the moon?_ |
+| **Chatterbox** | _A lunar cycle lasts 29.53 days and consists of four principal phases, the new moon, first quarter, full moon and third quarter. Would you like to know more?_ |
 | **User** | _Yes_ |
-| **Mycroft** | _The apparent shape of the moon between New Moon and First Quarter is known as Waxing Crescent, the apparent shape between First Quarter and Full Moon is known as Waxing Gibbous. The First Quarter is half illuminated and is growing in illumination toward a Full Moon. The Last Quarter is half illuminated and shrinking in illumination toward a New Moon. A New Moon is not illuminated and not therefore not visible to the naked eye._ |
+| **Chatterbox** | _The apparent shape of the moon between New Moon and First Quarter is known as Waxing Crescent, the apparent shape between First Quarter and Full Moon is known as Waxing Gibbous. The First Quarter is half illuminated and is growing in illumination toward a Full Moon. The Last Quarter is half illuminated and shrinking in illumination toward a New Moon. A New Moon is not illuminated and not therefore not visible to the naked eye._ |
 
 | **Scenario** | When the user needs Help |
 | :--- | :--- |
-| **User** | _Hey Mycroft, can you tell me the moon phase for a certain day?_ |
-| **Mycroft** | _Yes, what day would you like to know the moon phase?_ |
+| **User** | _Hey Chatterbox, can you tell me the moon phase for a certain day?_ |
+| **Chatterbox** | _Yes, what day would you like to know the moon phase?_ |
 | **User** | _May 15th_ |
-| **Mycroft** | _On May 15th the moon will be waning crescent and 45% illuminated_ |
+| **Chatterbox** | _On May 15th the moon will be waning crescent and 45% illuminated_ |
 | \_\_ |  |
-| **User** | _Hey Mycroft, how do I get information on the moon phases_ |
-| **Mycroft** | _You can ask me what the current moon phase is, the moon phase on a future date, or more information about moon phases._ |
+| **User** | _Hey Chatterbox, how do I get information on the moon phases_ |
+| **Chatterbox** | _You can ask me what the current moon phase is, the moon phase on a future date, or more information about moon phases._ |
 
 | **Scenario** | **Error Handling** |
 | :--- | :--- |
 | **User** | _What’s the moon phase on the next go around?_ |
-| **Mycroft** | _For which day would you like to know the moon phase?_ |
+| **Chatterbox** | _For which day would you like to know the moon phase?_ |
 | **User** | _next monday_ |
 
 **Scenario: Error Handling**
@@ -117,21 +117,21 @@ The next step in the process is organizing the first pass of dialogs into groups
 | **Scenario** | Error Handling |
 | :--- | :--- |
 | **User** | _What’s the moon phase on the next go around?_ |
-| **Mycroft** | _For which day would you like to know the moon phase?_ |
+| **Chatterbox** | _For which day would you like to know the moon phase?_ |
 | **User** | _June 5th_ |
-| **Mycroft** | _June 5th is a Full Moon_ |
+| **Chatterbox** | _June 5th is a Full Moon_ |
 | \_\_ |  |
 | **User** | _How many moon phases are there left?_ |
-| **Mycroft** | _I’m not sure I understood you, would you like to know when the next moon phase cycle begins?_ |
+| **Chatterbox** | _I’m not sure I understood you, would you like to know when the next moon phase cycle begins?_ |
 | **User** | _yes_ |
-| **Mycroft** | _the next moon phase begins with the new moon on April 23rd_ |
+| **Chatterbox** | _the next moon phase begins with the new moon on April 23rd_ |
 
 ## Converting Example Interactions into Behave Feature files
 
 Once you have finished creating you example interactions and you have done some rounds of testing with some users, then it's time to convert your Interactions into Behave Feature files. You can see an example of the first Scenario from the Example Dialogs converted to a Feature file below.
 
 ```text
-Feature: mycroft-moon-phase
+Feature: chatterbox-moon-phase
 
   Scenario Outline: The user asks for the current moon phase
     Given an english speaking user

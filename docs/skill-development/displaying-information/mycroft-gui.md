@@ -1,6 +1,6 @@
 ---
 description: >-
-  A visual and display framework for Mycroft running on top of KDE Plasma
+  A visual and display framework for Chatterbox running on top of KDE Plasma
   Technology and built using Kirigami, a lightweight user interface framework
   for convergent applications empowered by Qt.
 ---
@@ -13,17 +13,17 @@ In the age of information visualization is eminently essential to grab attention
 
 ### Introduction
 
-Mycroft-GUI is an open source visual and display framework for Mycroft running on top of KDE Plasma Technology and built using Kirigami a lightweight user interface framework for convergent applications which are empowered by Qt.
+Chatterbox-GUI is an open source visual and display framework for Chatterbox running on top of KDE Plasma Technology and built using Kirigami a lightweight user interface framework for convergent applications which are empowered by Qt.
 
 ### Getting Started
 
-Mycroft is an open source voice assistant that can be extended and expanded to the limits of your imagination. Mycroft can run anywhere from your desktop to your automobiles or on smart devices that empower your home.
+Chatterbox is an open source voice assistant that can be extended and expanded to the limits of your imagination. Chatterbox can run anywhere from your desktop to your automobiles or on smart devices that empower your home.
 
-Want Mycroft to do something new? Teach Mycroft a skill, share it, and improve the experience for tens of thousands of people all over the world. This guide aims to provide you with resources to create familiar and consistent visual experiences with your expanding and innovative skills.
+Want Chatterbox to do something new? Teach Chatterbox a skill, share it, and improve the experience for tens of thousands of people all over the world. This guide aims to provide you with resources to create familiar and consistent visual experiences with your expanding and innovative skills.
 
 ## VISUAL SKILL DEVELOPMENT API FOUNDATION
 
-Mycroft enabled devices with displays such as the Mark II, KDE Plasmoid provide skill developers the opportunity to create skills that can be empowered by both voice and screen interaction. The display interaction technology is based on the QML user interface markup language that gives you complete freedom to create in-depth innovative interactions without boundaries or provide you with simple templates within the Mycroft GUI framework that allow minimalistic display of text and images based on your skill development specifics and preferences.
+Chatterbox enabled devices with displays such as the Mark II, KDE Plasmoid provide skill developers the opportunity to create skills that can be empowered by both voice and screen interaction. The display interaction technology is based on the QML user interface markup language that gives you complete freedom to create in-depth innovative interactions without boundaries or provide you with simple templates within the Chatterbox GUI framework that allow minimalistic display of text and images based on your skill development specifics and preferences.
 
 This section of the guide is divided into two skill examples that will show you how to create:
 
@@ -43,15 +43,15 @@ A collection of resources to familiarize you with QML and Kirigami Framework.
 
 #### Building your skill to support display
 
-Skills for Mycroft AI are written in Python, using the skills development guide available [here](https://mycroft.ai/documentation/skills/developing-skills/)
+Skills for Chatterbox AI are written in Python, using the skills development guide available [here](https://chatterbox.ai/documentation/skills/developing-skills/)
 
 Let's walk you through some basics of writing your QML user interface, this section is divided into 5 parts:
 
-* [Importing Modules](mycroft-gui.md#importing-modules)
-* [Using Mycroft-GUI Framework Base Delegates](mycroft-gui.md#using-mycroft-gui-framework-base-delegates)
-* [Using Mycroft Framework Components](mycroft-gui.md#using-mycroft-framework-components)
-* [Event Handling](mycroft-gui.md#event-handling)
-* [Resting Faces](mycroft-gui.md#resting-faces)
+* [Importing Modules](chatterbox-gui.md#importing-modules)
+* [Using Chatterbox-GUI Framework Base Delegates](chatterbox-gui.md#using-chatterbox-gui-framework-base-delegates)
+* [Using Chatterbox Framework Components](chatterbox-gui.md#using-chatterbox-framework-components)
+* [Event Handling](chatterbox-gui.md#event-handling)
+* [Resting Faces](chatterbox-gui.md#resting-faces)
 
 #### Importing Modules
 
@@ -64,7 +64,7 @@ import QtQuick 2.4
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.4
 import org.kde.kirigami 2.4 as Kirigami
-import Mycroft 1.0 as Mycroft
+import Chatterbox 1.0 as Chatterbox
 import org.kde.lottie 1.0
 ```
 
@@ -84,26 +84,26 @@ QtQuick Layouts are a set of QML types used to arrange items in a user interface
 
 [Kirigami](https://api.kde.org/frameworks/kirigami/html/index.html) is a set of QtQuick components for mobile and convergent applications. [Kirigami](https://api.kde.org/frameworks/kirigami/html/index.html) is a set of high level components to make the creation of applications that look and feel great on mobile as well as desktop devices and follow the [Kirigami Human Interface Guidelines](https://community.kde.org/KDE_Visual_Design_Group/KirigamiHIG)
 
-**Mycroft Module:**
+**Chatterbox Module:**
 
-Mycroft GUI frameworks provides a set of high level components and events system for aiding in the development of Mycroft visual skills. One of the controls provided by Mycroft GUI frameworks are Mycroft-GUI Framework Base Delegates [Mycroft-GUI Framework Base Delegates Documentation](mycroft-gui.md)
+Chatterbox GUI frameworks provides a set of high level components and events system for aiding in the development of Chatterbox visual skills. One of the controls provided by Chatterbox GUI frameworks are Chatterbox-GUI Framework Base Delegates [Chatterbox-GUI Framework Base Delegates Documentation](chatterbox-gui.md)
 
 **QML Lottie Module:**
 
 This provides a QML `Item` to render Adobe® After Effects™ animations exported as JSON with Bodymovin using the Lottie Web library. For list of all properties supported refer [Lottie QML](https://github.com/kbroulik/lottie-qml)
 
-#### Using Mycroft-GUI Framework Base Delegates
+#### Using Chatterbox-GUI Framework Base Delegates
 
-When you design your skill with QML, Mycroft-GUI frameworks provides you with some base delegates you should use when designing your GUI skill. The base delegates provide you with a basic presentation layer for your skill with some property assignments that can help you setup background images, background dim, timeout and grace time properties to give you the control you need for rendering an experience. In your GUI Skill you can use:
+When you design your skill with QML, Chatterbox-GUI frameworks provides you with some base delegates you should use when designing your GUI skill. The base delegates provide you with a basic presentation layer for your skill with some property assignments that can help you setup background images, background dim, timeout and grace time properties to give you the control you need for rendering an experience. In your GUI Skill you can use:
 
-* Mycroft.Delegate: A basic and simple page based on Kirigami.Page
+* Chatterbox.Delegate: A basic and simple page based on Kirigami.Page
 
-  Simple display Image and Text Example using Mycroft.Delegate
+  Simple display Image and Text Example using Chatterbox.Delegate
 
   ```text
-  import Mycroft 1.0 as Mycroft
+  import Chatterbox 1.0 as Chatterbox
 
-  Mycroft.Delegate {
+  Chatterbox.Delegate {
       skillBackgroundSource: sessionData.exampleImage
       ColumnLayout {
           anchors.fill: parent
@@ -123,18 +123,18 @@ When you design your skill with QML, Mycroft-GUI frameworks provides you with so
   }
   ```
 
-* Mycroft.ScrollableDelegate: A delegate that displays skill visuals in a scroll enabled Kirigami Page.
+* Chatterbox.ScrollableDelegate: A delegate that displays skill visuals in a scroll enabled Kirigami Page.
 
-  Example of using Mycroft.ScrollableDelegate
+  Example of using Chatterbox.ScrollableDelegate
 
   ```text
   import QtQuick 2.4
   import QtQuick.Controls 2.2
   import QtQuick.Layouts 1.4
   import org.kde.kirigami 2.4 as Kirigami
-  import Mycroft 1.0 as Mycroft
+  import Chatterbox 1.0 as Chatterbox
 
-  Mycroft.ScrollableDelegate{
+  Chatterbox.ScrollableDelegate{
       id: root
       skillBackgroundSource: sessionData.background
       property var sampleModel: sessionData.sampleBlob
@@ -184,11 +184,11 @@ When you design your skill with QML, Mycroft-GUI frameworks provides you with so
   }
   ```
 
-#### Using Mycroft Framework Components
+#### Using Chatterbox Framework Components
 
 ### Simple template based text and image skill displays
 
-Designing a simple skill and only want to display text or images ? Mycroft GUI framework and Mycroft enclosure API provides ready to use QML based template wrappers that can minimalisticly display simple skills data such as text and images. In the example below we will showcase how to create a simple voice skill that displays simple text on your Mycroft enabled device with a display.
+Designing a simple skill and only want to display text or images ? Chatterbox GUI framework and Chatterbox enclosure API provides ready to use QML based template wrappers that can minimalisticly display simple skills data such as text and images. In the example below we will showcase how to create a simple voice skill that displays simple text on your Chatterbox enabled device with a display.
 
 **Text Example:**
 
@@ -216,7 +216,7 @@ self.gui.show_image("https://source.unsplash.com/1920x1080/?+autumn")
 ...
 def handle_hello_world(self, message):
 ...
-self.gui.show_url("https://mycroft.ai")
+self.gui.show_url("https://chatterbox.ai")
 ...
 ```
 
@@ -267,10 +267,10 @@ import QtQuick 2.4
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.4
 import org.kde.kirigami 2.4 as Kirigami
-import Mycroft 1.0 as Mycroft
+import Chatterbox 1.0 as Chatterbox
 import org.kde.lottie 1.0
 
-Mycroft.Delegate {
+Chatterbox.Delegate {
     LottieAnimation {     
         id: fancyAnimation 
         anchors.fill: parent
@@ -293,10 +293,10 @@ import QtQuick 2.4
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.4
 import org.kde.kirigami 2.4 as Kirigami
-import Mycroft 1.0 as Mycroft
+import Chatterbox 1.0 as Chatterbox
 
-Mycroft.Delegate {
-     background: Mycroft.SlidingImage {
+Chatterbox.Delegate {
+     background: Chatterbox.SlidingImage {
      source: "foo.jpg" 
      running: bool    //If true the sliding animation is active
      speed: 1         //Animation speed in Kirigami.Units.gridUnit / second
@@ -315,10 +315,10 @@ import QtQuick 2.4
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.4
 import org.kde.kirigami 2.4 as Kirigami
-import Mycroft 1.0 as Mycroft
+import Chatterbox 1.0 as Chatterbox
 
-Mycroft.Delegate {
-     Mycroft.PaginatedText {
+Chatterbox.Delegate {
+     Chatterbox.PaginatedText {
          text: string      //The text that should be displayed
          currentIndex: 0   //The currently visible page number (starting from 0)
      }
@@ -347,9 +347,9 @@ import QtQuick 2.4
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.4
 import org.kde.kirigami 2.4 as Kirigami
-import Mycroft 1.0 as Mycroft
+import Chatterbox 1.0 as Chatterbox
 
-Mycroft.Delegate{
+Chatterbox.Delegate{
     id: root
     property var foodPlacesModel: sessionData.foodPlacesBlob
 
@@ -434,12 +434,12 @@ import QtQuick 2.4
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.4
 import org.kde.kirigami 2.4 as Kirigami
-import Mycroft 1.0 as Mycroft
+import Chatterbox 1.0 as Chatterbox
 
-Mycroft.ProportionalDelegate {
+Chatterbox.ProportionalDelegate {
     id: root
 
-    Mycroft.AutoFitLabel {
+    Chatterbox.AutoFitLabel {
         id: monthLabel
         font.weight: Font.Bold
         Layout.fillWidth: true
@@ -447,7 +447,7 @@ Mycroft.ProportionalDelegate {
         text: sessionData.month
     }
 
-    Mycroft.AutoFitLabel {
+    Chatterbox.AutoFitLabel {
         id: dayLabel
         font.weight: Font.Bold
         Layout.fillWidth: true
@@ -468,12 +468,12 @@ import QtQuick 2.4
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.4
 import org.kde.kirigami 2.4 as Kirigami
-import Mycroft 1.0 as Mycroft
+import Chatterbox 1.0 as Chatterbox
 
-Mycroft.Delegate {
+Chatterbox.Delegate {
     id: root
 
-    Mycroft.SlideShow {
+    Chatterbox.SlideShow {
         id: simpleSlideShow 
         model: sessionData.exampleModel // model with slideshow data
         anchors.fill: parent
@@ -518,13 +518,13 @@ import QtQuick 2.4
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.4
 import org.kde.kirigami 2.4 as Kirigami
-import Mycroft 1.0 as Mycroft
+import Chatterbox 1.0 as Chatterbox
 
-Mycroft.Delegate {
+Chatterbox.Delegate {
     id: root
     skillBackgroundSource: sessionData.audioThumbnail
 
-    Mycroft.AudioPlayer {
+    Chatterbox.AudioPlayer {
         id: examplePlayer
         anchors.fill: parent
         source: sessionData.audioSource        //Set URL of audio file
@@ -539,7 +539,7 @@ Mycroft.Delegate {
 
 #### Event Handling
 
-Mycroft GUI API provides an Event Handling Protocol between the skill and QML display which allow Skill Authors to forward events in either direction to an event consumer. Skill Authors have the ability to create any amount of custom events. Event names that start with "system." are available to all skills, like previous/next/pick.
+Chatterbox GUI API provides an Event Handling Protocol between the skill and QML display which allow Skill Authors to forward events in either direction to an event consumer. Skill Authors have the ability to create any amount of custom events. Event names that start with "system." are available to all skills, like previous/next/pick.
 
 **Simple Event Trigger Example From QML Display To Skill**
 
@@ -563,9 +563,9 @@ import QtQuick 2.4
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.4
 import org.kde.kirigami 2.4 as Kirigami
-import Mycroft 1.0 as Mycroft
+import Chatterbox 1.0 as Chatterbox
 
-Mycroft.Delegate {
+Chatterbox.Delegate {
     id: root
 
     Button {
@@ -599,9 +599,9 @@ import QtQuick 2.4
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.4
 import org.kde.kirigami 2.4 as Kirigami
-import Mycroft 1.0 as Mycroft
+import Chatterbox 1.0 as Chatterbox
 
-Mycroft.Delegate {
+Chatterbox.Delegate {
     id: root
     property var fooString: sessionData.foobar
 
@@ -626,13 +626,13 @@ import QtQuick 2.4
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.4
 import org.kde.kirigami 2.4 as Kirigami
-import Mycroft 1.0 as Mycroft
+import Chatterbox 1.0 as Chatterbox
 
-Mycroft.Delegate {
+Chatterbox.Delegate {
     id: root
     skillBackgroundSource: sessionData.videoThumbnail
 
-    Mycroft.VidioPlayer {
+    Chatterbox.VidioPlayer {
         id: examplePlayer
         anchors.fill: parent
         source: sessionData.videoSource        //Set URL of video file
@@ -652,7 +652,7 @@ The resting face API provides skill authors the ability to extend their skills t
 **Python Skill Example**
 
 ```text
-from mycroft.skills.core import resting_screen_handler
+from chatterbox.skills.core import resting_screen_handler
 ...
 @resting_screen_handler('NameOfIdleScreen')
 def handle_idle(self, message):
@@ -669,9 +669,9 @@ import QtQuick 2.4
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.4
 import org.kde.kirigami 2.4 as Kirigami
-import Mycroft 1.0 as Mycroft
+import Chatterbox 1.0 as Chatterbox
 
-Mycroft.Delegate {
+Chatterbox.Delegate {
     id: root
     property var fooString: sessionData.exampleText
 

@@ -6,11 +6,11 @@ description: How to make use of the enclosure display on the Mark 1.
 
 ## About **Enclosures**
 
-The Mark 1 **Device** is housed in an **Enclosure**. An Enclosure is a shell that houses a **Device** that runs Mycroft. In the future, different **Enclosures** will have different capabilities.
+The Mark 1 **Device** is housed in an **Enclosure**. An Enclosure is a shell that houses a **Device** that runs Chatterbox. In the future, different **Enclosures** will have different capabilities.
 
 ## The Mark 1 Enclosure capabilities
 
-The Mark 1 _mouth_ and _eyes_ can be controlled by **Skills** using the `self.enclosure` object inherited from the `MycroftSkill` base class. This object acts as an interface to the **Enclosure** and allows the Skill creator to draw to the _mouth_ display.
+The Mark 1 _mouth_ and _eyes_ can be controlled by **Skills** using the `self.enclosure` object inherited from the `ChatterboxSkill` base class. This object acts as an interface to the **Enclosure** and allows the Skill creator to draw to the _mouth_ display.
 
 This is how the _mouth_ and _eyes_ are made to change during operations such as audio playback.
 

@@ -6,7 +6,7 @@ description: >-
 
 # Filesystem access
 
-Many Skills may want access to parts of the filesystem. To account for the many different platforms that can run Mycroft there are three locations that a Skill can utilize.
+Many Skills may want access to parts of the filesystem. To account for the many different platforms that can run Chatterbox there are three locations that a Skill can utilize.
 
 * Persistent filesystem
 * Temporary cache
@@ -60,9 +60,9 @@ Example:
 Example:
 
 ```python
-from mycroft import MycroftSkill
+from chatterbox import ChatterboxSkill
 
-class FileSystemSkill(MycroftSkill):
+class FileSystemSkill(ChatterboxSkill):
 
     def initialize(self):
         """Log the path of this Skills persistent namespace."""
@@ -82,9 +82,9 @@ In this example, we create a subdirectory called "cache", then write to a text f
 from os import mkdir
 from os.path import join
 
-from mycroft import MycroftSkill
+from chatterbox import ChatterboxSkill
 
-class FileSystemSkill(MycroftSkill):
+class FileSystemSkill(ChatterboxSkill):
 
     def initialize(self):
         """Create a cache subdirectory and write to a file inside it"""
@@ -103,9 +103,9 @@ def create_skill():
 ### Example Skill
 
 ```python
-from mycroft import MycroftSkill, intent_handler
+from chatterbox import ChatterboxSkill, intent_handler
 
-class FileSystemSkill(MycroftSkill):
+class FileSystemSkill(ChatterboxSkill):
 
     def initialize(self):
         """Perform initial setup for the Skill.
@@ -146,10 +146,10 @@ This directory will likely be part of a small RAM disk and may be cleared at any
 
 ```python
 from os.path import join
-from mycroft import MycroftSkill, intent_handler
-from mycroft.util import get_cache_directory
+from chatterbox import ChatterboxSkill, intent_handler
+from chatterbox.util import get_cache_directory
 
-class CachingSkill(MycroftSkill):
+class CachingSkill(ChatterboxSkill):
 
     def initialize(self):
         """Perform initial setup for the Skill.
@@ -185,7 +185,7 @@ def create_skill():
 self.root_dir
 ```
 
-This member variable contains the absolute path of a Skill’s root directory e.g. `~.local/share/mycroft/skills/my-skill.me/`.
+This member variable contains the absolute path of a Skill’s root directory e.g. `~.local/share/chatterbox/skills/my-skill.me/`.
 
 Generally Skills should not modify anything within this directory. Modifying anything in the Skill directory will reload the Skill. This will also prevent the Skill from updating as we do not want to overwrite changes made during development. It is also not guaranteed that the Skill will have permission to write to this directory.
 

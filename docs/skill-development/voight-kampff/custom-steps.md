@@ -8,7 +8,7 @@ description: >-
 
 Custom Steps can be added to your Skills repository within the `test/behave/steps` directory.
 
-The Mycroft Timer Skill for example provides [test/behave/steps/timer.py](https://github.com/MycroftAI/mycroft-timer/blob/20.02/test/behave/steps/timer.py). This has a range of custom Steps to ensure the system is in an appropriate state before the test is run, and that a timer is stopped correctly when requested.
+The Chatterbox Timer Skill for example provides [test/behave/steps/timer.py](https://github.com/ChatterboxAI/chatterbox-timer/blob/20.02/test/behave/steps/timer.py). This has a range of custom Steps to ensure the system is in an appropriate state before the test is run, and that a timer is stopped correctly when requested.
 
 Let's use an example from this Skill to see how we can define our own custom Steps.
 
@@ -39,7 +39,7 @@ from test.integrationtests.voight_kampff import wait_for_dialog, emit_utterance
 
 From `behave` we can get the behave decorators - `given`, `when`, or `then`. For this Step we also need some helper functions from the Voight Kampff module.
 
-Like any Python script, you can import other packages from Mycroft or externally as needed.
+Like any Python script, you can import other packages from Chatterbox or externally as needed.
 
 ### Voight Kampff Tools
 
@@ -60,9 +60,9 @@ Returns:
 
 `tuple (bool, str)` - test status, debug output
 
-**mycroft\_responses\(context\)**
+**chatterbox\_responses\(context\)**
 
-Collect and format mycroft responses from context.
+Collect and format chatterbox responses from context.
 
 Arguments:
 
@@ -70,7 +70,7 @@ Arguments:
 
 Returns: 
 
-`(str)` - Mycroft responses including skill and dialog file
+`(str)` - Chatterbox responses including skill and dialog file
 
 #### emit\_utterance\(bus, utt\)
 
@@ -144,7 +144,7 @@ def given_set_timer_named(context, timer_name, timer_length):
 
 The first argument of each Step function is always a [Behave `Context` Object](https://behave.readthedocs.io/en/latest/api.html#behave.runner.Context), with some additional properties added by Voight Kampff. These are:
 
-`context.bus` - an instance of the Mycroft `MessageBusClient` class. `context.log` - an instance of the Python standard library `logging.Logger` class. `context.msm` - a reference to the Mycroft Skills Manager
+`context.bus` - an instance of the Chatterbox `MessageBusClient` class. `context.log` - an instance of the Python standard library `logging.Logger` class. `context.msm` - a reference to the Chatterbox Skills Manager
 
 ## Step logic
 
@@ -160,7 +160,7 @@ def given_set_timer_length(context, timer_length):
 
 In this example we have four lines:
 
-1. Emitting an utterance to the Mycroft MessageBus to create a timer for the given length of time. 
+1. Emitting an utterance to the Chatterbox MessageBus to create a timer for the given length of time. 
 2. Waiting for dialog to be returned from the MessageBus confirming that the timer has been started. 
 3. Logging an `info` level message to confirm we created a timer. 
 4. Clearing any remaining messages from the MessageBus to prevent interference with the test.
@@ -169,7 +169,7 @@ _Note: the log message in this Step isn't really necessary. Voight Kampff will c
 
 ## Help
 
-For further assistance with Skill testing, please post your question on the [Community Forums](https://community.mycroft.ai/) or in the [Skills channel on Mycroft Chat](https://chat.mycroft.ai/community/channels/skills).
+For further assistance with Skill testing, please post your question on the [Community Forums](https://community.chatterbox.ai/) or in the [Skills channel on Chatterbox Chat](https://chat.chatterbox.ai/community/channels/skills).
 
-See our [tips for how to ask the best questions](../../using-mycroft-ai/troubleshooting/getting-more-support.md). This helps you get a more complete response faster.
+See our [tips for how to ask the best questions](../../using-chatterbox-ai/troubleshooting/getting-more-support.md). This helps you get a more complete response faster.
 

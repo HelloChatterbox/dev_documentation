@@ -1,12 +1,12 @@
 ---
 description: >-
-  Learn how to use the Mycroft Skills Kit - MSK - to make the creation, testing
+  Learn how to use the Chatterbox Skills Kit - MSK - to make the creation, testing
   and submission of Skills a lot easier.
 ---
 
-# Mycroft Skills Kit
+# Chatterbox Skills Kit
 
-The Mycroft Skills Kit - `msk` - is a Python-based utility that has been created to make it easier for **Skill** Authors to create, test and submit **Skills** to the [Skills Marketplace](https://market.mycroft.ai). We hope this utility helps to shorten the development cycle, and remove some of the tedious parts of **Skill** creation.
+The Chatterbox Skills Kit - `msk` - is a Python-based utility that has been created to make it easier for **Skill** Authors to create, test and submit **Skills** to the [Skills Marketplace](https://market.chatterbox.ai). We hope this utility helps to shorten the development cycle, and remove some of the tedious parts of **Skill** creation.
 
 `msk` currently supports the following features:
 
@@ -19,7 +19,7 @@ The Mycroft Skills Kit - `msk` - is a Python-based utility that has been created
 
 _NOTE: `msk` has only been tested on Linux systems_
 
-`msk` comes pre installed on the [Mark 1](https://mycroft.ai/documentation/mark-1), [Picroft](https://mycroft.ai/documentation/picroft) and the `git` installation of Mycroft-core. The utility is self-contained and can be installed separately using `pip` by typing the following line into the terminal on your Linux system:
+`msk` comes pre installed on the [Mark 1](https://chatterbox.ai/documentation/mark-1), [Picroft](https://chatterbox.ai/documentation/picroft) and the `git` installation of Chatterbox-core. The utility is self-contained and can be installed separately using `pip` by typing the following line into the terminal on your Linux system:
 
 ```bash
 pip3 install msk
@@ -58,18 +58,18 @@ The normal commands for `msk` are:
 
 ```bash
 msk create
-msk create-test /opt/mycroft/skills/myskill
-msk upload /opt/mycroft/skills/myskill
-msk upgrade /opt/mycroft/skills/myskill
+msk create-test /opt/chatterbox/skills/myskill
+msk upload /opt/chatterbox/skills/myskill
+msk upgrade /opt/chatterbox/skills/myskill
 ```
 
-If using the built-in installation of `msk` with a Mycroft device or Mycroft git installation, use `mycroft-msk` in place of `msk`:
+If using the built-in installation of `msk` with a Chatterbox device or Chatterbox git installation, use `chatterbox-msk` in place of `msk`:
 
 ```bash
-mycroft-msk create
-mycroft-msk create-test /opt/mycroft/skills/myskill
-mycroft-msk upload /opt/mycroft/skills/myskill
-mycroft-msk upgrade /opt/mycroft/skills/myskill
+chatterbox-msk create
+chatterbox-msk create-test /opt/chatterbox/skills/myskill
+chatterbox-msk upload /opt/chatterbox/skills/myskill
+chatterbox-msk upgrade /opt/chatterbox/skills/myskill
 ```
 
 ## Create
@@ -88,7 +88,7 @@ Looks good? (Y/n) Y
 Enter a one line description for your skill (ie. Orders fresh pizzas from the store):
 - Reminds you to feed your poor starving Corgi
 Enter a long description:
-> Every 24 hours, Mycroft will send you a reminder to feed your Corgi, and tell you what your Corgi was fed the previous day, so you can provide a different delicious meal for your precious Corgi.
+> Every 24 hours, Chatterbox will send you a reminder to feed your Corgi, and tell you what your Corgi was fed the previous day, so you can provide a different delicious meal for your precious Corgi.
 >
 Enter some example phrases to trigger your skill:
 - Have I fed the Corgi today
@@ -121,13 +121,13 @@ To https://github.com/YourGitHubUserName/feed-the-corgi-skill
  * [new branch]      master -> master
 Branch master set up to track remote branch master from origin.
 Created GitHub repo: https://github.com/YourGitHubUserName/feed-the-corgi-skill
-Created skill at: /opt/mycroft/skills/feed-the-corgi-skill
+Created skill at: /opt/chatterbox/skills/feed-the-corgi-skill
 ```
 
-Now, if you look in `/opt/mycroft/skills/` you will see that all the files required for the **Skill** have now been created, including the `.voc` files.
+Now, if you look in `/opt/chatterbox/skills/` you will see that all the files required for the **Skill** have now been created, including the `.voc` files.
 
 ```bash
-$ ls -las /opt/mycroft/skills/feed-the-corgi-skill
+$ ls -las /opt/chatterbox/skills/feed-the-corgi-skill
 total 36
 4 drwxrwxr-x   5 kathyreid kathyreid 4096 Jun  7 05:20 .
 4 drwxr-xr-x 103 kathyreid kathyreid 4096 Jun  7 05:18 ..
@@ -141,7 +141,7 @@ total 36
 ```
 
 ```bash
-$ ls -las /opt/mycroft/skills/feed-the-corgi-skill/vocab/en-us/
+$ ls -las /opt/chatterbox/skills/feed-the-corgi-skill/vocab/en-us/
 total 12
 4 drwxrwxr-x 2 kathyreid kathyreid 4096 Jun  7 05:20 .
 4 drwxrwxr-x 3 kathyreid kathyreid 4096 Jun  7 05:20 ..
@@ -150,20 +150,20 @@ total 12
 
 ## Create test
 
-`msk` also provides a function for creating `Intent` tests, as part of our [Automated Testing for Skills](https://mycroft.ai/documentation/skills/automatic-testing/).
+`msk` also provides a function for creating `Intent` tests, as part of our [Automated Testing for Skills](https://chatterbox.ai/documentation/skills/automatic-testing/).
 
 Please see this ASCII Cinema video to see the process for using `msk create-test`:
 
 [![msk-create-test](https://images2.imgbox.com/9c/c8/gLRS7xuL_o.gif)](https://asciinema.org/a/Ayzaj6QJbKGBfs2eIQWr11idH?speed=1.5)
 
-As before if the mycroft-core github installation is used make sure to use `mycroft-msk` or activate the mycroft-core Python _virtual environment_. From the mycroft-core folder
+As before if the chatterbox-core github installation is used make sure to use `chatterbox-msk` or activate the chatterbox-core Python _virtual environment_. From the chatterbox-core folder
 
 `$ source .venv/bin/activate`
 
 Next, we use the `msk create-test` function. You _must_ pass the **Skill** directory location to the command, or it will fail.
 
 ```bash
-$ msk create-test /opt/mycroft/skills/feed-the-corgi-skill/
+$ msk create-test /opt/chatterbox/skills/feed-the-corgi-skill/
 
 Which intent would you like to test?
 1. corgi.the.feed.intent
@@ -179,13 +179,13 @@ Choose expected dialog (leave empty to skip).
 1. corgi.the.feed
 
 > 1
-Generated test file: /opt/mycroft/skills/feed-the-corgi-skill/test/intent/corgi.the.feed.intent.0.intent.json
+Generated test file: /opt/chatterbox/skills/feed-the-corgi-skill/test/intent/corgi.the.feed.intent.0.intent.json
 ```
 
 If we have a look inside the `corgi.the.feed.intent.0.intent.json` file we can see that the test has been created for us.
 
 ```javascript
-$ cat /opt/mycroft/skills/feed-the-corgi-skill/test/intent/corgi.the.feed.intent.0.intent.json
+$ cat /opt/chatterbox/skills/feed-the-corgi-skill/test/intent/corgi.the.feed.intent.0.intent.json
 {
     "intent_type": "corgi.the.feed",
     "expected_dialog": "corgi.the.feed",
@@ -195,13 +195,13 @@ $ cat /opt/mycroft/skills/feed-the-corgi-skill/test/intent/corgi.the.feed.intent
 
 ## Upload Skill
 
-`msk` also provides a function for uploading a **Skill** to the [Mycroft Skills Repo](https://github.com/mycroftai/mycroft-skills), as part of our \[Skill Submission Process\] \([https://mycroft.ai/documentation/skills/skill-submission/](https://mycroft.ai/documentation/skills/skill-submission/)\).
+`msk` also provides a function for uploading a **Skill** to the [Chatterbox Skills Repo](https://github.com/chatterboxai/chatterbox-skills), as part of our \[Skill Submission Process\] \([https://chatterbox.ai/documentation/skills/skill-submission/](https://chatterbox.ai/documentation/skills/skill-submission/)\).
 
 Please see this ASCII Cinema video to see the process for using `msk upload`:
 
 [![msk-upload](https://images2.imgbox.com/35/5d/BCVxUxuh_o.gif)](https://asciinema.org/a/Bp1sORVnmVz9wYjZXfempTPoO?speed=1.5)
 
-If using the msk delivered with the mycroft-core github installation be sure to use `mycroft-msk` or activate the mycroft-core Python _virtual environment_. From the mycroft-core folder
+If using the msk delivered with the chatterbox-core github installation be sure to use `chatterbox-msk` or activate the chatterbox-core Python _virtual environment_. From the chatterbox-core folder
 
 `$ source .venv/bin/activate`
 
@@ -210,7 +210,7 @@ You will now see that your `bash` prompt is prefixed with `(venv)`.
 Next, we use the `msk upload` command with the path to the **Skill**:
 
 ```bash
-$ msk upload /opt/mycroft/skills/feed-the-corgi-skill/
+$ msk upload /opt/chatterbox/skills/feed-the-corgi-skill/
 === GitHub Credentials ===
 Username: YourGitHubUserName
 Password:
@@ -221,27 +221,27 @@ Compressing objects: 100% (339/339), done.
 Writing objects: 100% (531/531), 123.54 KiB | 0 bytes/s, done.
 Total 531 (delta 298), reused 304 (delta 177)
 remote: Resolving deltas: 100% (298/298), completed with 6 local objects.
-To https://github.com/YourGitHubUserName/mycroft-skills
+To https://github.com/YourGitHubUserName/chatterbox-skills
  * [new branch]      add/feed-the-corgi -> add/feed-the-corgi
 Branch add/feed-the-corgi set up to track remote branch add/feed-the-corgi from fork.
-Created pull request:  https://github.com/MycroftAI/mycroft-skills/pull/392
+Created pull request:  https://github.com/ChatterboxAI/chatterbox-skills/pull/392
 ```
 
 ## Upgrade Skill
 
-`msk` also provides a function for upgrading a **Skill** once it has been merged into the [Mycroft Skills Repo](https://github.com/mycroftai/mycroft-skills), as part of our \[Skill Submission Process\] \([https://mycroft.ai/documentation/skills/skill-submission/](https://mycroft.ai/documentation/skills/skill-submission/)\).
+`msk` also provides a function for upgrading a **Skill** once it has been merged into the [Chatterbox Skills Repo](https://github.com/chatterboxai/chatterbox-skills), as part of our \[Skill Submission Process\] \([https://chatterbox.ai/documentation/skills/skill-submission/](https://chatterbox.ai/documentation/skills/skill-submission/)\).
 
 ### Before you upgrade
 
 Before you can use `msk upgrade`, you must ensure:
 
-* That your **Skill** has already been merged with the `mycroft-skills` repo.
+* That your **Skill** has already been merged with the `chatterbox-skills` repo.
 * That you have made changes to your **Skill** and that these changes have been committed to the **Skill's** `git` repository.
 
-Once your changes are committed, you can then use `msk upgrade` by passing the location of the Skill folder. Generally we find it's easiest to be inside the Skill's folder in `/opt/mycroft/skills/SKILL-NAME` and then use the current directory symbol, period `.`
+Once your changes are committed, you can then use `msk upgrade` by passing the location of the Skill folder. Generally we find it's easiest to be inside the Skill's folder in `/opt/chatterbox/skills/SKILL-NAME` and then use the current directory symbol, period `.`
 
 ```text
-(.venv) kathyreid@kathyreid-Oryx-Pro:/opt/mycroft/skills/kathy-msk-test-skill$ msk upgrade .
+(.venv) kathyreid@kathyreid-Oryx-Pro:/opt/chatterbox/skills/kathy-msk-test-skill$ msk upgrade .
 === GitHub Credentials ===
 Username: KathyReid
 Password:
@@ -253,9 +253,9 @@ Total 3 (delta 1), reused 0 (delta 0)
 remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 remote:
 remote: Create a pull request for 'upgrade-kathy-msk-test-skill' on GitHub by visiting:
-remote:      https://github.com/KathyReid/mycroft-skills/pull/new/upgrade-kathy-msk-test-skill
+remote:      https://github.com/KathyReid/chatterbox-skills/pull/new/upgrade-kathy-msk-test-skill
 remote:
-To https://github.com/KathyReid/mycroft-skills
+To https://github.com/KathyReid/chatterbox-skills
  * [new branch]      upgrade-kathy-msk-test-skill -> upgrade-kathy-msk-test-skill
 Branch 'upgrade-kathy-msk-test-skill' set up to track remote branch 'upgrade-kathy-msk-test-skill' from 'fork'.
 
@@ -265,26 +265,26 @@ Branch 'upgrade-kathy-msk-test-skill' set up to track remote branch 'upgrade-kat
 
  - [test for msk](https://github.com/KathyReid/kathy-msk-test-skill/commit/6d0e3552314673402e6f44ee90ee29feff6075ca)
 
-<sub>Created with [mycroft-skills-kit](https://github.com/mycroftai/mycroft-skills-kit) v0.3.10</sub>
+<sub>Created with [chatterbox-skills-kit](https://github.com/chatterboxai/chatterbox-skills-kit) v0.3.10</sub>
 
-Created PR at: https://github.com/MycroftAI/mycroft-skills/pull/661
+Created PR at: https://github.com/ChatterboxAI/chatterbox-skills/pull/661
 ```
 
-`msk upgrade` will create a new PR on the [Mycroft Skills Repo](https://github.com/mycroftai/mycroft-skills), and this will be reviewed using the [Skills Acceptance process](https://mycroft.ai/documentation/skills/skills-acceptance-process/).
+`msk upgrade` will create a new PR on the [Chatterbox Skills Repo](https://github.com/chatterboxai/chatterbox-skills), and this will be reviewed using the [Skills Acceptance process](https://chatterbox.ai/documentation/skills/skills-acceptance-process/).
 
 * If you try to run `msk upgrade` and your Skill has not yet been merged, you will receive the error:
 
 ```text
-(.venv) kathyreid@kathyreid-Oryx-Pro:/opt/mycroft/skills/kathy-msk-test-skill$ msk upgrade .
+(.venv) kathyreid@kathyreid-Oryx-Pro:/opt/chatterbox/skills/kathy-msk-test-skill$ msk upgrade .
 NotUploaded: The skill kathy-msk-test-skill has not yet been uploaded to the skill store
 ```
 
 * If have uncommitted items, you will receive the error:
 
 ```text
-(.venv) kathyreid@kathyreid-Oryx-Pro:/opt/mycroft/skills/kathy-msk-test-skill$ msk upgrade .
+(.venv) kathyreid@kathyreid-Oryx-Pro:/opt/chatterbox/skills/kathy-msk-test-skill$ msk upgrade .
 AlreadyUpdated: The latest version of kathy-msk-test-skill is already uploaded to the skill repo
-(.venv) kathyreid@kathyreid-Oryx-Pro:/opt/mycroft/skills/kathy-msk-test-skill$ git status
+(.venv) kathyreid@kathyreid-Oryx-Pro:/opt/chatterbox/skills/kathy-msk-test-skill$ git status
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -300,10 +300,10 @@ no changes added to commit (use "git add" and/or "git commit -a")
 You need to ensure that your changes are committed:
 
 ```text
-(.venv) kathyreid@kathyreid-Oryx-Pro:/opt/mycroft/skills/kathy-msk-test-skill$ git commit -a
+(.venv) kathyreid@kathyreid-Oryx-Pro:/opt/chatterbox/skills/kathy-msk-test-skill$ git commit -a
 [master 6d0e355] test for msk
  1 file changed, 3 insertions(+)
-(.venv) kathyreid@kathyreid-Oryx-Pro:/opt/mycroft/skills/kathy-msk-test-skill$ git push -u origin master
+(.venv) kathyreid@kathyreid-Oryx-Pro:/opt/chatterbox/skills/kathy-msk-test-skill$ git push -u origin master
 Username for 'https://github.com': KathyReid
 Password for 'https://KathyReid@github.com':
 Counting objects: 3, done.
@@ -319,5 +319,5 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 
 ## Join our Skills Authoring Community
 
-[Join other Skill Authors in Mycroft Chat](https://chat.mycroft.ai/community/channels/skills).
+[Join other Skill Authors in Chatterbox Chat](https://chat.chatterbox.ai/community/channels/skills).
 

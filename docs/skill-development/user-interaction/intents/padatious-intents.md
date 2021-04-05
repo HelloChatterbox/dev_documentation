@@ -10,7 +10,7 @@ Padatious has a number of key benefits over other intent parsing technologies.
 * Intents run independently of each other. This allows quickly installing new skills without retraining all other skill intents.
 * With Padatious, you can easily extract entities and then use these in Skills. For example, "Find the nearest gas station" -&gt; `{ "place":"gas station"}`
 
-{% page-ref page="../../../mycroft-technologies/padatious.md" %}
+{% page-ref page="../../../chatterbox-technologies/padatious.md" %}
 
 ## Creating Intents
 
@@ -29,7 +29,7 @@ describe a tomato
 what defines a tomato
 ```
 
-These sample phrases do not require punctuation like a question mark. We can also leave out contractions such as "what's", as this will be automatically expanded to "what is" by Mycroft before the utterance is parsed.
+These sample phrases do not require punctuation like a question mark. We can also leave out contractions such as "what's", as this will be automatically expanded to "what is" by Chatterbox before the utterance is parsed.
 
 Each file should contain at least 4 examples for good modeling.
 
@@ -37,9 +37,9 @@ The above example allows us to map many phrases to a single intent, however ofte
 
 ### Defining entities
 
-Let's now find out Mycroft's opinion on different types of tomatoes. To do this we will create a new intent file: `vocab/en-us/do.you.like.intent`
+Let's now find out Chatterbox's opinion on different types of tomatoes. To do this we will create a new intent file: `vocab/en-us/do.you.like.intent`
 
-with examples of questions about mycroft's opinion about tomatoes:
+with examples of questions about chatterbox's opinion about tomatoes:
 
 ```text
 are you fond of tomatoes
@@ -184,7 +184,7 @@ From our first example above, we created a file `vocab/en-us/what.is.a.tomato.in
 This _decorator_ must be imported before it is used:
 
 ```python
-from mycroft import intent_handler
+from chatterbox import intent_handler
 ```
 
 {% hint style="info" %}
@@ -194,9 +194,9 @@ from mycroft import intent_handler
 Now we can create our Tomato Skill:
 
 ```python
-from mycroft import MycroftSkill, intent_handler
+from chatterbox import ChatterboxSkill, intent_handler
 
-class TomatoSkill(MycroftSkill):
+class TomatoSkill(ChatterboxSkill):
     def __init__(self):
         super().__init__()
 
@@ -221,7 +221,7 @@ def create_skill():
 ```
 
 {% hint style="info" %}
-See a Padatious intent handler example in the [Hello World Skill](https://github.com/MycroftAI/skill-hello-world/blob/67a972792a07da7e3406bf7f94acd54aa2674829/__init__.py#L42)
+See a Padatious intent handler example in the [Hello World Skill](https://github.com/ChatterboxAI/skill-hello-world/blob/67a972792a07da7e3406bf7f94acd54aa2674829/__init__.py#L42)
 {% endhint %}
 
 ## Common Problems
@@ -240,7 +240,7 @@ The utterance string received from the speech-to-text engine is received all low
 
 ## Need more help?
 
-If something isn't working as expected, please join us in the [~Skills channel of Mycroft Chat](https://chat.mycroft.ai/community/channels/skills).
+If something isn't working as expected, please join us in the [~Skills channel of Chatterbox Chat](https://chat.chatterbox.ai/community/channels/skills).
 
-It's also really helpful for us if you add an issue to our [documentation repo](https://github.com/MycroftAI/documentation/issues). This means we can make sure it gets covered for all developers in the future.
+It's also really helpful for us if you add an issue to our [documentation repo](https://github.com/ChatterboxAI/documentation/issues). This means we can make sure it gets covered for all developers in the future.
 

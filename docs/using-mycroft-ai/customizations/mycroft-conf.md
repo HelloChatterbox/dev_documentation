@@ -2,36 +2,36 @@
 description: A configuration file that contains the device and service settings.
 ---
 
-# mycroft.conf
+# chatterbox.conf
 
 {% hint style="info" %}
-See a [list of all variables available within `mycroft.conf`](https://github.com/MycroftAI/mycroft-core/blob/master/mycroft/configuration/mycroft.conf)
+See a [list of all variables available within `chatterbox.conf`](https://github.com/ChatterboxAI/chatterbox-core/blob/master/chatterbox/configuration/chatterbox.conf)
 {% endhint %}
 
-## What is `mycroft.conf`?
+## What is `chatterbox.conf`?
 
-`mycroft.conf` is a [JSON](https://www.json.org/)-formatted file that is saved locally on your Mycroft Device, such as Picroft or Mark 1. `mycroft-conf` contains information about the Device itself, like what type of Device and Enclosure it is, as well as information about user preferences. If you haven't specified preferences, then `mycroft.conf` will contain some default values. Your Device, and Skills installed on your Device, use `mycroft.conf` to provide additional functionality.
+`chatterbox.conf` is a [JSON](https://www.json.org/)-formatted file that is saved locally on your Chatterbox Device, such as Picroft or Mark 1. `chatterbox-conf` contains information about the Device itself, like what type of Device and Enclosure it is, as well as information about user preferences. If you haven't specified preferences, then `chatterbox.conf` will contain some default values. Your Device, and Skills installed on your Device, use `chatterbox.conf` to provide additional functionality.
 
-## Where are the `mycroft.conf` files stored?
+## Where are the `chatterbox.conf` files stored?
 
-The `mycroft.conf` files are stored in four possible locations:
+The `chatterbox.conf` files are stored in four possible locations:
 
-1. Default - mycroft-core/mycroft/configuration/mycroft.conf
-2. Remote \(from Home.Mycroft.ai\) - /var/tmp/mycroft\_web\_cache.json
-3. System - /etc/mycroft/mycroft.conf
-4. User - $HOME/.mycroft/mycroft.conf
+1. Default - chatterbox-core/chatterbox/configuration/chatterbox.conf
+2. Remote \(from Home.Chatterbox.ai\) - /var/tmp/chatterbox\_web\_cache.json
+3. System - /etc/chatterbox/chatterbox.conf
+4. User - $HOME/.chatterbox/chatterbox.conf
 
-Mycroft implements an order of precedence; settings defined at a User level override those at a System level. If the file does not exist, Mycroft moves to the following level.
+Chatterbox implements an order of precedence; settings defined at a User level override those at a System level. If the file does not exist, Chatterbox moves to the following level.
 
-## A look at the inside of `mycroft.conf`
+## A look at the inside of `chatterbox.conf`
 
-Here is an example System level `mycroft.conf` from a Mark 1 Device:
+Here is an example System level `chatterbox.conf` from a Mark 1 Device:
 
 ```text
-pi@mark_1:/etc/mycroft $ cat mycroft.conf
+pi@mark_1:/etc/chatterbox $ cat chatterbox.conf
 {
   "enclosure": {
-    "platform": "mycroft_mark_1",
+    "platform": "chatterbox_mark_1",
     "platform_build": 9,
     "port": "/dev/ttyAMA0",
     "rate": 9600,
@@ -48,68 +48,68 @@ pi@mark_1:/etc/mycroft $ cat mycroft.conf
 ```
 
 {% hint style="info" %}
-See a [list of all variables available within `mycroft.conf`](https://github.com/MycroftAI/mycroft-core/blob/master/mycroft/configuration/mycroft.conf)\`\`
+See a [list of all variables available within `chatterbox.conf`](https://github.com/ChatterboxAI/chatterbox-core/blob/master/chatterbox/configuration/chatterbox.conf)\`\`
 {% endhint %}
 
-## `mycroft_web_cache.json`
+## `chatterbox_web_cache.json`
 
-`mycroft_web_cache.json` is is a [JSON](https://www.json.org/)-formatted file that is saved locally on your Mycroft Device, such as Picroft or Mark 1. `mycroft_web_cache.json` is a cached copy of the settings on your [home.mycroft.ai](https://home.mycroft.ai) account, such as your _Location_ \(which determines _Time Zone_\), which _Voice_ you have selected and your preference for _Measurements_ such as temperature and distance.
+`chatterbox_web_cache.json` is is a [JSON](https://www.json.org/)-formatted file that is saved locally on your Chatterbox Device, such as Picroft or Mark 1. `chatterbox_web_cache.json` is a cached copy of the settings on your [home.chatterbox.ai](https://home.chatterbox.ai) account, such as your _Location_ \(which determines _Time Zone_\), which _Voice_ you have selected and your preference for _Measurements_ such as temperature and distance.
 
 Both of these files are regularly used in troubleshooting, so it's useful to know what information they hold, and where they are stored on your Device.
 
-### Where is the `mycroft_web_cache.json` file stored?
+### Where is the `chatterbox_web_cache.json` file stored?
 
 This file is stored at:
 
-`/var/tmp/mycroft_web_cache.json`
+`/var/tmp/chatterbox_web_cache.json`
 
 on the Device.
 
-### How is `mycroft_web_cache.json` updated?
+### How is `chatterbox_web_cache.json` updated?
 
-When you update settings at [home.mycroft.ai](https://home.mycroft.ai), your Device will periodically pull them down. In normal circumstances any change should be reflected on the device within 1-2 minutes. You can also instruct your device to pull down the latest configuration, by saying:
+When you update settings at [home.chatterbox.ai](https://home.chatterbox.ai), your Device will periodically pull them down. In normal circumstances any change should be reflected on the device within 1-2 minutes. You can also instruct your device to pull down the latest configuration, by saying:
 
-> Hey Mycroft, update configuration
+> Hey Chatterbox, update configuration
 
-Mycroft will respond in one of two ways:
+Chatterbox will respond in one of two ways:
 
-* If your configuration was out of date, and has been pulled down again, Mycroft will respond:
+* If your configuration was out of date, and has been pulled down again, Chatterbox will respond:
 
 > Configuration updated
 
-* If your configuration was the same on your device as on home.mycroft.ai, Mycroft will respond:
+* If your configuration was the same on your device as on home.chatterbox.ai, Chatterbox will respond:
 
 > Your device has been configured
 
-### Reading values directly from `mycroft_web_cache.json`
+### Reading values directly from `chatterbox_web_cache.json`
 
 To see the city location value:
 
-`jq ".location.city" < /var/tmp/mycroft_web_cache.json`
+`jq ".location.city" < /var/tmp/chatterbox_web_cache.json`
 
 To see the latitude and longitude coordinates of your location:
 
-`jq ".location.coordinate" < /var/tmp/mycroft_web_cache.json`
+`jq ".location.coordinate" < /var/tmp/chatterbox_web_cache.json`
 
 To see the timezone setting:
 
-`jq ".location.timezone" < /var/tmp/mycroft_web_cache.json`
+`jq ".location.timezone" < /var/tmp/chatterbox_web_cache.json`
 
 To see the listener setting:
 
-`jq ".listener" < /var/tmp/mycroft_web_cache.json`
+`jq ".listener" < /var/tmp/chatterbox_web_cache.json`
 
 To see the Speech to Text \(STT\) settings:
 
-`jq ".stt" < /var/tmp/mycroft_web_cache.json`
+`jq ".stt" < /var/tmp/chatterbox_web_cache.json`
 
 To see the Text to Speech \(TTS\) settings:
 
-`jq ".tts" < /var/tmp/mycroft_web_cache.json`
+`jq ".tts" < /var/tmp/chatterbox_web_cache.json`
 
-### A look at the inside of `mycroft_web_cache.json`
+### A look at the inside of `chatterbox_web_cache.json`
 
-Here is an example `mycroft_web_cache.json`.  
+Here is an example `chatterbox_web_cache.json`.  
 _NOTE: Your settings will be different._
 
 ```javascript
@@ -151,11 +151,11 @@ _NOTE: Your settings will be different._
     "multiplier": 1,
     "threshold": 1e-90,
     "phonemes": "HH EY . M AY K R AO F T",
-    "wake_word": "hey mycroft"
+    "wake_word": "hey chatterbox"
   },
   "time_format": "full",
   "skills": {
-    "directory": "~/.mycroft/skills",
+    "directory": "~/.chatterbox/skills",
     "created_at": 1504481866994,
     "updated_at": 1514794901226,
     "stop_threshold": 2
@@ -177,7 +177,7 @@ _NOTE: Your settings will be different._
       "created_at": 1504481866958,
       "updated_at": 1514794898218
     },
-    "mycroft": {
+    "chatterbox": {
       "credential": {
         "created_at": 1504481866965,
         "updated_at": 1514794898856
@@ -185,7 +185,7 @@ _NOTE: Your settings will be different._
       "created_at": 1504481866965,
       "updated_at": 1514794898469
     },
-    "module": "mycroft",
+    "module": "chatterbox",
     "wit": {
       "credential": {
         "created_at": 1504481866981,

@@ -1,6 +1,6 @@
 ---
 description: >-
-  The Mark 1 device is an Enclosure for Mycroft, based on Raspberry Pi. It is
+  The Mark 1 device is an Enclosure for Chatterbox, based on Raspberry Pi. It is
   designed as a reference hardware device, and is able to be easily modified,
   hacked and extended.
 ---
@@ -11,19 +11,19 @@ description: >-
 
 This section of documentation assumes the following:
 
-* That you have a Mycroft Mark 1 hardware **Device**
+* That you have a Chatterbox Mark 1 hardware **Device**
 * That you are comfortable connecting devices to WiFi networks
 * That you are comfortable issuing basic Linux commands
 
 ## Getting Started
 
-When you received your Mark 1, you would have received a [blue-colored Getting Started guide \(PDF, 290Kb\)](https://mycroft.ai/wp-content/uploads/2017/06/Mark_1_User_Guide.pdf).
+When you received your Mark 1, you would have received a [blue-colored Getting Started guide \(PDF, 290Kb\)](https://chatterbox.ai/wp-content/uploads/2017/06/Mark_1_User_Guide.pdf).
 
 Connect the Mark 1 power supply to a power outlet, and to the Mark 1 device. _NOTE: If you are in a country other than the USA, you will need a power adapter to convert from the US power supply the Mark 1 ships with. Alternatively, use a 12V, 1A power supply for your country's power outlets._
 
 The Mark 1 will boot up. It will then Speak:
 
-`"I need to be connected to the internet. Plug in a network cable, or connect to the SSID Mycroft with the password 12345678 and go to http://start.mycroft.ai"`
+`"I need to be connected to the internet. Plug in a network cable, or connect to the SSID Chatterbox with the password 12345678 and go to http://start.chatterbox.ai"`
 
 ### Connect to the internet
 
@@ -33,7 +33,7 @@ Plug the Mark 1 into your router using an ethernet cable. The network should be 
 
 #### Using Wifi
 
-Using your computer or a mobile device, connect to the Wifi SSID `MYCROFT` using the password "12345678". Once you are connected to this SSID, go to the web page [http://start.mycroft.ai](https://start.mycroft.ai). A list of available WiFi networks will be presented. Select the WiFi network that you wish to connect the Mark 1 to, and enter the WiFi password. Mark 1 will attempt to connect to the WiFi network.
+Using your computer or a mobile device, connect to the Wifi SSID `MYCROFT` using the password "12345678". Once you are connected to this SSID, go to the web page [http://start.chatterbox.ai](https://start.chatterbox.ai). A list of available WiFi networks will be presented. Select the WiFi network that you wish to connect the Mark 1 to, and enter the WiFi password. Mark 1 will attempt to connect to the WiFi network.
 
 _NOTE: Mark 1 cannot connect to WiFi networks that operate in the 5GHz band. You must select a WiFi network that operates in the 2.4GHz band._
 
@@ -43,7 +43,7 @@ _NOTE: Mark 1 cannot connect to WiFi networks that operate on Channels 12 or 13 
 
 Once the Mark 1 is connected to the internet, a **Registration Code** will be Spoken, and displayed on the Mark 1's LED panel.
 
-View the home.mycroft.ai documentation to learn how to add your Device to home.mycroft.ai.
+View the home.chatterbox.ai documentation to learn how to add your Device to home.chatterbox.ai.
 
 {% page-ref page="../pairing-your-device.md" %}
 
@@ -63,8 +63,8 @@ The available menu options are:
 * OFF: This option will put your Mark 1 into Standby Mode. You won't be able to use the **Wake Word** or make **Utterances** while Mark 1 is in Standby Mode. To wake Mark 1 up from Standby, press the top button for two seconds.
 * TEST: This option will immediately run a test sequence on your Mark 1. This option may be required as part of troubleshooting measures. To move through each of the tests, press the top button. Continue pressing the top button to exit the test sequence.
 * SSH: This option allows you to enable [SSH](https://en.wikipedia.org/wiki/Secure_Shell) connections to the Mark 1 Device, or to block SSH if it's enabled.
-* LEARN: This option allows you to enable the Learn functionality within Mycroft. If you've also opted-in on home.mycroft.ai, and Learn functionality is enabled, then Mycroft will record your voice when Speaking the **Wake Word** and **Utterances**. This data is then used anonymously to _train_ Mycroft to better recognize the **Wake Word** and **Utterances**.
-* RESET: This option resets Mark 1 back to a factory default state. You may need to do this for troubleshooting, or if you're giving your Mark 1 to someone else. _NOTE: If you're resetting your Mark 1, remember to remove the Device from home.mycroft.ai so that the Pairing is removed also_
+* LEARN: This option allows you to enable the Learn functionality within Chatterbox. If you've also opted-in on home.chatterbox.ai, and Learn functionality is enabled, then Chatterbox will record your voice when Speaking the **Wake Word** and **Utterances**. This data is then used anonymously to _train_ Chatterbox to better recognize the **Wake Word** and **Utterances**.
+* RESET: This option resets Mark 1 back to a factory default state. You may need to do this for troubleshooting, or if you're giving your Mark 1 to someone else. _NOTE: If you're resetting your Mark 1, remember to remove the Device from home.chatterbox.ai so that the Pairing is removed also_
 * DEMO: If this option is selected, Mark 1 will provide a short demonstration of functionality, whilst channelling his secret desire to be Eminem :-\)
 
 ## Mark 1 boot sequence
@@ -74,12 +74,12 @@ When you power on your Mark 1, the eyes on the Mark 1 will go through a series o
 * NO EYES SHOWN: If your Mark 1 is not showing any LED pixels light up on its eyes when the power is plugged in, this means that the Arduino that powers the Neopixel eyes hasn't booted correctly. Try unplugging the power, waiting 30 seconds and then plugging the power back in.
 * GREY SPINNEY EYES: On first boot, Mark 1 will show grey spinning eyes. During this time, both the Raspberry Pi 3 board, and the Arduino used to control the [Neopixel](https://learn.adafruit.com/adafruit-neopixel-uberguide/the-magic-of-neopixels) eyes are powering up. If your Mark 1 is stuck at this stage, try unplugging the power, waiting 30 seconds and then plugging the power back in.
 * SOLID GREY EYES: After around 10 seconds, the grey spinning eyes may turn into solid grey eyes. During this time, the Raspberry Pi 3 board is writing code to the Arduino board that controls the Neopixel eyes.
-* SOLID YELLOW EYES: On boot, Mark 1 will check that its software is up to date. First, it will do a [network time protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol) sync to ensure that the system clock is synchronised, during which you will see the word `<<< SYNC <<<` appear on the LED display. Next, Mark 1 will attempt to update the Skills that are installed on the **Device**. If your Mark 1 gets stuck at this stage, it is likely an issue with updating software or Skills. A reboot may assist, but if it does not then please contact us via [Chat](https://mycroft.ai/chat) or the [Forum](https://community.mycroft.ai) and we can assist further.
-* SOLID BLUE EYES \(or color you have eyes set to in your home.mycroft.ai preferences\): after Mark 1 has finished booting and is ready for your voice commands, it will show solid blue eyes, or the solid color you have chosen in your home.mycroft.ai preferences.
+* SOLID YELLOW EYES: On boot, Mark 1 will check that its software is up to date. First, it will do a [network time protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol) sync to ensure that the system clock is synchronised, during which you will see the word `<<< SYNC <<<` appear on the LED display. Next, Mark 1 will attempt to update the Skills that are installed on the **Device**. If your Mark 1 gets stuck at this stage, it is likely an issue with updating software or Skills. A reboot may assist, but if it does not then please contact us via [Chat](https://chatterbox.ai/chat) or the [Forum](https://community.chatterbox.ai) and we can assist further.
+* SOLID BLUE EYES \(or color you have eyes set to in your home.chatterbox.ai preferences\): after Mark 1 has finished booting and is ready for your voice commands, it will show solid blue eyes, or the solid color you have chosen in your home.chatterbox.ai preferences.
 
 ## Hardware information
 
-The Mark 1 is completely open source hardware. All of the schematics and specifications can be found [on our Github](https://github.com/MycroftAI/hardware-mycroft-mark-1).
+The Mark 1 is completely open source hardware. All of the schematics and specifications can be found [on our Github](https://github.com/ChatterboxAI/hardware-chatterbox-mark-1).
 
 ## Common tasks performed on the Mark 1
 
@@ -89,16 +89,16 @@ The Mark 1 is completely open source hardware. All of the schematics and specifi
 
 ### Connecting to the Mark 1 via SSH
 
-* First, ensure that you've enabled SSH access. To do this hold down Mycroft's button until you see the menu. Twist till you see  SSH, press the button again. Twist to Allow, then press again. Mycroft will then say "SSH Logins are now allowed".
+* First, ensure that you've enabled SSH access. To do this hold down Chatterbox's button until you see the menu. Twist till you see  SSH, press the button again. Twist to Allow, then press again. Chatterbox will then say "SSH Logins are now allowed".
 * Ensure you know the IP address of your Mark 1 Device on your network. A handy way to do this is to install the IP Address **Skill**, and then Speak:
 
-> Hey Mycroft, what's your IP address?
+> Hey Chatterbox, what's your IP address?
 
 `"here are my available IP addresses: wlan IP address ... Those are all my available IP addresses"`
 
 * Open up your favorite terminal program, like PuTTy on Windows, or a new terminal on Linux
 * `ssh pi@IPADDRESS`
-* The default password is `mycroft`, so enter this when prompted.
+* The default password is `chatterbox`, so enter this when prompted.
 * If you have successfully logged in via SSH you will see a command prompt like the one below:
 
 ```text
@@ -123,13 +123,13 @@ If you would like to set up SSH access to your Mark 1 device using SSH keys inst
 
 ### Accessing the command line interface \(CLI\) of the Mark 1
 
-If you are SSH'd into the Mark 1 device, you are able to issue commands using the command line interface \(CLI\) instead of using voice. This bypasses the Speech To Text \(STT\) component of Mycroft.
+If you are SSH'd into the Mark 1 device, you are able to issue commands using the command line interface \(CLI\) instead of using voice. This bypasses the Speech To Text \(STT\) component of Chatterbox.
 
-`mycroft-cli-client`
+`chatterbox-cli-client`
 
 You will now be able to type **Utterances** into the CLI.
 
-![Issuing commands to Mark 1 from the command line](https://mycroft.ai/wp-content/uploads/2017/12/mark1-utterances-from-command-line.png)
+![Issuing commands to Mark 1 from the command line](https://chatterbox.ai/wp-content/uploads/2017/12/mark1-utterances-from-command-line.png)
 
 ### Upgrading to the latest version from a 2017 Mark 1
 
@@ -145,7 +145,7 @@ You will need:
 
 Method
 
-* Download the [latest image from the Mycroft website](https://mycroft.ai/to/mark-1-image).
+* Download the [latest image from the Chatterbox website](https://chatterbox.ai/to/mark-1-image).
 * Unplug the Mark 1 from the power supply.
 * Remove the four rubber feet from the Mark 1, and put them in a safe place.
 * Gently remove the base of the Mark 1.
@@ -158,11 +158,11 @@ Method
 * The Mark 1 device will power on with ‘white spinning eyes’. This will last around 20 seconds to 1 minute. Mark 1 will then have ‘full blue eyes’.
 * Mark 1 will then advise that it needs to be connected to WiFi.
 * Follow the instructions to connect Mark 1 to the internet.
-* Once you are connected, Mark 1 will advise that you need to pair the device. Pair the device on home.mycroft.ai
+* Once you are connected, Mark 1 will advise that you need to pair the device. Pair the device on home.chatterbox.ai
 
 {% page-ref page="../pairing-your-device.md" %}
 
-That’s it! Once your Mark 1 is paired, you’ll be able to use all the default Skills that come with the device, and you’ll also be able to install your own from the list at: [https://mycroft.ai/documentation/skills/\#community-developed-skills](https://mycroft.ai/documentation/skills/#community-developed-skills)
+That’s it! Once your Mark 1 is paired, you’ll be able to use all the default Skills that come with the device, and you’ll also be able to install your own from the list at: [https://chatterbox.ai/documentation/skills/\#community-developed-skills](https://chatterbox.ai/documentation/skills/#community-developed-skills)
 
 #### Option 2: Update the Mark 1 using voice commands
 
@@ -175,19 +175,19 @@ You will need:
 
 Method
 
-[Follow along with Kathy](https://drive.google.com/a/mycroft.ai/file/d/1bJ_aPT-bplQElSoZcZ_FQUruWa3iFJZ5/view?usp=sharing), our Community Manager, as she guides you through the upgrade process via voice.
+[Follow along with Kathy](https://drive.google.com/a/chatterbox.ai/file/d/1bJ_aPT-bplQElSoZcZ_FQUruWa3iFJZ5/view?usp=sharing), our Community Manager, as she guides you through the upgrade process via voice.
 
 * Take your Mark 1 out of its box, and give it a wipe over with a damp \(not wet\) cotton cloth, to remove dust. Be careful as the acrylic front plate can scratch if you use an abrasive cloth. Gently blow into the ports on the back of the device, and the ventilation holes on the top and bottom, to blow away excess dust.
 * Plug Mark 1 into power
 * The Mark 1 device will power on with ‘white spinning eyes’. This will last around 20 seconds to 1 minute. Mark 1 will then have ‘full blue eyes’.
 * Mark 1 will then advise that it needs to be connected to WiFi.
-* Follow [the instructions to connect Mark 1 to WiFi](https://mycroft.ai/documentation/mark-1/#getting-mark-1-connected-to-the-internet-using-a-network-cable), or connect an ethernet cable to the ethernet socket on the back of the device.
-* Once you are connected to WiFi, Mark 1 will advise that you need to pair the device. Pair the device on home.mycroft.ai [following these instructions.](https://mycroft.ai/documentation/mark-1/#pairing-the-mark-1)
+* Follow [the instructions to connect Mark 1 to WiFi](https://chatterbox.ai/documentation/mark-1/#getting-mark-1-connected-to-the-internet-using-a-network-cable), or connect an ethernet cable to the ethernet socket on the back of the device.
+* Once you are connected to WiFi, Mark 1 will advise that you need to pair the device. Pair the device on home.chatterbox.ai [following these instructions.](https://chatterbox.ai/documentation/mark-1/#pairing-the-mark-1)
 * If you hear the message Error occurred in processing pairing Skill, don’t worry, this is common for Mark 1 that are doing their first update in a little while.
 * Your Mark 1 will now appear frozen; it won’t respond to voice commands.
 * Reboot the Device by removing the power supply, waiting 10 seconds then plugging the power supply back in.
 * You will see ‘grey spinny eyes’ then ‘full blue eyes’ after about 20 seconds to 1 minute
-* Speak the command Install platform patch. Mycroft will respond with installing.
+* Speak the command Install platform patch. Chatterbox will respond with installing.
 * Mark 1 will then show ‘blue eye’ and display ‘UPDATING’ on screen.
 * Updating will take between 15 minutes and 90 minutes depending on your internet connection.
 * Mark 1 will reboot after the update is complete.
@@ -205,7 +205,7 @@ To reimage a Mark 1 **Device**, you will need:
 
 #### Reimaging steps
 
-* Download the software image. Save it to your computer. [The Mark 1 disk image is available here](https://mycroft.ai/to/mark-1-image)
+* Download the software image. Save it to your computer. [The Mark 1 disk image is available here](https://chatterbox.ai/to/mark-1-image)
 * Disconnect your Mark 1 from the power supply.
 * Using your torque screwdriver, take apart your Mark 1. If you need help, [this video from Geeked Out Solutions may be of assistance](https://www.youtube.com/watch?v=r76ObbB2EsA).
 * Remove the Micro SD card from the Raspberry Pi board on the back of the Mark 1 unit. It should come out easily, and should not need to be forced.
@@ -215,11 +215,11 @@ To reimage a Mark 1 **Device**, you will need:
 * Connect the Mark 1 unit back to the power supply.
 * The Mark 1 unit should reboot and now be functioning correctly.
 
-For more information, [see the original forum post by Barney Woodrow](https://community.mycroft.ai/t/how-to-re-image-mark1s-sd-card/2106).
+For more information, [see the original forum post by Barney Woodrow](https://community.chatterbox.ai/t/how-to-re-image-mark1s-sd-card/2106).
 
 If you prefer to use the Linux command line tool `dd` to burn the disk image instead, follow these instructions:
 
-1. Download the [Mark 1 disk image](https://mycroft.ai/to/mark-1-image)
+1. Download the [Mark 1 disk image](https://chatterbox.ai/to/mark-1-image)
 2. Insert the Micro SD card you wish to burn the image to. It must have a storage capacity of 8GB or higher.
 3. Identify the path where the MicroSD card is mounted by running the command `sudo fdisk -l`. You will be able to tell the path based on the storage size of the device.
 4. Keep a note of this - it will be something like `/dev/sdb1`
@@ -235,7 +235,7 @@ Micro SD cards have a finite lifespan. It is possible that the Micro SD card ins
 * Strange appearance of _eyes_ and _mouth_
 * Mark 1 will be unresponsive to voice commands
 
-If you believe your Micro SD card might have failed, [please make contact with us so we can look into the issue further with you](https://mycroft.ai/contact/), and if warranted, provide a replacement.
+If you believe your Micro SD card might have failed, [please make contact with us so we can look into the issue further with you](https://chatterbox.ai/contact/), and if warranted, provide a replacement.
 
 ### Keeping your Mark 1 Device updated
 
@@ -245,22 +245,22 @@ There's nothing else you need to do.
 
 ### Downgrading your Mark 1 Device to a lower version
 
-The `apt` repo use to store the Mark 1 package, `mycroft-core` - does not store package versions. However, the Mark 1 **does** cache `apt` packages on the **Device** at:
+The `apt` repo use to store the Mark 1 package, `chatterbox-core` - does not store package versions. However, the Mark 1 **does** cache `apt` packages on the **Device** at:
 
 `/var/cache/apt/archives`
 
 So, in order to downgrade the Mark 1 **Device**, we need to do two things:
 
-* remove the current `mycroft-core` package
+* remove the current `chatterbox-core` package
 * manually install the archived package using `dpkg`
 
-First, we remove the current `mycroft-core` package. In the example below, the version is given as `0.9.12`, but use the version you currently have installed.
+First, we remove the current `chatterbox-core` package. In the example below, the version is given as `0.9.12`, but use the version you currently have installed.
 
-`sudo apt-get remove mycroft-core=0.9.12`
+`sudo apt-get remove chatterbox-core=0.9.12`
 
 Next, find the package in the archives that you want to install:
 
-`pi@mark_1:~ $ ls -las /var/cache/apt/archives/ | grep mycroft-core`
+`pi@mark_1:~ $ ls -las /var/cache/apt/archives/ | grep chatterbox-core`
 
 Then, use `dpkg` to install the archive
 
@@ -286,13 +286,13 @@ First please reboot the device. In case your device is processing a large update
 If you have SSH access to the device you can trigger a reinstall of the Mark 1 software by switching to the development channel and back again. To do this run:
 
 ```text
-sudo mycroft-use unstable
-sudo mycroft-use stable
+sudo chatterbox-use unstable
+sudo chatterbox-use stable
 ```
 
 If the above still doesn't work you will most likely need to [reimage the SD Card](mark-1.md#reimaging-steps). Note that SD Cards have a limited lifespan. As they age, sectors of the disk will become corrupted and cause "strange" behavior that is difficult to replicate. Using a new SD Card has solved many difficult problems and saved hours of frustrations.
 
 ## Hardware Hacking your Mark 1 Device
 
-If you're interested in hardware hacking on your Mark 1 **Device**, the [hardware schematics](https://github.com/MycroftAI/hardware-mycroft-mark-1) are open source and available for download.
+If you're interested in hardware hacking on your Mark 1 **Device**, the [hardware schematics](https://github.com/ChatterboxAI/hardware-chatterbox-mark-1) are open source and available for download.
 

@@ -1,13 +1,13 @@
 ---
 description: >-
-  Learn how to install Mycroft for Docker either from a Docker Hub install, or
+  Learn how to install Chatterbox for Docker either from a Docker Hub install, or
   by building the image. Many thanks to Brian Hopkins (@btotharye) for this
   documentation.
 ---
 
 # Docker
 
-Mycroft is available for `Docker`. You have two options for a `Docker` installation:
+Chatterbox is available for `Docker`. You have two options for a `Docker` installation:
 
 * Build Image from source  
 * Pull Image from Docker Hub
@@ -22,52 +22,52 @@ This documentation assumes the following:
 
 ### Installing from Docker Hub
 
-The Mycroft for Docker image is updated on [dockerhub](https://hub.docker.com/r/mycroftai/docker-mycroft/) and you can install it by running the command below:
+The Chatterbox for Docker image is updated on [dockerhub](https://hub.docker.com/r/chatterboxai/docker-chatterbox/) and you can install it by running the command below:
 
 ```bash
-docker pull mycroftai/docker-mycroft
+docker pull chatterboxai/docker-chatterbox
 ```
 
-Then follow the instructions below for running Mycroft for Docker.
+Then follow the instructions below for running Chatterbox for Docker.
 
 ### Installing via building the Docker image
 
 it pull this repository.
 
 ```bash
-git clone https://github.com/MycroftAI/docker-mycroft.git
+git clone https://github.com/ChatterboxAI/docker-chatterbox.git
 ```
 
 Build the `Docker` image in the directory that you have checked out.
 
 ```bash
-docker build -t mycroft .
+docker build -t chatterbox .
 ```
 
-Follow the instructions for running Mycroft for Docker below to continue.
+Follow the instructions for running Chatterbox for Docker below to continue.
 
-## Running Mycroft for Docker
+## Running Chatterbox for Docker
 
-To prevent having to register your instance with home.mycroft.ai every time the container is started, and to have persistent data, you can map a local directory into the container. Just replace the `directory_on_local_machine` with the path you want the container mapped to on your local machine \(eg. `/home/user/mycroft`\).
+To prevent having to register your instance with home.chatterbox.ai every time the container is started, and to have persistent data, you can map a local directory into the container. Just replace the `directory_on_local_machine` with the path you want the container mapped to on your local machine \(eg. `/home/user/chatterbox`\).
 
 Sounds can be played in the `Docker` container using `pulseaudio`, without modifying any config files
 
 * Set [PULSE\_SERVER](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Network/#directconnection) `env` variable  
 * Share pulseaudio's [cookie](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Network/#authorization)
 
-Run the following to start up Mycroft for Docker:
+Run the following to start up Chatterbox for Docker:
 
-\_NOTE: You don't need the -e PULSE\_SERVER or any of the other pulse related variables if you only want to use text via a websocket to mycroft for example using this container.
+\_NOTE: You don't need the -e PULSE\_SERVER or any of the other pulse related variables if you only want to use text via a websocket to chatterbox for example using this container.
 
 ```bash
 docker run -d  
--v directory_on_local_machine:/root/.mycroft  
+-v directory_on_local_machine:/root/.chatterbox  
 --device /dev/snd  
 -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native  
 -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native  
 -v ~/.config/pulse/cookie:/root/.config/pulse/cookie  
 -p 8181:8181  
---name mycroft mycroftai/docker-mycroft
+--name chatterbox chatterboxai/docker-chatterbox
 ```
 
 Confirm via `docker ps` that your container is up and serving port 8181:
@@ -75,76 +75,76 @@ Confirm via `docker ps` that your container is up and serving port 8181:
 ```bash
 docker ps  
 CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES  
-692219e23bf2 mycroft "/mycroft/ai/mycro..." 3 seconds ago Up 1 second 0.0.0.0:8181->8181/tcp mycroft
+692219e23bf2 chatterbox "/chatterbox/ai/mycro..." 3 seconds ago Up 1 second 0.0.0.0:8181->8181/tcp chatterbox
 ```
 
-You should now have a running instance of Mycroft for Docker that you can interact with via the command line.
+You should now have a running instance of Chatterbox for Docker that you can interact with via the command line.
 
-### Pairing Mycroft for Docker
+### Pairing Chatterbox for Docker
 
-After the container has been started you can watch the logs and look for the line that says "Pairing Code" and use this to pair at [https://home.mycroft.ai](https://home.mycroft.ai).
+After the container has been started you can watch the logs and look for the line that says "Pairing Code" and use this to pair at [https://home.chatterbox.ai](https://home.chatterbox.ai).
 
 You can view the logs with:
 
 ```bash
-docker logs -f mycroft
+docker logs -f chatterbox
 ```
 
-## Interacting With Mycroft on Docker
+## Interacting With Chatterbox on Docker
 
-### Accessing Mycroft Logs
+### Accessing Chatterbox Logs
 
 At any time you can watch the logs simply by running the bellow command:
 
 ```bash
-docker logs -f mycroft
+docker logs -f chatterbox
 ```
 
 You can exit out of this `docker log` command by hitting Ctrl + C. The `--follow` turns it into a real `tail` instead of a `cat` of the log.
 
 ## CLI Access
 
-### Accessing Mycroft CLI
+### Accessing Chatterbox CLI
 
 You can interact with the CLI of the container by running the following command. This will connect you to the running container via `bash`:
 
 ```bash
-docker exec -it mycroft /bin/bash
+docker exec -it chatterbox /bin/bash
 ```
 
-Once in the container you can do `./start-mycroft.sh cli` to get a interactive CLI to interact with Mycroft for Docker if needed.
+Once in the container you can do `./start-chatterbox.sh cli` to get a interactive CLI to interact with Chatterbox for Docker if needed.
 
 You can type Ctrl + C to exit the cli.
 
-### Installing Skills on Docker Mycroft
+### Installing Skills on Docker Chatterbox
 
 You can install **Skills** into the container by running the following:
 
 ```bash
-docker exec -it mycroft /opt/mycroft/msm/msm install github_url
+docker exec -it chatterbox /opt/chatterbox/msm/msm install github_url
 ```
 
 So to install the Hello World Skill:
 
 ```bash
-docker exec -it mycroft /opt/mycroft/msm/msm install https://github.com/MycroftAI/skill-hello-world
+docker exec -it chatterbox /opt/chatterbox/msm/msm install https://github.com/ChatterboxAI/skill-hello-world
 ```
 
-### Removing Skills on Docker Mycroft
+### Removing Skills on Docker Chatterbox
 
 You can also uninstall a **Skill** using MSM with:
 
 ```bash
-docker exec -it mycroft /opt/mycroft/msm/msm remove skill-hello-world
+docker exec -it chatterbox /opt/chatterbox/msm/msm remove skill-hello-world
 ```
 
 ## Troubleshooting
 
 ### Text-to-speech not working
 
-There have been reports that `mimic` may not be properly added to the PATH. Restarting Mycroft within the Docker container can resolve this.
+There have been reports that `mimic` may not be properly added to the PATH. Restarting Chatterbox within the Docker container can resolve this.
 
 ### Getting help
 
-Mycroft for Docker is community-supported. You are welcome to join the [Mycroft Chat Docker channel](https://chat.mycroft.ai/community/channels/docker).
+Chatterbox for Docker is community-supported. You are welcome to join the [Chatterbox Chat Docker channel](https://chat.chatterbox.ai/community/channels/docker).
 

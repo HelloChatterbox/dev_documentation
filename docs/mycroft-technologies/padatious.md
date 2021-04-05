@@ -4,7 +4,7 @@ description: 'Padatious is a machine-learning, neural-network based intent parse
 
 # Padatious
 
-Padatious is a [machine-learning](https://en.wikipedia.org/wiki/Machine_learning), [neural-network](https://en.wikipedia.org/wiki/Artificial_neural_network) based _intent parser_. It is an alternative to the [Adapt intent parser](https://mycroft.ai/documentation/adapt/). Unlike Adapt, which uses small groups of unique words, Padatious is trained on the sentence as a whole.
+Padatious is a [machine-learning](https://en.wikipedia.org/wiki/Machine_learning), [neural-network](https://en.wikipedia.org/wiki/Artificial_neural_network) based _intent parser_. It is an alternative to the [Adapt intent parser](https://chatterbox.ai/documentation/adapt/). Unlike Adapt, which uses small groups of unique words, Padatious is trained on the sentence as a whole.
 
 Padatious has a number of key benefits over other intent parsing technologies.
 
@@ -24,9 +24,9 @@ In speech recognition and voice assistance, an **intent** is the task the user _
 
 _Example_: Julie wants to know about today's weather in her current location, which is Melbourne, Australia.
 
-* `hey mycroft, what's today's weather like?`
-* `hey mycroft, what's the weather like in Melbourne?`
-* `hey mycroft, weather`
+* `hey chatterbox, what's today's weather like?`
+* `hey chatterbox, what's the weather like in Melbourne?`
+* `hey chatterbox, weather`
 
 Each of these examples has very similar _intent_. The role of Padatious is to determine intent programmatically.
 
@@ -55,7 +55,7 @@ and
 
 `vocab/en-us/do.you.like.intent`
 
-with examples of questions about mycroft's opinion about tomatoes:
+with examples of questions about chatterbox's opinion about tomatoes:
 
 * Are you fond of tomatoes?
 * Do you like tomatoes?
@@ -97,11 +97,11 @@ A skill using Padatious is no different than previous skills except that `self.r
 For example, the Tomato Skill would be written as:
 
 ```text
-from mycroft import MycroftSkill
+from chatterbox import ChatterboxSkill
 
-class TomatoSkill(MycroftSkill):
+class TomatoSkill(ChatterboxSkill):
     def __init__(self):
-        MycroftSkill.__init__(self)
+        ChatterboxSkill.__init__(self)
 
     def initialize(self):
         self.register_intent_file('what.is.intent', self.handle_what_is)
@@ -224,7 +224,7 @@ _NOTE: Currently, the number of :0 words is not fully taken into consideration s
 
 ## API Example
 
-_NOTE: This section is of use if you are using Padatious on a project other than Mycroft. If you're developing_ [_Skills for Mycroft_](https://mycroft.ai/documentation/skills)_, you don't need to worry about this_
+_NOTE: This section is of use if you are using Padatious on a project other than Chatterbox. If you're developing_ [_Skills for Chatterbox_](https://chatterbox.ai/documentation/skills)_, you don't need to worry about this_
 
 **program.py**:
 
@@ -262,7 +262,7 @@ python3 program.py
 
 ## Installing Padatious
 
-_NOTE: This section is of use if you are using Padatious on a project other than Mycroft. If you're developing_ [_Skills for Mycroft_](https://mycroft.ai/documentation/skills)_, you don't need to worry about this_
+_NOTE: This section is of use if you are using Padatious on a project other than Chatterbox. If you're developing_ [_Skills for Chatterbox_](https://chatterbox.ai/documentation/skills)_, you don't need to worry about this_
 
 ### Prerequisites
 

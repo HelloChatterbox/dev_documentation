@@ -1,47 +1,47 @@
 ---
 description: >-
-  Learn about foreign language support in Mycroft, and how to approach
-  configuring Mycroft to support other languages.
+  Learn about foreign language support in Chatterbox, and how to approach
+  configuring Chatterbox to support other languages.
 ---
 
 # Languages
 
-In order to support other languages, several components have to be in place in the end to end [Mycroft Voice Stack](https://mycroft.ai/voice-stack-introduction/). Adding language support for Mycroft means that each of those components has to support the new language. This page walks you what has to be done for each of the elements.
+In order to support other languages, several components have to be in place in the end to end [Chatterbox Voice Stack](https://chatterbox.ai/voice-stack-introduction/). Adding language support for Chatterbox means that each of those components has to support the new language. This page walks you what has to be done for each of the elements.
 
-At present English is the only officially supported language. Using a language other than English will require at least some editing via the commandline, and likely general troubleshooting. If you are not familiar with Mycroft's configuration files, please see our [dedicated documentation for `mycroft.conf`](https://mycroft.ai/documentation/mycroft-conf/).
+At present English is the only officially supported language. Using a language other than English will require at least some editing via the commandline, and likely general troubleshooting. If you are not familiar with Chatterbox's configuration files, please see our [dedicated documentation for `chatterbox.conf`](https://chatterbox.ai/documentation/chatterbox-conf/).
 
 Adding support for a new language is a significant undertaking. It is complex and will require some development and Linux system administration knowledge.
 
 ## Overview
 
-For Mycroft to be usable in a language we need to look at six components.
+For Chatterbox to be usable in a language we need to look at six components.
 
 1. [Language setting](./#1-language-setting): To inform each of the following components which language we are using, we must set our overall language setting.
-2. [Wake Word](./#2-wake-word): When you Speak 'Hey Mycroft, do something', you are invoking a Wake Word. To change your Wake Word to another language, you need to change the Wake Word phrase that is used.
-3. [Speech to Text](./#3-speech-to-text-stt): Mycroft is designed to be modular, so you can choose which Speech to Text engine you use. You need to find and configure a Speech to Text engine for your language.
-4. [Text to Speech](./#4-text-to-speech-tts): Again, Mycroft is designed to be modular, so you can choose which Text to Speech engine you use. You need to find and configure a Text to Speech engine for your language.
+2. [Wake Word](./#2-wake-word): When you Speak 'Hey Chatterbox, do something', you are invoking a Wake Word. To change your Wake Word to another language, you need to change the Wake Word phrase that is used.
+3. [Speech to Text](./#3-speech-to-text-stt): Chatterbox is designed to be modular, so you can choose which Speech to Text engine you use. You need to find and configure a Speech to Text engine for your language.
+4. [Text to Speech](./#4-text-to-speech-tts): Again, Chatterbox is designed to be modular, so you can choose which Text to Speech engine you use. You need to find and configure a Text to Speech engine for your language.
 5. [Skills](./#5-skills): To support a language, a Skill must have `vocab` and `dialog` entries for that language.
-6. [Mycroft Core](./#6-mycroft-core-lingua-franca-library): To support a new language, `mycroft-core` needs to have supporting files added to the [Lingua Franca library](https://github.com/MycroftAI/lingua-franca).
+6. [Chatterbox Core](./#6-chatterbox-core-lingua-franca-library): To support a new language, `chatterbox-core` needs to have supporting files added to the [Lingua Franca library](https://github.com/ChatterboxAI/lingua-franca).
 
 ## 1. Language setting
 
-Your primary language is set within your `mycroft.conf` file. Using the [Configuration Manager](../config-manager.md) we can set the language by running:
+Your primary language is set within your `chatterbox.conf` file. Using the [Configuration Manager](../config-manager.md) we can set the language by running:
 
 ```bash
-mycroft-config set lang "it-it"
+chatterbox-config set lang "it-it"
 ```
 
 ## 2. Wake Word
 
-Changing your wake word is not necessary, however may be desirable in order to wake the device with a phrase that is more appropriate or relevant in your language. By default, Mycroft will continue to be awoken by the phrase _"Hey Mycroft"_.
+Changing your wake word is not necessary, however may be desirable in order to wake the device with a phrase that is more appropriate or relevant in your language. By default, Chatterbox will continue to be awoken by the phrase _"Hey Chatterbox"_.
 
-[See our documentation on changing your Wake Word, and select a Wake Word that suits your language](https://mycroft.ai/documentation/home-mycroft-ai-pairing/#changing-your-wake-word). Alternatively you can create a custom wake word:
+[See our documentation on changing your Wake Word, and select a Wake Word that suits your language](https://chatterbox.ai/documentation/home-chatterbox-ai-pairing/#changing-your-wake-word). Alternatively you can create a custom wake word:
 
 {% page-ref page="../wake-word.md" %}
 
 ## 3. Speech to Text \(STT\)
 
-Speech to text \(STT\) is the part of Mycroft that translates spoken words into text. That text is then used by intent parsers, and then by Skills.
+Speech to text \(STT\) is the part of Chatterbox that translates spoken words into text. That text is then used by intent parsers, and then by Skills.
 
 ### Available STT engines
 
@@ -53,7 +53,7 @@ STT engines are made available by different vendors, and they each have differen
 * [List of languages supported by IBM Watson](https://cloud.ibm.com/docs/services/speech-to-text?topic=speech-to-text-models#models)
 * [List of languages supported by Wit.AI](https://wit.ai/faq)
 
-See the full range of supported STT engines and how to configure Mycroft to use them:
+See the full range of supported STT engines and how to configure Chatterbox to use them:
 
 {% page-ref page="../stt-engine.md" %}
 
@@ -76,20 +76,20 @@ TTS engines are made available by different vendors, and they each have differen
 * [List of languages supported by MaryTTS](http://mary.dfki.de/)
 * [List of languages supported by BingTTS](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support#text-to-speech)
 
-Once you've found an TTS engine for your language, you will need to configure Mycroft to use it. This is done through the [mycroft.conf](https://mycroft.ai/documentation/mycroft-conf/) file.
+Once you've found an TTS engine for your language, you will need to configure Chatterbox to use it. This is done through the [chatterbox.conf](https://chatterbox.ai/documentation/chatterbox-conf/) file.
 
 #### What if there isn't an TTS engine available for my language?
 
 Unfortunately, TTS engines aren't available for every language in the world.
 
-If you would like to build a TTS for your language, then we recommend you check out [Mimic Recording Studio](https://mycroft.ai/documentation/mimic-recording-studio/). Mimic Recording Studio facilitates the recording of phrases based on a _corpus_, and the recordings can be used to train a voice with the `mimic2` TTS software.
+If you would like to build a TTS for your language, then we recommend you check out [Mimic Recording Studio](https://chatterbox.ai/documentation/mimic-recording-studio/). Mimic Recording Studio facilitates the recording of phrases based on a _corpus_, and the recordings can be used to train a voice with the `mimic2` TTS software.
 
 ### Setting your TTS engine
 
-Using the [Configuration Manager](../config-manager.md) we can edit the User-level `mycroft.conf` file by running:
+Using the [Configuration Manager](../config-manager.md) we can edit the User-level `chatterbox.conf` file by running:
 
 ```bash
-mycroft-config edit user
+chatterbox-config edit user
 ```
 
 We can then add our TTS configuration values.
@@ -118,24 +118,24 @@ The TTS options you can select from are;
 
 ## 5. Skills
 
-In order to support a new language, individual Skills must support that language too. Mycroft Skills are already structured to cater for new languages. Within the Skill's directory, you will see subdirectories called `dialog`, `vocab` or `locale`. Within these directories is a directory for each of the languages the Skill supports, named after the BCP-47 language code for the language - such as `en-us` for American English and `pt-br` for Brazilian Portuguese.
+In order to support a new language, individual Skills must support that language too. Chatterbox Skills are already structured to cater for new languages. Within the Skill's directory, you will see subdirectories called `dialog`, `vocab` or `locale`. Within these directories is a directory for each of the languages the Skill supports, named after the BCP-47 language code for the language - such as `en-us` for American English and `pt-br` for Brazilian Portuguese.
 
-To have a Skill support another language, the easiest way is to contribute to translating `dialog` and `vocab` files on the [Mycroft Translate](https://translate.mycroft.ai) platform. When significant progress has been made on a language in Mycroft Translate, the translations are automatically added to Skills.
+To have a Skill support another language, the easiest way is to contribute to translating `dialog` and `vocab` files on the [Chatterbox Translate](https://translate.chatterbox.ai) platform. When significant progress has been made on a language in Chatterbox Translate, the translations are automatically added to Skills.
 
-You can modify the individual `dialog` and `vocab` files for a Skill on your own device if you need to. Each Skill is in it's own directory on your device at `/opt/mycroft/skills/`.
+You can modify the individual `dialog` and `vocab` files for a Skill on your own device if you need to. Each Skill is in it's own directory on your device at `/opt/chatterbox/skills/`.
 
-## 6. Mycroft Core - Lingua Franca library
+## 6. Chatterbox Core - Lingua Franca library
 
-In addition to the above, `mycroft-core` also requires localization, in particular to extract dates and numbers.
+In addition to the above, `chatterbox-core` also requires localization, in particular to extract dates and numbers.
 
-For more information, see the [Lingua Franca Github repository](https://github.com/MycroftAI/lingua-franca).
+For more information, see the [Lingua Franca Github repository](https://github.com/ChatterboxAI/lingua-franca).
 
 Some common files for each language are:
 
 * `parse_LANG.py` - this file parses large numbers, extracts dates and times in formats specific to the language, and handles definite articles such as 'a, an' etc.
 * `format_LANG.py` - this file formats cardinal and ordinal numbers, and helps to handle pronunciation of complex phrases involving decimals and fractions. Depending on the language, this file will also help format days of the week and other complex date and time phrasing.
 
-As of mid-2019, the languages supported by `mycroft-core` are:
+As of mid-2019, the languages supported by `chatterbox-core` are:
 
 * [German](german.md) \(`de`\)
 * French \(`fr`\)
@@ -154,14 +154,14 @@ Contributions to this utility are warmly welcomed.
 
 ## Example configuration
 
-Putting these six components together allows us to use Mycroft in another language. A simple `mycroft.conf` file for Italian users might look like:
+Putting these six components together allows us to use Chatterbox in another language. A simple `chatterbox.conf` file for Italian users might look like:
 
 ```javascript
 {
   "lang": "it-it",
   "stt": {
-    "module": "mycroft",
-    "mycroft": {
+    "module": "chatterbox",
+    "chatterbox": {
       "lang": "it-it"
     }
   },
@@ -180,11 +180,11 @@ This configuration will set the:
 * Speech to Text \(STT\) engine
 * Text to Speech \(TTS\) engine
 
-This configuration has not changed the Wake Word, so the device will continue responding to "Hey Mycroft".
+This configuration has not changed the Wake Word, so the device will continue responding to "Hey Chatterbox".
 
 ## Further languages support
 
-You're welcome to post questions and queries to the [Languages topic on the Mycroft Forum](https://community.mycroft.ai/c/languages) or join our [Languages chatroom at Mycroft Chat](https://chat.mycroft.ai/community/channels/languages) to connect with others from around the world.
+You're welcome to post questions and queries to the [Languages topic on the Chatterbox Forum](https://community.chatterbox.ai/c/languages) or join our [Languages chatroom at Chatterbox Chat](https://chat.chatterbox.ai/community/channels/languages) to connect with others from around the world.
 
-We also have a number of [language-specific channels in Chat](https://mycroft.ai/contribute/#translate-to-new-languages).
+We also have a number of [language-specific channels in Chat](https://chatterbox.ai/contribute/#translate-to-new-languages).
 

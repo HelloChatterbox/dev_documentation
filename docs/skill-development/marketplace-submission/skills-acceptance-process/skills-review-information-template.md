@@ -9,7 +9,7 @@ description: >-
 ```text
 ## Meta
 
-* Who: [@your-github-handle](https://github.com/your-github-handle) / @your-mycroft-chat-handle  
+* Who: [@your-github-handle](https://github.com/your-github-handle) / @your-chatterbox-chat-handle  
 * Datestamp: run `date +%Y-%m-%d_%H:%M:%S_%Z`  
 * Language and dialect of tester:
 
@@ -43,9 +43,9 @@ This review checks the README for completeness - does it follow the README templ
 
 * [ ] **Categories**  
 
-  Is there at least one category listed? At least one category must be selected for the Skill to be displayed correctly in the [Mycroft Marketplace](https://market.mycroft.ai).  
+  Is there at least one category listed? At least one category must be selected for the Skill to be displayed correctly in the [Chatterbox Marketplace](https://market.chatterbox.ai).  
 
-  Is the bolded category the most appropriate for this Skill? The bold category is considered the primary category and will be used for display in the [Marketplace](https://market.mycroft.ai/), all others are secondary and used for search results.
+  Is the bolded category the most appropriate for this Skill? The bold category is considered the primary category and will be used for display in the [Marketplace](https://market.chatterbox.ai/), all others are secondary and used for search results.
 
 &gt;
 

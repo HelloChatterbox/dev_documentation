@@ -1,23 +1,23 @@
-# Contributing to Mycroft Documentation
+# Contributing to Chatterbox Documentation
 
-Mycroft is intentionally open source software, and we subscribe to the collaborative approaches that are the hallmark of the open source community. For this reason, everyone is welcome to contribute to Mycroft Documentation.
+Chatterbox is intentionally open source software, and we subscribe to the collaborative approaches that are the hallmark of the open source community. For this reason, everyone is welcome to contribute to Chatterbox Documentation.
 
 ## Process flow
 
 ### If you are non-technical
 
-If you would like to contribute to the Mycroft Documentation and are non-technical, please [make contact](https://mycroft.ai/contact) and we will provide a non-technical mechanism to contribute.
+If you would like to contribute to the Chatterbox Documentation and are non-technical, please [make contact](https://chatterbox.ai/contact) and we will provide a non-technical mechanism to contribute.
 
 ### If you are technical, and/or you know Git and GitHub
 
-If you would like to contribute to Mycroft Documentation and are technically-minded, you may:
+If you would like to contribute to Chatterbox Documentation and are technically-minded, you may:
 
 * Raise an Issue on this repo in GitHub
 * Clone this Repo into your own GitHub account, make changes and raise a Pull Request
 
 ### Documentation Team
 
-A Documentation Team is responsible for the guardianship of Mycroft Documentation. This team comprises both Mycroft Staff and Mycroft community members. The Documentation Team is responsible for additions and deletions to the Team itself. To chat with the Documentation Team, please join the [Mycroft Chat facility](https://chat.mycroft.ai), specifically the ~documentation channel.
+A Documentation Team is responsible for the guardianship of Chatterbox Documentation. This team comprises both Chatterbox Staff and Chatterbox community members. The Documentation Team is responsible for additions and deletions to the Team itself. To chat with the Documentation Team, please join the [Chatterbox Chat facility](https://chat.chatterbox.ai), specifically the ~documentation channel.
 
 ### Review of Issues and Pull Requests
 
@@ -38,4 +38,4 @@ If a Pull Request satisfies review criteria, it will be merged to the appropriat
 
 ### Dispute resolution
 
-If at any time you believe the Documentation Team has acted unfairly, you may [contact Mycroft](https://mycroft.ai/contact) and request review and/or dispute resolution at any time. This process will be conducted in a professional manner.
+If at any time you believe the Documentation Team has acted unfairly, you may [contact Chatterbox](https://chatterbox.ai/contact) and request review and/or dispute resolution at any time. This process will be conducted in a professional manner.

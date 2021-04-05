@@ -1,23 +1,23 @@
 ---
-description: Maintaining the history of Mycroft contributions to our legacy repo.
+description: Maintaining the history of Chatterbox contributions to our legacy repo.
 ---
 
 # Legacy Repo
 
 ## Legacy repo shout-out
 
-Prior to open-sourcing Mycroft in the mycroft-core.git repo, a number of folks were working on the mycroft.git repo. The commit history was messy, there were some API keys checked in, and we felt it was time for a fresh start. The biggest drawback is the loss of commit/contributor history. This page will at least resolve the latter. Thank you to everyone who helped us get this far!
+Prior to open-sourcing Chatterbox in the chatterbox-core.git repo, a number of folks were working on the chatterbox.git repo. The commit history was messy, there were some API keys checked in, and we felt it was time for a fresh start. The biggest drawback is the loss of commit/contributor history. This page will at least resolve the latter. Thank you to everyone who helped us get this far!
 
 {% hint style="info" %}
 Please note that below is a percentage of commits, and not a percentage of contribution value. Everyone below is awesome.
 {% endhint %}
 
-## Git Summary: Mycroft Legacy Repo, 20 May 2016
+## Git Summary: Chatterbox Legacy Repo, 20 May 2016
 
 ```text
-seanfitz@r2d2:~/development/mycroft (master u=)$ git summary
+seanfitz@r2d2:~/development/chatterbox (master u=)$ git summary
 
- project  : mycroft
+ project  : chatterbox
  repo age : 8 months
  active   : 205 days
  commits  : 549

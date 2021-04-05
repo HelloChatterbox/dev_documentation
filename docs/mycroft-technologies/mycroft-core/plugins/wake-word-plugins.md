@@ -1,10 +1,10 @@
 # Wake Word Plugins
 
-All Mycroft Wake Word Plugins need to provide a class derived from the HotWordEngine base class in `mycroft.client.speech.hotword_factory`
+All Chatterbox Wake Word Plugins need to provide a class derived from the HotWordEngine base class in `chatterbox.client.speech.hotword_factory`
 
-When the `__init__()` method of the base class is run the config for that module will be loaded and available through `self.config`. Mycroft's selected language will also be available through `self.lang`.
+When the `__init__()` method of the base class is run the config for that module will be loaded and available through `self.config`. Chatterbox's selected language will also be available through `self.lang`.
 
-For example, the following [Mycroft configuration](../../../using-mycroft-ai/customizations/config-manager.md):
+For example, the following [Chatterbox configuration](../../../using-chatterbox-ai/customizations/config-manager.md):
 
 ```javascript
 {
@@ -40,11 +40,11 @@ The `stop()` method is optional and takes no arguments. It should be used to per
 
 ## Entry point
 
-To make the class detectable as a Wake Word plugin, the package needs to provide an entry point under the `mycroft.plugin.wake_word` namespace.
+To make the class detectable as a Wake Word plugin, the package needs to provide an entry point under the `chatterbox.plugin.wake_word` namespace.
 
 ```python
 setup([...],
-      entry_points = {'mycroft.plugin.wake_word': 'example_wake_word_plugin = my_example_ww:myWakeWordEngine'}
+      entry_points = {'chatterbox.plugin.wake_word': 'example_wake_word_plugin = my_example_ww:myWakeWordEngine'}
       )
 ```
 

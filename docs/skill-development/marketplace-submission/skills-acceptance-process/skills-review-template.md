@@ -4,16 +4,16 @@ description: Complete template for the Skills Acceptance Process.
 
 # Combined Template
 
-The overall [Skills Acceptance Process](https://mycroft.ai/documentation/skills/skills-acceptance-process/) is outlined in the Mycroft Documentation.
+The overall [Skills Acceptance Process](https://chatterbox.ai/documentation/skills/skills-acceptance-process/) is outlined in the Chatterbox Documentation.
 
-This template is provided to make it easier for testers to complete the process and provide relevant feedback to Skill Authors. An example of the completed process can be found on [this Pull Request](https://github.com/MycroftAI/mycroft-skills/pull/844#issuecomment-460913234). If you have any other questions or comments, please raise them in the [Skill Testing Team Chat](https://chat.mycroft.ai/community/channels/skill-testing-team).
+This template is provided to make it easier for testers to complete the process and provide relevant feedback to Skill Authors. An example of the completed process can be found on [this Pull Request](https://github.com/ChatterboxAI/chatterbox-skills/pull/844#issuecomment-460913234). If you have any other questions or comments, please raise them in the [Skill Testing Team Chat](https://chat.chatterbox.ai/community/channels/skill-testing-team).
 
 The process has been split into three parts:  
 1. Code review - ensuring the code is stable and secure;  
 2. Information review - ensuring all info is accurate and understandable; and  
 3. Functional review - ensuring the experience of using the Skill is intuitive.
 
-Testers can choose to conduct one or more of these reviews at a time, and once completed the review should be posted as a comment on the relevant [Pull Request \(PR\)](https://github.com/MycroftAI/mycroft-skills/pulls). Once all reviews are completed with no outstanding `Actions Required`, the Skill will be merged into the repo and automatically added to the [Mycroft Marketplace](https://market.mycroft.ai/skills).
+Testers can choose to conduct one or more of these reviews at a time, and once completed the review should be posted as a comment on the relevant [Pull Request \(PR\)](https://github.com/ChatterboxAI/chatterbox-skills/pulls). Once all reviews are completed with no outstanding `Actions Required`, the Skill will be merged into the repo and automatically added to the [Chatterbox Marketplace](https://market.chatterbox.ai/skills).
 
 ## Instructions for use
 
@@ -40,8 +40,8 @@ _Action Required: For any actions required by the Skill Author, please use this 
 ## Meta
 
 * Platform:  
-* Mycroft-core version:  
-* Who: [@your-github-handle](https://github.com/your-github-handle) / @your-mycroft-chat-handle  
+* Chatterbox-core version:  
+* Who: [@your-github-handle](https://github.com/your-github-handle) / @your-chatterbox-chat-handle  
 * Datestamp: run `date +%Y-%m-%d_%H:%M:%S_%Z`  
 * Language and dialect of tester:
 
@@ -121,9 +121,9 @@ This review checks the README for completeness - does it follow the README templ
 
 * [ ] **Categories**  
 
-  Is there at least one category listed? At least one category must be selected for the Skill to be displayed correctly in the [Mycroft Marketplace](https://market.mycroft.ai).  
+  Is there at least one category listed? At least one category must be selected for the Skill to be displayed correctly in the [Chatterbox Marketplace](https://market.chatterbox.ai).  
 
-  Is the bolded category the most appropriate for this Skill? The bold category is considered the primary category and will be used for display in the [Marketplace](https://market.mycroft.ai/), all others are secondary and used for search results.
+  Is the bolded category the most appropriate for this Skill? The bold category is considered the primary category and will be used for display in the [Marketplace](https://market.chatterbox.ai/), all others are secondary and used for search results.
 
 &gt;
 
@@ -143,7 +143,7 @@ This review checks the README for completeness - does it follow the README templ
 
 * [ ] **Installation**
 
-Check that the Skill installs using voice commands. Mycroft will get the user to confirm which Skill should be installed if there is ambiguity in Skill names - such as duplicate names. If possible, name the Skill so that there is minimal duplication and/or conflict. You should also verify that the Skill name can be verbally pronounced by speaking the Skill name into the Mycroft command line several times, and reading the resulting transcriptions. Suggest alternative Skill names if it is difficult to verbally pronounce the Skill name. Please provide confirmation that the Skill was successfully installed and by what means \(voice or `mycroft-msm install`\), as well as what utterance was detected when invoking the install voice command.
+Check that the Skill installs using voice commands. Chatterbox will get the user to confirm which Skill should be installed if there is ambiguity in Skill names - such as duplicate names. If possible, name the Skill so that there is minimal duplication and/or conflict. You should also verify that the Skill name can be verbally pronounced by speaking the Skill name into the Chatterbox command line several times, and reading the resulting transcriptions. Suggest alternative Skill names if it is difficult to verbally pronounce the Skill name. Please provide confirmation that the Skill was successfully installed and by what means \(voice or `chatterbox-msm install`\), as well as what utterance was detected when invoking the install voice command.
 
 > Install method:  
 > Output:
@@ -156,13 +156,13 @@ Check that the Skill installs using voice commands. Mycroft will get the user to
 
 * [ ] **Settings**  
 
-  If Skill includes a `settingsmeta` file - are the settings well laid out? Does the placeholder text make sense? This can also be checked on [home.mycroft.ai/\#/skill](https://home.mycroft.ai/#/skill)
+  If Skill includes a `settingsmeta` file - are the settings well laid out? Does the placeholder text make sense? This can also be checked on [home.chatterbox.ai/\#/skill](https://home.chatterbox.ai/#/skill)
 
 &gt;
 
 * [ ] **Dialog**
 
-Check the `dialog` directory to ensure that from a voice user interface perspective the dialogs read well. Alway play every `dialog` phrase on the command line by doing `say` so that you can check how the `dialog` is spoken. It is a good idea to run the `dialog` phrases through [mimic](https://mycroft.ai/documentation/mimic/).
+Check the `dialog` directory to ensure that from a voice user interface perspective the dialogs read well. Alway play every `dialog` phrase on the command line by doing `say` so that you can check how the `dialog` is spoken. It is a good idea to run the `dialog` phrases through [mimic](https://chatterbox.ai/documentation/mimic/).
 
 Sometimes the `dialog` files will need a small tweak such as a space between words, or extra vowel sounds, to sound realistic. Sometimes words don't render as expected and alternative wording should be used. Some of the tricks you might need to use include separating words by a space - such as `sub sonic` instead of `subsonic`, or `broad cast` instead of `broadcast`.
 
@@ -172,15 +172,15 @@ Sometimes the `dialog` files will need a small tweak such as a space between wor
 
 For each function of the Skill add a new checkbox with the utterance used to invoke the functionality. Confirm the output and behaviour of each. If any setup is required to perform these tests please indicate this directly before the test is described.
 
-* [ ] **"Are there unread messages on Mycroft Chat"**
+* [ ] **"Are there unread messages on Chatterbox Chat"**
 
 &gt;
 
-* [ ] **"Name Mycroft Chat channels with unread messages"**
+* [ ] **"Name Chatterbox Chat channels with unread messages"**
 
 &gt;
 
-* [ ] **"Read all unread Mycroft Chat messages"**
+* [ ] **"Read all unread Chatterbox Chat messages"**
 
 &gt;
 
@@ -188,11 +188,11 @@ For each function of the Skill add a new checkbox with the utterance used to inv
 
 &gt;
 
-* [ ] **"Begin monitoring of Mycroft Chat"**
+* [ ] **"Begin monitoring of Chatterbox Chat"**
 
 &gt;
 
-* [ ] **"Stop monitoring of Mycroft Chat"**
+* [ ] **"Stop monitoring of Chatterbox Chat"**
 
 &gt;
 
@@ -201,6 +201,6 @@ For each function of the Skill add a new checkbox with the utterance used to inv
 A short list of any _Actions Required_. It is also great to provide a short statement of your impressions.  
 \*
 
-Once you have completed any updates, you can update this pull request by running `mycroft-msk submit /path/to/skill/directory`
+Once you have completed any updates, you can update this pull request by running `chatterbox-msk submit /path/to/skill/directory`
 ```
 

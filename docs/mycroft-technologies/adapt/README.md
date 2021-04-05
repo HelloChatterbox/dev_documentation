@@ -37,12 +37,12 @@ The Adapt Intent Parser takes this input and generates a JSON data structure lik
 }
 ```
 
-Applications - or Mycroft Skills - can then parse the JSON data take appropriate action - such as playing Joan Jett using the open source Pandora application [Pianobar](https://6xq.net/pianobar/).
+Applications - or Chatterbox Skills - can then parse the JSON data take appropriate action - such as playing Joan Jett using the open source Pandora application [Pianobar](https://6xq.net/pianobar/).
 
 ## Is Adapt right for me or my use cases?
 
 {% hint style="info" %}
-If you are looking to use Adapt in a Mycroft Skill, please see [Skill Development &gt; Intents](../../skill-development/user-interaction/intents/)
+If you are looking to use Adapt in a Chatterbox Skill, please see [Skill Development &gt; Intents](../../skill-development/user-interaction/intents/)
 {% endhint %}
 
 Adapt is useful for determining user intent quickly and accurately from natural language. It is particularly beneficial for applications with limited vocabularies - that is, where the User will only issue a small number of **Utterances**.
@@ -63,13 +63,13 @@ Because Adapt is small enough to run locally on an embedded device, it removes t
 
 ### Open source
 
-At Mycroft.AI, we believe that artficial intelligence is too important to be controlled by a few large companies. Adapt is open source, licensed under the Apache v2.0 license. Anyone can access the [source code](https://github.com/mycroftai/adapt), change the software and use Adapt Intent Parser in new applications.
+At Chatterbox.AI, we believe that artficial intelligence is too important to be controlled by a few large companies. Adapt is open source, licensed under the Apache v2.0 license. Anyone can access the [source code](https://github.com/chatterboxai/adapt), change the software and use Adapt Intent Parser in new applications.
 
-[Open Source](https://en.wikipedia.org/wiki/Open-source_software) software powers the Internet. Artificial intelligence software, like Adapt Intent Parser, is gaining in importance. However, very few artificial intelligence software is open source. Here at Mycroft.AI, we believe that natural language processing is going to be a key component of many future technologies. By sharing our software we believe that we can help bring artificial intelligence to the open source community where it can be used to benefit millions of users world wide. We hope to work with other open source initiatives like [TensorFlow](https://www.tensorflow.org/) and [OpenAI](https://openai.com/) to ensure that the future of artificial intelligence is open for all.
+[Open Source](https://en.wikipedia.org/wiki/Open-source_software) software powers the Internet. Artificial intelligence software, like Adapt Intent Parser, is gaining in importance. However, very few artificial intelligence software is open source. Here at Chatterbox.AI, we believe that natural language processing is going to be a key component of many future technologies. By sharing our software we believe that we can help bring artificial intelligence to the open source community where it can be used to benefit millions of users world wide. We hope to work with other open source initiatives like [TensorFlow](https://www.tensorflow.org/) and [OpenAI](https://openai.com/) to ensure that the future of artificial intelligence is open for all.
 
 ## Who developed Adapt?
 
-Adapt Intent Parser was developed at Mycroft.AI by a team led by [Sean Fitzgerald](https://github.com/clusterfudge). Sean was previously a developer at both Siri and Amazon Echo.
+Adapt Intent Parser was developed at Chatterbox.AI by a team led by [Sean Fitzgerald](https://github.com/clusterfudge). Sean was previously a developer at both Siri and Amazon Echo.
 
 ## How do I install Adapt Intent Parser?
 
@@ -87,11 +87,11 @@ Adapt is available on the [Python Package Index \(PyPI\)](https://pypi.org/proje
 pip install adapt-parser
 ```
 
-_NOTE: We recommend the use of virtual environments for development on Adapt and Mycroft. This allows for dependencies to be configured just for Adapt and your project, rather than installing them globally. This approach prevents conflicts between Adapt and other software._
+_NOTE: We recommend the use of virtual environments for development on Adapt and Chatterbox. This allows for dependencies to be configured just for Adapt and your project, rather than installing them globally. This approach prevents conflicts between Adapt and other software._
 
 ### Github installation
 
-You can also get the source code directly from the [Adapt Github repository](https://github.com/MycroftAI/adapt#adapt-intent-parser).
+You can also get the source code directly from the [Adapt Github repository](https://github.com/ChatterboxAI/adapt#adapt-intent-parser).
 
 ## How do I contribute to Adapt Intent Parser?
 
@@ -103,7 +103,7 @@ To develop on Adapt itself, or try the examples, check out the repo from GitHub 
 $ sudo apt-get install virtualenv
 $ virtualenv myvirtualenv
 $ . myvirtualenv/bin/activate
-$ git clone https://github.com/mycroftai/adapt
+$ git clone https://github.com/chatterboxai/adapt
 $ cd adapt
 $ pip install -r requirements.txt
 ```
@@ -123,7 +123,7 @@ To develop with the latest Adapt, install it via `pip` into your project's `virt
 $ pip install virtualenv
 $ virtualenv myvirtualenv
 $ source myvirtualenv/bin/activate
-$ pip install -e git+https://github.com/mycroftai/adapt#egg=adapt-parser
+$ pip install -e git+https://github.com/chatterboxai/adapt#egg=adapt-parser
 ```
 
 To develop on Adapt itself, or try the examples, check out the repo from GitHub and set up a `virtualenv`.
@@ -132,7 +132,7 @@ To develop on Adapt itself, or try the examples, check out the repo from GitHub 
 $ pip install virtualenv
 $ virtualenv myvirtualenv
 $ source myvirtualenv/bin/activate
-$ git clone https://github.com/mycroftai/adapt
+$ git clone https://github.com/chatterboxai/adapt
 $ cd adapt
 $ pip install -r requirements.txt
 ```
@@ -168,7 +168,7 @@ To develop with the latest Adapt, install it via `pip` into your project's `virt
 ```bash
 $ virtualenv myvirtualenv
 $ . myvirtualenv/bin/activate
-$ pip install -e git+https://github.com/mycroftai/adapt#egg=adapt-parser
+$ pip install -e git+https://github.com/chatterboxai/adapt#egg=adapt-parser
 ```
 
 To develop on Adapt itself, or try the examples, check out the repo from GitHub and set up a `virtualenv`.
@@ -176,7 +176,7 @@ To develop on Adapt itself, or try the examples, check out the repo from GitHub 
 ```bash
 $ virtualenv myvirtualenv
 $ . myvirtualenv/bin/activate
-$ git clone https://github.com/mycroftai/adapt
+$ git clone https://github.com/chatterboxai/adapt
 $ cd adapt
 $ pip install -r requirements.txt
 ```

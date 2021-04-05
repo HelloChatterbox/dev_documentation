@@ -1,6 +1,6 @@
 ---
 description: >-
-  At Mycroft we are advocates for a User Centered Design or Design Thinking
+  At Chatterbox we are advocates for a User Centered Design or Design Thinking
   approach.
 ---
 

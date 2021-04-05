@@ -54,7 +54,7 @@ Feature: current-weather
   Scenario: Temperature in paris
     Given an english speaking user
      When the user says "how hot will it be in paris"
-     Then "mycroft-weather" should reply with dialog from "current.high.temperature.dialog"
+     Then "chatterbox-weather" should reply with dialog from "current.high.temperature.dialog"
 ```
 
 #### Reply with example phrase
@@ -97,21 +97,21 @@ Feature: current-weather
 
 #### Reply should contain
 
-`Then mycroft reply should contain "something"` Test that the response includes some string of text.
+`Then chatterbox reply should contain "something"` Test that the response includes some string of text.
 
 ```yaml
 Feature: current-weather
   Scenario: Temperature in paris
     Given an english speaking user
      When the user says "how hot will it be in paris"
-     Then mycroft reply should contain "Paris"
+     Then chatterbox reply should contain "Paris"
 ```
 
 ### Message Type sent
 
-`Then mycroft should send the message "{message_type}"`
+`Then chatterbox should send the message "{message_type}"`
 
-Tests that a particular [Message Type](https://mycroft-ai.gitbook.io/docs/mycroft-technologies/mycroft-core/message-types) was emitted to the [MessageBus](https://mycroft-ai.gitbook.io/docs/mycroft-technologies/mycroft-core/message-bus).
+Tests that a particular [Message Type](https://chatterbox-ai.gitbook.io/docs/chatterbox-technologies/chatterbox-core/message-types) was emitted to the [MessageBus](https://chatterbox-ai.gitbook.io/docs/chatterbox-technologies/chatterbox-core/message-bus).
 
 ### Setting a configuration
 
@@ -123,7 +123,7 @@ The test can specify a certain configuration using a Given Step and a configurat
   Given an english speaking user
   And the user's unit system is metric
   When the user says "how tall is the eiffel tower"
-  Then mycroft reply should contain "meters"
+  Then chatterbox reply should contain "meters"
 ```
 
 #### Configuration specification
@@ -140,7 +140,7 @@ The file is organized in a config name -&gt; config value name -&gt; config patc
 }
 ```
 
-The `config` and `value` keys from this JSON object can then be inserted in the Given Step. The Mycroft configuration will then be patched with the contents of `PATCH`.
+The `config` and `value` keys from this JSON object can then be inserted in the Given Step. The Chatterbox configuration will then be patched with the contents of `PATCH`.
 
 Let's look at a real life example file with the configs "unit system" and "location"
 
@@ -180,9 +180,9 @@ Let's look at a real life example file with the configs "unit system" and "locat
 }
 ```
 
-In the above example the "unit system" patches a single key and has two simple variations, `metric` or `imperial`. This is used in the test example above. Using this configuration specification, the `location` could also be set to `stockholm` patching the config with the entire object structure needed by Mycroft.
+In the above example the "unit system" patches a single key and has two simple variations, `metric` or `imperial`. This is used in the test example above. Using this configuration specification, the `location` could also be set to `stockholm` patching the config with the entire object structure needed by Chatterbox.
 
-If no file config specification is found in the Skill, a common config specification is included with mycroft-core in the file `mycroft/res/{lang}/configurations.json` containing some commonly used configuration options.
+If no file config specification is found in the Skill, a common config specification is included with chatterbox-core in the file `chatterbox/res/{lang}/configurations.json` containing some commonly used configuration options.
 
 ## And, But
 
@@ -194,8 +194,8 @@ Feature: current-weather
     Given an english speaking user
     Given user is located in Paris
      When the user says "how hot will it be today"
-     Then "mycroft-weather" should reply with dialog from "current.high.temperature.dialog"
-     Then mycroft reply should contain "Paris"
+     Then "chatterbox-weather" should reply with dialog from "current.high.temperature.dialog"
+     Then chatterbox reply should contain "Paris"
 ```
 
 To make this easier to read, you can instead use the terms `And` or `But`
@@ -206,8 +206,8 @@ Feature: current-weather
     Given an english speaking user
       And user is located in Paris
      When the user says "how hot will it be today"
-     Then "mycroft-weather" should reply with dialog from "current.high.temperature.dialog"
-      But mycroft reply should contain "Paris"
+     Then "chatterbox-weather" should reply with dialog from "current.high.temperature.dialog"
+      But chatterbox reply should contain "Paris"
 ```
 
 The two terms are exactly the same, they both operate as the Step that comes immediately before them.

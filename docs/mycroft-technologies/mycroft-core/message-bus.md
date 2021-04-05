@@ -1,7 +1,7 @@
 ---
 description: >-
   A Message Bus is mechanism for independent systems to communicate with each
-  other using a set of Messages for common commands or notifiers. In the Mycroft
+  other using a set of Messages for common commands or notifiers. In the Chatterbox
   ecosystem, the Messagebus is a websocket.
 ---
 
@@ -9,28 +9,28 @@ description: >-
 
 ## What is a Message Bus?
 
-A Message Bus is mechanism for independent systems to communicate with each other using a set of _messages_ for common commands or notifiers. In the Mycroft ecosystem, the Messagebus is a websocket and the messages contain a message type with an optional JSON data packet. Some messages trigger actions and have side effects; some are simple notifiers of actions that either have occurred or are about to occur. The Messagebus connects the `mycroft-core` processes and the **Skills**, and can also be joined by outside systems such as the CLI.
+A Message Bus is mechanism for independent systems to communicate with each other using a set of _messages_ for common commands or notifiers. In the Chatterbox ecosystem, the Messagebus is a websocket and the messages contain a message type with an optional JSON data packet. Some messages trigger actions and have side effects; some are simple notifiers of actions that either have occurred or are about to occur. The Messagebus connects the `chatterbox-core` processes and the **Skills**, and can also be joined by outside systems such as the CLI.
 
 See all the Message types that are currently used by the MessageBus.
 
 {% page-ref page="message-types.md" %}
 
-Messages can be sent from the _producers_ and acted upon by [Skills](https://mycroft.ai/documentation/skills) or other _consumers_ within `mycroft-core`. The producers and consumers listed are examples and some messages might be generated or handled by other processes or advanced **Skills**.
+Messages can be sent from the _producers_ and acted upon by [Skills](https://chatterbox.ai/documentation/skills) or other _consumers_ within `chatterbox-core`. The producers and consumers listed are examples and some messages might be generated or handled by other processes or advanced **Skills**.
 
-The base [MycroftSkill API](http://mycroft-core.readthedocs.io/en/stable/) handles most of the Messagebus usage automatically. For example, the `mycroft.stop` message is caught by the skill framework, invoking an overridden `MycroftSkills.stop()` method within a **Skill**. Similarly, the `MycroftSkill.speak()` and `MycroftSkill.speak_dialog()` methods generate `speak` messages to be conveyed to the text-to-speech \(TTS\) and audio systems.
+The base [ChatterboxSkill API](http://chatterbox-core.readthedocs.io/en/stable/) handles most of the Messagebus usage automatically. For example, the `chatterbox.stop` message is caught by the skill framework, invoking an overridden `ChatterboxSkills.stop()` method within a **Skill**. Similarly, the `ChatterboxSkill.speak()` and `ChatterboxSkill.speak_dialog()` methods generate `speak` messages to be conveyed to the text-to-speech \(TTS\) and audio systems.
 
-You will really only need to know about the Mycroft Messagebus if you are developing advanced **Skills**. The `MycroftSkill.add_event()` method allows you to attach a handler which will be triggered when the message is seen on the Messagebus.
+You will really only need to know about the Chatterbox Messagebus if you are developing advanced **Skills**. The `ChatterboxSkill.add_event()` method allows you to attach a handler which will be triggered when the message is seen on the Messagebus.
 
 _NOTE: We can only currently assist you in writing Skills in Python, so if you choose to write Skills in another programming language, we may not be able to provide assistance - but we don't want to stop you doing awesome things!_
 
-## MycroftSkill Interaction
+## ChatterboxSkill Interaction
 
 ### Connecting Message handlers
 
 ```python
-from mycroft import MycroftSkill
+from chatterbox import ChatterboxSkill
 
-class ListenForMessageSkill(MycroftSkill):
+class ListenForMessageSkill(ChatterboxSkill):
   def initialize(self):  
       self.add_event('recognizer_loop:record_begin',  
                     self.handle_listener_started)  
@@ -50,10 +50,10 @@ def create_skill():
 ### Generating Messages
 
 ```python
-from mycroft import MycroftSkill
-from mycroft.messagebus import Message
+from chatterbox import ChatterboxSkill
+from chatterbox.messagebus import Message
 
-class GenerateMessageSkill(MycroftSkill):
+class GenerateMessageSkill(ChatterboxSkill):
   def some_method(self):  
     self.bus.emit(Message("recognizer_loop:utterance",  
                           {'utterances': ["the injected utterance"],  
@@ -63,21 +63,21 @@ def create_skill():
     return GenerateMessageSkill()
 ```
 
-## Mycroft MessageBus Client
+## Chatterbox MessageBus Client
 
-The [Mycroft MessageBus Client](https://github.com/MycroftAI/mycroft-messagebus-client) is a Python module providing a simple interface for the Mycroft MessageBus. It can be used to connect to Mycroft, send messages, and react to messages sent by the Mycroft system.
+The [Chatterbox MessageBus Client](https://github.com/ChatterboxAI/chatterbox-messagebus-client) is a Python module providing a simple interface for the Chatterbox MessageBus. It can be used to connect to Chatterbox, send messages, and react to messages sent by the Chatterbox system.
 
-The module is available through [PyPI.org](https://pypi.org/project/mycroft-messagebus-client/) or directly [on Github](https://github.com/MycroftAI/mycroft-messagebus-client).
+The module is available through [PyPI.org](https://pypi.org/project/chatterbox-messagebus-client/) or directly [on Github](https://github.com/ChatterboxAI/chatterbox-messagebus-client).
 
-You can install it in your Mycroft Virtual Environment using:
+You can install it in your Chatterbox Virtual Environment using:
 
 ```text
-mycroft-pip install mycroft-messagebus-client
+chatterbox-pip install chatterbox-messagebus-client
 ```
 
-#### MycroftBusClient\(\)
+#### ChatterboxBusClient\(\)
 
-The `MycroftBusClient()` object can be setup to connect to any host and port as well as any endpoint on that host. this makes it quite versatile and will work on the main bus as well as on a gui bus. If no arguments are provided it will try to connect to a local instance of Mycroft-core on the default endpoint and port.
+The `ChatterboxBusClient()` object can be setup to connect to any host and port as well as any endpoint on that host. this makes it quite versatile and will work on the main bus as well as on a gui bus. If no arguments are provided it will try to connect to a local instance of Chatterbox-core on the default endpoint and port.
 
 #### Message\(\)
 
@@ -89,12 +89,12 @@ Message('MESSAGE_TYPE', data={'meaning': 42}, context={'origin': 'A.Dent'})
 
 ### Sending a Message
 
-In the following example we setup an instance of the MessageBusClient then emit a `speak` Message with a data payload. Mycroft would consume this Message and speak "Hello World".
+In the following example we setup an instance of the MessageBusClient then emit a `speak` Message with a data payload. Chatterbox would consume this Message and speak "Hello World".
 
 ```python
-from mycroft_bus_client import MessageBusClient, Message
+from chatterbox_bus_client import MessageBusClient, Message
 
-print('Setting up client to connect to a local mycroft instance')
+print('Setting up client to connect to a local chatterbox instance')
 client = MessageBusClient()
 client.run_in_thread()
 
@@ -106,16 +106,16 @@ client.emit(Message('speak', data={'utterance': 'Hello World'}))
 
 In the following example we setup an instance of the MessageBusClient. We then define a function `print_utterance` that prints the `utterance` from a Message. This is registered as a handler for the `speak` Message. Finally we call the `run_forever()` method to keep the `client` running.
 
-If this code had run before the example above, it would catch the `speak` Message we emitted and print: `Mycroft said "Hello World"`
+If this code had run before the example above, it would catch the `speak` Message we emitted and print: `Chatterbox said "Hello World"`
 
 ```python
-from mycroft_bus_client import MessageBusClient, Message
+from chatterbox_bus_client import MessageBusClient, Message
 
-print('Setting up client to connect to a local mycroft instance')
+print('Setting up client to connect to a local chatterbox instance')
 client = MessageBusClient()
 
 def print_utterance(message):
-    print('Mycroft said "{}"'.format(message.data.get('utterance')))
+    print('Chatterbox said "{}"'.format(message.data.get('utterance')))
 
 
 print('Registering handler for speak message...')
@@ -156,19 +156,19 @@ Unfortunately, we cannot provide support or examples for other languages.
 ### Generating Messages
 
 ```bash
-python3 -m mycroft.messagebus.send xxx.yyy.zzz
+python3 -m chatterbox.messagebus.send xxx.yyy.zzz
 ```
 
 or
 
 ```bash
-python3 -m mycroft.messagebus.send xxx.yyy.zzz '{"name": "value"}'
+python3 -m chatterbox.messagebus.send xxx.yyy.zzz '{"name": "value"}'
 ```
 
 A simple message looks like this:
 
 ```bash
-python3 -m mycroft.messagebus.send speak '{"utterance" : "I am good"}'
+python3 -m chatterbox.messagebus.send speak '{"utterance" : "I am good"}'
 ```
 
 ## Guidelines for Message Usage
@@ -179,14 +179,14 @@ Private messages can be placed on the Messagebus following these naming conventi
 * Messages MUST use verbs for requests - such as;  
   * `mic.mute`  
   * `mic.unmute`  
-  * `skill.mycrofttimer.cancel.all`
+  * `skill.chatterboxtimer.cancel.all`
 * Messages MUST use the future tense for pre-action notifications - such as;  
   * `mic.muting`  
   * `mic.unmuting`
 * Messages MUST use the past tense for post-action notifications - such as;  
   * `mic.muted`  
   * `mic.unmuted`  
-  * `skill.mycrofttimer.expired`
+  * `skill.chatterboxtimer.expired`
 
 See all the Message types that are currently used by the MessageBus.
 
@@ -194,5 +194,5 @@ See all the Message types that are currently used by the MessageBus.
 
 ## Additional Support
 
-If you have further questions, then the best place to ask them is our [Community Forum](https://community.mycroft.ai) or in the [~dev Channel](https://chat.mycroft.ai/community/channels/dev) on Mycroft Chat.
+If you have further questions, then the best place to ask them is our [Community Forum](https://community.chatterbox.ai) or in the [~dev Channel](https://chat.chatterbox.ai/community/channels/dev) on Chatterbox Chat.
 

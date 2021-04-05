@@ -6,5 +6,5 @@ description: >-
 
 # Converse
 
-See the [`converse()` method documentation](https://mycroft-core.readthedocs.io/en/latest/source/mycroft.html#mycroft.MycroftSkill.converse).
+See the [`converse()` method documentation](https://chatterbox-core.readthedocs.io/en/latest/source/chatterbox.html#chatterbox.ChatterboxSkill.converse).
 

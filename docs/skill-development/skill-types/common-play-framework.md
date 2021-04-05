@@ -9,20 +9,20 @@ description: >-
 
 ## Introduction
 
-Over time, many **Skills** are likely to use similar keywords - called `Intents` - to triggers actions. One of the most frequently used keywords is `play`. This means that several **Skills** can all use the word `play` in their `Intents` - causing something called an _intent collision_ - where Mycroft doesn't know which **Skill** to invoke because there are so many to choose from.
+Over time, many **Skills** are likely to use similar keywords - called `Intents` - to triggers actions. One of the most frequently used keywords is `play`. This means that several **Skills** can all use the word `play` in their `Intents` - causing something called an _intent collision_ - where Chatterbox doesn't know which **Skill** to invoke because there are so many to choose from.
 
-The **Common Play Framework** solves this problem by allowing Mycroft to infer a _confidence score_ from an `Intent` which uses the `play` keyword. The _confidence score_ is designed so that there is a much higher probability of the right **Skill** being invoked to handle an `Intent` which has the keyword `play` in it.
+The **Common Play Framework** solves this problem by allowing Chatterbox to infer a _confidence score_ from an `Intent` which uses the `play` keyword. The _confidence score_ is designed so that there is a much higher probability of the right **Skill** being invoked to handle an `Intent` which has the keyword `play` in it.
 
 To take advantage of the **Common Play Framework**, your **Skill** needs to be written in a specific way - outlined below:
 
-## Basing your Skill on the `CommonPlaySkill` class instead of `MycroftSkill`
+## Basing your Skill on the `CommonPlaySkill` class instead of `ChatterboxSkill`
 
-To interface with the playback control the **Skill** will be based on the `CommonPlaySkill` class instead of the normal `MycroftSkill`. Your **Skill** also needs to implement two methods, `CPS_match_query_phrase` and `CPS_start`.
+To interface with the playback control the **Skill** will be based on the `CommonPlaySkill` class instead of the normal `ChatterboxSkill`. Your **Skill** also needs to implement two methods, `CPS_match_query_phrase` and `CPS_start`.
 
 The setup looks like this:
 
 ```python
-from mycroft.skills.common_play_skill import CommonPlaySkill, CPSMatchLevel
+from chatterbox.skills.common_play_skill import CommonPlaySkill, CPSMatchLevel
 
 
 class TutorialSkill(CommonPlaySkill):
@@ -115,12 +115,12 @@ track_dict = {
 }
 ```
 
-To match from this list the `match_one` function in `mycroft.util.parse` can be used to fuzzy match one of the elements in the dict.
+To match from this list the `match_one` function in `chatterbox.util.parse` can be used to fuzzy match one of the elements in the dict.
 
 First we add the import at the top of the file:
 
 ```python
-from mycroft.util.parse import match_one
+from chatterbox.util.parse import match_one
 ```
 
 then we update the `CPS_match_query_phrase` method to use it to select the best match. This fuzzy matching system will match strings that are close to one of the keys in the above `dict`. This means phrases like "play crazy comet" will be matched with a fairly high confidence despite not being the _exact_ string in the dictionary.
@@ -166,9 +166,9 @@ The complete source code can be found [here](https://github.com/forslund/common-
 
 ## Technical Documentation
 
-More information on the Common Play Framework can be found in the [Mycroft Technical Documentation](https://mycroft-core.readthedocs.io/en/master/source/mycroft.html#commonplayskill-class).
+More information on the Common Play Framework can be found in the [Chatterbox Technical Documentation](https://chatterbox-core.readthedocs.io/en/master/source/chatterbox.html#commonplayskill-class).
 
 ## Where to go for more assistance
 
-Join us in the [Skills Mycroft Chat room](https://chat.mycroft.ai/community/channels/skills) or join us in the [Mycroft Forum](https://community.mycroft.ai).
+Join us in the [Skills Chatterbox Chat room](https://chat.chatterbox.ai/community/channels/skills) or join us in the [Chatterbox Forum](https://community.chatterbox.ai).
 

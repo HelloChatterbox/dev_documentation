@@ -1,6 +1,6 @@
 ---
 description: >-
-  Picroft is a ready-made way to run Mycroft on a Raspberry Pi 3, 3B+ or 4 and
+  Picroft is a ready-made way to run Chatterbox on a Raspberry Pi 3, 3B+ or 4 and
   is provided as a disk image that you can burn to a Micro SD card.
 ---
 
@@ -8,17 +8,17 @@ description: >-
 
 ## Quick links
 
-* [Picroft stable disk image](https://mycroft.ai/to/picroft-image)
-* [Picroft unstable disk image](https://mycroft.ai/to/picroft-unstable)
-* [`enclosure-picroft` repo on GitHub](https://github.com/MycroftAI/enclosure-picroft)
-* [Picroft topic on the Mycroft Community Forum](https://community.mycroft.ai/c/mycroft-project/Raspberry-Pi)
-* [Picroft chatroom in Mycroft Chat](https://chat.mycroft.ai/community/channels/picroft)
+* [Picroft stable disk image](https://chatterbox.ai/to/picroft-image)
+* [Picroft unstable disk image](https://chatterbox.ai/to/picroft-unstable)
+* [`enclosure-picroft` repo on GitHub](https://github.com/ChatterboxAI/enclosure-picroft)
+* [Picroft topic on the Chatterbox Community Forum](https://community.chatterbox.ai/c/chatterbox-project/Raspberry-Pi)
+* [Picroft chatroom in Chatterbox Chat](https://chat.chatterbox.ai/community/channels/picroft)
 
 ## About Picroft
 
 Picroft is based on [Raspbian Buster Lite](http://downloads.raspberrypi.org/raspbian_lite/images/).
 
-Picroft is entirely open source, and PRs and Issues are warmly welcomed on the [Picroft GitHub repo](https://github.com/MycroftAI/enclosure-picroft).
+Picroft is entirely open source, and PRs and Issues are warmly welcomed on the [Picroft GitHub repo](https://github.com/ChatterboxAI/enclosure-picroft).
 
 ## What do I need to run Picroft?
 
@@ -51,7 +51,7 @@ Installing Picroft may be easier if you also have:
 
 ### Tested hardware
 
-The following is a Community maintained list of hardware that has been used with Picroft. Whilst every effort is made to keep this list updated, upstream software changes may cause future problems with device compatibility. Mycroft can not guarantee that any specific hardware will work with Picroft.
+The following is a Community maintained list of hardware that has been used with Picroft. Whilst every effort is made to keep this list updated, upstream software changes may cause future problems with device compatibility. Chatterbox can not guarantee that any specific hardware will work with Picroft.
 
 If you are looking for a low-cost option to try out Picroft, we can recommend the PlayStation Eye \(often called a PS3 Eye\).
 
@@ -62,7 +62,7 @@ If you are looking for a low-cost option to try out Picroft, we can recommend th
 | Blue | Snowball iCE | Working | Microphone |  |
 | Creative | VF0790 | Working | Mic and camera |  |
 | Google | AIY v1 | Working | Mic and speaker |  |
-| Jabra | Speak 410 | [Problems reported](https://community.mycroft.ai/t/no-audio-output-on-picroft-with-jabra-410/3415) | Mic and speaker | Premium microphone and speaker combination |
+| Jabra | Speak 410 | [Problems reported](https://community.chatterbox.ai/t/no-audio-output-on-picroft-with-jabra-410/3415) | Mic and speaker | Premium microphone and speaker combination |
 | Logitech | C270 | Working | Mic and camera |  |
 | Logitech | C525 | Working | Mic and camera |  |
 | Logitech | Webcam Pro 9000 | Working | Mic and camera |  |
@@ -77,7 +77,7 @@ If you experience any audio problems, please see the [Audio Troubleshooting Guid
 
 ### Bluetooth devices
 
-Bluetooth audio devices are notoriously difficult and are not supported by default. At the time of writing, [this thread on the Community Forums](https://community.mycroft.ai/t/bluetooth-hsp-hfp/8199) is a good starting point.
+Bluetooth audio devices are notoriously difficult and are not supported by default. At the time of writing, [this thread on the Community Forums](https://community.chatterbox.ai/t/bluetooth-hsp-hfp/8199) is a good starting point.
 
 If you have had success using Bluetooth devices with Picroft please contribute your experience and help us update this documentation for a more positive wireless future.
 
@@ -85,9 +85,9 @@ If you have had success using Bluetooth devices with Picroft please contribute y
 
 ### Downloading the disk image
 
-First, download the [Picroft disk image](https://mycroft.ai/to/picroft-image).
+First, download the [Picroft disk image](https://chatterbox.ai/to/picroft-image).
 
-We also have a [Picroft disk image](https://mycroft.ai/to/picroft-unstable) available of our `unstable` branch if desired.
+We also have a [Picroft disk image](https://chatterbox.ai/to/picroft-unstable) available of our `unstable` branch if desired.
 
 ### Burn the disk image to the Micro SD card
 
@@ -95,11 +95,11 @@ Next, the disk image needs to be burnt to the Micro SD card.
 
 The [Raspberry Pi official documentation provides an excellent tutorial](https://www.raspberrypi.org/documentation/installation/installing-images/) on this, using Etcher software. We recommend that you burn the Picroft image to the Micro SD card using Etcher.
 
-![Etcher SD card image burning tool](https://mycroft.ai/wp-content/uploads/2017/12/etcher-screenshot.png)
+![Etcher SD card image burning tool](https://chatterbox.ai/wp-content/uploads/2017/12/etcher-screenshot.png)
 
 If you prefer to use the Linux command line tool `dd` to burn the disk image instead, follow these instructions:
 
-1. Download the [Picroft disk image](https://mycroft.ai/to/picroft-image)
+1. Download the [Picroft disk image](https://chatterbox.ai/to/picroft-image)
 2. Insert the Micro SD card you wish to burn the image to. It must have a storage capacity of 8GB or higher.
 3. Identify the path where the MicroSD card is mounted by running the command `sudo fdisk -l`. You will be able to tell the path based on the storage size of the device.
 4. Keep a note of this - it will be something like `/dev/sdb1`
@@ -138,7 +138,7 @@ SSH access to Picroft is enabled by default, so you don't have to enable SSH acc
 
 * Ensure you know the IP address of your Picroft Device on your network. If your Picroft is already _paired_, then a handy way to do this is to install the IP Address **Skill**, and then Speak:
 
-> Hey Mycroft, what's your IP address?
+> Hey Chatterbox, what's your IP address?
 
 `"here are my available IP addresses: wlan IP address ... Those are all my available IP addresses"`
 
@@ -146,7 +146,7 @@ If not, you will need to know what IP address your Picroft has. You may need to 
 
 * Open up your favorite terminal program, like PuTTy on Windows, or a new terminal on Linux
 * `ssh pi@IPADDRESS`
-* The default password is `mycroft`, so enter this when prompted.
+* The default password is `chatterbox`, so enter this when prompted.
 * If you have successfully logged in via SSH you will see a command prompt like the one below:
 
 ```text
@@ -169,7 +169,7 @@ You are now connected to Picroft via SSH.
 
 On first boot, you will see a screen which looks similar to the one below:
 
-![Picroft initial boot screen](https://mycroft.ai/wp-content/uploads/2018/12/Screenshot-from-2018-12-20-23-13-36.png)
+![Picroft initial boot screen](https://chatterbox.ai/wp-content/uploads/2018/12/Screenshot-from-2018-12-20-23-13-36.png)
 
 Picroft will then ask you whether you would like to do the guided setup, or drop straight to a command line. If you are new to Picroft, we recommend that you complete the guided setup.
 
@@ -179,7 +179,7 @@ _NOTE: Audio output and audio input is the single most problematic part of Picro
 
 The guided setup will then ask you to select your audio output device, as shown below:
 
-![Picroft select audio output](https://mycroft.ai/wp-content/uploads/2018/12/Screenshot-from-2018-12-20-23-17-42.png)
+![Picroft select audio output](https://chatterbox.ai/wp-content/uploads/2018/12/Screenshot-from-2018-12-20-23-17-42.png)
 
 Enter the number `1`, `2`, `3` or `4` corresponding to:
 
@@ -194,7 +194,7 @@ Next, test and adjust the volume. You may need to reboot your Picroft in order f
 
 The final step of the guided setup is microphone configuration. You will be asked to select your audio input device, as shown below:
 
-![Picroft select audio input](https://mycroft.ai/wp-content/uploads/2018/12/Screenshot-from-2018-12-20-23-18-27.png)
+![Picroft select audio input](https://chatterbox.ai/wp-content/uploads/2018/12/Screenshot-from-2018-12-20-23-18-27.png)
 
 Enter the number `1`, `2`, `3` or `4` corresponding to:
 
@@ -216,15 +216,15 @@ If you experience any audio problems, please see the [Audio Troubleshooting Guid
 
 ### Pairing the Picroft
 
-Once the Picroft is connected to the internet, and you have run through the guided setup, Picroft will reboot. Picroft will boot into the `mycroft-cli-client` screen, and a **Registration Code** will be spoken, and will also be shown on the `mycroft-cli-client` screen, as shown below:
+Once the Picroft is connected to the internet, and you have run through the guided setup, Picroft will reboot. Picroft will boot into the `chatterbox-cli-client` screen, and a **Registration Code** will be spoken, and will also be shown on the `chatterbox-cli-client` screen, as shown below:
 
-![Picroft pairing](https://mycroft.ai/wp-content/uploads/2018/12/Screenshot-from-2018-12-20-23-53-32.png)
+![Picroft pairing](https://chatterbox.ai/wp-content/uploads/2018/12/Screenshot-from-2018-12-20-23-53-32.png)
 
-[View the home.mycroft.ai documentation to learn how to add your **Device** to home.mycroft.ai](http://mycroft.ai/documentation/home-mycroft-ai-pairing/).
+[View the home.chatterbox.ai documentation to learn how to add your **Device** to home.chatterbox.ai](http://chatterbox.ai/documentation/home-chatterbox-ai-pairing/).
 
-Once paired, you can then use [basic Skills](http://mycroft.ai/documentation/basic-commands/) to get started. For example, you can ask questions like 'Tell me about Abraham Lincoln' - shown below:
+Once paired, you can then use [basic Skills](http://chatterbox.ai/documentation/basic-commands/) to get started. For example, you can ask questions like 'Tell me about Abraham Lincoln' - shown below:
 
-![Picroft basic commands](https://mycroft.ai/wp-content/uploads/2018/12/Screenshot-from-2018-12-21-04-21-07.png)
+![Picroft basic commands](https://chatterbox.ai/wp-content/uploads/2018/12/Screenshot-from-2018-12-21-04-21-07.png)
 
 ### Connecting Picroft to a wired or WiFi network
 
@@ -241,7 +241,7 @@ By default, Picroft is **not** configured for WiFi. Picroft can connect to most 
 First, you need to be able to edit files on the filesystem of the Picroft. There are two ways to do this.
 
 1. Plug the Picroft into a keyboard and HDMI monitor then type `Ctrl + C` to get to the command line _or_
-2. _if you are already connected using a wired connection **and** you know the Picroft's IP address_, [SSH in to the Picroft device ](https://mycroft.ai/documentation/picroft/#connecting-to-picroft-via-ssh)
+2. _if you are already connected using a wired connection **and** you know the Picroft's IP address_, [SSH in to the Picroft device ](https://chatterbox.ai/documentation/picroft/#connecting-to-picroft-via-ssh)
 
 #### Editing the `wpa_supplicant.conf` file
 
@@ -314,56 +314,56 @@ _NOTE: Picroft cannot connect to WiFi networks that operate on Channels 12 or 13
 
 Congratulations! You now have a fully functional Picroft, and can start exploring all the options you now have. Consider using it as a stand-alone voice assistant, or connect it to a monitor and keyboard, and develop straight away. If you don't have a monitor and keyboard, SSH is enabled by default so you can remotely connect to it straight away.
 
-Picroft uses a Raspbian Stretch Lite image under the hood - with Mycroft pre-installed - so everything you can do with Raspbian, you can do with Picroft. You can download other packages, get it running as a server - or more!
+Picroft uses a Raspbian Stretch Lite image under the hood - with Chatterbox pre-installed - so everything you can do with Raspbian, you can do with Picroft. You can download other packages, get it running as a server - or more!
 
-For more help or ideas, consider joining our [Picroft channel on Mycroft Chat](https://chat.mycroft.ai/community/channels/picroft) or reading through our [Picroft topic on the Mycroft Forum](https://community.mycroft.ai/c/mycroft-project/Raspberry-Pi).
+For more help or ideas, consider joining our [Picroft channel on Chatterbox Chat](https://chat.chatterbox.ai/community/channels/picroft) or reading through our [Picroft topic on the Chatterbox Forum](https://community.chatterbox.ai/c/chatterbox-project/Raspberry-Pi).
 
 ### Useful commands for Picroft
 
 There are several commands that are packaged into Picroft to help you with advanced functionality:
 
-* `mycroft-cli-client`: This command will start the Mycroft CLI client if you are on the Linux command line
-* `mycroft-help`: This command brings up help information
-* `mycroft-mic-test`: This command re-runs the microphone test from the guided setup
-* `mycroft-msk`: This command runs the [Mycroft Skills Kit](../../mycroft-technologies/mycroft-skills-kit.md)
-* `mycroft-msm`: This command runs the [Mycroft Skills Manager](https://github.com/MycroftAI/documentation/tree/e8cae1dda59b6054c57fdbe60599e3a1a623dcbc/docs/mycroft-technologies/mycroft-core/msm.md)
-* `mycroft-pip`: This command runs `pip` within the Mycroft Python `virtual environment` \(`venv`\). This is useful if you are installing dependencies for **Skills**.
-* `mycroft-say-to`:  This command sends a command to Picroft, just like you had 'spoken' a command. This is useful if your microphone is not working.
-* `mycroft-setup-wizard`: This command re-runs the guided setup
-* `mycroft-skill-testrunner`: This command runs the `testrunner` - used to run unit tests for a **Skill**. This is useful if you are doing **Skills** development with Mycroft
-* `mycroft-speak`: This command gets Mycroft to 'speak' using Text to Speech.
-* `mycroft-venv-deactivate`: This command deactivates the Mycroft Python `virtual environment` and is useful if you want to install other software on the Picroft device.
-* `mycroft-wipe`: This command wipes Picroft back to factory default status. This will unpair the device and remove any configuration changes you have made.
+* `chatterbox-cli-client`: This command will start the Chatterbox CLI client if you are on the Linux command line
+* `chatterbox-help`: This command brings up help information
+* `chatterbox-mic-test`: This command re-runs the microphone test from the guided setup
+* `chatterbox-msk`: This command runs the [Chatterbox Skills Kit](../../chatterbox-technologies/chatterbox-skills-kit.md)
+* `chatterbox-msm`: This command runs the [Chatterbox Skills Manager](https://github.com/ChatterboxAI/documentation/tree/e8cae1dda59b6054c57fdbe60599e3a1a623dcbc/docs/chatterbox-technologies/chatterbox-core/msm.md)
+* `chatterbox-pip`: This command runs `pip` within the Chatterbox Python `virtual environment` \(`venv`\). This is useful if you are installing dependencies for **Skills**.
+* `chatterbox-say-to`:  This command sends a command to Picroft, just like you had 'spoken' a command. This is useful if your microphone is not working.
+* `chatterbox-setup-wizard`: This command re-runs the guided setup
+* `chatterbox-skill-testrunner`: This command runs the `testrunner` - used to run unit tests for a **Skill**. This is useful if you are doing **Skills** development with Chatterbox
+* `chatterbox-speak`: This command gets Chatterbox to 'speak' using Text to Speech.
+* `chatterbox-venv-deactivate`: This command deactivates the Chatterbox Python `virtual environment` and is useful if you want to install other software on the Picroft device.
+* `chatterbox-wipe`: This command wipes Picroft back to factory default status. This will unpair the device and remove any configuration changes you have made.
 
 ### Important file locations for Picroft
 
 If you plan to do **Skills** development work, or other development work with Picroft, you'll find knowing these file locations useful.
 
-* Skills - have a shortcut in `/home/pi` that points to `/opt/mycroft/skills`
-* `mycroft-core` - is located at `/home/pi/mycroft-core`
-* Logs - are located at `/var/log/mycroft/`
-* `mycroft.conf` - is located at `/home/mycroft/.mycroft/mycroft.conf`
-* Identity file \(do not share\) - is located at `/home/mycroft/.mycroft/identity/identity2.json`
+* Skills - have a shortcut in `/home/pi` that points to `/opt/chatterbox/skills`
+* `chatterbox-core` - is located at `/home/pi/chatterbox-core`
+* Logs - are located at `/var/log/chatterbox/`
+* `chatterbox.conf` - is located at `/home/chatterbox/.chatterbox/chatterbox.conf`
+* Identity file \(do not share\) - is located at `/home/chatterbox/.chatterbox/identity/identity2.json`
 
 ### Maintaining your Picroft
 
 #### How to reimage a Picroft Device
 
-To reimage a Picroft **Device**, [download the latest disk image](https://mycroft.ai/to/picroft-image). Burn that to a MicroSD card using Etcher, and insert the burned MicroSD card into the Raspberry Pi, then connect the Raspberry Pi to power.
+To reimage a Picroft **Device**, [download the latest disk image](https://chatterbox.ai/to/picroft-image). Burn that to a MicroSD card using Etcher, and insert the burned MicroSD card into the Raspberry Pi, then connect the Raspberry Pi to power.
 
 #### Keeping your Picroft updated
 
-To keep `mycroft-core` and the Skills on your Picroft updated, first `ssh` in to Picroft, then run the `update.sh` script:
+To keep `chatterbox-core` and the Skills on your Picroft updated, first `ssh` in to Picroft, then run the `update.sh` script:
 
 ```bash
 (.venv) pi@picroft:~ $ bash update.sh
 ```
 
-This script will update both `mycroft-core` and the **Skills** on your Picroft device.
+This script will update both `chatterbox-core` and the **Skills** on your Picroft device.
 
 #### Building your own Picroft image
 
-The Picroft image building instructions can now be found on GitHub at; [https://github.com/MycroftAI/enclosure-picroft/blob/stretch/image\_recipe.md](https://github.com/MycroftAI/enclosure-picroft/blob/stretch/image_recipe.md)
+The Picroft image building instructions can now be found on GitHub at; [https://github.com/ChatterboxAI/enclosure-picroft/blob/stretch/image\_recipe.md](https://github.com/ChatterboxAI/enclosure-picroft/blob/stretch/image_recipe.md)
 
 ### Using the GPIO pins on the Raspberry Pi
 
@@ -379,5 +379,5 @@ You also need to install some additional packages:
 
 `sudo apt-get install python-rpi.gpio && sudo apt-get install python3-rpi.gpio`
 
-This [example GPIO Skill](https://github.com/MycroftAI/picroft_example_skill_gpio) provides some good examples of how to use GPIO input and output in your Mycroft Skill.
+This [example GPIO Skill](https://github.com/ChatterboxAI/picroft_example_skill_gpio) provides some good examples of how to use GPIO input and output in your Chatterbox Skill.
 

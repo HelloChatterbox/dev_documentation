@@ -4,7 +4,7 @@ description: The audio service handles playback and queueing of tracks.
 
 # Audio Service
 
-The `mycroft-core` distribution of Mycroft includes a _Playback Skill_ which can be used to control playback after it has been started. This means that playback only needs to be started in the **Skill**. Controlling playback can then be done through the _Playback Skill_.
+The `chatterbox-core` distribution of Chatterbox includes a _Playback Skill_ which can be used to control playback after it has been started. This means that playback only needs to be started in the **Skill**. Controlling playback can then be done through the _Playback Skill_.
 
 ## How to set up the Audio Service
 
@@ -15,7 +15,7 @@ First, import the
 class.
 
 ```python
-from mycroft.skills.audioservice import AudioService
+from chatterbox.skills.audioservice import AudioService
 ```
 
 Then in the `initialize()` method of your **Skill**, instantiate an `AudioService` object:
@@ -42,11 +42,11 @@ or with a list of tracks
         self.audio_service.play(['file:///path/to/my/track.mp3', 'http://tracks-online.com/my/track.mp3'])
 ```
 
-see the [AudioServicePlugins](https://mycroft-ai.gitbook.io/docs/mycroft-technologies/mycroft-core/plugins/audioservice#audiobackend) for information about configuring supported uris.
+see the [AudioServicePlugins](https://chatterbox-ai.gitbook.io/docs/chatterbox-technologies/chatterbox-core/plugins/audioservice#audiobackend) for information about configuring supported uris.
 
 The play method has an optional second argument to further process the user's **Utterance**. Currently this can only be used to select backend \(where you want to send the audio\) but in the future it will be able to handle requests like
 
-> Hey Mycroft, play Hello Nasty by the Beastie Boys at half volume. We don't want to wake the neighbours
+> Hey Chatterbox, play Hello Nasty by the Beastie Boys at half volume. We don't want to wake the neighbours
 
 To use this feature the **Utterance** received from the intent service must be passed
 
@@ -71,10 +71,10 @@ These haven't been extensively tested on the Mark 1 yet.
 
 ## PulseAudio features
 
-The audio service hooks into the PulseAudio controls and can mute playback of sound streams beyond Mycroft's control. This is currently deactivated by default but can be enabled by changing the `mycroft.conf` configuration found in `mycroft/configuration/mycroft.conf`
+The audio service hooks into the PulseAudio controls and can mute playback of sound streams beyond Chatterbox's control. This is currently deactivated by default but can be enabled by changing the `chatterbox.conf` configuration found in `chatterbox/configuration/chatterbox.conf`
 
 ```javascript
-  "play_wav_cmdline": "paplay %1 --stream-name=mycroft-voice",
+  "play_wav_cmdline": "paplay %1 --stream-name=chatterbox-voice",
   "Audio": {
     "pulseaudio": "mute"
   }
@@ -82,5 +82,5 @@ The audio service hooks into the PulseAudio controls and can mute playback of so
 
 ## AudioService Technical Documentation
 
-More information on AudioService methods can be found in the [Mycroft Technical Documentation](https://mycroft-core.readthedocs.io/en/master/source/mycroft.html#audioservice-class).
+More information on AudioService methods can be found in the [Chatterbox Technical Documentation](https://chatterbox-core.readthedocs.io/en/master/source/chatterbox.html#audioservice-class).
 

@@ -1,6 +1,6 @@
 ---
 description: >-
-  We value and recognise your contributions. Mycroft is artificial intelligence
+  We value and recognise your contributions. Chatterbox is artificial intelligence
   for _everyone_ and we warmly welcome both non-technical and technical
   contributions.
 ---
@@ -13,8 +13,8 @@ If you're non-technical, there are still many ways to contribute.
 
 * You can contribute your **voice** to the [Mozilla Open Voice Project](https://voice.mozilla.org/)
 * You can give us **feedback** on this documentation, using the ratings system you'll see at the bottom of the page
-* You can [contact us](https://mycroft.ai/contact) and provide suggestions for improvement or enhancement
-* You can join our community through our [Chat](https://chat.mycroft.ai) or [Forum](https://community.mycroft.ai)
+* You can [contact us](https://chatterbox.ai/contact) and provide suggestions for improvement or enhancement
+* You can join our community through our [Chat](https://chat.chatterbox.ai) or [Forum](https://community.chatterbox.ai)
 
 ## I'm technically minded, how do I contribute?
 
@@ -23,8 +23,8 @@ Great! Let's get you started.
 ### Reporting Issues
 
 * You'll need a [GitHub account](https://github.com/signup/free)
-* We require that all developers sign a [Contributor License Agreement Request Form](https://mycroft.ai/cla/). This agreement clarifies that you are granting a license to the Mycroft Project to freely use your work.  Additionally, it establishes that you retain the ownership of your contributed code and intellectual property.  As the owner, you are free to use your code in other work, obtain patents, or do anything else you choose with it.
-* Check our [Issues](https://github.com/issues?user=MycroftAI) first to see if the Issue has already been reported.
+* We require that all developers sign a [Contributor License Agreement Request Form](https://chatterbox.ai/cla/). This agreement clarifies that you are granting a license to the Chatterbox Project to freely use your work.  Additionally, it establishes that you retain the ownership of your contributed code and intellectual property.  As the owner, you are free to use your code in other work, obtain patents, or do anything else you choose with it.
+* Check our [Issues](https://github.com/issues?user=ChatterboxAI) first to see if the Issue has already been reported.
 
 If not, you'll need to create a new Issue. Help us to help fix the Issue quicker by following these guidelines. Your Issue should contain:
 
@@ -34,42 +34,42 @@ Object-deviation format is a very specific way of describing faults. The more sp
 
 For example:
 
-* "When my Mycroft Mark 1 device \(**object**\) powers on, the color of his eyes is red instead of blue \(**deviation - red - from expected condition - blue**\)
-* "When I ask Mycroft about the weather \(**object**\), Mycroft reports the low temperature correctly, but the high temperature is incorrectly reported as the low temperature \(**deviation - incorrect temperature - from expected condition - correct temperature**
+* "When my Chatterbox Mark 1 device \(**object**\) powers on, the color of his eyes is red instead of blue \(**deviation - red - from expected condition - blue**\)
+* "When I ask Chatterbox about the weather \(**object**\), Chatterbox reports the low temperature correctly, but the high temperature is incorrectly reported as the low temperature \(**deviation - incorrect temperature - from expected condition - correct temperature**
 
-#### The Enclosure or Device you are using, and the version of Mycroft you are using
+#### The Enclosure or Device you are using, and the version of Chatterbox you are using
 
 Be sure to let us know the **Enclosure** or **Device** you're using, such as:
 
 * Mark 1
-* Mycroft for Linux \(please let us know your distro and install method\)
+* Chatterbox for Linux \(please let us know your distro and install method\)
 * Picroft \(let us know which Speakers and Headphones you're using too\)
 
 This helps us to pinpoint the issue quickly.
 
-Below, you'll find instructions to identify the version of Mycroft you're using.
+Below, you'll find instructions to identify the version of Chatterbox you're using.
 
 **Mark 1 and Picroft**
 
-To find what version of Mycroft your Mark 1 or Picroft is running, you'll need to [SSH into the Device](https://github.com/krisgesling/docs-rewrite/tree/5a6e9b5a7ba547d928ec3888dc71a50571b85b58/using-mycroft-ai/get-mycroft/mark-1/README.md#connecting-to-the-mark-1-via-ssh). Run the command `apt list`
+To find what version of Chatterbox your Mark 1 or Picroft is running, you'll need to [SSH into the Device](https://github.com/krisgesling/docs-rewrite/tree/5a6e9b5a7ba547d928ec3888dc71a50571b85b58/using-chatterbox-ai/get-chatterbox/mark-1/README.md#connecting-to-the-mark-1-via-ssh). Run the command `apt list`
 
-then look through it to find the Mycroft packages that are installed.
+then look through it to find the Chatterbox packages that are installed.
 
 ```bash
-mycroft-core/unknown,now 0.9.7 armhf [installed,automatic]
-mycroft-mark-1/unknown,now 0.9.7 armhf [installed]
-mycroft-picroft/unknown 0.9.7 armhf
-mycroft-wifi-setup/unknown,now 0.1.5 armhf [installed,automatic]
+chatterbox-core/unknown,now 0.9.7 armhf [installed,automatic]
+chatterbox-mark-1/unknown,now 0.9.7 armhf [installed]
+chatterbox-picroft/unknown 0.9.7 armhf
+chatterbox-wifi-setup/unknown,now 0.1.5 armhf [installed,automatic]
 ```
 
-**Mycroft for Linux**
+**Chatterbox for Linux**
 
-If you're using Mycroft for Linux, you will simply run the CLI, and the CLI will tell you the version number.
+If you're using Chatterbox for Linux, you will simply run the CLI, and the CLI will tell you the version number.
 
-`mycroft-core$ ./start-mycroft.sh debug`
+`chatterbox-core$ ./start-chatterbox.sh debug`
 
 ```bash
-Starting all mycroft-core services
+Starting all chatterbox-core services
 Initializing...
 Starting background service bus
 Restarting: skills
@@ -80,7 +80,7 @@ Starting cli
 
 The version number will be shown in the top right hand corner of the CLI, as shown below.
 
-![CLI showing version number](https://mycroft.ai/wp-content/uploads/2017/12/CLI-showing-version-number.png)
+![CLI showing version number](https://chatterbox.ai/wp-content/uploads/2017/12/CLI-showing-version-number.png)
 
 ### Making changes
 
@@ -93,7 +93,7 @@ The version number will be shown in the top right hand corner of the CLI, as sho
 
    `git commit -m "Issues-123 - Fixing 'A' sound on Spelling Skill"`
 
-7. Before committing, format your code following the PEP8 rules and organize your imports removing unused libs. To check whether you are following these rules, install pep8 and run `pep8 mycroft test` while in the `mycroft-core` folder. This will check for formatting issues in the `mycroft` and `test` folders.
+7. Before committing, format your code following the PEP8 rules and organize your imports removing unused libs. To check whether you are following these rules, install pep8 and run `pep8 chatterbox test` while in the `chatterbox-core` folder. This will check for formatting issues in the `chatterbox` and `test` folders.
 8. Once you have committed everything and are done with your branch, you have to rebase your code with **dev**. Do the following steps:
    1. Make sure you do not have any changes left on your branch
    2. Checkout on dev branch and make sure it is up-to-date
@@ -111,8 +111,8 @@ The version number will be shown in the top right hand corner of the CLI, as sho
       git push -f
       ```
 9. If possible, create unit tests for your changes
-   * [Unit Tests for most contributions](https://github.com/MycroftAI/mycroft-core/tree/dev/test)
-   * [Intent Tests for new skills](https://docs.mycroft.ai/development/creating-a-skill#testing-your-skill)
+   * [Unit Tests for most contributions](https://github.com/ChatterboxAI/chatterbox-core/tree/dev/test)
+   * [Intent Tests for new skills](https://docs.chatterbox.ai/development/creating-a-skill#testing-your-skill)
    * We utilize TRAVIS-CI, which will test each pull request. To test locally you can run: `./start.sh unittest`
 10. Once everything is OK, you can finally [create a Pull Request \(PR\) on Github](https://help.github.com/articles/using-pull-requests/) in order to be reviewed and merged.
 

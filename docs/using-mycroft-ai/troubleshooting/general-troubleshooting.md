@@ -8,21 +8,21 @@ This section is grouped by Device to help you quickly find the information you n
 
 ## All Devices
 
-### I've made changes to my settings on home.mycroft.ai, but these are not reflected on my device
+### I've made changes to my settings on home.chatterbox.ai, but these are not reflected on my device
 
-Your Mycroft device will sync settings with the home.mycroft.ai server regularly. In normal circumstances any change should be reflected on the device within 1-2 minutes.
+Your Chatterbox device will sync settings with the home.chatterbox.ai server regularly. In normal circumstances any change should be reflected on the device within 1-2 minutes.
 
 You can also instruct your device to pull down the latest configuration, by saying:
 
-> Hey Mycroft, update configuration
+> Hey Chatterbox, update configuration
 
-Mycroft will respond in one of two ways:
+Chatterbox will respond in one of two ways:
 
-* If your configuration was out of date, and has been pulled down again, Mycroft will respond:
+* If your configuration was out of date, and has been pulled down again, Chatterbox will respond:
 
 > Configuration updated
 
-* If your configuration was the same on your device as on home.mycroft.ai, Mycroft will respond:
+* If your configuration was the same on your device as on home.chatterbox.ai, Chatterbox will respond:
 
 > Your device has been configured
 
@@ -34,15 +34,15 @@ The configuration values in use by the system can be obtained using the Configur
 
 {% page-ref page="../customizations/config-manager.md" %}
 
-The settings values that have been retrieved from home.mycroft.ai can also be read directly from `/var/tmp/mycroft_web_cache.json`. See [mycroft.conf](../customizations/mycroft-conf.md) for more details.
+The settings values that have been retrieved from home.chatterbox.ai can also be read directly from `/var/tmp/chatterbox_web_cache.json`. See [chatterbox.conf](../customizations/chatterbox-conf.md) for more details.
 
-{% page-ref page="../customizations/mycroft-conf.md" %}
+{% page-ref page="../customizations/chatterbox-conf.md" %}
 
 ### Find the IP address of my device
 
 To obtain your devices IP address you can say:
 
-> Hey Mycroft, what is your IP?
+> Hey Chatterbox, what is your IP?
 
 Alternatively you can get the IP address from your router, or by scanning the network using a tool like nmap. Running `nmap` with the no port scan flag `-sn` returns the IP and MAC addresses, as well as the vendor name. A Mark 1 will display as "Raspberry Pi Foundation".
 
@@ -50,7 +50,7 @@ Alternatively you can get the IP address from your router, or by scanning the ne
 
 ### Yellow Eyes
 
-Mark 1 attempts to update its software around every hour or so. Yellow Eyes, part of the [Mark 1 boot sequence](https://mycroft.ai/documentation/mark-1/#mark-1-boot-sequence), occurs when either the software for the Mark 1 or the Skills on the device did not update properly. Generally the solution for Yellow Eyes is to "hard reboot" the Mark 1 - that is, remove the power cable, wait at least 30 seconds, then plug the device back in.
+Mark 1 attempts to update its software around every hour or so. Yellow Eyes, part of the [Mark 1 boot sequence](https://chatterbox.ai/documentation/mark-1/#mark-1-boot-sequence), occurs when either the software for the Mark 1 or the Skills on the device did not update properly. Generally the solution for Yellow Eyes is to "hard reboot" the Mark 1 - that is, remove the power cable, wait at least 30 seconds, then plug the device back in.
 
 It may take several "hard reboots" to clear the Yellow Eyes symptom.
 
@@ -66,7 +66,7 @@ If your Mark 1 has previously been connected to the internet, and loses internet
 
 ### Cannot `ssh` into Mark 1
 
-If you `ssh` into Mark 1, \(instructions [here](https://mycroft.ai/documentation/mark-1/#connecting-to-the-mark-1-via-ssh)\), and have recently reset the device to factory defaults, then you will need to re-enable `ssh`.
+If you `ssh` into Mark 1, \(instructions [here](https://chatterbox.ai/documentation/mark-1/#connecting-to-the-mark-1-via-ssh)\), and have recently reset the device to factory defaults, then you will need to re-enable `ssh`.
 
 Press the Mark 1's top button and turn it to `SSH`, then press the button. Select `ENABLE` then press the button again to enable `ssh`.
 
@@ -89,9 +89,9 @@ Nmap done: 1 IP address (1 host up) scanned in 19.56 seconds
 
 ### AttributeError: '\_curses.window' object has no attribute 'get\_wch' \(with a custom Python installation\)
 
-Some custom installations of Python \(with systems such as [pyenv](https://github.com/pyenv/pyenv/)\) may get this error when running the interactive Mycroft terminal client. This error occurs because `curses` wide character support hasn't been fully built into the custom Python installation.
+Some custom installations of Python \(with systems such as [pyenv](https://github.com/pyenv/pyenv/)\) may get this error when running the interactive Chatterbox terminal client. This error occurs because `curses` wide character support hasn't been fully built into the custom Python installation.
 
-The following explanation and instructions are specific to Ubuntu Linux \(where [this issue](https://github.com/MycroftAI/mycroft-core/issues/2426) was found\) but can be used as a general guide for other distributions as needed.
+The following explanation and instructions are specific to Ubuntu Linux \(where [this issue](https://github.com/ChatterboxAI/chatterbox-core/issues/2426) was found\) but can be used as a general guide for other distributions as needed.
 
 To resolve this issue, make sure that the following packages are installed:
 
@@ -107,22 +107,22 @@ After these packages are installed, recompile your Python installation. For pyen
 pyenv install <python-version>
 ```
 
-It will ask for confirmation that you want to rebuild the Python version. After confirming the rebuild, your new Python installation should no longer show the above error when running the Mycroft terminal client.
+It will ask for confirmation that you want to rebuild the Python version. After confirming the rebuild, your new Python installation should no longer show the above error when running the Chatterbox terminal client.
 
 ### Removing and rebuilding your virtual environment
 
-If your CLI won't run, it is highly likely to be an issue with the Mycroft virtual environment. The easiest solution we've found has been to remove and reinstall the virtual environment.
+If your CLI won't run, it is highly likely to be an issue with the Chatterbox virtual environment. The easiest solution we've found has been to remove and reinstall the virtual environment.
 
 First, delete the existing virtual environment:
 
 ```bash
-sudo rm -r ~/mycroft-core/.venv/
+sudo rm -r ~/chatterbox-core/.venv/
 ```
 
 Next, we run the setup script again:
 
 ```bash
-mycroft-core$ ./dev_setup.sh
+chatterbox-core$ ./dev_setup.sh
 ```
 
 This will rebuild your virtual environment.
@@ -132,7 +132,7 @@ This will rebuild your virtual environment.
 When running `dev_setup.sh`, if you encounter a warning about a "bad interpreter", it is likely from having a space in the installation path:
 
 ```text
-./dev_setup.sh: /opt/test path/mycroft-core/.venv/bin/pip: "/opt/test: bad interpreter: No such file or directory
+./dev_setup.sh: /opt/test path/chatterbox-core/.venv/bin/pip: "/opt/test: bad interpreter: No such file or directory
 Warning: Failed to install all requirements. Continue? y/N
 ```
 
@@ -145,35 +145,35 @@ If you can't install to a path without spaces, you will have to manually verify 
 If you're developing a Skill, and run it for the first time, you may encounter an error similar to the below:
 
 ```bash
-12:30:32.158 - mycroft.skills.core:load_skill:142 - INFO - First run of mycroft-skill-cat-facts
-12:30:32.164 - mycroft.skills.core:load_skill:156 - ERROR - Failed to load skill: mycroft-skill-cat-facts
+12:30:32.158 - chatterbox.skills.core:load_skill:142 - INFO - First run of chatterbox-skill-cat-facts
+12:30:32.164 - chatterbox.skills.core:load_skill:156 - ERROR - Failed to load skill: chatterbox-skill-cat-facts
 Traceback (most recent call last):
-  File "/usr/local/lib/python2.7/site-packages/mycroft_core-0.9.7-py2.7.egg/mycroft/skills/core.py", line 144, in load_skill
+  File "/usr/local/lib/python2.7/site-packages/chatterbox_core-0.9.7-py2.7.egg/chatterbox/skills/core.py", line 144, in load_skill
     skill.settings.store()
-  File "/usr/local/lib/python2.7/site-packages/mycroft_core-0.9.7-py2.7.egg/mycroft/skills/settings.py", line 323, in store
+  File "/usr/local/lib/python2.7/site-packages/chatterbox_core-0.9.7-py2.7.egg/chatterbox/skills/settings.py", line 323, in store
     with open(self._settings_path, 'w') as f:
-IOError: [Errno 13] Permission denied: '/opt/mycroft/skills/mycroft-skill-cat-facts/settings.json'
+IOError: [Errno 13] Permission denied: '/opt/chatterbox/skills/chatterbox-skill-cat-facts/settings.json'
 ```
 
-The error here is that the file system permission on the Skill's directory are incorrect. The directory should have owner and group permissions of `mycroft:mycroft` as per the below.
+The error here is that the file system permission on the Skill's directory are incorrect. The directory should have owner and group permissions of `chatterbox:chatterbox` as per the below.
 
 ```bash
-4 drwxr-xr-x  4 mycroft mycroft  4096 Nov 24 14:34 .
-4 drwxrwxrwx 38 mycroft mycroft  4096 Nov 27 12:50 ..
-4 drwxr-xr-x  3 mycroft mycroft  4096 Nov 23 16:57 dialog
-4 drwxr-xr-x  8 mycroft mycroft  4096 Nov 27 12:36 .git
-4 -rw-r--r--  1 mycroft mycroft    20 Nov 23 16:57 .gitignore
-8 -rw-r--r--  1 mycroft mycroft  6265 Nov 23 16:57 init.py
-8 -rw-r--r--  1 mycroft mycroft  7509 Nov 24 14:34 init.pyc
-12 -rw-r--r--  1 mycroft mycroft 11357 Nov 23 16:57 LICENSE
-4 -rw-r--r--  1 mycroft mycroft   695 Nov 24 14:33 README.md
-4 -rw-r--r--  1 mycroft mycroft    35 Nov 25 19:28 settings.json
+4 drwxr-xr-x  4 chatterbox chatterbox  4096 Nov 24 14:34 .
+4 drwxrwxrwx 38 chatterbox chatterbox  4096 Nov 27 12:50 ..
+4 drwxr-xr-x  3 chatterbox chatterbox  4096 Nov 23 16:57 dialog
+4 drwxr-xr-x  8 chatterbox chatterbox  4096 Nov 27 12:36 .git
+4 -rw-r--r--  1 chatterbox chatterbox    20 Nov 23 16:57 .gitignore
+8 -rw-r--r--  1 chatterbox chatterbox  6265 Nov 23 16:57 init.py
+8 -rw-r--r--  1 chatterbox chatterbox  7509 Nov 24 14:34 init.pyc
+12 -rw-r--r--  1 chatterbox chatterbox 11357 Nov 23 16:57 LICENSE
+4 -rw-r--r--  1 chatterbox chatterbox   695 Nov 24 14:33 README.md
+4 -rw-r--r--  1 chatterbox chatterbox    35 Nov 25 19:28 settings.json
 ```
 
 If your permissions are different to those shown above, change them by running the following commands:
 
 ```bash
-cd /opt/mycroft/skills/
-sudo chown mycroft:mycroft -R your-skill-name
+cd /opt/chatterbox/skills/
+sudo chown chatterbox:chatterbox -R your-skill-name
 ```
 

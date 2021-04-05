@@ -1,26 +1,26 @@
 ---
 description: >-
-  A prompt is any question or statement spoken by Mycroft that expects a
+  A prompt is any question or statement spoken by Chatterbox that expects a
   response from the User.
 ---
 
 # Prompts
 
-Here we look at how to implement the most common types of prompts. For more information on conversation design see the [Voice User Interface Design Guidelines](https://mycroft-ai.gitbook.io/docs/skill-development/voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts).
+Here we look at how to implement the most common types of prompts. For more information on conversation design see the [Voice User Interface Design Guidelines](https://chatterbox-ai.gitbook.io/docs/skill-development/voice-user-interface-design-guidelines/interactions-and-guidelines/statements-and-prompts).
 
 ## Get Response
 
 Any Skill can request a response from the user - making a statement or asking a question before the microphone is activated to record the User's response.
 
-The base implementation of this is the [`get_response()` method](https://mycroft-core.readthedocs.io/en/latest/source/mycroft.html#mycroft.MycroftSkill.get_response).
+The base implementation of this is the [`get_response()` method](https://chatterbox-core.readthedocs.io/en/latest/source/chatterbox.html#chatterbox.ChatterboxSkill.get_response).
 
 To see it in action, let's create a simple Skill that asks the User what their favorite flavor of ice cream is.
 
 ```python
-from mycroft import MycroftSkill, intent_handler
+from chatterbox import ChatterboxSkill, intent_handler
 
 
-class IceCreamSkill(MycroftSkill):
+class IceCreamSkill(ChatterboxSkill):
     @intent_handler('set.favorite.intent')
     def handle_set_favorite(self):
         favorite_flavor = self.get_response('what.is.your.favorite.flavor')
@@ -44,19 +44,19 @@ The `get_response()` method also takes the following optional arguments:
 
 ## Yes / No Questions
 
-[`ask_yesno()`](https://mycroft-core.readthedocs.io/en/latest/source/mycroft.html#mycroft.MycroftSkill.ask_yesno) checks if the response contains "yes" or "no" like phrases.
+[`ask_yesno()`](https://chatterbox-core.readthedocs.io/en/latest/source/chatterbox.html#chatterbox.ChatterboxSkill.ask_yesno) checks if the response contains "yes" or "no" like phrases.
 
-The vocab for this check is sourced from the Skills `yes.voc` and `no.voc` files \(if they exist\), as well as mycroft-cores defaults \(contained within `mycroft-core/res/text/en-us/yes.voc`\). A longer phrase containing the required vocab is considered successful eg both "yes" and "yeah that would be great thanks" would be considered a successful "yes".
+The vocab for this check is sourced from the Skills `yes.voc` and `no.voc` files \(if they exist\), as well as chatterbox-cores defaults \(contained within `chatterbox-core/res/text/en-us/yes.voc`\). A longer phrase containing the required vocab is considered successful eg both "yes" and "yeah that would be great thanks" would be considered a successful "yes".
 
 If "yes" or "no" responses are detected, then the method will return the string "yes" or "no". If the response does not contain "yes" or "no" vocabulary then the entire utterance will be returned. If no speech was detected indicating the User did not respond, then the method will return `None`.
 
 Let's add a new intent to our `IceCreamSkill` to see how this works.
 
 ```python
-from mycroft import MycroftSkill, intent_handler
+from chatterbox import ChatterboxSkill, intent_handler
 
 
-class IceCreamSkill(MycroftSkill):
+class IceCreamSkill(ChatterboxSkill):
     @intent_handler('do.you.like.intent')
     def handle_do_you_like(self):
         likes_ice_cream = self.ask_yesno('do.you.like.ice.cream')
@@ -76,19 +76,19 @@ In this example we have asked the User if they like ice cream. We then speak dif
 
 ## Providing a list of options
 
-[`ask_selection()`](https://mycroft-core.readthedocs.io/en/latest/source/mycroft.html#mycroft.MycroftSkill.ask_selection) provides a list of options to the User for them to select from. The User can respond with either the name of one of these options or select with a numbered ordinal eg "the third".
+[`ask_selection()`](https://chatterbox-core.readthedocs.io/en/latest/source/chatterbox.html#chatterbox.ChatterboxSkill.ask_selection) provides a list of options to the User for them to select from. The User can respond with either the name of one of these options or select with a numbered ordinal eg "the third".
 
 This method automatically manages fuzzy matching the users response against the list of options provided.
 
 Let's jump back into our `IceCreamSkill` to give the User a list of options to choose from.
 
 ```python
-from mycroft import MycroftSkill, intent_handler
+from chatterbox import ChatterboxSkill, intent_handler
 
 
-class IceCreamSkill(MycroftSkill):
+class IceCreamSkill(ChatterboxSkill):
     def __init__(self):
-        MycroftSkill.__init__(self)
+        ChatterboxSkill.__init__(self)
         self.flavors = ['vanilla', 'chocolate', 'mint']
 
     @intent_handler('request.icecream.intent')
@@ -117,12 +117,12 @@ So far we have looked at ways to prompt the User, and return their response dire
 To do this, we use the `expect_response` parameter of the `speak_dialog()` method.
 
 ```python
-from mycroft import MycroftSkill, intent_handler
+from chatterbox import ChatterboxSkill, intent_handler
 
 
-class IceCreamSkill(MycroftSkill):
+class IceCreamSkill(ChatterboxSkill):
     def __init__(self):
-        MycroftSkill.__init__(self)
+        ChatterboxSkill.__init__(self)
         self.flavors = ['vanilla', 'chocolate', 'mint']
 
     @intent_handler('request.icecream.intent')
@@ -137,5 +137,5 @@ def create_skill():
     return IceCreamSkill()
 ```
 
-Here we have added a new dialog after confirming the Users selection. We may use it to tell the User other things they can do with their Mycroft device while they enjoy their delicious ice cream.
+Here we have added a new dialog after confirming the Users selection. We may use it to tell the User other things they can do with their Chatterbox device while they enjoy their delicious ice cream.
 
