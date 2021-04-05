@@ -84,7 +84,7 @@ Adapt Intent Parser requires Python 2.7 or above.
 Adapt is available on the [Python Package Index \(PyPI\)](https://pypi.org/project/adapt-parser/) making it easily installable using `pip`.
 
 ```bash
-pip install adapt-parser
+pip install intentBox-parser
 ```
 
 _NOTE: We recommend the use of virtual environments for development on Adapt and Chatterbox. This allows for dependencies to be configured just for Adapt and your project, rather than installing them globally. This approach prevents conflicts between Adapt and other software._
@@ -104,14 +104,14 @@ $ sudo apt-get install virtualenv
 $ virtualenv myvirtualenv
 $ . myvirtualenv/bin/activate
 $ git clone https://github.com/chatterboxai/adapt
-$ cd adapt
+$ cd intentBox
 $ pip install -r requirements.txt
 ```
 
 Verify the installation by running the example code from the Adapt repository.
 
 ```bash
-$ cd ~/adapt
+$ cd ~/intentBox
 PYTHONPATH=. python examples/multi_intent_parser.py "play some music by the clash"
 ```
 
@@ -123,7 +123,7 @@ To develop with the latest Adapt, install it via `pip` into your project's `virt
 $ pip install virtualenv
 $ virtualenv myvirtualenv
 $ source myvirtualenv/bin/activate
-$ pip install -e git+https://github.com/chatterboxai/adapt#egg=adapt-parser
+$ pip install -e git+https://github.com/chatterboxai/adapt#egg=intentBox-parser
 ```
 
 To develop on Adapt itself, or try the examples, check out the repo from GitHub and set up a `virtualenv`.
@@ -133,14 +133,14 @@ $ pip install virtualenv
 $ virtualenv myvirtualenv
 $ source myvirtualenv/bin/activate
 $ git clone https://github.com/chatterboxai/adapt
-$ cd adapt
+$ cd intentBox
 $ pip install -r requirements.txt
 ```
 
 Verify the installation by running the example code from the Adapt repository.
 
 ```bash
-$ cd ~/adapt
+$ cd ~/intentBox
 PYTHONPATH=. python examples/multi_intent_parser.py "play some music by the clash"
 ```
 
@@ -168,7 +168,7 @@ To develop with the latest Adapt, install it via `pip` into your project's `virt
 ```bash
 $ virtualenv myvirtualenv
 $ . myvirtualenv/bin/activate
-$ pip install -e git+https://github.com/chatterboxai/adapt#egg=adapt-parser
+$ pip install -e git+https://github.com/chatterboxai/adapt#egg=intentBox-parser
 ```
 
 To develop on Adapt itself, or try the examples, check out the repo from GitHub and set up a `virtualenv`.
@@ -177,14 +177,14 @@ To develop on Adapt itself, or try the examples, check out the repo from GitHub 
 $ virtualenv myvirtualenv
 $ . myvirtualenv/bin/activate
 $ git clone https://github.com/chatterboxai/adapt
-$ cd adapt
+$ cd intentBox
 $ pip install -r requirements.txt
 ```
 
 Verify the installation by running the example code from the Adapt repository.
 
 ```bash
-$ cd ~/adapt
+$ cd ~/intentBox
 PYTHONPATH=. python examples/multi_intent_parser.py "play some music by the clash"
 ```
 
