@@ -187,5 +187,7 @@ self.root_dir
 
 This member variable contains the absolute path of a Skill’s root directory e.g. `~.local/share/chatterbox/skills/my-skill.me/`.
 
-Generally Skills should not modify anything within this directory. Modifying anything in the Skill directory will reload the Skill. This will also prevent the Skill from updating as we do not want to overwrite changes made during development. It is also not guaranteed that the Skill will have permission to write to this directory.
+Generally Skills should not modify anything within this directory. 
+Modifying anything in the Skill directory will reload the Skill. 
+It is also not guaranteed that the Skill will have permission to write to this directory.
 

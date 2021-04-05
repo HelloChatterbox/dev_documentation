@@ -73,7 +73,8 @@ Here we have installed a number of `pianobar` packages, and then verify that the
 
 ### Other Chatterbox Skills
 
-A Skill may even require that other Chatterbox Skills are installed rather than duplicate functionality. Here we can see that the Cocktails Skill and the Mozilla Webthings Gateway are listed as dependencies.
+A Skill may even require that other Chatterbox Skills are installed rather than duplicate functionality. 
+Here we can see that the Cocktails Skill and the Mozilla Webthings Gateway are listed as dependencies.
 
 ```yaml
 dependencies:
