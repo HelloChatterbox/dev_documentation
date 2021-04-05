@@ -24,31 +24,3 @@ It's a good idea to start by writing down how your Skill will work, including
 * Will you need any additional packages or dependencies?
 
 Once you've given these some thought, you can get started.
-
-## Chatterbox Skills Kit \(MSK\)
-
-To setup the foundations of your Skill, we will use the [Chatterbox Skills Kit \(MSK\)](../../chatterbox-technologies/chatterbox-skills-kit.md) that comes installed with Chatterbox. If you chose the defaults during installation, you can run MSK from your Terminal using the command: `chatterbox-msk`. Running this command without any arguments will provide a brief overview of what you can do with MSK.
-
-If you receive a "command not found", then you will need to run `msk` manually from your `chatterbox-core` directory. Anytime you see `chatterbox-msk` in our documentation you must replace this with:
-
-### MSK Create
-
-`chatterbox-msk create` is an interactive script that asks you a few questions and generates a new Skill template. This template can immediately be used as a Skill, however you will most likely want to extend its functionaity.
-
-To create your first Skill, you will be asked for a:
-
-1. Name  To be readable within the space available on the [Chatterbox Skills Marketplace](https://market.chatterbox.ai) the name should be short, generally under 22 characters in length. The name must also be unique. You can check the [Marketplace](https://market.chatterbox.ai) to see what other Skills already exist. 
-2. Example phrases \(known as utterances\)  Utterances that you expect Users to say to Chatterbox, that your Skill will respond to. 
-3. Response dialog  The dialog that your Skill will respond with. 
-4. Short description  A one-line description, less than 40 characters long. 
-5. Long description  This can be as short or as long as you like. 
-6. Author  This is most often your name, and / or Github @username 
-7. Categories  The [Chatterbox Skills Marketplace](https://market.chatterbox.ai) categories your Skill belongs to. It's important to note that the first category you select will be set as the default category. This is where your Skill will most often appear in the Marketplace. 
-8. Tags  Tags provide an additional means for Users to search for or discover relevant Skills. Unlike categories, you can set your tags to anything you like.
-
-After inputting this data you will be asked if you would like a Github repo created for your Skill. This provides an easy way to store your Skill, and will be required if you choose to [publish your Skill in the Marketplace](../marketplace-submission/).
-
-If you have completed all of these steps, your Skill will have been created in the `/opt/chatterbox/skills` directory on your device.
-
-In the next section, we will explore each component that makes up your Skill.
-

@@ -17,23 +17,6 @@ Pairing is also used for services that require API authentication, such as
 * Google Speech to Text
 * Weather Skill API and OpenWeather
 
-## Creating a home.chatterbox.ai account
-
-You can [create a home.chatterbox.ai account](https://home.chatterbox.ai/#/signup) by using
-
-* Your Facebook account or;
-* Your Google account or;
-* Your GitHub account or;
-* By signing up with your email address and choosing a password
-
-### The Open Dataset
-
-By default, Chatterbox will not store your usage data or keep any recordings of your voice.
-
-When creating an account, you will be asked if you would like to Opt-In to the Open Dataset. If you choose to Opt-In then Chatterbox will record your voice when Speaking the Wake Word and Utterances. This data is de-identified and used anonymously to _train_ Chatterbox to better recognize the Wake Word and Utterances. It will also be provided to key partners such as Mozilla, to assist in the development of speech recognition tools such as [DeepSpeech](https://github.com/mozilla/DeepSpeech).
-
-If you change your mind at any time, you can change your selection under the Agreements section of [your Profile](https://account.chatterbox.ai/profile).
-
 ## Adding a Device
 
 To add a Device to your home.chatterbox.ai account, you will need a 6-character **Registration Code**. The Registration Code is provided in different ways depending on which **Device** you have.
@@ -54,21 +37,11 @@ number 7
 
 Your pairing code will be different.
 
-#### Mark 1
-
-After you have connected your Mark 1 to Wifi, Chatterbox will speak a 6-character **Registration Code**. This code will also appear on Chatterbox's LED screen.
-
-If you're stuck connecting to Wifi, please read the [Mark 1 Getting Started Guide \(PDF, 290Kb\)](https://chatterbox.ai/wp-content/uploads/2017/06/Mark_1_User_Guide.pdf).
-
 #### Picroft
 
 After you have connected your Picroft to Wifi, Chatterbox will speak a 6-character **Registration Code**.
 
 If you're stuck connecting to Wifi, please read the [Picroft documentation](http://chatterbox.ai/documentation/picroft/).
-
-#### Linux
-
-After your Chatterbox for Linux installation is successfully installed, Chatterbox will speak a 6-character **Registration Code**.
 
 ### Pairing your Device\(s\) to your home.chatterbox.ai account
 
@@ -93,12 +66,6 @@ DO NOT SHARE THIS INFORMATION WITH OTHERS - IT IS YOUR MYCROFT IDENTITY
 You may be asked for this information by Chatterbox support staff while troubleshooting Device and/or Pairing issues.
 
 ## Device Settings
-
-From the User menu in the top right, choose 'Devices'.
-
-### Devices
-
-This is list of all Chatterbox devices paired with your account. From here you can add a new device, or change settings for existing devices.
 
 Settings available:
 

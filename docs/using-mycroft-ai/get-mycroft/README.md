@@ -25,13 +25,6 @@ If you are a technical user, run Chatterbox on your favorite Linux distro, inclu
 
 {% page-ref page="linux.md" %}
 
-### Windows and Mac
-
-We’re not quite ready to release Chatterbox natively for Windows and macOS. If you are keen to help and have technical experience on these platforms, please let us know!
-
-However you can run Chatterbox on MacOS and Windows inside a virtual machine using VirtualBox.
-
-{% page-ref page="macos-and-windows-with-virtualbox.md" %}
 
 ### Chatterbox for Docker
 
@@ -39,27 +32,10 @@ Run Chatterbox in a Docker container. This can be installed using our [pre-built
 
 {% page-ref page="docker.md" %}
 
-### Chatterbox for Android
-
-Build Chatterbox in Android Studio and deploy to your Android devices. We have source code available if you’re comfortable with Android Studio and have the skill set to compile this into an .apk and load onto an Android device.
-
-{% page-ref page="android.md" %}
-
 ## Buy a device
 
 Get a dedicated device, a voice assistant with no hassles. Plug in, connect to WiFi and go.
 
-### Mark II
-
-The Mark II is our next-generation smart speaker designed for you and your family, whatever your level of technical expertise. At the same time, it is open hardware and software for developers, makers and hackers.
-
-{% page-ref page="mark-ii.md" %}
-
-### Mark 1
-
-Mark 1 is a no-fuss way to get started. It has been designed specifically to work with Chatterbox’s capabilities as a standalone device. Great for those who aren’t super technical, but it can be easily extended, altered, modified, and hacked.
-
-_The Mark 1 is currently sold out._
 
 {% page-ref page="mark-1.md" %}
 
