@@ -11,9 +11,9 @@ A user can accomplish the same task by expressing their intent in multiple ways.
 
 _Example_: Julie wants to know about today's weather in her current location, which is Melbourne, Australia.
 
-> "hey chatterbox, what's today's weather like?" 
+> "hey chatterbox, what's today's weather like?"
 >
-> "hey chatterbox, what's the weather like in Melbourne?" 
+> "hey chatterbox, what's the weather like in Melbourne?"
 >
 > "hey chatterbox, weather"
 
@@ -29,9 +29,9 @@ In the example above, we might extract data elements like:
 
 Chatterbox has two separate Intent parsing engines each with their own strengths. Each of these can be used in most situations, however they will process the utterance in different ways.
 
-[**Padatious**](../../../chatterbox-technologies/padatious.md) is a light-weight neural network that is trained on whole phrases. Padatious intents are generally more accurate however require you to include sample phrases that cover the breadth of ways that a User may ask about something.
+[**Padatious**](https://github.com/HelloChatterbox/dev_documentation/tree/fa8dd19ece396fdac40a643e544472fe7433b789/docs/chatterbox-technologies/padatious.md) is a light-weight neural network that is trained on whole phrases. Padatious intents are generally more accurate however require you to include sample phrases that cover the breadth of ways that a User may ask about something.
 
-[**Adapt**](../../../chatterbox-technologies/adapt/) is a keyword based parser. It is more flexible, as it detects the presence of one or more keywords in an utterance, however this can result in false matches.
+[**Adapt**](https://github.com/HelloChatterbox/dev_documentation/tree/fa8dd19ece396fdac40a643e544472fe7433b789/docs/chatterbox-technologies/adapt/README.md) is a keyword based parser. It is more flexible, as it detects the presence of one or more keywords in an utterance, however this can result in false matches.
 
 We will now look at each in more detail, including how to use them in a Chatterbox Skill.
 

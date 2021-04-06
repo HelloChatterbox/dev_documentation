@@ -10,8 +10,6 @@ Padatious has a number of key benefits over other intent parsing technologies.
 * Intents run independently of each other. This allows quickly installing new skills without retraining all other skill intents.
 * With Padatious, you can easily extract entities and then use these in Skills. For example, "Find the nearest gas station" -&gt; `{ "place":"gas station"}`
 
-{% page-ref page="../../../chatterbox-technologies/padatious.md" %}
-
 ## Creating Intents
 
 Padatious uses a series of example sentences to train a machine learning model to identify an intent.

@@ -23,7 +23,7 @@ The `super()` call does some setup adding specific options to how Chatterbox wil
 * `ssml_tags`: list of valid SSML tags for the TTS if any, otherwise None.
 * `validator`: a special class that verifies that the TTS is working in the current configuration.
 
-It also registers the module's config from the [Chatterbox configuration](../../../using-chatterbox-ai/customizations/config-manager.md) in `self.config` as well as the current language in `self.lang`
+It also registers the module's config from the [Chatterbox configuration](https://github.com/HelloChatterbox/dev_documentation/tree/fa8dd19ece396fdac40a643e544472fe7433b789/docs/using-chatterbox-ai/customizations/config-manager.md) in `self.config` as well as the current language in `self.lang`
 
 For the following config snippet
 

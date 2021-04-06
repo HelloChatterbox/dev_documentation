@@ -7,9 +7,7 @@ description: >-
 
 # Conversations
 
-Any time the user needs to input a lot of information or the user needs to sort through a variety of options a conversation will be needed. 
-Users may be used to systems that require them to separate input into different chunks. 
-For example, many personal navigation devices \(GPS units\) require users to input the street number, street name, city, and state separately, like this:
+Any time the user needs to input a lot of information or the user needs to sort through a variety of options a conversation will be needed. Users may be used to systems that require them to separate input into different chunks. For example, many personal navigation devices \(GPS units\) require users to input the street number, street name, city, and state separately, like this:
 
 | Speaker |  |
 | :--- | :--- |
@@ -21,12 +19,9 @@ For example, many personal navigation devices \(GPS units\) require users to inp
 | **User** | _Springfield_ |
 | **Navigation Device** | _Oregon_ |
 
-This was a limitation of the technology, both the STT and intent parser were not capable of handling an entire address. 
-With Chatterbox you do not need to separate the address into multiple inputs. 
-It’s also easy to think like a traditional GUI and translate what are typically separate fields into prompts for the user, but that will only slows down the interaction. 
+This was a limitation of the technology, both the STT and intent parser were not capable of handling an entire address. With Chatterbox you do not need to separate the address into multiple inputs. It’s also easy to think like a traditional GUI and translate what are typically separate fields into prompts for the user, but that will only slows down the interaction.
 
-The best solution is to allow the user to input information both ways, all at once, or in pieces. 
-For example the Chatterbox Alarm skill allows the user to set a complicated alarm all in one go, or in steps.
+The best solution is to allow the user to input information both ways, all at once, or in pieces. For example the Chatterbox Alarm skill allows the user to set a complicated alarm all in one go, or in steps.
 
 **In Steps:**
 
@@ -46,11 +41,9 @@ For example the Chatterbox Alarm skill allows the user to set a complicated alar
 | **User** | Hey Chatterbox, set a recurring alarm for weekdays at 7 am |
 | Chatterbox | I've set a recurring Alarm for 7 am on weekdays |
 
-### Context
+## Context
 
-Conversational context is a given when speaking to another person, but not always when interacting with a computer based system. 
-Many skills are designed with only a quick back and forth interaction in mind, and can operate well without conversational context, but conversational context can be a powerful addition to a skill and can make the interaction much more life like. 
-Here are some examples of how to use context in conversation. 
+Conversational context is a given when speaking to another person, but not always when interacting with a computer based system. Many skills are designed with only a quick back and forth interaction in mind, and can operate well without conversational context, but conversational context can be a powerful addition to a skill and can make the interaction much more life like. Here are some examples of how to use context in conversation.
 
 | Speaker |  |
 | :--- | :--- |
@@ -64,6 +57,4 @@ Here are some examples of how to use context in conversation.
 To learn more about the technical aspects of Conversational Context, see:
 
 {% page-ref page="../user-interaction/conversational-context.md" %}
-
-
 

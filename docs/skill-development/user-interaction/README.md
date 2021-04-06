@@ -8,8 +8,7 @@ description: >-
 
 ## Intents
 
-The initial interactions with your Skill will start with a general utterance from the User. 
-Your Skill must register intents that it can handle and Chatterbox will then determine which Skill can respond to the Users request.
+The initial interactions with your Skill will start with a general utterance from the User. Your Skill must register intents that it can handle and Chatterbox will then determine which Skill can respond to the Users request.
 
 {% page-ref page="intents/" %}
 
@@ -27,15 +26,13 @@ If you need to prompt the User for information, you can use a range of methods t
 
 ## Parsing Utterances
 
-A common process within a Skill is to parse the contents of an utterance. 
-Chatterbox provides a range of easy to use methods for this task.
+A common process within a Skill is to parse the contents of an utterance. Chatterbox provides a range of easy to use methods for this task.
 
 {% page-ref page="parsing.md" %}
 
 ## Confirmations
 
-Confirmations are used to verify that the input from the User was understood correctly. 
-These may be verbal or non-verbal.
+Confirmations are used to verify that the input from the User was understood correctly. These may be verbal or non-verbal.
 
 {% page-ref page="confirmations.md" %}
 

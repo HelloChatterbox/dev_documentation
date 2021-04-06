@@ -5,7 +5,7 @@ Adapt is a keyword based intent parser. It determines user intent based on a lis
 {% embed url="https://www.youtube.com/watch?v=zR9xvPtM6Ro" caption="" %}
 
 {% hint style="info" %}
-For technical details or usage of Adapt outside of a Chatterbox Skill, see the [Adapt documentation](../../../chatterbox-technologies/adapt/).
+For technical details or usage of Adapt outside of a Chatterbox Skill, see the [Adapt documentation](https://github.com/HelloChatterbox/dev_documentation/tree/fa8dd19ece396fdac40a643e544472fe7433b789/docs/chatterbox-technologies/adapt/README.md).
 {% endhint %}
 
 ## Defining keywords and entities

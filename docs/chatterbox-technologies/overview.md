@@ -6,7 +6,6 @@ description: A broad overview of the technology that makes up Chatterbox AI.
 
 Chatterbox is the name of a suite of software and hardware tools that use [natural language processing](https://en.wikipedia.org/wiki/Natural_language_processing) and [machine learning](https://en.wikipedia.org/wiki/Machine_learning) to provide an open source voice assistant.
 
-
 ## Chatterbox components
 
 Chatterbox is modular. Some components can be easily 'swapped out' for others:
@@ -14,7 +13,6 @@ Chatterbox is modular. Some components can be easily 'swapped out' for others:
 * Speech to Text \(STT\)
 * Intent parser
 * Text to Speech \(TTS\)
-
 
 ### Speech to Text \(STT\)
 
@@ -24,7 +22,7 @@ We are working with Mozilla to build [DeepSpeech](https://github.com/mozilla/Dee
 
 DeepSpeech is not yet ready for production use and Chatterbox currently uses [Google STT](https://cloud.google.com/speech/) as the default STT engine.
 
-Chatterbox also supports other STT engines that can be configured using the [Configuration Manager](../using-chatterbox-ai/customizations/config-manager.md):
+Chatterbox also supports other STT engines that can be configured using the [Configuration Manager](https://github.com/HelloChatterbox/dev_documentation/tree/fa8dd19ece396fdac40a643e544472fe7433b789/docs/using-chatterbox-ai/customizations/config-manager.md):
 
 * [IBM Watson Speech to Text](https://www.ibm.com/watson/services/speech-to-text/) \(IBM API key required\)
 * [wit.ai Speech to Text](https://wit.ai/blog/2014/02/12/speech-api) \(wit.ai API key required\)
@@ -72,6 +70,5 @@ Chatterbox is designed to run on many different platforms. Each dedicated platfo
 
 * **Picroft** - any Raspberry Pi 3 or 4 that is running the Picroft software image.
 
-The enclosure refers to the specific code that is required for that device. 
-It might define unique functionality such as the button, or a specific way of interacting with the hardware, such as controlling the volume levels at a hardware level via i2c.
+The enclosure refers to the specific code that is required for that device. It might define unique functionality such as the button, or a specific way of interacting with the hardware, such as controlling the volume levels at a hardware level via i2c.
 

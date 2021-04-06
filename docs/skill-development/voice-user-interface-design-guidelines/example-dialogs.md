@@ -1,13 +1,10 @@
 # Example Interaction Script
 
-After working on a list of jobs to be done creating Example Interactions is one of the next steps in the design and planning process. 
-In this step you will take the Job Stories and write example Dialogs that get the User's job accomplished. 
-Once development begins the Example Dialogs become the basis of the Dialog and Vocab files within your skill. 
+After working on a list of jobs to be done creating Example Interactions is one of the next steps in the design and planning process. In this step you will take the Job Stories and write example Dialogs that get the User's job accomplished. Once development begins the Example Dialogs become the basis of the Dialog and Vocab files within your skill.
 
 ## First Draft Interaction Scripts
 
-Begin by writing the example interactions of your skill from start to finish based on your Job Stories. 
-At first don’t worry about organizing the interactions. Just try to write down as many examples as possible. If you skipped ahead and
+Begin by writing the example interactions of your skill from start to finish based on your Job Stories. At first don’t worry about organizing the interactions. Just try to write down as many examples as possible. If you skipped ahead and
 
 Here is an example of a First Draft Interaction of a Moon Phase Skill.
 
@@ -64,9 +61,7 @@ Here is an example of a First Draft Interaction of a Moon Phase Skill.
 
 ## Organized Interaction Scripts
 
-The next step in the process is organizing the first pass of dialogs into groups. 
-You may already have a good idea of what these groups of similar interactions are based on your Job Stories from the beginning phase. 
-You can also think of these as the features of the skill. 
+The next step in the process is organizing the first pass of dialogs into groups. You may already have a good idea of what these groups of similar interactions are based on your Job Stories from the beginning phase. You can also think of these as the features of the skill.
 
 | **Scenario** | **When a user asks for the current Moon Phase** |
 | :--- | :--- |
@@ -131,14 +126,9 @@ You can also think of these as the features of the skill.
 | **User** | _yes_ |
 | **Chatterbox** | _the next moon phase begins with the new moon on April 23rd_ |
 
-
 ## Converting Example Interactions to Flows \(optional\)
 
-Some might think that creating the Flowcharts would be the first step in the process. 
-After all the flowchart is abstract and doesn’t require full statements or prompts to be written. 
-In a flowchart you just need to see the steps and decision points within the interaction.
-However, in practice the language used in the interaction can have such a great impact on the user’s input that is more important to start with Example Interactions and real statements and prompts first.
+Some might think that creating the Flowcharts would be the first step in the process. After all the flowchart is abstract and doesn’t require full statements or prompts to be written. In a flowchart you just need to see the steps and decision points within the interaction. However, in practice the language used in the interaction can have such a great impact on the user’s input that is more important to start with Example Interactions and real statements and prompts first.
 
-In a flowchart it's easy to add several decision branches to a step, but in practice the dialog necessary to effectively make the decision might require multiple steps. 
-It's always best to start with the dialog.
+In a flowchart it's easy to add several decision branches to a step, but in practice the dialog necessary to effectively make the decision might require multiple steps. It's always best to start with the dialog.
 

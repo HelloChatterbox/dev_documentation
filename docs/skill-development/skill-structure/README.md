@@ -183,7 +183,7 @@ _Please note that this function is not scoped within your Skills class. It shoul
 
 ### LICENSE
 
-This file contains the full text of the license your Skill is being distributed under. 
+This file contains the full text of the license your Skill is being distributed under.
 
 ### README.md
 

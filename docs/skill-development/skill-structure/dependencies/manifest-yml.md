@@ -9,8 +9,7 @@ description: >-
 In this file we can include Python packages, Linux applications or other Chatterbox skills that are required for our own Skill to function properly.
 
 {% hint style="info" %}
-[YAML](https://en.wikipedia.org/wiki/YAML) is a language commonly used for configuration files.
-It uses indentation rather than brackets or parentheses to define the structure or hierarchy of its contents.
+[YAML](https://en.wikipedia.org/wiki/YAML) is a language commonly used for configuration files. It uses indentation rather than brackets or parentheses to define the structure or hierarchy of its contents.
 {% endhint %}
 
 ## File contents
@@ -39,7 +38,7 @@ There is no limit to the number of packages you can install
 
 ### Linux System Packages
 
-Linux packages are defined under the `system` key. 
+Linux packages are defined under the `system` key.
 
 ```yaml
 dependencies:
@@ -47,10 +46,9 @@ dependencies:
     apt-get: fortune
 ```
 
-
 ### Other Chatterbox Skills
 
-A Skill may even require that other Chatterbox Skills are installed rather than duplicate functionality. 
+A Skill may even require that other Chatterbox Skills are installed rather than duplicate functionality.
 
 ```yaml
 dependencies:

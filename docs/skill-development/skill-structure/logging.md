@@ -6,14 +6,11 @@ description: >-
 
 # Logging
 
-To track events and data within your Skill we can use logging. 
-If you are new to programming, this is a way to output a message that can tell you the state of your Skill at a particular point in time, details about an error that has occured, or simply noting that a program reached a particular point in the code.
+To track events and data within your Skill we can use logging. If you are new to programming, this is a way to output a message that can tell you the state of your Skill at a particular point in time, details about an error that has occured, or simply noting that a program reached a particular point in the code.
 
 ## Basic Usage
 
-A logger is available through the `ChatterboxSkill` base class. 
-This means that you can use it within a Skill without needing to import the `logging` package. 
-You can simply call `self.log` from within the class of your Skill.
+A logger is available through the `ChatterboxSkill` base class. This means that you can use it within a Skill without needing to import the `logging` package. You can simply call `self.log` from within the class of your Skill.
 
 Here is a quick example of an `info` level message used in a Skill. We will learn more about different levels shortly.
 
@@ -92,11 +89,9 @@ except ZeroDivisionError as e:
 
 Log messages from a Skill are written to the `skills.log` file located at: `/var/log/chatterbox/skills.log`
 
-
 ## Using the logger outside the Skill class
 
-As the logger is provided by the ChatterboxSkill class, it is only available within that scope. 
-If you need to log messages from outside of this class, you can import the logger manually.
+As the logger is provided by the ChatterboxSkill class, it is only available within that scope. If you need to log messages from outside of this class, you can import the logger manually.
 
 ```python
 from chatterbox.util import LOG

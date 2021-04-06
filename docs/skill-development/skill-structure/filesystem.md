@@ -6,8 +6,7 @@ description: >-
 
 # Filesystem access
 
-Many Skills may want access to parts of the filesystem. 
-To account for the many different platforms that can run Chatterbox there are three locations that a Skill can utilize.
+Many Skills may want access to parts of the filesystem. To account for the many different platforms that can run Chatterbox there are three locations that a Skill can utilize.
 
 * Persistent filesystem
 * Temporary cache
@@ -56,8 +55,7 @@ Example:
 
 ### Get the path of the namespaced directory.
 
-`self.file_system.path` is a member value containing the root path of the namespace. 
-However it is recommended that you use the `self.file_system.open()` method to read and write files.
+`self.file_system.path` is a member value containing the root path of the namespace. However it is recommended that you use the `self.file_system.open()` method to read and write files.
 
 Example:
 
@@ -142,8 +140,7 @@ def create_skill():
 
 Skills can create a directory for caching temporary data to speed up performance.
 
-This directory will likely be part of a small RAM disk and may be cleared at any time. 
-So code that uses these cached files must be able to fallback and regenerate the file.
+This directory will likely be part of a small RAM disk and may be cleared at any time. So code that uses these cached files must be able to fallback and regenerate the file.
 
 ### Example Skill
 
@@ -190,7 +187,5 @@ self.root_dir
 
 This member variable contains the absolute path of a Skill’s root directory e.g. `~.local/share/chatterbox/skills/my-skill.me/`.
 
-Generally Skills should not modify anything within this directory. 
-Modifying anything in the Skill directory will reload the Skill. 
-It is also not guaranteed that the Skill will have permission to write to this directory.
+Generally Skills should not modify anything within this directory. Modifying anything in the Skill directory will reload the Skill. It is also not guaranteed that the Skill will have permission to write to this directory.
 

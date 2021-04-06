@@ -1,18 +1,15 @@
 ---
 description: >-
   A Message Bus is mechanism for independent systems to communicate with each
-  other using a set of Messages for common commands or notifiers. In the Chatterbox
-  ecosystem, the Messagebus is a websocket.
+  other using a set of Messages for common commands or notifiers. In the
+  Chatterbox ecosystem, the Messagebus is a websocket.
 ---
 
 # MessageBus
 
 ## What is a Message Bus?
 
-A Message Bus is mechanism for independent systems to communicate with each other using a set of _messages_ for common commands or notifiers.
-In the Chatterbox ecosystem, the Messagebus is a websocket and the messages contain a message type with an optional JSON data packet. 
-Some messages trigger actions and have side effects; some are simple notifiers of actions that either have occurred or are about to occur. 
-The Messagebus connects the `chatterbox-core` processes and the **Skills**, and can also be joined by outside systems such as the CLI.
+A Message Bus is mechanism for independent systems to communicate with each other using a set of _messages_ for common commands or notifiers. In the Chatterbox ecosystem, the Messagebus is a websocket and the messages contain a message type with an optional JSON data packet. Some messages trigger actions and have side effects; some are simple notifiers of actions that either have occurred or are about to occur. The Messagebus connects the `chatterbox-core` processes and the **Skills**, and can also be joined by outside systems such as the CLI.
 
 See all the Message types that are currently used by the MessageBus.
 
@@ -20,12 +17,9 @@ See all the Message types that are currently used by the MessageBus.
 
 Messages can be sent from the _producers_ and acted upon by [Skills](https://chatterbox.ai/documentation/skills) or other _consumers_ within `chatterbox-core`. The producers and consumers listed are examples and some messages might be generated or handled by other processes or advanced **Skills**.
 
-The base [ChatterboxSkill API](http://chatterbox-core.readthedocs.io/en/stable/) handles most of the Messagebus usage automatically. 
-For example, the `chatterbox.stop` message is caught by the skill framework, invoking an overridden `ChatterboxSkills.stop()` method within a **Skill**. 
-Similarly, the `ChatterboxSkill.speak()` and `ChatterboxSkill.speak_dialog()` methods generate `speak` messages to be conveyed to the text-to-speech \(TTS\) and audio systems.
+The base [ChatterboxSkill API](http://chatterbox-core.readthedocs.io/en/stable/) handles most of the Messagebus usage automatically. For example, the `chatterbox.stop` message is caught by the skill framework, invoking an overridden `ChatterboxSkills.stop()` method within a **Skill**. Similarly, the `ChatterboxSkill.speak()` and `ChatterboxSkill.speak_dialog()` methods generate `speak` messages to be conveyed to the text-to-speech \(TTS\) and audio systems.
 
-You will really only need to know about the Chatterbox Messagebus if you are developing advanced **Skills**. 
-The `ChatterboxSkill.add_event()` method allows you to attach a handler which will be triggered when the message is seen on the Messagebus.
+You will really only need to know about the Chatterbox Messagebus if you are developing advanced **Skills**. The `ChatterboxSkill.add_event()` method allows you to attach a handler which will be triggered when the message is seen on the Messagebus.
 
 ## ChatterboxSkill Interaction
 

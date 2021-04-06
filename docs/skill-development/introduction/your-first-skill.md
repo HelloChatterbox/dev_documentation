@@ -12,7 +12,7 @@ If you haven't already, check out our [Introduction to Skill Development](./). T
 
 * Know some basic knowledge of [Python programming](https://www.python.org/),
 * have an account on [Github.com](https://github.com), and
-* have a [working version of Chatterbox](../../using-chatterbox-ai/get-chatterbox/).
+* have a [working version of Chatterbox](https://github.com/HelloChatterbox/dev_documentation/tree/fa8dd19ece396fdac40a643e544472fe7433b789/docs/using-chatterbox-ai/get-chatterbox/README.md).
 
 ## Understand the flow of your Skill
 
@@ -24,3 +24,4 @@ It's a good idea to start by writing down how your Skill will work, including
 * Will you need any additional packages or dependencies?
 
 Once you've given these some thought, you can get started.
+

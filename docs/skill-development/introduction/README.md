@@ -18,12 +18,11 @@ If you aren't familiar with the basics of Python, check out our [list of Python 
 
 ### Github account
 
-Skills are hosted on [Github](https://github.com), so you will need to create an account there if you don't already have one.
-It is good to have an understanding of the [GitHub basics](https://guides.github.com/activities/hello-world/).
+Skills are hosted on [Github](https://github.com), so you will need to create an account there if you don't already have one. It is good to have an understanding of the [GitHub basics](https://guides.github.com/activities/hello-world/).
 
 ### Running Chatterbox
 
-To test your Skill out, you will need to [set up a Chatterbox device](../../using-chatterbox-ai/get-chatterbox/). 
+To test your Skill out, you will need to [set up a Chatterbox device](https://github.com/HelloChatterbox/dev_documentation/tree/fa8dd19ece396fdac40a643e544472fe7433b789/docs/using-chatterbox-ai/get-chatterbox/README.md).
 
 If you aren't yet familiar with how Chatterbox works, check out the [overview of Chatterbox components](http://chatterbox.ai/documentation/chatterbox-software-hardware/) to understand the many technologies that come together to provide an intelligent voice assistant.
 
@@ -49,5 +48,5 @@ You'll notice some new terms as you start to develop Skills.
 * **dialog** - A dialog is a phrase that is spoken by Chatterbox. Different Skills will have different dialogs, depending on what the Skill does. For example, in a _weather_ Skill, a dialog might be `the.maximum.temperature.is.dialog`.
 * **intent** - Chatterbox matches utterances that a User speaks with a Skill by determining an intent from the utterance. For example, if a User speaks `Hey Chatterbox, what's the weather like in Toronto?` then the intent will be identified as _weather_ and matched with the _Weather Skill_. When you develop new Skills, you need to define new intents.
 
-If you encounter anything else you're not familiar with, checkout the [Chatterbox Glossary](../../about-chatterbox-ai/glossary.md).
+If you encounter anything else you're not familiar with, checkout the [Chatterbox Glossary](https://github.com/HelloChatterbox/dev_documentation/tree/fa8dd19ece396fdac40a643e544472fe7433b789/docs/about-chatterbox-ai/glossary.md).
 

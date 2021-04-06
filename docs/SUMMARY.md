@@ -4,8 +4,8 @@
 
 ## About Chatterbox AI
 
-* [Why use Chatterbox AI?](about-chatterbox-ai/why-use-chatterbox.md)
-* [Glossary of terms](about-chatterbox-ai/glossary.md)
+* [Why use Chatterbox AI?](about-chatterbox-ai/why-use-chatterbox-ai.md)
+* [Glossary of terms](about-chatterbox-ai/glossary-of-terms.md)
 * [Contributing](about-chatterbox-ai/contributing.md)
 * [FAQ](about-chatterbox-ai/faq.md)
 
@@ -19,13 +19,13 @@
 * [Basic Commands](using-chatterbox-ai/basic-commands.md)
 * [Installing New Skills](using-chatterbox-ai/installing-new-skills.md)
 * [Customizations](using-chatterbox-ai/customizations/README.md)
-  * [Configuration Manager](using-chatterbox-ai/customizations/config-manager.md)
-  * [chatterbox.conf](using-chatterbox-ai/customizations/chatterbox-conf.md)
+  * [Configuration Manager](using-chatterbox-ai/customizations/configuration-manager.md)
+  * [chatterbox.conf](using-chatterbox-ai/customizations/chatterbox.conf.md)
   * [Languages](using-chatterbox-ai/customizations/languages/README.md)
     * [German](using-chatterbox-ai/customizations/languages/german.md)
-  * [Using a Custom Wake Word](using-chatterbox-ai/customizations/wake-word.md)
-  * [Speech-To-Text](using-chatterbox-ai/customizations/stt-engine.md)
-  * [Text-To-Speech](using-chatterbox-ai/customizations/tts-engine.md)
+  * [Using a Custom Wake Word](using-chatterbox-ai/customizations/using-a-custom-wake-word.md)
+  * [Speech-To-Text](using-chatterbox-ai/customizations/speech-to-text.md)
+  * [Text-To-Speech](using-chatterbox-ai/customizations/text-to-speech.md)
 * [Troubleshooting](using-chatterbox-ai/troubleshooting/README.md)
   * [General Troubleshooting](using-chatterbox-ai/troubleshooting/general-troubleshooting.md)
   * [Audio Troubleshooting](using-chatterbox-ai/troubleshooting/audio-troubleshooting.md)

@@ -21,7 +21,7 @@ Chatterbox supports plugins for:
 * [Speech to Text \(STT\)](stt.md)
 * [Text to Speech \(TTS\)](tts.md)
 * [Audioservice backends](audioservice.md)
-* [Wake word engines](wake-word-plugins.md)
+* [Wake word engines](https://github.com/HelloChatterbox/dev_documentation/tree/fa8dd19ece396fdac40a643e544472fe7433b789/docs/chatterbox-technologies/chatterbox-core/plugins/wake-word-plugins.md)
 
 These are accessible at through the following entry point types:
 

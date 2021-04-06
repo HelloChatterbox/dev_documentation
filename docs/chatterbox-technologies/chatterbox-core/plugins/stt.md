@@ -8,7 +8,7 @@ All Chatterbox STT Plugins need to provide a class derived from the STT base cla
 
 When the `__init__()` method of the base class is run the config for that module will be loaded and available through `self.config`. Chatterbox's selected language will also be available through `self.lang`.
 
-For example, the following [Chatterbox configuration](../../../using-chatterbox-ai/customizations/config-manager.md):
+For example, the following [Chatterbox configuration](https://github.com/HelloChatterbox/dev_documentation/tree/fa8dd19ece396fdac40a643e544472fe7433b789/docs/using-chatterbox-ai/customizations/config-manager.md):
 
 ```javascript
   "stt": {

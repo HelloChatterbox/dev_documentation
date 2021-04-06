@@ -6,11 +6,9 @@ description: You can think of skills as the apps of the Chatterbox system.
 
 ## What can a Skill do?
 
-Skills give Chatterbox the ability to perform a variety of functions. They can be installed or removed by the user, and can be easily updated to expand functionality. 
-To get a good idea of what skills to build, let’s talk about the best use cases for a voice assistant, and what types of things Chatterbox can do. 
+Skills give Chatterbox the ability to perform a variety of functions. They can be installed or removed by the user, and can be easily updated to expand functionality. To get a good idea of what skills to build, let’s talk about the best use cases for a voice assistant, and what types of things Chatterbox can do.
 
-Chatterbox can run on a variety of platforms from the Linux Desktop to our dedicated Smart Speakers. Different devices will have slightly different use cases. 
-Devices in the home are generally located in the living room or kitchen and are ideal for listening to the news, playing music, general information, using timers while cooking, checking the weather, and other similar activities that are easily accomplished hands free. 
+Chatterbox can run on a variety of platforms from the Linux Desktop to our dedicated Smart Speakers. Different devices will have slightly different use cases. Devices in the home are generally located in the living room or kitchen and are ideal for listening to the news, playing music, general information, using timers while cooking, checking the weather, and other similar activities that are easily accomplished hands free.
 
 ### Basic functions
 
@@ -22,7 +20,7 @@ We also call this General Question and Answer, and it covers all of those factua
 
 ### Media
 
-One of the biggest use cases for Smart Speakers is playing media. The reason media playback is so popular is because it makes playing a song so easy, all you have to do is say “Hey Chatterbox play the Beatles,” and you can be enjoying music without having to reach for a phone or remote. Within our Defualt Skills we support Spotify and Pandora. However, it would be great if Chatterbox supported as many streaming services as possible. In addition to listening to music, there are skills that handle podcasts as well. 
+One of the biggest use cases for Smart Speakers is playing media. The reason media playback is so popular is because it makes playing a song so easy, all you have to do is say “Hey Chatterbox play the Beatles,” and you can be enjoying music without having to reach for a phone or remote. Within our Defualt Skills we support Spotify and Pandora. However, it would be great if Chatterbox supported as many streaming services as possible. In addition to listening to music, there are skills that handle podcasts as well.
 
 ### News
 
