@@ -2,7 +2,7 @@
 description: >-
   We value and recognise your contributions. Chatterbox is artificial intelligence
   for _everyone_ and we warmly welcome both non-technical and technical
-  contributions.
+  contributions. 
 ---
 
 # Contributing
