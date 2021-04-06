@@ -41,7 +41,6 @@
   * [Error Handling](skill-development/voice-user-interface-design-guidelines/error-handling.md)
   * [Example Interaction Script](skill-development/voice-user-interface-design-guidelines/example-dialogs.md)
   * [Prototyping](skill-development/voice-user-interface-design-guidelines/prototyping.md)
-  * [Design to Development](skill-development/voice-user-interface-design-guidelines/design-to-development.md)
 * [Development Setup](skill-development/introduction/README.md)
   * [Python Resources](skill-development/introduction/python-resources.md)
   * [Your First Skill](skill-development/introduction/your-first-skill.md)
