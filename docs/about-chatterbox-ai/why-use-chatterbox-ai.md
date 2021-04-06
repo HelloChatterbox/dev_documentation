@@ -1,7 +1,5 @@
 # Why use Chatterbox AI?
 
-## Why use Chatterbox AI?
-
 Why would you choose to use Chatterbox over alternatives such as Amazon™ Alexa™, Google Assistant™, Microsoft Cortana™ or Apple's Siri™?
 
 Great question!

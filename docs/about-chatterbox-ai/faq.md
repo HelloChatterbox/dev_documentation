@@ -1,9 +1,5 @@
 # FAQ
 
-
-
-## FAQ
-
 ### Can Chatterbox run completely offline? Can I self-host everything?
 
 As a privacy focused project and community, many people are interested in fully offline or self-hosted options. Chatterbox has intentionally been built in a modular fashion, so this is possible however is not easy and is unlikely to provide an equivalent user experience.

@@ -11,19 +11,13 @@
 
 ## Using Chatterbox AI
 
-* [Get Chatterbox](using-chatterbox-ai/get-chatterbox/README.md)
-  * [Picroft](using-chatterbox-ai/get-chatterbox/picroft.md)
-  * [Linux](using-chatterbox-ai/get-chatterbox/linux.md)
-  * [Docker](using-chatterbox-ai/get-chatterbox/docker.md)
+* [Get Chatterbox](using-chatterbox-ai/get-chatterbox.md)
 * [Pairing Your Device](using-chatterbox-ai/pairing-your-device.md)
 * [Basic Commands](using-chatterbox-ai/basic-commands.md)
 * [Installing New Skills](using-chatterbox-ai/installing-new-skills.md)
 * [Customizations](using-chatterbox-ai/customizations/README.md)
   * [Configuration Manager](using-chatterbox-ai/customizations/configuration-manager.md)
   * [chatterbox.conf](using-chatterbox-ai/customizations/chatterbox.conf.md)
-  * [Languages](using-chatterbox-ai/customizations/languages/README.md)
-    * [German](using-chatterbox-ai/customizations/languages/german.md)
-  * [Using a Custom Wake Word](using-chatterbox-ai/customizations/using-a-custom-wake-word.md)
   * [Speech-To-Text](using-chatterbox-ai/customizations/speech-to-text.md)
   * [Text-To-Speech](using-chatterbox-ai/customizations/text-to-speech.md)
 * [Troubleshooting](using-chatterbox-ai/troubleshooting/README.md)

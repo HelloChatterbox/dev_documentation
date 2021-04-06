@@ -1,7 +1,5 @@
 # Glossary of terms
 
-## Glossary of terms
-
 * **Device** - the platform you have Chatterbox installed on. This might be using an **Enclosure**, like the Mark 1, or on a Raspberry Pi, or it might be on a Linux desktop. Each **Device** needs to be **Paired** with your Chatterbox Home account before it can be used.
 * **Enclosure** - a hardware implementation of Chatterbox. Examples include the Mark 1 and Picroft.
 * **Fallback** - a **Skill** that is designated to be a 'catch-all' when Chatterbox cannot interpret the **Intent** from an **Utterance**.

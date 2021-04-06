@@ -1,9 +1,5 @@
 # Contributing
 
-
-
-## Contributing
-
 ### I'm non-technical, how do I contribute?
 
 If you're non-technical, there are still many ways to contribute.
