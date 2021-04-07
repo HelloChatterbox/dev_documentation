@@ -1,2 +1,0 @@
-# Adapt Tutorial
-
