@@ -14,15 +14,13 @@ While alternative tools are readily available, and easy to use, they come with s
 
 ## Open source
 
-Chatterbox is open source. This means that the code used by Chatterbox can be inspected, copied, modified, and contributed back to the Chatterbox community for everyone to enjoy.
+Chatterbox is built on top of mycroft-core, the world's first open source voice assistant
 
 Tools like Amazon™ Alexa™, Google Assistant™, Microsoft Cortana™ or Apple's Siri™ are _black boxes_. 
 That is, you can't look inside them, and see what they do - or importantly - _how_ they do it. 
 And while they may allow you some flexibility to create new **Skills**, these are usually strictly controlled. 
 Chatterbox gives you freedom, flexibility and control over how your want _your_ voice assistant to work.
 Chatterbox is AI for _everyone_.
-
-Chatterbox code is licensed under the [Apache 2 open source license](https://en.wikipedia.org/wiki/Apache_License).
 
 ## Respecting your privacy
 
@@ -31,9 +29,6 @@ no metrics, we don't save any data and we don't know who you are
 
 You're welcome to view our [privacy policy](https://chatterbox.ai/privacy-policy/)
 
-## More hardware, more choices
-
-Chatterbox runs on a wide range of software platforms and hardware - meaning that you can run Chatterbox on the **Devices** _you_ want. Try Chatterbox on a Raspberry Pi, on an Android device - or on your Linux desktop.
 
 ## Lightweight
 

@@ -1,14 +1,22 @@
 ---
-description: >-
-  IntentBox is an intent parser - meaning that it is a library for converting
-  natural language into machine-readable data structures, such as JSON.
+description: >- IntentBox is an intent parser - meaning that it is a library
+for converting natural language into machine-readable data structures, such as
+JSON.
 ---
 
 # intentBox
 
+intentBox is built on top of FOSS technologies:
+
+- [Adapt](https://github.com/MycroftAI/adapt)
+- [Padatious](https://github.com/MycroftAI/padatious)
+- [Padaos](https://github.com/MycroftAI/padaos)
+
+intentBox is licensed under the Apache-2.0 license
+
 - [Usage](#usage)
-  * [Adapt](#adapt-4)
-  * [Padatious](#padatious-2)
+    * [Adapt](#adapt-4)
+    * [Padatious](#padatious-2)
   
 # Usage
 
@@ -33,8 +41,7 @@ light = ["light", "lights"]
 on = ["activate", "on", "engage", "open"]
 off = ["deactivate", "off", "disengage", "close"]
 
-
-intents.register_entity("weather", weather) # name, samples
+intents.register_entity("weather", weather)  # name, samples
 intents.register_entity("hello", hello)
 intents.register_entity("name", name)
 intents.register_entity("joke", joke)
@@ -46,8 +53,8 @@ intents.register_entity("play", play)
 intents.register_entity("music", music)
 intents.register_entity("say", say)
 
-
-intents.register_intent("weather", ["weather"], ["say"]) # name, required_kwords, optional_kwords
+intents.register_intent("weather", ["weather"],
+                        ["say"])  # name, required_kwords, optional_kwords
 intents.register_intent("hello", ["hello"])
 intents.register_intent("name", ["name"])
 intents.register_intent("joke", ["joke"], ["say"])
@@ -102,8 +109,8 @@ for sent in sentences:
     print("_______________________________")
 
 ```
-## Padatious
 
+## Padatious
 
 ```python
 from intentBox.padatious_extract import PadatiousExtractor
@@ -116,11 +123,14 @@ weather = ["weather"]
 hello = ["hey", "hello", "hi", "greetings"]
 name = ["my name is {name}"]
 joke = ["tell me a joke", "i want a joke", "say a joke", "tell joke"]
-lights_on = ["turn on the lights", "lights on", "turn lights on", "turn the lights on"]
-lights_off = ["turn off the lights", "lights off", "turn lights off", "turn the lights off"]
+lights_on = ["turn on the lights", "lights on", "turn lights on",
+             "turn the lights on"]
+lights_off = ["turn off the lights", "lights off", "turn lights off",
+              "turn the lights off"]
 door_on = ["open the door", "open door", "open the doors"]
 door_off = ["close the door", "close door", "close the doors"]
-music = ["play music", "play some songs", "play heavy metal", "play some jazz", "play rock"]
+music = ["play music", "play some songs", "play heavy metal", "play some jazz",
+         "play rock"]
 
 intents.register_intent("weather", weather)  # name, samples
 intents.register_intent("hello", hello)
