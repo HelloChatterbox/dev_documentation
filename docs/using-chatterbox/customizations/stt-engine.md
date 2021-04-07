@@ -18,9 +18,13 @@ By supporting Mozilla's DeepSpeech project we are aiming to provide a competitiv
 
 The following are some of the available STT options. Each provides details on how to get setup, and how to configure Chatterbox.
 
+### Community Support
+
+
 ## Mozilla DeepSpeech
 
-Chatterbox has been supporting Mozilla's efforts to build DeepSpeech, an open Speech-to-Text technology. It is a fully open source STT engine, based on Baidu’s Deep Speech architecture and implemented with Google’s TensorFlow framework. Being open source means that if you have the hardware, it can be run within your own network providing additional privacy and control for you and your family.
+Mozilla's DeepSpeech, an open Speech-to-Text technology based on Baidu’s Deep Speech architecture and implemented with Google’s TensorFlow framework.
+Being open source means that if you have the hardware, it can be run within your own network providing additional privacy and control for you and your family.
 
 ### Server Setup
 
@@ -30,11 +34,7 @@ To setup a DeepSpeech server that Chatterbox can use, try the [deepspeech-server
 
 ### Chatterbox Configuration
 
-Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
-
-```bash
-chatterbox-config edit user
-```
+Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file
 
 To our existing configuration values we will add the following:
 
@@ -65,11 +65,7 @@ The latest installation instructions can be found on the [Kaldi Github repositor
 
 ### Chatterbox Configuration
 
-Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
-
-```bash
-chatterbox-config edit user
-```
+Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file
 
 To our existing configuration values we will add the following:
 
@@ -82,47 +78,14 @@ To our existing configuration values we will add the following:
   }
 ```
 
-## GoVivace
-
-[GoVivace](https://www.govivace.com/) is a for-profit company that has a [proprietary STT engine](https://www.govivace.com/products/automatic-speech-recognition-asr/).
-
-### Account Setup
-
-The software is available in both 32 and 64-bit versions for Linux, Windows, and Mac platforms. A minimum of 4GB of RAM and a 2.0GHz processor is recommended. A [UniMRCP server plugin](https://www.unimrcp.org/govivacesr) is also available.
-
-See [their website](https://www.govivace.com/products/automatic-speech-recognition-asr/) for more details.
-
-### Chatterbox Configuration
-
-Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
-
-```bash
-chatterbox-config edit user
-```
-
-To our existing configuration values we will add the following:
-
-```javascript
-"stt": {
-  "govivace": {
-    "uri": "https://services.govivace.com:49149/telephony",
-    "credential": {
-      "token": "xxxxx"
-    }
-  },
-  "module": "govivace"
-}
-```
-
-The credential token will be provided to you by GoVivace.
-
 ## Google Cloud
 
 The standard [Google Cloud Speech-To-Text API](https://cloud.google.com/speech-to-text/).
 
 ### Account Setup
 
-A [Google Cloud account](https://cloud.google.com/) with active billing is required. Please carefully consider the [financial cost of using this service](https://cloud.google.com/speech-to-text/pricing).
+A [Google Cloud account](https://cloud.google.com/) with active billing is required. 
+Please carefully consider the [financial cost of using this service](https://cloud.google.com/speech-to-text/pricing).
 
 To obtain the required credential JSON data, you must create a Google API Console project. To do this:
 
@@ -141,12 +104,7 @@ Remember to activate the API in the [GCP Console](https://console.developers.goo
 
 ### Chatterbox Configuration
 
-Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
-
-```bash
-chatterbox-config edit user
-```
-
+Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file 
 To our existing configuration values we will add the following:
 
 ```javascript
@@ -178,21 +136,18 @@ A streaming STT interface for the Google Cloud Speech-To-Text API.
 
 ### Account Setup
 
-A [Google Cloud account](https://cloud.google.com/) with active billing is required. Please carefully consider the [financial cost of using this service](https://cloud.google.com/speech-to-text/pricing).
+A [Google Cloud account](https://cloud.google.com/) with active billing is required.
+Please carefully consider the [financial cost of using this service](https://cloud.google.com/speech-to-text/pricing).
 
 ### Chatterbox Configuration
 
 Install `google-cloud-speech` in the Chatterbox Virtual environment using:
 
 ```text
-chatterbox-pip install google-cloud-speech
+/pip install google-cloud-speech
 ```
 
-Then, using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
-
-```bash
-chatterbox-config edit user
-```
+Then, using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file
 
 To our existing configuration values we will add the following:
 
@@ -206,168 +161,3 @@ To our existing configuration values we will add the following:
   "module": "google_cloud_streaming"
 }
 ```
-
-## Houndify
-
-STT provided by Houndify.
-
-### Account Setup
-
-Create a [Houndify account](https://www.houndify.com/), then:
-
-* Create a New Client from your dashboard
-  * Give your client a name and select a platform.
-* Enable the "Speech To Text Only" domain for your Client.
-* Get the `Client ID` and `Client Key` from your Client Information panel.
-
-### Chatterbox Configuration
-
-Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
-
-```bash
-chatterbox-config edit user
-```
-
-To our existing configuration values we will add the following:
-
-```javascript
-"stt": {
-  "houndify": {
-    "credential": {
-      "client_id": "xxxxx",
-      "client_key": "xxxxx"
-    }
-  },
-  "module": "houndify"
-}
-```
-
-## IBM Cloud
-
-IBM Cloud - Watson Speech to Text is a cloud-based deep-learning speech-to-text service offered on top of the IBM Watson platform.
-
-### Account Setup
-
-Create an account at [IBM.com/cloud](https://www.ibm.com/cloud/watson-speech-to-text), then:
-
-* Create a New Resource from your dashboard
-  * Select "Speech to Text" as the product
-* Retrieve the `API Key` and `URL` from the Services section of your dashboard
-
-### Chatterbox Configuration
-
-Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
-
-```bash
-chatterbox-config edit user
-```
-
-To our existing configuration values we will add the following:
-
-```javascript
-"stt": {
-  "ibm": {
-    "credential": {
-      "token": "YOUR_API_KEY"
-    },
-    "url": "YOUR_URL"
-  },
-  "module": "ibm"
-}
-```
-
-## Microsoft Azure
-
-STT provided by the Microsoft Azure Speech Services. Formerly known as Bing STT.
-
-### Account Setup
-
-Create a [Microsoft Azure account](https://azure.microsoft.com/en-us/services/cognitive-services/speech-services/) and get a server access token.
-
-### Chatterbox Configuration
-
-Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
-
-```bash
-chatterbox-config edit user
-```
-
-To our existing configuration values we will add the following:
-
-```javascript
-"stt": {
-  "bing": {
-    "credential": {
-      "token": "xxxxx"
-    }
-  },
-  "module": "bing"
-}
-```
-
-## Wit.ai
-
-A natural language platform owned by Facebook.
-
-### Account Setup
-
-Create an account at [Wit.ai](https://wit.ai/) then create a new app to get your server access token. See the [Wit.ai documentation](https://wit.ai/docs) for further details.
-
-### Chatterbox Configuration
-
-Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
-
-```bash
-chatterbox-config edit user
-```
-
-To our existing configuration values we will add the following:
-
-```javascript
-"stt": {
-  "wit": {
-    "credential": {
-      "token": "xxxxx"
-    }
-  },
-  "module": "wit"
-}
-```
-
-## Yandex SpeechKit STT
-
-Yandex is one of the largest cloud platforms in Russia.
-
-### Account Setup
-
-Create a [Yandex Cloud account](https://cloud.yandex.com/services/speechkit), then:
-
-* [Create a billing account](https://cloud.yandex.com/docs/billing/quickstart/#create_billing_account) - you can activate a free period in the console.
-* Create first "folder" in cloud.
-* [Create a service account](https://cloud.yandex.com/docs/iam/operations/sa/create) for your Chatterbox instance with role editor.
-* [Create an API key](https://cloud.yandex.com/docs/iam/operations/api-key/create) for your service account.
-
-See the [Yandex Identity and Access Management documentation](https://cloud.yandex.com/docs/iam/) for further details.
-
-### Chatterbox Configuration
-
-Using the [Configuration Manager](config-manager.md) we can edit the `chatterbox.conf` file by running:
-
-```bash
-chatterbox-config edit user
-```
-
-To our existing configuration values we will add the following:
-
-```javascript
-"stt": {
-  "yandex": {
-    "lang": "en-US",
-    "credential": {
-      "api_key": "YOUR_API_KEY"
-    }
-  },
-  "module": "yandex"
-}
-```
-
