@@ -36,9 +36,31 @@ Python packages
 /pip install python-package-name
 ```
 
-Chatterbox Skills
+## Check installed version
+
+System packages
 
 ```bash
-/install https://github.com/HelloChatterbox/hello-world-test-skill
+/apt find system-package-name
 ```
 
+Python packages
+
+```bash
+/pip find python-package-name
+```
+
+
+## Uninstall
+
+System packages
+
+```bash
+/apt remove system-package-name
+```
+
+Python packages
+
+```bash
+/pip uninstall python-package-name
+```

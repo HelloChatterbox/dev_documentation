@@ -1,0 +1,59 @@
+# Github integration
+
+To install a skill you first need to publish it in github
+
+This is intended for developers and skills written in python, 
+For regular chatterbox skills we recommend copy-pasting the xml directly into 
+the skill builder and deploying
+
+- Mycroft skills are supported
+- skills without blocks.xml can not be edited in the skill builder
+- skills only with .xml file need to be deployed in the skill builder
+
+## Repository structure
+
+Each skill repo needs to follow this structure:
+
+  - repo_name
+    - `__init__.py`
+    - locale
+      - en-us
+          - say_this.dialog
+          - hear_this.intent
+    - readme.md        (optional)
+    - manifest.yaml    (optional)
+    - skill_meta.json  (optional)
+    
+
+## Deploying from github
+
+to deploy a skill to your chatterbox you need to use the chat interface
+
+```
+/install https://github.com/HelloChatterbox/hello-world-test-skill/
+```
+
+you can also install skills from a specific branch/release/tag
+
+```
+/install https://github.com/HelloChatterbox/hello-world-test-skill/tree/dev
+```
+
+or install skills from a pinned commit
+
+```
+/install https://github.com/HelloChatterbox/hello-world-test-skill/commit/5491658ee22573c848b1a65d73ebb2f2310cf053
+```
+
+installing from private repositories is not currently supported
+
+## Updating skills
+
+to update a skill simply install it again, the old skill will be replaced
+
+this also works for changing between branches
+
+## Deleting skills
+
+the skills will show in the skills cards together with regular chatterbox 
+skills, you can enable/disable and delete skills as usual
