@@ -9,7 +9,7 @@ description: >-
 
 Each Message type listed contains a description outlining it's meaning or purpose. Where relevant, the Message type will also list the specific JSON data packets expected to be emitted with that Message, and the most common producers and consumers of the Message.
 
-See the [MessageBus documentation](message-bus.md) for further information on this service and examples of using Messages.
+See the [MessageBus documentation](services/message-bus.md) for further information on this service and examples of using Messages.
 
 ## General
 

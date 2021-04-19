@@ -13,7 +13,7 @@ A Message Bus is mechanism for independent systems to communicate with each othe
 
 See all the Message types that are currently used by the MessageBus.
 
-{% page-ref page="message-types.md" %}
+{% page-ref page="../message-types.md" %}
 
 Messages can be sent from the _producers_ and acted upon by [Skills](https://chatterbox.ai/documentation/skills) or other _consumers_ within `chatterbox-core`. The producers and consumers listed are examples and some messages might be generated or handled by other processes or advanced **Skills**.
 
@@ -80,7 +80,7 @@ Private messages can be placed on the Messagebus following these naming conventi
 
 See all the Message types that are currently used by the MessageBus.
 
-{% page-ref page="message-types.md" %}
+{% page-ref page="../message-types.md" %}
 
 ## Additional Support
 

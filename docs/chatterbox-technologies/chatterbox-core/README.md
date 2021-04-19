@@ -10,7 +10,7 @@ description: >-
 
 Chatterbox Core includes four or more distinct Services:
 
-* [MessageBus](message-bus.md)
+* [MessageBus](services/message-bus.md)
 * [Skills](https://github.com/ChatterboxAI/documentation/tree/4a8ffa3702e64c9411fb0ba4239a61d1cca506ab/docs/chatterbox-technologies/chatterbox-core/skills-service.md)
 * [Audio](services/audio-service.md)
 * [Voice](https://github.com/ChatterboxAI/documentation/tree/4a8ffa3702e64c9411fb0ba4239a61d1cca506ab/docs/chatterbox-technologies/chatterbox-core/voice-service.md)
