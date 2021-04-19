@@ -56,6 +56,7 @@
 * [Advanced Skill Types](skill-development/skill-types/README.md)
   * [Fallback Skill](skill-development/skill-types/fallback-skill.md)
 * [FAQ](skill-development/faq.md)
+* [Github](skill-development/github.md)
 
 ## Chatterbox Technologies
 
