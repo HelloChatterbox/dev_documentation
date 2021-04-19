@@ -12,11 +12,6 @@
 
 * [Basic Commands](using-chatterbox-ai/basic-commands.md)
 * [Installing New Skills](using-chatterbox-ai/installing-new-skills.md)
-* [Customizations](using-chatterbox-ai/customizations/README.md)
-  * [Configuration Manager](using-chatterbox-ai/customizations/configuration-manager.md)
-  * [chatterbox.conf](using-chatterbox-ai/customizations/chatterbox.conf.md)
-  * [Speech-To-Text](using-chatterbox-ai/customizations/speech-to-text.md)
-  * [Text-To-Speech](using-chatterbox-ai/customizations/text-to-speech.md)
 * [Troubleshooting](using-chatterbox-ai/troubleshooting/README.md)
   * [General Troubleshooting](using-chatterbox-ai/troubleshooting/general-troubleshooting.md)
   * [Audio Troubleshooting](using-chatterbox-ai/troubleshooting/audio-troubleshooting.md)
