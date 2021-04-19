@@ -12,7 +12,7 @@ This is intended for developers and skills written in python, For regular chatte
 
 * Mycroft skills are supported
 * skills without blocks.xml can not be edited in the skill builder
-* skills only with .xml file need to be deployed in the skill builder
+* skills only with .xml file need to be deployed in the skill builder after the install step
 
 ## Repository structure
 
