@@ -53,7 +53,6 @@
   * [Converse](skill-development/user-interaction/converse.md)
 * [Advanced Skill Types](skill-development/skill-types/README.md)
   * [Fallback Skill](skill-development/skill-types/fallback-skill.md)
-* [FAQ](skill-development/faq.md)
 * [Github](skill-development/github.md)
 
 ## Chatterbox Technologies
