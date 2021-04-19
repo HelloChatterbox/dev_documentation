@@ -1,8 +1,10 @@
+---
+description: Python dict based database with persistence and search capabilities
+---
+
 # json\_database
 
-Python dict based database with persistence and search capabilities
-
-[https://github.com/HelloChatterbox/json\_database/edit/master/README.md](https://github.com/HelloChatterbox/json_database/edit/master/README.md)
+{% embed url="https://github.com/HelloChatterbox/json\_database" %}
 
 ## Features
 
