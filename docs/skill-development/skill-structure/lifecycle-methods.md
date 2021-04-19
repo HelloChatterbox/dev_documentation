@@ -74,11 +74,10 @@ In the following example, we call a method `stop_beeping` to end a notification 
 
 The `shutdown` method is called during the Skill process termination. It is used to perform any final actions to ensure all processes and operations in execution are stopped safely. This might be particularly useful for Skills that have scheduled future events, may be writing to a file or database, or that have initiated new processes.
 
-In the following example we cancel a scheduled event and call a method in our Skill to stop a subprocess we initiated.
+In the following example we call a method in our Skill to stop a subprocess we initiated.
 
 ```python
     def shutdown(self):
-        self.cancel_scheduled_event('my_event')
         self.stop_my_subprocess()
 ```
 
