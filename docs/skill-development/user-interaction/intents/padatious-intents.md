@@ -14,9 +14,9 @@ Padatious has a number of key benefits over other intent parsing technologies.
 
 Padatious uses a series of example sentences to train a machine learning model to identify an intent.
 
-The examples are stored in a Skill's `vocab/lang` or `local/lang` directory, in files ending in the file extension `.intent`. For example, if you were to create a _tomato_ Skill to respond to questions about a _tomato_, you would create the file
+The examples are stored in a Skill's `locale/lang` directory, in files ending in the file extension `.intent`. For example, if you were to create a _tomato_ Skill to respond to questions about a _tomato_, you would create the file
 
-`vocab/en-us/what.is.a.tomato.intent`
+`locale/en-us/what.is.a.tomato.intent`
 
 This file would contain examples of questions asking what a _tomato_ is.
 
@@ -35,7 +35,7 @@ The above example allows us to map many phrases to a single intent, however ofte
 
 ### Defining entities
 
-Let's now find out Chatterbox's opinion on different types of tomatoes. To do this we will create a new intent file: `vocab/en-us/do.you.like.intent`
+Let's now find out Chatterbox's opinion on different types of tomatoes. To do this we will create a new intent file: `locale/en-us/do.you.like.intent`
 
 with examples of questions about chatterbox's opinion about tomatoes:
 
@@ -54,7 +54,7 @@ Note the `{type}` in the above examples. These are wild-cards where matching con
 
 In the above example, `{type}` will match anything. While this makes the intent flexible, it will also match if we say something like Do you like eating tomatoes?. It would think the type of tomato is eating which doesn't make much sense. Instead, we can specify what type of things the {type} of tomato should be. We do this by defining the type entity file here:
 
-`vocab/en-us/type.entity`
+`locale/en-us/type.entity`
 
 which might contain something like:
 
@@ -173,7 +173,7 @@ The `intent_handler()` _decorator_ can be used to create a Padatious intent hand
 
 You may also see the `@intent_file_handler` decorator used in Skills. This has been deprecated and you can now replace any instance of this with the simpler `@intent_handler` decorator.
 
-From our first example above, we created a file `vocab/en-us/what.is.a.tomato.intent`. To register an intent using this file we can use:
+From our first example above, we created a file `locale/en-us/what.is.a.tomato.intent`. To register an intent using this file we can use:
 
 ```python
 @intent_handler('what.is.a.tomato.intent')
@@ -235,10 +235,4 @@ The utterance string received from the speech-to-text engine is received all low
         if 'Proper Noun'.lower() in utterance:
             self.speak('Found it')
 ```
-
-## Need more help?
-
-If something isn't working as expected, please join us in the [~Skills channel of Chatterbox Chat](https://chat.chatterbox.ai/community/channels/skills).
-
-It's also really helpful for us if you add an issue to our [documentation repo](https://github.com/ChatterboxAI/documentation/issues). This means we can make sure it gets covered for all developers in the future.
 
