@@ -1,18 +1,10 @@
+---
+description: >-
+  The chatterbox skill builder functionality can be augmented with third party
+  extensions
+---
+
 # Extensions
-
-description: &gt;-
-
-### The chatterbox skill builder functionality can be augmented with third party extensions
-
-## Extensions
-
-The chatterbox skill builder functionality can be augmented with third party extensions
-
-the default extensions are:
-
-* a
-* b
-* c
 
 ### Open source
 
