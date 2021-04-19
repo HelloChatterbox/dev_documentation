@@ -39,7 +39,6 @@
   * [Logging](skill-development/skill-structure/logging.md)
   * [Dependencies](skill-development/skill-structure/dependencies/README.md)
     * [Manifest.yml](skill-development/skill-structure/dependencies/manifest-yml.md)
-    * [Requirements files](skill-development/skill-structure/dependencies/requirements-files.md)
   * [Filesystem access](skill-development/skill-structure/filesystem.md)
   * [Skill API](skill-development/skill-structure/api.md)
 * [User interaction](skill-development/user-interaction/README.md)
