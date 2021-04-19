@@ -11,7 +11,7 @@ To install a skill you first need to publish it in github
 This is intended for developer skills written in python
 
 * Mycroft skills are supported
-* skills without `blocks.xml` can not be edited in the skill builder
+* skills without `blocks.xml` can not be loaded in the skill builder
 * skills only with `blocks.xml` file need to be deployed in the skill builder after the install step
 
 {% hint style="info" %}
