@@ -1,8 +1,10 @@
+---
+description: unofficial youtube search api
+---
+
 # youtube\_searcher
 
-unofficial youtube search api
-
-[https://github.com/HelloChatterbox/youtube\_searcher](https://github.com/HelloChatterbox/youtube_searcher)
+{% embed url="https://github.com/HelloChatterbox/youtube\_searcher" %}
 
 ## Install
 
