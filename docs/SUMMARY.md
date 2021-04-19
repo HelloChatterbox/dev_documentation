@@ -11,7 +11,7 @@
 ## Using Chatterbox AI
 
 * [Basic Commands](using-chatterbox-ai/basic-commands.md)
-* [Installing New Skills](using-chatterbox-ai/installing-new-skills.md)
+* [Installing New Skills](using-chatterbox-ai/github.md)
 * [Troubleshooting](using-chatterbox-ai/troubleshooting/README.md)
   * [General Troubleshooting](using-chatterbox-ai/troubleshooting/general-troubleshooting.md)
   * [Log Files](using-chatterbox-ai/troubleshooting/log-files.md)
@@ -53,7 +53,6 @@
   * [Converse](skill-development/user-interaction/converse.md)
 * [Advanced Skill Types](skill-development/skill-types/README.md)
   * [Fallback Skill](skill-development/skill-types/fallback-skill.md)
-* [Github](skill-development/github.md)
 
 ## Chatterbox Technologies
 

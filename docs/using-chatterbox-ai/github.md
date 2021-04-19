@@ -1,4 +1,10 @@
-# Github
+---
+description: >-
+  Skills are like apps for a voice assistant. They give Chatterbox access to new
+  information and new abilities.
+---
+
+# Installing New Skills
 
 To install a skill you first need to publish it in github
 
