@@ -1,8 +1,10 @@
+---
+description: Parsing of wikipedia made easy
+---
+
 # wikipedia\_for\_humans
 
-Parsing of Wikipedia made easy.
-
-[https://github.com/HelloChatterbox/wikipedia\_for\_humans](https://github.com/HelloChatterbox/wikipedia_for_humans)
+{% embed url="https://github.com/HelloChatterbox/wikipedia\_for\_humans" %}
 
 ## Install
 
@@ -216,8 +218,4 @@ for candidate, score in wikipedia_for_humans.disambiguate(page, "films", all_mat
 0.4 The Mercury Cinema
 """
 ```
-
-## Motivation
-
-Searching wikipedia by voice should be easy
 
