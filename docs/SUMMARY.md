@@ -10,8 +10,6 @@
 
 ## Using Chatterbox AI
 
-* [Get Chatterbox](using-chatterbox-ai/get-chatterbox.md)
-* [Pairing Your Device](using-chatterbox-ai/pairing-your-device.md)
 * [Basic Commands](using-chatterbox-ai/basic-commands.md)
 * [Installing New Skills](using-chatterbox-ai/installing-new-skills.md)
 * [Customizations](using-chatterbox-ai/customizations/README.md)
