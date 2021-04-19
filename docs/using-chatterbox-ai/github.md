@@ -8,11 +8,15 @@ description: >-
 
 To install a skill you first need to publish it in github
 
-This is intended for developers and skills written in python, For regular chatterbox skills we recommend copy-pasting the xml directly into the skill builder and deploying
+This is intended for developer skills written in python
 
 * Mycroft skills are supported
 * skills without blocks.xml can not be edited in the skill builder
 * skills only with .xml file need to be deployed in the skill builder after the install step
+
+{% hint style="info" %}
+For regular chatterbox skills we recommend copy-pasting the xml directly into the skill builder and clicking the deploy button
+{% endhint %}
 
 ## Repository structure
 
