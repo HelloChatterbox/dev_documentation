@@ -57,7 +57,6 @@
 
 ## Chatterbox Technologies
 
-* [Technology Overview](chatterbox-technologies/overview.md)
 * [Chatterbox Core](chatterbox-technologies/chatterbox-core/README.md)
   * [MessageBus](chatterbox-technologies/chatterbox-core/message-bus.md)
   * [Message Types](chatterbox-technologies/chatterbox-core/message-types.md)
