@@ -22,7 +22,7 @@ The `locale` directory contains subdirectories for each spoken language the skil
 
 By default, your new Skill should contain one subdirectory for United States English - 'en-us'. If more languages were supported, then there would be additional language directories.
 
-#### Dialog files
+### Dialog files
 
 There will be one `.dialog` file in the language subdirectory \(ie. `en-us`\) for each type of dialog the Skill will use. 
 
@@ -36,7 +36,7 @@ For example, how do you say 'goodbye' to someone?
 * Goodbye
 * See ya!
 
-#### Intent files
+### Intent files
 
 Each Skill defines one or more Intents. Adapt Intents are defined using  `.voc` files. Padatious Intents are defined using `.intent` files
 
