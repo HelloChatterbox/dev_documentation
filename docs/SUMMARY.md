@@ -67,7 +67,7 @@
   * [Message Types](chatterbox-technologies/chatterbox-core/message-types.md)
 * [IntentBox](chatterbox-technologies/intentbox/README.md)
   * [Multi Intent Support](chatterbox-technologies/intentbox/matching-strategies.md)
-  * [intent assistant](chatterbox-technologies/intentbox/intent_assistant.md)
+  * [Intent Assistant](chatterbox-technologies/intentbox/intent_assistant.md)
   * [coreference resolution](chatterbox-technologies/intentbox/coreference_resolution.md)
 * [Extensions](chatterbox-technologies/extensions/README.md)
   * [wikipedia\_for\_humans](chatterbox-technologies/extensions/wikipedia_for_humans.md)

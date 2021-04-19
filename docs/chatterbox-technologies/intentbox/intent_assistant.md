@@ -1,26 +1,8 @@
-# intent assistant
+---
+description: scan your skills folder and diagnose possible problems
+---
 
-write once, use everywhere
-
-Scan your skills folder and diagnose possible problems
-
-* [Intent Assistant](intent_assistant.md#intent-assistant)
-  * [Usage](intent_assistant.md#usage)
-    * [Intent Building](intent_assistant.md#intent-building)
-      * [Output](intent_assistant.md#output)
-        * [ADAPT:](intent_assistant.md#adapt-)
-        * [PADATIOUS:](intent_assistant.md#padatious-)
-        * [FUZZY MATCH:](intent_assistant.md#fuzzy-match-)
-    * [Intent Matching](intent_assistant.md#intent-matching)
-      * [Output](intent_assistant.md#output-1)
-        * [Fuzzy Match](intent_assistant.md#fuzzy-match)
-    * [Intent Tests](intent_assistant.md#intent-tests)
-      * [Test utterances](intent_assistant.md#test-utterances)
-        * [Output](intent_assistant.md#output-2)
-      * [Utterance wildcards](intent_assistant.md#utterance-wildcards)
-        * [Output](intent_assistant.md#output-3)
-
-## Usage
+# Intent Assistant
 
 ### Intent Building
 
