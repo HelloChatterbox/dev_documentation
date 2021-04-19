@@ -29,7 +29,7 @@ Each skill repo needs to follow this structure:
       * say\_this.dialog
       * hear\_this.intent
   * readme.md        \(optional\)
-  * manifest.yaml    \(optional\)
+  * manifest.yaml   \(optional\)
   * skill\_meta.json  \(optional\)
 
 ## Deploying from github
