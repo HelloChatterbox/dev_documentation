@@ -4,42 +4,27 @@ description: Exploring the foundational components of a basic Chatterbox Skill.
 
 # Skill Structure
 
-If we now navigate to our new Skill, we can see that it is made up of a number of files and folders.
+## Folder structure
 
-```text
-$ ls -l
-total 20
-drwxr-xr-x 3 kris kris 4096 Oct  8 22:21 dialog
--rw-r--r-- 1 kris kris  299 Oct  8 22:21 __init__.py
--rw-r--r-- 1 kris kris 9482 Oct  8 22:21 LICENSE
--rw-r--r-- 1 kris kris  283 Oct  8 22:21 README.md
--rw-r--r-- 1 kris kris  642 Oct  8 22:21 settingsmeta.yaml
-drwxr-xr-x 3 kris kris 4096 Oct  8 22:21 vocab
-```
+Each skill repo needs to follow this structure:
 
-We will look at each of these in turn.
+* repo\_name
+  * `__init__.py`
+  * locale
+    * en-us
+      * say\_this.dialog
+      * hear\_this.intent
+  * readme.md        \(optional\)
+  * manifest.yaml   \(optional\)
+  * skill\_meta.json  \(optional\)
 
-### `vocab`, `dialog`, and `locale` directories
+The `locale` directory contains subdirectories for each spoken language the skill supports. The subdirectories are named using the [IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag) for the language. For example, Portuguese is 'pt-pt', German is 'de-de', and Australian English is 'en-au'.
 
-The `dialog`, `vocab`, and `locale` directories contain subdirectories for each spoken language the skill supports. The subdirectories are named using the [IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag) for the language. For example, Brazilian Portugues is 'pt-br', German is 'de-de', and Australian English is 'en-au'.
+By default, your new Skill should contain one subdirectory for United States English - 'en-us'. If more languages were supported, then there would be additional language directories.
 
-By default, your new Skill contains one subdirectory for United States English - 'en-us'. If more languages were supported, then there would be additional language directories.
+#### Dialog files
 
-```bash
-$ ls -l dialog
-total 4
-drwxr-xr-x 2 kris kris 4096 Oct  8 22:21 en-us
-```
-
-#### Dialog Directory
-
-There will be one file in the language subdirectory \(ie. `en-us`\) for each type of dialog the Skill will use. Currently this will contain all of the phrases you input when creating the Skill.
-
-```bash
-$ ls -l dialog/en-us
-total 4
--rw-r--r-- 1 kris kris 10 Oct  8 22:21 first.dialog
-```
+There will be one `.dialog` file in the language subdirectory \(ie. `en-us`\) for each type of dialog the Skill will use. 
 
 When instructed to use a particular dialog, Chatterbox will choose one of these lines at random. This is closer to natural speech. That is, many similar phrases mean the same thing.
 
@@ -51,31 +36,14 @@ For example, how do you say 'goodbye' to someone?
 * Goodbye
 * See ya!
 
-#### Vocab Directory
+#### Intent files
 
-Each Skill defines one or more Intents. Intents are defined in the `vocab` directory. The `vocab` directory is organized by language, just like the `dialog` directory.
+Each Skill defines one or more Intents. Adapt Intents are defined using  `.voc` files. Padatious Intents are defined using `.intent` files
 
-We will learn about Intents in more detail shortly. For now, we can see that within the `vocab` directory you may find multiple types of files:
+We will learn about Intents in more detail shortly. For now, we can see that within the `locale` directory you may find multiple types of files:
 
 * `.intent` files used for defining Padatious Intents
-* `.voc` files define keywords primarily used in Adapt Intents
-* `.entity` files define a named entity also used in Adapt Intents
-
-In our current example we might see something like:
-
-```bash
-$ ls -l vocab/en-us
-total 4
--rw-r--r-- 1 kris kris 23 Oct  8 22:21 first.intent
-```
-
-This `.intent` file will contain all of the sample utterances we provided when creating the Skill.
-
-#### Locale Directory
-
-This directory is a newer addition to Chatterbox and combines `dialog` and `vocab` into a single directory. This was requested by the Community to reduce the complexity of a Skills structure, particularly for smaller Skills. Any of the standard file types that we've looked at so far will be treated the same if they are contained in the `dialog`, `vocab`, or `locale` directories.
-
-This also includes the `regex` directory that you will learn about later in the tutorial.
+* `.voc` files define keywords primarily used in Adapt Intent
 
 ### \_\_init\_\_.py
 
