@@ -1,10 +1,10 @@
+---
+description: regex automated
+---
+
 # auto\_regex
 
-## auto\_regex
-
-regex automated
-
-[https://github.com/HelloChatterbox/auto\_regex](https://github.com/HelloChatterbox/auto_regex)
+{% embed url="https://github.com/HelloChatterbox/auto\_regex" %}
 
 ## install
 
@@ -13,8 +13,6 @@ install from pip
 ```bash
 pip install auto_regex
 ```
-
-or just bundle the python file with your project, it is standalone
 
 ## usage
 
@@ -61,8 +59,6 @@ for query in test:
 * spaces in entities will be replaced with \_ `say {two words}` -&gt; `say {two_words}`
 
 ## Credits
-
-JarbasAI
 
 Heavily borrowed from [Padaos](https://github.com/MatthewScholefield/padaos)
 
