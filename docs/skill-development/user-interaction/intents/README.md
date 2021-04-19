@@ -25,13 +25,3 @@ In the example above, we might extract data elements like:
 * **location** - Julie has stipulated her location as Melbourne, but she does not state that she means Melbourne, Australia. How do we distinguish this from Melbourne, Florida, United States?
 * **date** - Julie has been specific about the _timeframe_ she wants weather data for - today. But how do we know what today means in Julie's timezone. Melbourne, Australia is between 14-18 hours ahead of the United States. We don't want to give Julie yesterday's weather, particularly as Melbourne is renowned for having changeable weather.
 
-## Chatterbox's Intent Parsing Engines
-
-Chatterbox has two separate Intent parsing engines each with their own strengths. Each of these can be used in most situations, however they will process the utterance in different ways.
-
-[**Padatious**](https://github.com/HelloChatterbox/dev_documentation/tree/fa8dd19ece396fdac40a643e544472fe7433b789/docs/chatterbox-technologies/padatious.md) is a light-weight neural network that is trained on whole phrases. Padatious intents are generally more accurate however require you to include sample phrases that cover the breadth of ways that a User may ask about something.
-
-[**Adapt**](https://github.com/HelloChatterbox/dev_documentation/tree/fa8dd19ece396fdac40a643e544472fe7433b789/docs/chatterbox-technologies/adapt/README.md) is a keyword based parser. It is more flexible, as it detects the presence of one or more keywords in an utterance, however this can result in false matches.
-
-We will now look at each in more detail, including how to use them in a Chatterbox Skill.
-
