@@ -2,8 +2,6 @@
 
 Adapt is a keyword based intent parser. It determines user intent based on a list of keywords or entities contained within a users utterance.
 
-{% embed url="https://www.youtube.com/watch?v=zR9xvPtM6Ro" caption="" %}
-
 {% hint style="info" %}
 For technical details or usage of Adapt outside of a Chatterbox Skill, see the [Adapt documentation](https://github.com/HelloChatterbox/dev_documentation/tree/fa8dd19ece396fdac40a643e544472fe7433b789/docs/chatterbox-technologies/adapt/README.md).
 {% endhint %}
@@ -14,7 +12,7 @@ For technical details or usage of Adapt outside of a Chatterbox Skill, see the [
 
 Vocab files define keywords that Adapt will look for in a Users utterance to determine their intent.
 
-These files can be located in either the `vocab/lang-code/` or `locale/lang-code/` directories of a Skill. They can have one or more lines to list synonyms or terms that have the same meaning in the context of this Skill. Chatterbox will match _any_ of these keywords with the Intent.
+These files are located in the `locale/lang-code/` directories of a Skill. They can have one or more lines to list synonyms or terms that have the same meaning in the context of this Skill. Chatterbox will match _any_ of these keywords with the Intent.
 
 Consider a simple `Potato.voc`. Within this file we might include:
 
@@ -40,9 +38,13 @@ Chatterbox will match this to any Adapt Intents that are using the `Potato` keyw
 
 ### Regular Expression \(.rx\) Files
 
-Regular expressions \(or regex\) allow us to capture entities based on the structure of an utterance.
+Regular expressions \(or regex\) allow us to capture entities based on the structure of an utterance. 
 
-These files can be located in either the `regex/lang-code/` or `locale/lang-code/` directories of a Skill. They can have one or more lines to provide different ways that an entity may be referenced. Chatterbox will execute these lines in the order they appear and return the first result as an entity to the Intent Handler.
+{% hint style="info" %}
+Most of the time we recommend you use padatious instead of regex files
+{% endhint %}
+
+These files are located in the `locale/lang-code/` directories of a Skill. They can have one or more lines to provide different ways that an entity may be referenced. Chatterbox will execute these lines in the order they appear and return the first result as an entity to the Intent Handler.
 
 Let's consider a `type.rx` file to extract the type of potato we are interested in. Within this file we might include:
 
@@ -196,10 +198,4 @@ The utterance string received from the speech-to-text engine is received all low
         if 'Proper Noun'.lower() in utterance:
             self.speak('Found it')
 ```
-
-## Need more help?
-
-If something isn't working as expected, please join us in the [~Skills channel of Chatterbox Chat](https://chat.chatterbox.ai/community/channels/skills).
-
-It's also really helpful for us if you add an issue to our [documentation repo](https://github.com/ChatterboxAI/documentation/issues). This means we can make sure it gets covered for all developers in the future.
 
