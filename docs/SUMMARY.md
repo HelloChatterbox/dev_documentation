@@ -6,7 +6,6 @@
 
 * [Why use Chatterbox AI?](about-chatterbox-ai/why-use-chatterbox-ai.md)
 * [Glossary](about-chatterbox-ai/glossary-of-terms.md)
-* [Contributing](about-chatterbox-ai/contributing.md)
 * [FAQ](about-chatterbox-ai/faq.md)
 
 ## Using Chatterbox AI
