@@ -1,8 +1,10 @@
+---
+description: '"there''s a lot of weather"'
+---
+
 # temporalis
 
-"there's a lot of weather"
-
-[https://github.com/HelloChatterbox/temporalis](https://github.com/HelloChatterbox/temporalis)
+{% embed url="https://github.com/HelloChatterbox/temporalis" %}
 
 ## install
 
