@@ -1,14 +1,12 @@
+---
+description: >-
+  An unofficial WikiWow python API. Uses BeautifulSoup to scrape WikiHow and
+  return the data you want.
+---
+
 # pywikihow
 
-An unofficial WikiWow python API. Uses BeautifulSoup to scrape WikiHow and return the data you want.
-
-* [Installation](pywikihow.md#install)
-* [Usage](pywikihow.md#usage)
-  * [Random How To](pywikihow.md#random-how-to)
-  * [Searching](pywikihow.md#searching)
-  * [Parsing](pywikihow.md#parsing)
-
-[https://github.com/HelloChatterbox/PyWikiHow](https://github.com/HelloChatterbox/PyWikiHow)
+{% embed url="https://github.com/HelloChatterbox/PyWikiHow" %}
 
 ## Installation
 
