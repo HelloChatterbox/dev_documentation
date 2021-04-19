@@ -1,10 +1,10 @@
+---
+description: >-
+  IntentBox is an intent parser - meaning that it is a library for converting
+  natural language into machine-readable data structures, such as json
+---
+
 # IntentBox
-
-description: &gt;- IntentBox is an intent parser - meaning that it is a library for converting natural language into machine-readable data structures, such as
-
-### JSON.
-
-## intentBox
 
 intentBox is built on top of FOSS technologies:
 
