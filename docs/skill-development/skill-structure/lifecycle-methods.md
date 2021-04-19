@@ -26,7 +26,9 @@ In the following example we assign a variable `learning` to be `True`. The varia
 
 The `initialize` method is called after the Skill is fully constructed and registered with the system. It is used to perform any final setup for the Skill including accessing Skill settings.
 
-In the following example we access the `my_setting` value, that would have been defined in the Skill's [`settingsmeta.json`](https://github.com/HelloChatterbox/dev_documentation/tree/fa8dd19ece396fdac40a643e544472fe7433b789/docs/skill-development/skill-structure/skill-settings.md). We use the `get` method in case the variable `my_setting` is undefined.
+In the following example we access the `my_setting` value. 
+
+We use the `get` method in case the variable `my_setting` is undefined.
 
 ```python
     def initialize(self):
