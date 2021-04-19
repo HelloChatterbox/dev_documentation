@@ -37,7 +37,6 @@
 * [Skill Structure](skill-development/skill-structure/README.md)
   * [Lifecycle Methods](skill-development/skill-structure/lifecycle-methods.md)
   * [Logging](skill-development/skill-structure/logging.md)
-  * [Skill Settings](skill-development/skill-structure/skill-settings.md)
   * [Dependencies](skill-development/skill-structure/dependencies/README.md)
     * [Manifest.yml](skill-development/skill-structure/dependencies/manifest-yml.md)
     * [Requirements files](skill-development/skill-structure/dependencies/requirements-files.md)
