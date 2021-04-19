@@ -1,28 +1,8 @@
-# matching strategies
+---
+description: Different strategies can be used for intent matching
+---
 
-description: &gt;- IntentBox is an intent parser - meaning that it is a library for converting
-
-### natural language into machine-readable data structures, such as JSON.
-
-## intentBox
-
-Multiple intent extraction from a single utterance, framed as a segmentation problem
-
-* [About](matching-strategies.md#about)
-  * [Single Intent](matching-strategies.md#single-intent)
-    * [Adapt](matching-strategies.md#adapt)
-    * [Padatious](matching-strategies.md#padatious)
-  * [Main and Secondary intents](matching-strategies.md#main-and-secondary-intents)
-    * [Adapt](matching-strategies.md#adapt-1)
-  * [Segmentation + Intent](matching-strategies.md#segmentation---intent)
-    * [Adapt](matching-strategies.md#adapt-2)
-    * [Padatious](matching-strategies.md#padatious-1)
-  * [Segmentation + Main and Secondary Intents](matching-strategies.md#segmentation---main-and-secondary-intents)
-    * [Adapt](matching-strategies.md#adapt-3)
-
-## About
-
-Different strategies can be used for intent matching
+# Multi Intent Support
 
 ### Single Intent
 

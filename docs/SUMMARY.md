@@ -66,7 +66,7 @@
     * [Blockly Service](chatterbox-technologies/chatterbox-core/services/blockly-service.md)
   * [Message Types](chatterbox-technologies/chatterbox-core/message-types.md)
 * [IntentBox](chatterbox-technologies/intentbox/README.md)
-  * [matching strategies](chatterbox-technologies/intentbox/matching-strategies.md)
+  * [Multi Intent Support](chatterbox-technologies/intentbox/matching-strategies.md)
   * [intent assistant](chatterbox-technologies/intentbox/intent_assistant.md)
   * [coreference resolution](chatterbox-technologies/intentbox/coreference_resolution.md)
 * [Extensions](chatterbox-technologies/extensions/README.md)
