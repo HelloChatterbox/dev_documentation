@@ -1,10 +1,10 @@
 ---
-description: A statement is any information spoken by Chatterbox to the User.
+description: A dialog is any information spoken by Chatterbox to the User.
 ---
 
-# Statements
+# Dialog
 
-## Speaking a statement
+## Speaking a dialog
 
 One of Chatterbox's most important core capabilities is to convert text to speech, that is, to speak a statement.
 
@@ -77,10 +77,7 @@ Remember, Chatterbox has a language setting that determines from which directory
 
 #### File locations
 
-The [Skill Structure](../skill-structure/) section describes where to place the Intent file and dialog file. Basically, there are two choices:
-
-1. Put both files in `locale/en-us`
-2. Put the dialog file in `dialog/en-us` , and put the Intent file in `vocab/en-us`
+The [Skill Structure](../skill-structure/) section describes where to place the Intent file and dialog file. Put both files in `locale/en-us`
 
 ### Statements with variables
 

@@ -45,7 +45,7 @@
   * [Intents](skill-development/user-interaction/intents/README.md)
     * [Padatious Intents](skill-development/user-interaction/intents/padatious-intents.md)
     * [Adapt Intents](skill-development/user-interaction/intents/adapt-intents.md)
-  * [Statements](skill-development/user-interaction/statements.md)
+  * [Dialog](skill-development/user-interaction/statements.md)
   * [Prompts](skill-development/user-interaction/prompts.md)
   * [Parsing Utterances](skill-development/user-interaction/parsing.md)
   * [Confirmations](skill-development/user-interaction/confirmations.md)
