@@ -16,7 +16,6 @@
   * [General Troubleshooting](using-chatterbox-ai/troubleshooting/general-troubleshooting.md)
   * [Log Files](using-chatterbox-ai/troubleshooting/log-files.md)
   * [Support Skill](using-chatterbox-ai/troubleshooting/support-skill.md)
-  * [Getting more support](using-chatterbox-ai/troubleshooting/getting-more-support.md)
 
 ## Skill Development
 
