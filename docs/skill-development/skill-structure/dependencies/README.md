@@ -50,7 +50,6 @@ Python packages
 /pip find python-package-name
 ```
 
-
 ## Uninstall
 
 System packages
@@ -64,3 +63,4 @@ Python packages
 ```bash
 /pip uninstall python-package-name
 ```
+

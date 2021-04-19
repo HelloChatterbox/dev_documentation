@@ -1,8 +1,8 @@
-# [Temporalis](https://en.wiktionary.org/wiki/temporalis#Adjective)
+# temporalis
 
 "there's a lot of weather"
 
-https://github.com/HelloChatterbox/temporalis
+[https://github.com/HelloChatterbox/temporalis](https://github.com/HelloChatterbox/temporalis)
 
 ## install
 
@@ -44,5 +44,5 @@ print("Moon phase", forecast.moon_phase)
 # work with raw data
 print("\n##### RAW DATA ######")
 pprint(forecast.data)
-
 ```
+

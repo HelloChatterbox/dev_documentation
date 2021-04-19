@@ -1,17 +1,17 @@
-# PyWikiHow
+# pywikihow
 
 An unofficial WikiWow python API. Uses BeautifulSoup to scrape WikiHow and return the data you want.
 
-- [Installation](#install)
-- [Usage](#usage)
-    * [Random How To](#random-how-to)
-    * [Searching](#searching)
-    * [Parsing](#parsing)
+* [Installation](pywikihow.md#install)
+* [Usage](pywikihow.md#usage)
+  * [Random How To](pywikihow.md#random-how-to)
+  * [Searching](pywikihow.md#searching)
+  * [Parsing](pywikihow.md#parsing)
 
-
-https://github.com/HelloChatterbox/PyWikiHow
+[https://github.com/HelloChatterbox/PyWikiHow](https://github.com/HelloChatterbox/PyWikiHow)
 
 ## Installation
+
 ```bash
 pip install pywikihow
 ```
@@ -27,7 +27,6 @@ from pywikihow import RandomHowTo
 
 how_to = RandomHowTo()
 how_to.print()
-
 ```
 
 ### Searching
@@ -45,7 +44,6 @@ how_tos[0].print()
 # for efficiency and to get unlimited entries, the best is to use the generator
 for how_to in WikiHow.search("how to learn python"):
     how_to.print()
-
 ```
 
 ### Parsing
@@ -70,11 +68,11 @@ first_step.print()
 data = first_step.as_dict()
 
 how_to.print(extended=True)
-
 ```
 
 ### ToDo
 
-- Many WikiHow articles also contain "Parts" which break down further into sub-steps. Write a function to parse these additional divisions.
-- Add parser for tips
-- Add parser for warnings
+* Many WikiHow articles also contain "Parts" which break down further into sub-steps. Write a function to parse these additional divisions.
+* Add parser for tips
+* Add parser for warnings
+

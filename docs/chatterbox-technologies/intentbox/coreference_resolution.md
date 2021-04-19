@@ -1,7 +1,6 @@
-## Coreference
+# coreference resolution
 
 ```python
-
 from intentBox.coreference import CoreferenceSolver
 
 text = "My sister has a dog. She loves him"
@@ -36,5 +35,5 @@ print(CoreferenceSolver.replace_coreferences_with_context(text))   # use previou
 text = "tell her to buy milk"
 print(CoreferenceSolver.replace_coreferences(text))   # no context available
 # tell her to buy milk
-
 ```
+

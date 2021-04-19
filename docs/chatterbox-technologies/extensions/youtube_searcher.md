@@ -1,19 +1,16 @@
-# Youtube Searcher
+# youtube\_searcher
 
 unofficial youtube search api
 
-https://github.com/HelloChatterbox/youtube_searcher
-
+[https://github.com/HelloChatterbox/youtube\_searcher](https://github.com/HelloChatterbox/youtube_searcher)
 
 ## Install
 
 ```bash
 pip install youtube_searcher
-
 ```
 
 ## Usage
-
 
 ```python
 from youtube_searcher import search_youtube
@@ -35,8 +32,8 @@ data = search_youtube(query)
                                            'Teaser Trailer',
                                   'url': 'https://www.youtube.com/watch?v=aQxaGpJNfyA',
                                   'videoId': 'aQxaGpJNfyA'},
-  
-				(...)
+
+                (...)
 
                                  {'length': '0:29',
                                   'length_human': '0 minutos e 29 segundos',
@@ -59,9 +56,9 @@ data = search_youtube(query)
                                       'width': 320}],
                       'title': 'marilyn manson',
                       'url': 'https://www.youtube.com/results?search_query=marilyn+manson&sp=Eh-SARwKCi9tLzAzaDUwMmsqDm1hcmlseW4gbWFuc29ueAE%253D'},
-                    
-  
-				(...)
+
+
+                (...)
 
                      {'thumbnails': [{'height': 180,
                                       'url': '//i.ytimg.com/vi/-uWqiDIZJ4U/mqdefault.jpg',
@@ -80,9 +77,9 @@ data = search_youtube(query)
                      'title': 'Slipknot - Psychosocial [OFFICIAL VIDEO]',
                      'url': 'https://www.youtube.com/watch?v=5abamRO41fE',
                      'videoId': '5abamRO41fE'},
-                   
-  
-				(...)
+
+
+                (...)
 
                     {'length': '4:12',
                      'length_human': '4 minutos e 12 segundos',
@@ -108,11 +105,11 @@ data = search_youtube(query)
              'title': 'Rob Zombie - Dragula (Official Video)',
              'url': 'https://www.youtube.com/watch?v=EqQuihD0hoI',
              'videoId': 'EqQuihD0hoI'},
-           
-  
-				(...)
 
- 
+
+                (...)
+
+
             {'length': '2:18',
              'length_human': '2 minutos e 18 segundos',
              'thumbnails': [{'height': 202,
@@ -125,6 +122,5 @@ data = search_youtube(query)
              'url': 'https://www.youtube.com/watch?v=FVN6CDo02gA',
              'videoId': 'FVN6CDo02gA'}]}
 """
-
-
 ```
+

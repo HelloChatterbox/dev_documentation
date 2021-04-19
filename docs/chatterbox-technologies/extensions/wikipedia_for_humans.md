@@ -1,8 +1,8 @@
-# Wikipedia for humans
+# wikipedia\_for\_humans
 
 Parsing of Wikipedia made easy.
 
-https://github.com/HelloChatterbox/wikipedia_for_humans
+[https://github.com/HelloChatterbox/wikipedia\_for\_humans](https://github.com/HelloChatterbox/wikipedia_for_humans)
 
 ## Install
 
@@ -148,7 +148,7 @@ for paragraph, score in wikipedia_for_humans.search_paragraphs(search_term,
  'in pairs or in small packs in areas where they are highly persecuted, giving '
  'them a disadvantage facing large dog groups.Wolves kill dogs wherever they '
  'are found together. (...)
- 
+
 0.19205298013245026
  "The origin of the domestic dog includes the dog's evolutionary divergence "
  'from the wolf, its domestication, and its development into dog types and dog '
@@ -159,7 +159,6 @@ for paragraph, score in wikipedia_for_humans.search_paragraphs(search_term,
  'first domesticated.The genetic divergence between dogs and wolves occurred '
  'between 40,000–20,000 years ago, (...)
 """
-
 ```
 
 page disambiguation
@@ -221,3 +220,4 @@ for candidate, score in wikipedia_for_humans.disambiguate(page, "films", all_mat
 ## Motivation
 
 Searching wikipedia by voice should be easy
+

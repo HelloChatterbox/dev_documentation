@@ -1,26 +1,26 @@
----
-description: >- IntentBox is an intent parser - meaning that it is a library
-for converting natural language into machine-readable data structures, such as
-JSON.
----
+# IntentBox
 
-# intentBox
+description: &gt;- IntentBox is an intent parser - meaning that it is a library for converting natural language into machine-readable data structures, such as
+
+### JSON.
+
+## intentBox
 
 intentBox is built on top of FOSS technologies:
 
-- [Adapt](https://github.com/MycroftAI/adapt)
-- [Padatious](https://github.com/MycroftAI/padatious)
-- [Padaos](https://github.com/MycroftAI/padaos)
+* [Adapt](https://github.com/MycroftAI/adapt)
+* [Padatious](https://github.com/MycroftAI/padatious)
+* [Padaos](https://github.com/MycroftAI/padaos)
 
 intentBox is licensed under the Apache-2.0 license
 
-- [Usage](#usage)
-    * [Adapt](#adapt-4)
-    * [Padatious](#padatious-2)
-  
-# Usage
+* [Usage](./#usage)
+  * [Adapt](./#adapt-4)
+  * [Padatious](./#padatious-2)
 
-## Adapt
+## Usage
+
+### Adapt
 
 ```python
 from intentBox.adapt_extract import AdaptExtractor
@@ -107,10 +107,9 @@ for sent in sentences:
     print("UTTERANCE:", sent)
     pprint(intents.intents_remainder(sent))
     print("_______________________________")
-
 ```
 
-## Padatious
+### Padatious
 
 ```python
 from intentBox.padatious_extract import PadatiousExtractor
@@ -169,5 +168,5 @@ for sent in sentences:
     print("UTTERANCE:", sent)
     pprint(intents.calc_intents(sent))
     print("_______________________________")
-
 ```
+

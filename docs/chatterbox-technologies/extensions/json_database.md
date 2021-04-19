@@ -1,17 +1,17 @@
-# Json Database
+# json\_database
 
 Python dict based database with persistence and search capabilities
 
-https://github.com/HelloChatterbox/json_database/edit/master/README.md
+[https://github.com/HelloChatterbox/json\_database/edit/master/README.md](https://github.com/HelloChatterbox/json_database/edit/master/README.md)
 
 ## Features
 
-- pure python
-- save and load from file
-- search recursively by key and key/value pairs
-- fuzzy search
-- supports arbitrary objects
-- supports comments in saved files
+* pure python
+* save and load from file
+* search recursively by key and key/value pairs
+* fuzzy search
+* supports arbitrary objects
+* supports comments in saved files
 
 ## Install
 
@@ -20,7 +20,6 @@ pip install json_database
 ```
 
 ## Usage
-
 
 ### JsonStorage
 
@@ -88,15 +87,13 @@ with JsonDatabase("users", db_path) as db:
         {"name": "jones", "age": 35},
         {"name": "joey", "birthday": "may 12"}]:
         db.add_item(user)
-        
+
     # pretty print database contents
     db.print()
 
 
 # auto saved when used with context manager
 # db.commit()
-
-
 ```
 
 search entries by key
@@ -113,7 +110,7 @@ users_with_defined_age = db.search_by_key("age")
 
 for user in users_with_defined_age:
     print(user["name"], user["age"])
-    
+
 # fuzzy search
 users = db.search_by_key("birth", fuzzy=True)
 for user, conf in users:
@@ -187,5 +184,5 @@ print(db.search_by_key("birth", fuzzy=True))
 # search entries with a certain value
 print(db.search_by_value("age", 12))
 print(db.search_by_value("name", "jon", fuzzy=True))
-
 ```
+
