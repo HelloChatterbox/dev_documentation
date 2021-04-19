@@ -14,7 +14,6 @@
 * [Installing New Skills](using-chatterbox-ai/installing-new-skills.md)
 * [Troubleshooting](using-chatterbox-ai/troubleshooting/README.md)
   * [General Troubleshooting](using-chatterbox-ai/troubleshooting/general-troubleshooting.md)
-  * [Audio Troubleshooting](using-chatterbox-ai/troubleshooting/audio-troubleshooting.md)
   * [Log Files](using-chatterbox-ai/troubleshooting/log-files.md)
   * [Support Skill](using-chatterbox-ai/troubleshooting/support-skill.md)
   * [Getting more support](using-chatterbox-ai/troubleshooting/getting-more-support.md)
