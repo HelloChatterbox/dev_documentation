@@ -2933,7 +2933,7 @@ python3 -m chatterbox.messagebus.send 'system.update'
 {% endtab %}
 {% endtabs %}
 
-## PROPOSED
+## Proposed namespaces for devs
 
 ### skill.namespace.\*
 
