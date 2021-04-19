@@ -6,8 +6,6 @@ description: >-
 
 # Conversational Context
 
-_NOTE: Conversational context is currently only available with the_ [_Adapt_](https://chatterbox.ai/documentation/adapt) _Intent Parser, and is not yet available for_ [_Padatious_](https://chatterbox.ai/documentation/padatious)
-
 > How tall is John Cleese?
 
 `"John Cleese is 196 centimeters"`
