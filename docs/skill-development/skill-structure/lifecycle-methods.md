@@ -39,11 +39,11 @@ We use the `get` method in case the variable `my_setting` is undefined.
 
 The `converse` method can be used to handle follow up utterances prior to the normal intent handling process. It can be useful for handling utterances from a User that do not make sense as a standalone [intent](../user-interaction/intents/).
 
-A skill is only allowed to `converse` if the user previously initiated an interaction with the skill
+A skill is only allowed to `converse` if the user previously initiated an interaction with the skill, i.e. if the skill is in the **active skills list**
 
 #### Purpose of converse method:
 
-- allow skills to intercept an utterance before the intent stage (the skill is `conversing`)
+- allow skills to intercept an utterance before the intent stage (the skill is **conversing**)
 - allow skills to parse utterances without using the intent parsers
 - allow skills to prepare for follow up intent parsing (manage internal state)
 
@@ -53,7 +53,7 @@ converse method **does not** use regular intent parsing
 
 - `converse` is only called for currently active skills
 - core manages active skills (permission to converse)
-  - an active skill is a `skill that returned True in converse method or triggered an intent`
+  - an active skill is a skill that `returned True in converse` method, `triggered an intent` or `returned True in a fallback query`
   - the active skill list is ordered by activation timestamp
   - a skill is deactivated if "activate" is not called for 5 minutes (user abandoned interaction)
 - skills can request to be activated
