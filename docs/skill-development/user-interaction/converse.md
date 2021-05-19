@@ -6,6 +6,10 @@ description: >-
 
 # Converse
 
+The converse method can be used to handle follow up utterances prior to the normal intent handling process. It can be useful for handling utterances from a User that do not make sense as a standalone intent.
+
+A skill is only allowed to converse if the user previously initiated an interaction with the skill, i.e. if the skill is in the **active skill list**
+
 See the [`converse()` method documentation](https://developer.hellochatterbox.net/skill-development/skill-structure/lifecycle-methods#converse).
 
 
