@@ -39,12 +39,36 @@ We use the `get` method in case the variable `my_setting` is undefined.
 
 The `converse` method can be used to handle follow up utterances prior to the normal intent handling process. It can be useful for handling utterances from a User that do not make sense as a standalone [intent](../user-interaction/intents/).
 
-The method receives two arguments:
+A skill is only allowed to `converse` if the user previously initiated an interaction with the skill
+
+#### Purpose of converse method:
+
+- allow skills to intercept an utterance before the intent stage (the skill is `conversing`)
+- allow skills to parse utterances without using the intent parsers
+- allow skills to prepare for follow up intent parsing (manage internal state)
+
+converse method **does not** use regular intent parsing
+
+#### Active skill list:
+
+- `converse` is only called for currently active skills
+- core manages active skills (permission to converse)
+  - an active skill is a `skill that returned True in converse method or triggered an intent`
+  - the active skill list is ordered by activation timestamp
+  - a skill is deactivated if "activate" is not called for 5 minutes (user abandoned interaction)
+- skills can request to be activated
+- skills can request to be deactivated (missing feature)
+- skills should be able to react to being (de)activated (missing feature)
+- there is an official messagebus interface to retrieve the active skill list
+
+
+The `converse` method receives two arguments:
 
 * `utterances` \(list\): The utterances from the user. If there are multiple utterances, consider them all to be transcription possibilities. Commonly, the first entry is the raw utterance and the second is a `normalized` version of the first utterance.
 * `lang` \(string\): The language the utterance is in. This defaults to None.
 
-Once the Skill has initially been triggered by the User, the `converse` method will be called each time an utterance is received. It is therefore important to check the contents of the utterance to ensure it matches what you expected.
+
+Once the Skill has initially been triggered by the User, the `converse` method will be called each time a new utterance is received until the skill is deactivated
 
 If the utterance is handled by the converse method, we return `True` to indicate that the utterance should not be passed onto the normal intent matching service and no other action is required by the system. If the utterance was not handled, we return `False` and the utterance is passed on first to other `converse` methods, and then to the normal intent matching service.
 
