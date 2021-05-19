@@ -17,7 +17,9 @@ See the [`converse()` method documentation](https://developer.hellochatterbox.ne
 
 - allow skills to intercept an utterance before the intent stage (the skill is **conversing**)
 - allow skills to parse utterances without using the intent parsers
+  - allow conditional user defined logic to decide when to trigger
 - allow skills to prepare for follow up intent parsing (manage internal state)
+
 
 converse method **does not** use regular intent parsing
 
